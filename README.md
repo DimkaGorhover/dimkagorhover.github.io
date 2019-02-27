@@ -1,6 +1,1 @@
-## CV: Dmytro Horkhover
-
-### 
-[My CV](docs)
-
-
+#### [My CV](./cv)
