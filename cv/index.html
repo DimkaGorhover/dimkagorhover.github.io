@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h3 id="h_1">1. About Me</h3>
-                <p>Software Engineer 6+ years, mostly Java. Passionate of java, jvm, performance, benchmarking, data
+                <p>Software Engineer <span id="years_of_exp">-1</span> years, mostly Java. Passionate of java, jvm, performance, benchmarking, data
                     structures, reactive streams.</p>
 
                 <h3>Contacts</h3>
@@ -107,8 +107,8 @@
                         <li><a href="#h_2.3">2.3. Software Engineer at Ciklum (July 2014 - November 2015 (1 year 5
                             months))</a>
                         </li>
-                        <li><a href="#h_2.4">2.4. Software/Java Engineer / Tech Lead at PrivatBank (July 2012 - July
-                            2013 (1
+                        <li><a href="#h_2.4">2.4. Software/Java Engineer / Tech Lead at PrivatBank (July 2013 - July
+                            2014 (1
                             year 1 month))</a></li>
                         <li><a href="#h_2.5">2.5. Software/Java Engineer at PrivatBank (February 2012 - July 2013 (1
                             year 6
@@ -133,7 +133,7 @@
 
         <h3 id="h_2.1">2.1. Senior Java Developer ar <a href="https://www.intellias.com/" target="_blank">Intellias</a>
             (Lviv,
-            November 2018 - Present)</h3>
+            November 2018 - March 2019 (<span id="intellias_duration"></span>))</h3>
 
         <h5>Responsibility:</h5>
         <p>Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi </p>
@@ -272,7 +272,7 @@
         <p>I’ve been working on LoopMe project when it was Ciklums outstaff project. More details in "<a href="#loopme">Software
             Engineer at LoopMe</a>".</p>
 
-        <h3 id="h_2.4">2.4. Software/Java Engineer / Tech Lead at PrivatBank (July 2012 - July 2013 (1 year 1
+        <h3 id="h_2.4">2.4. Software/Java Engineer / Tech Lead at PrivatBank (July 2013 - July 2014 (1 year 1
             month))</h3>
         <p>I’ve been working as tech lead in small team of 4 developers. The most projects were internal, but the
             biggest
@@ -397,5 +397,29 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+
+<script>
+
+    function pretty_period(m1, m2) {
+        const duration = m2.diff(m1, 'months');
+        const years = Math.floor(duration / 12.0);
+        const months = Math.trunc(duration % 12.0) + 1;
+        return (years > 0 ? (years + " years ") : "") + months + " months";
+    }
+
+    const years_of_exp = moment().diff(moment([2012, 2, 28]), 'years');
+    document.getElementById("years_of_exp").innerHTML = years_of_exp + "+";
+
+
+    document.getElementById("intellias_duration").innerText = pretty_period(
+        moment([2018, 11, 1]),
+        moment([2019, 3, 15])
+    );
+
+
+</script>
+
 </body>
 </html>
