@@ -1,28 +1,31 @@
 import React, {Component} from 'react';
 
-class Contacts extends Component {
+class ContactEntry extends Component {
+    render() {
+        const {name, link} = this.props;
+        return (
+            <li>
+                <a href={link} rel="noopener noreferrer" target="_blank">{name}</a>
+            </li>
+        )
+    }
+}
+
+export default class Contacts extends Component {
 
     render() {
 
-        let {contacts} = this.props;
-
-        contacts = contacts.map(function (currentValue, index, array) {
+        const contacts = this.props.contacts.map(function (currentValue, index, array) {
             return (
-                <li>
-                    <a href={currentValue.link} rel="noopener noreferrer" target="_blank">{currentValue.name}</a>
-                </li>
+                <ContactEntry name={currentValue.name} link={currentValue.link} />
             );
         });
 
         return (
             <div>
                 <h3>Contacts:</h3>
-                <ul>
-                    {contacts}
-                </ul>
+                <ul>{contacts}</ul>
             </div>
         )
     }
 }
-
-export default Contacts
