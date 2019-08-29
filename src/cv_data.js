@@ -18,7 +18,7 @@ export default {
             name: "Software Engineer ar N-IX",
             city: "Lviv, Ukraine",
             dates: {
-                start: moment([2019, 8, 1])
+                start: moment([2019, 8 - 1, 1])
             },
             description: "",
             responsibility: "",
@@ -37,8 +37,8 @@ export default {
             name: "Senior Java Developer ar Intellias",
             city: "Lviv, Ukraine",
             dates: {
-                start: moment([2018, 11, 1]),
-                end: moment([2019, 3, 15])
+                start: moment([2018, 11 - 1, 1]),
+                end: moment([2019, 3 - 1, 15])
             },
             description: "",
             responsibility: "Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi",
@@ -57,8 +57,8 @@ export default {
             name: "Software Engineer at LoopMe",
             city: "Dnipro, Ukraine",
             dates: {
-                start: moment([2014, 7, 1]),
-                end: moment([2018, 10, 30])
+                start: moment([2014, 7 - 1, 1]),
+                end: moment([2018, 10 - 1, 30])
             },
             description: "For a better understanding of what I did and what I do now, I’ll split to 4 positions (periods of time):",
             responsibility: null,
@@ -69,8 +69,8 @@ export default {
                     name: "Clojure Developer in Ad Server Team",
                     city: "Dnipro, Ukraine",
                     dates: {
-                        start: moment([2014, 7, 1]),
-                        end: moment([2015, 2, 1])
+                        start: moment([2014, 7 - 1, 1]),
+                        end: moment([2015, 2 - 1, 1])
                     },
                     description: "",
                     responsibility: "Migrate from Ruby to Clojure, new features, develop fast solution for targeting (choosing best ad from big list of ads)",
@@ -89,8 +89,8 @@ export default {
                     name: "Clojure/Java Developer in Ad Server Team ",
                     city: "Dnipro, Ukraine",
                     dates: {
-                        start: moment([2015, 2, 1]),
-                        end: moment([2015, 6, 1])
+                        start: moment([2015, 2 - 1, 1]),
+                        end: moment([2015, 6 - 1, 1])
                     },
                     achievements: "I had to implement very difficult task between 2 languages. It had to be easy if another team helped. But idea was on “proof of concept” stage. I had to do it by myself. I did it and I got \"Company Hero\" award and £100 =) . This award is given once every six months.",
                     description: null,
@@ -111,8 +111,8 @@ export default {
                     name: "Clojure/Java Developer in Ad Server Team ",
                     city: "Dnipro, Ukraine",
                     dates: {
-                        start: moment([2015, 6, 1]),
-                        end: moment([2015, 9, 1])
+                        start: moment([2015, 6 - 1, 1]),
+                        end: moment([2015, 9 - 1, 1])
                     },
                     description: null,
                     responsibility: "Develop high-load ad-server, ad targeting, api’s for real time bidding platforms, api’s for front-end team.",
@@ -131,8 +131,8 @@ export default {
                     name: "Java Developer in Data Science Team",
                     city: "Dnipro, Ukraine",
                     dates: {
-                        start: moment([2015, 9, 1]),
-                        end: moment([2018, 11, 1])
+                        start: moment([2015, 9 - 1, 1]),
+                        end: moment([2018, 11 - 1, 1])
                     },
                     achievements: "I’ve been working for Data Science team alone about 2 years. As a result i created high performance java application by using small amount of design patterns and different data structures with response ~1ms (99 percentile). I didn't use lot of frameworks and libraries, and it helped with future migrations on new java versions.",
                     responsibility: "Develop high-performance high-load applications for Data Science Team, implement data science algorithms and adopt it for runtime, deliver prediction and bidding models to production, implement custom transport solutions for big prediction model, benchmarking, data structures investigation.",
@@ -154,16 +154,16 @@ export default {
             description: "I’ve been working on LoopMe project when it was Ciklums outstaff project. More details in \"Software Engineer at LoopMe\".",
             city: "Dnipro, Ukraine",
             dates: {
-                start: moment([2014, 7, 1]),
-                end: moment([2015, 11, 1])
+                start: moment([2014, 7 - 1, 1]),
+                end: moment([2015, 11 - 1, 1])
             }
         },
         {
             name: "Software/Java Engineer at PrivatBank",
             city: "Dnipro, Ukraine",
             dates: {
-                start: moment([2013, 7, 1]),
-                end: moment([2014, 7, 30])
+                start: moment([2013, 7 - 1, 1]),
+                end: moment([2014, 7 - 1, 30])
             },
             description: "I’ve been involved to develop such project like:"
         },
@@ -172,8 +172,8 @@ export default {
             responsibility: "Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), support, bugfix, unit testing, etc.",
             city: "Dnipro, Ukraine",
             dates: {
-                start: moment([2012, 2, 28]),
-                end: moment([2013, 7, 1])
+                start: moment([2012, 2 - 1, 28]),
+                end: moment([2013, 7 - 1, 1])
             },
             tech_stack: {
                 language: "",
@@ -189,8 +189,8 @@ export default {
                 {
                     name: "Privat24 Ukraine",
                     dates: {
-                        start: moment([2012, 2, 28]),
-                        end: moment([2013, 7, 1])
+                        start: moment([2012, 2 - 1, 28]),
+                        end: moment([2013, 7 - 1, 1])
                     },
                     city: "Dnipro, Ukraine",
                     responsibility: "Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), support, bugfix, unit testing, etc.",
@@ -209,8 +209,8 @@ export default {
                 {
                     name: "Privat24 Georgia",
                     dates: {
-                        start: moment([2012, 2, 28]),
-                        end: moment([2013, 7, 1])
+                        start: moment([2012, 2 - 1, 28]),
+                        end: moment([2013, 7 - 1, 1])
                     },
                     city: "Dnipro, Ukraine",
                     current_state: "acquired by Bank of Georgia",
@@ -231,8 +231,8 @@ export default {
                 {
                     name: "Privat24 A-Bank",
                     dates: {
-                        start: moment([2012, 2, 28]),
-                        end: moment([2013, 7, 1])
+                        start: moment([2012, 2 - 1, 28]),
+                        end: moment([2013, 7 - 1, 1])
                     },
                     city: "Dnipro, Ukraine",
                     responsibility: "Develop and support internet banking web application, same as Privat24 Ukraine",

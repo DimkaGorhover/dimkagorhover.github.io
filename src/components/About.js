@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import moment from "moment";
 import Contacts from "./Contacts";
 import cv_data from "../cv_data";
-import Container from 'react-bootstrap/Container';
 
 class About extends Component {
 

@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import About from "./About";
 import Experience from "./Experience";
-import {Container, Col, Row} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 
 export default class App extends Component {
+
     render() {
         return (
             <div>
@@ -13,12 +14,14 @@ export default class App extends Component {
                             <About/>
                         </Col>
                         <Col xs={4}>
-                            <img src="irzpGTIa_400x400.jpg" className="photo" alt="photo"/>
+                            <img src={"photo.jpg"} className="photo" alt={"photo"}/>
                         </Col>
                     </Row>
-                </Container>
-                <Container>
-                    <Experience/>
+                    <Row>
+                        <Col xs={12}>
+                            <Experience/>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         )
