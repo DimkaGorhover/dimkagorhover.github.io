@@ -152,13 +152,15 @@ export default {
         {
             name: "Software Engineer at Ciklum",
             description: "I’ve been working on LoopMe project when it was Ciklums outstaff project. More details in \"Software Engineer at LoopMe\".",
+            city: "Dnipro, Ukraine",
             dates: {
                 start: moment([2014, 7, 1]),
                 end: moment([2015, 11, 1])
             }
         },
         {
-            name: "Software/Java Engineer / Tech Lead at PrivatBank",
+            name: "Software/Java Engineer at PrivatBank",
+            city: "Dnipro, Ukraine",
             dates: {
                 start: moment([2013, 7, 1]),
                 end: moment([2014, 7, 30])
@@ -168,6 +170,7 @@ export default {
         {
             name: "Software/Java Engineer at PrivatBank",
             responsibility: "Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), support, bugfix, unit testing, etc.",
+            city: "Dnipro, Ukraine",
             dates: {
                 start: moment([2012, 2, 28]),
                 end: moment([2013, 7, 1])
@@ -189,6 +192,7 @@ export default {
                         start: moment([2012, 2, 28]),
                         end: moment([2013, 7, 1])
                     },
+                    city: "Dnipro, Ukraine",
                     responsibility: "Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), support, bugfix, unit testing, etc.",
                     description: "",
                     tech_stack: {
@@ -208,6 +212,7 @@ export default {
                         start: moment([2012, 2, 28]),
                         end: moment([2013, 7, 1])
                     },
+                    city: "Dnipro, Ukraine",
                     current_state: "acquired by Bank of Georgia",
                     achievements: "The project was written via Netbeans New Project which based on custom Netbeans Ant scripts plus Java EE (EJB). It was impossible to move such project to, for example, new version of java, etc. I spend 4 weekends (days + nights) and migrated this project to Java 7 + Spring + Maven + Git. No mentors helped me. It was great experience for me that I remember in nowadays.",
                     responsibility: "Develop and support internet banking web application, same as Privat24 Ukraine",
@@ -229,6 +234,7 @@ export default {
                         start: moment([2012, 2, 28]),
                         end: moment([2013, 7, 1])
                     },
+                    city: "Dnipro, Ukraine",
                     responsibility: "Develop and support internet banking web application, same as Privat24 Ukraine",
                     description: "",
                     tech_stack: {
