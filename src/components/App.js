@@ -14,7 +14,7 @@ export default class App extends Component {
                             <About/>
                         </Col>
                         <Col xs={4}>
-                            <img src={"photo.jpg"} className="photo" alt={"photo"}/>
+                            <img src={"static/photo.jpg"} className="photo" alt={"photo"}/>
                         </Col>
                     </Row>
                     <Row>

@@ -3,10 +3,12 @@ import moment from "moment";
 import Contacts from "./Contacts";
 import cv_data from "../cv_data";
 
-class About extends Component {
+export default class About extends Component {
 
     render() {
-        const years_of_exp = (moment().diff(moment([2012, 2, 28]), 'years')) + "+";
+        const currentTime = moment();
+        const firstDay = moment([2012, 2-1, 28]);
+        const years_of_exp = (currentTime.diff(firstDay, 'years')) + "+";
         return (
             <div>
                 <div>
@@ -32,5 +34,3 @@ class About extends Component {
         )
     }
 }
-
-export default About
