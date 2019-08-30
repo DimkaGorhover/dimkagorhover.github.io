@@ -1,36 +1,25 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {TechStackTextBlock} from "./TechStackTextBlock";
 
-export default class TechStack extends Component {
+export const TechStack = ({techStack}) => {
 
-    render() {
-
-        let {
-            language, frameworks, prod_env, build_tool, ci_cd, storage, vcs, metrics
-        } = this.props.tech_stack;
-
-        language = language && (<li><b>Language</b>: {language}</li>);
-        frameworks = frameworks && (<li><b>Frameworks & Libs</b>: {frameworks}</li>);
-        prod_env = prod_env && (<li><b>Production env</b>: {prod_env}</li>);
-        build_tool = build_tool && (<li><b>Build Tool</b>: {build_tool}</li>);
-        ci_cd = ci_cd && (<li><b>CI/CD</b>: {ci_cd}</li>);
-        storage = storage && (<li><b>Storage</b>: {storage}</li>);
-        vcs = vcs && (<li><b>VCS</b>: {vcs}</li>);
-        metrics = metrics && (<li><b>Metrics System</b>: {metrics}</li>);
-
+    if (techStack) {
         return (
             <div>
                 <h5>Stack of technologies:</h5>
                 <ul>
-                    {language}
-                    {frameworks}
-                    {prod_env}
-                    {build_tool}
-                    {ci_cd}
-                    {storage}
-                    {vcs}
-                    {metrics}
+                    <TechStackTextBlock title="Language" content={techStack.language}/>
+                    <TechStackTextBlock title="Frameworks & Libs" content={techStack.frameworks}/>
+                    <TechStackTextBlock title="Production env" content={techStack.prod_env}/>
+                    <TechStackTextBlock title="Build Tool" content={techStack.build_tool}/>
+                    <TechStackTextBlock title="CI/CD" content={techStack.ci_cd}/>
+                    <TechStackTextBlock title="Storage" content={techStack.storage}/>
+                    <TechStackTextBlock title="VCS" content={techStack.vcs}/>
+                    <TechStackTextBlock title="Metrics System" content={techStack.metrics}/>
                 </ul>
             </div>
-        )
+        );
     }
-}
+
+    return null;
+};

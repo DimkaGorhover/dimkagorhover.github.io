@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import moment from "moment";
-import Contacts from "./Contacts";
-import cv_data from "../cv_data";
+import moment from "moment"; // TODO: replace moment.js by date-fns (https://date-fns.org)
+import {Contacts} from "./Contacts";
+import {contacts} from "../cv_data";
 
 export default class About extends Component {
 
@@ -17,7 +17,7 @@ export default class About extends Component {
                         Software Engineer {years_of_exp} years, mostly Java. Passionate of java, jvm, performance, benchmarking, data structures, reactive streams.
                     </p>
 
-                    <Contacts contacts={cv_data.contacts} />
+                    <Contacts contacts={contacts} />
 
                     <h3>What am I looking for:</h3>
                     <p>
