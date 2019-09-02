@@ -4,7 +4,7 @@ import {TechStack} from "./TechStack";
 import {ExperienceEntryTextBlock} from "./ExperienceEntryTextBlock";
 import {InnerExperiences} from "./InnerExperiences";
 
-const diffYearsAndMonths = ({start, end}) => {
+const prettyPeriod = ({start, end}) => {
     // TODO: replace moment.js by date-fns (https://date-fns.org)
     let startStr = start.format("MMMM YYYY");
     let endStr;
@@ -30,7 +30,7 @@ export const ExperienceEntry = ({experience: exp, indexSuffix, index}) => {
 
     return (
         <div>
-            <h3>{indexSuffix}.{index}. {exp.name} ({exp.city}, {diffYearsAndMonths(exp.dates)})</h3>
+            <h3>{indexSuffix}.{index}. {exp.name} ({exp.city}, {prettyPeriod(exp.dates)})</h3>
             <ExperienceEntryTextBlock title="Description" text={exp.description}/>
             <ExperienceEntryTextBlock title="Responsibility" text={exp.responsibility}/>
             <TechStack techStack={exp.techStack}/>
