@@ -6,7 +6,8 @@ export const contacts = [
     {name: "Github", link: "https://github.com/DimkaGorhover"},
     {name: "Telegram", link: "https://t.me/hdmytro"},
     {name: "Twitter", link: "https://twitter.com/dghover"},
-    {name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover"}
+    {name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover"},
+    {name: "LeetCode", link: "https://leetcode.com/dimkagorhover/"}
 ];
 
 export const experiences = [
@@ -26,7 +27,7 @@ export const experiences = [
             build_tool: "Maven 3.3.1",
             ci_cd: "Jenkins",
             storage: "-",
-            vcs: "Subversion",
+            vcs: "Subversion (git svn plugin)",
             metrics: "-"
         }
     },

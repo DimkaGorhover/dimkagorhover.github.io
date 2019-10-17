@@ -1,5 +1,5 @@
 import React from 'react';
-import About from "./About";
+import {About} from "./About";
 import {Experience} from "./Experience";
 import {Col, Container, Row} from 'react-bootstrap';
 

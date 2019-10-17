@@ -1,3 +1,20 @@
+# Lessons
+https://learn.javascript.ru/screencast/react#react-virtual-DOM
+
+# Run server locally 
+```bash
+yarn start
+``` 
+
+# Deploy to Github
+```bash
+yarn deploy
+```
+
+
+------
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
