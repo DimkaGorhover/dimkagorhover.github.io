@@ -1,19 +1,34 @@
-# Lessons
+# CV
+
+## Lessons
+
 https://learn.javascript.ru/screencast/react#react-virtual-DOM
 
-# Run server locally 
+## Run server locally
+
 ```bash
 yarn start
-``` 
+```
 
-# Deploy to Github
+or (if you don't have node pre-installed locally, but you have docker)
+
+```bash
+make start
+```
+
+## Deploy to Github
+
 ```bash
 yarn deploy
 ```
 
+or (if you don't have node pre-installed locally, but you have docker)
+
+```bash
+make deploy
+```
 
 ------
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
