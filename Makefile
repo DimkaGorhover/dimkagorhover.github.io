@@ -13,14 +13,10 @@ yarn=$(prefix) -p 3000:3000 --entrypoint yarn $(node_image)
 
 version:
 	$(sh) -c '\
-		echo "node version:" && \
-		node --version && \
-		echo "npm version:" && \
-		npm --version && \
-		echo "npx version:" && \
-		npx --version && \
-		echo "yarn version:" && \
-		yarn --version \
+		echo "node version:" && node --version && \
+		echo "npm version:" && npm --version && \
+		echo "npx version:" && npx --version && \
+		echo "yarn version:" && yarn --version \
 		'
 
 install-deps:
@@ -35,8 +31,10 @@ npm-upgrade:
 upgrade:
 	$(yarn) install
 
-start:
+run:
 	$(yarn) start
+
+start: run
 
 deploy:
 	$(yarn) deploy

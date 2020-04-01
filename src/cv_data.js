@@ -12,11 +12,20 @@ export const contacts = [
 
 export const experiences = [
     {
+        name: "Self-Employed",
+        city: "Lviv, Ukraine",
+        description: "Working on my internal projects",
+        dates: {
+            start: moment([2020, 1 - 1, 1]),
+        },
+        responsibility: ""
+    },
+    {
         name: "Software Engineer ar N-IX",
         city: "Lviv, Ukraine",
         dates: {
-            start: moment([2019, 8 - 1, 1])
-            // start: new Date(2019, 8 - 1, 1)
+            start: moment([2019, 8 - 1, 1]),
+            end: moment([2019, 12 - 1, 31])
         },
         description: "",
         responsibility: "",
@@ -90,7 +99,7 @@ export const experiences = [
                     start: moment([2015, 2 - 1, 1]),
                     end: moment([2015, 6 - 1, 1])
                 },
-                achievements: "I had to implement very difficult task between 2 languages. It had to be easy if another team helped. But idea was on “proof of concept” stage. I had to do it by myself. I did it and I got \"Company Hero\" award and £100 =) . This award is given once every six months.",
+                achievements: "I had to implement very difficult task between 2 languages. It had to be easy if another team helped. But idea was on “proof of concept” stage. I had to do it by myself. I did it successfully and I got \"Company Hero\" award and £100 =) . This award is given once every six months.",
                 description: null,
                 currentState: "Migrated from Clojure to Java fully",
                 responsibility: "Develop high-load ad-server, ad targeting, api’s for real time bidding platforms, migration from Clojure to Java.",
@@ -110,7 +119,7 @@ export const experiences = [
                 city: "Dnipro, Ukraine",
                 dates: {
                     start: moment([2015, 6 - 1, 1]),
-                    end: moment([2015, 9 - 1, 1])
+                    end: moment([2016, 9 - 1, 1])
                 },
                 description: null,
                 responsibility: "Develop high-load ad-server, ad targeting, api’s for real time bidding platforms, api’s for front-end team.",
@@ -129,7 +138,7 @@ export const experiences = [
                 name: "Java Developer in Data Science Team",
                 city: "Dnipro, Ukraine",
                 dates: {
-                    start: moment([2015, 9 - 1, 1]),
+                    start: moment([2016, 9 - 1, 1]),
                     end: moment([2018, 11 - 1, 1])
                 },
                 achievements: "I’ve been working for Data Science team alone about 2 years. As a result i created high performance java application by using small amount of design patterns and different data structures with response ~1ms (99 percentile). I didn't use lot of frameworks and libraries, and it helped with future migrations on new java versions.",

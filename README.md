@@ -28,6 +28,10 @@ or (if you don't have node pre-installed locally, but you have docker)
 make deploy
 ```
 
+## Some Themes
+
+[bootswatch - Free themes for Bootstrap](https://bootswatch.com/)
+
 ------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
