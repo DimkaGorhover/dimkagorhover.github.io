@@ -28,15 +28,19 @@ const prettyPeriod = ({start, end}) => {
 
 export const ExperienceEntry = ({experience: exp, indexSuffix, index}) => {
 
+    if (indexSuffix) {
+        index = indexSuffix + '.' + index
+    }
+
     return (
         <div>
-            <h3>{indexSuffix}.{index}. {exp.name} ({exp.city}, {prettyPeriod(exp.dates)})</h3>
+            <h3>{index}. {exp.name} ({exp.city}, {prettyPeriod(exp.dates)})</h3>
             <ExperienceEntryTextBlock title="Description" text={exp.description}/>
             <ExperienceEntryTextBlock title="Responsibility" text={exp.responsibility}/>
             <TechStack techStack={exp.techStack}/>
             <ExperienceEntryTextBlock title="Achievements" text={exp.achievements}/>
             <ExperienceEntryTextBlock title="Current State" text={exp.currentState}/>
-            <InnerExperiences experiences={exp.inner} indexSuffix={indexSuffix + "." + index}/>
+            <InnerExperiences experiences={exp.inner} indexSuffix={index}/>
         </div>
     )
 };

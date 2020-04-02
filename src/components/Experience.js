@@ -6,7 +6,7 @@ export const Experience = () => {
 
     const experienceComponent = experiences.map((experience, i) => {
         return (
-            <ExperienceEntry indexSuffix={2} index={i + 1} experience={experience}/>
+            <ExperienceEntry index={i + 1} experience={experience}/>
         );
     });
 
