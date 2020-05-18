@@ -1,13 +1,14 @@
 import moment from "moment"; // TODO: replace moment.js by date-fns (https://date-fns.org)
 
 export const contacts = [
-    {name: "Email", link: "mailto:gd.mail.89@gmail.com"},
-    {name: "Skype", link: "skype:dier_89"},
-    {name: "Github", link: "https://github.com/DimkaGorhover"},
-    {name: "Telegram", link: "https://t.me/hdmytro"},
-    {name: "Twitter", link: "https://twitter.com/dghover"},
-    {name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover"},
-    {name: "LeetCode", link: "https://leetcode.com/dimkagorhover/"}
+    { name: "Email", link: "mailto:gd.mail.89@gmail.com" },
+    { name: "Skype", link: "skype:dier_89" },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
+    { name: "Github", link: "https://github.com/DimkaGorhover" },
+    { name: "Telegram", link: "https://t.me/hdmytro" },
+    { name: "Twitter", link: "https://twitter.com/dghover" },
+    { name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
+    { name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
 ];
 
 export const experiences = [
@@ -18,7 +19,17 @@ export const experiences = [
         dates: {
             start: moment([2020, 1 - 1, 1]),
         },
-        responsibility: ""
+        responsibility: "",
+        techStack: {
+            language: "Java 11+, Python",
+            frameworks: "Spring Boot, RxJava 2, gRPC",
+            prod_env: "Ansible + (Docker Swarm → Kubernetes)",
+            build_tool: "Gradle 6+",
+            ci_cd: "Jenkins, Gitlab",
+            storage: "PostgreSQL, Redis",
+            vcs: "Gitlab",
+            metrics: "Prometheus + Grafana"
+        }
     },
     {
         name: "Software Engineer ar N-IX",

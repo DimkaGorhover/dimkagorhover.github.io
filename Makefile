@@ -1,39 +1,45 @@
-# versions
-node_version=13.12.0
-alpine_version=3.11
+# https://hub.docker.com/_/node
+# https://hub.docker.com/_/alpine
+image=localhost/node-14.2.0-alpine3.11
+prefix=docker run -ti \
+	--rm \
+	--name cv-jsnode-container \
+	-v $(shell pwd):/app \
+	-w /app
+npm=$(prefix) --entrypoint npm $(image)
+yarn=$(prefix) --entrypoint yarn $(image)
+sh=$(prefix) --entrypoint sh $(image)
+version-cmd=$(sh) -c '\
+	echo -n "node : " && node --version && \
+	echo -n "npm  : " && npm --version && \
+	echo -n "npx  : " && npx --version && \
+	echo -n "yarn : " && yarn --version && \
+	git --version \
+	'
+deploy-cmd=$(prefix) \
+	-v $(HOME)/.ssh:/root/.ssh \
+	-v $(HOME)/.gitconfig:/root/.gitconfig \
+	-v $(HOME)/.gitignore_global:/root/.gitignore_global \
+	--entrypoint bash \
+	$(image) .docker-yarn-deploy.sh
 
-# images names
-image=node:$(node_version)-buster
-alpine_image=node:$(node_version)-alpine$(alpine_version)
-
-# global prefix
-prefix=docker run -ti --rm -v $(shell pwd):/app -w /app
-
-# tools
-npm=$(prefix) --entrypoint npm $(alpine_image)
-yarn=$(prefix) --entrypoint yarn $(alpine_image)
+build-docker:
+	cd docker && make build
 
 version:
-	$(prefix) \
-		--entrypoint sh \
-		$(alpine_image) -c '\
-			echo "node version:" && node --version && \
-			echo "npm version:" && npm --version && \
-			echo "npx version:" && npx --version && \
-			echo "yarn version:" && yarn --version \
-			'
+	$(version-cmd)
 
 npm-install:
 	$(npm) install
+
+npm-install-%:
+	$(npm) install $*
 
 npm-update:
 	$(npm) update
 
 npm-upgrade:
 	$(npm) upgrade
-
-npm-version:
-	$(npm) version
 
 yarn-install:
 	$(yarn) install
@@ -49,14 +55,9 @@ install: yarn-install
 upgrade: yarn-upgrade
 
 run:
-	$(prefix) -p 3000:3000 --entrypoint yarn $(alpine_image) start
+	$(prefix) -p 3000:3000 --entrypoint yarn $(image) start
 
 start: run
 
 deploy:
-	$(prefix) \
-		-v $(HOME)/.ssh:/root/.ssh \
-		-v $(HOME)/.gitconfig:/root/.gitconfig \
-		-v $(HOME)/.gitignore_global:/root/.gitignore_global \
-		--entrypoint bash \
-		$(image) .docker-yarn-deploy.sh
+	$(deploy-cmd)
