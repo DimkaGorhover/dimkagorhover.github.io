@@ -17,11 +17,14 @@ version-cmd=$(sh) -c '\
 	git --version \
 	'
 deploy-cmd=$(prefix) \
-	-v $(HOME)/.ssh:/root/.ssh \
+	-v $(HOME)/.ssh/id_rsa:/root/.ssh/id_rsa \
+	-v $(HOME)/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub \
+	-v $(HOME)/.ssh/known_hosts:/root/.ssh/known_hosts \
 	-v $(HOME)/.gitconfig:/root/.gitconfig \
 	-v $(HOME)/.gitignore_global:/root/.gitignore_global \
 	--entrypoint bash \
-	$(image) .docker-yarn-deploy.sh
+	$(image) \
+	.docker-yarn-deploy.sh
 
 build-docker:
 	cd docker && make build
