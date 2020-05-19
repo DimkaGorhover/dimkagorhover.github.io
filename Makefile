@@ -1,8 +1,12 @@
 # https://hub.docker.com/_/node
 # https://hub.docker.com/_/alpine
+cpu_count=$(shell sysctl -n hw.physicalcpu)
 image=localhost/node-14.2.0-alpine3.11
 prefix=docker run -ti \
 	--rm \
+	--cpus $(cpu_count) \
+	--memory 512m \
+	--memory-swap 0 \
 	--name cv-jsnode-container \
 	-v $(shell pwd):/app \
 	-w /app
@@ -32,33 +36,23 @@ build-docker:
 version:
 	$(version-cmd)
 
-npm-install:
-	$(npm) install
-
-npm-install-%:
-	$(npm) install $*
-
-npm-update:
-	$(npm) update
-
-npm-upgrade:
-	$(npm) upgrade
-
-yarn-install:
+install:
 	$(yarn) install
 
-yarn-upgrade:
-	$(yarn) upgrade
+add-%:
+	$(yarn) add $*
 
-yarn-test:
+test:
 	$(yarn) test
 
-install: yarn-install
-
-upgrade: yarn-upgrade
+build:
+	$(yarn) build
 
 run:
 	$(prefix) -p 3000:3000 --entrypoint yarn $(image) start
+
+# run:
+# 	$(prefix) -p 3000:3000 --entrypoint bash $(image)
 
 start: run
 
