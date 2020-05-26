@@ -34,7 +34,6 @@ export const ExperienceEntry = ({ experience: exp, indexSuffix, index }) => {
     if (indexSuffix) {
         index = indexSuffix + '.' + index
     }
-    console.log(exp.id)
 
     return (
         <div>

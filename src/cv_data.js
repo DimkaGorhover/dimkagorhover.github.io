@@ -61,7 +61,9 @@ export const experiences = [
             end: new Date(2019, 3 - 1, 15)
         },
         description: "",
-        responsibility: "Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi",
+        responsibility: `
+            Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi
+            `,
         techStack: {
             language: "Java 8",
             frameworks: "-",
@@ -81,9 +83,10 @@ export const experiences = [
             start: new Date(2014, 7 - 1, 1),
             end: new Date(2018, 10 - 1, 30)
         },
-        description: "\
-            For a better understanding of what I did and what I do now, \
-            I’ll split to 4 positions (periods of time):",
+        description: `
+            For a better understanding of what I did and what I do now,
+            I’ll split to 4 positions (periods of time):
+            `,
         responsibility: null,
         achievements: null,
         currentState: null,
@@ -96,9 +99,10 @@ export const experiences = [
                     end: new Date(2015, 2 - 1, 1)
                 },
                 description: "",
-                responsibility: "\
-                    Migrate from Ruby to Clojure, new features, develop fast solution for ad targeting \
-                    (choosing best ad from big list of ads)",
+                responsibility: `
+                    Migrate from Ruby to Clojure, new features, develop fast solution for ad targeting
+                    (choosing best ad from big list of ads)
+                    `,
                 techStack: {
                     language: "Clojure (based on Java 8)",
                     frameworks: "many Clojure specific libraries",
@@ -117,16 +121,18 @@ export const experiences = [
                     start: new Date(2015, 2 - 1, 1),
                     end: new Date(2015, 6 - 1, 1)
                 },
-                achievements: "\
-                    I had to implement a very difficult task between 2 languages. \
-                    It had to be easy if another team helped. But the idea was on PoC stage. \
-                    I had to do it by myself. I did it successfully and I got \"Company Hero\" award and £100. \
-                    This award is given once every six months.",
+                achievements: `
+                    I had to implement a very difficult task between 2 languages. 
+                    It had to be easy if another team helped. But the idea was on PoC stage. 
+                    I had to do it by myself. I did it successfully and I got "Company Hero" award and £100. 
+                    This award is given once every six months.
+                    `,
                 description: null,
                 currentState: "Migrated from Clojure to Java fully",
-                responsibility: "\
-                    Develop high-load ad-server, ad targeting, api’s for real time bidding platforms, \
-                    migration from Clojure to Java.",
+                responsibility: `
+                    Develop high-load ad-server, ad targeting, api’s for real time bidding platforms,
+                    migration from Clojure to Java.
+                    `,
                 techStack: {
                     language: "Java 8, Clojure (based on Java 8)",
                     frameworks: "Spring Boot, Spring 4",
@@ -146,9 +152,10 @@ export const experiences = [
                     end: new Date(2016, 9 - 1, 1)
                 },
                 description: null,
-                responsibility: "\
-                    Develop high-load ad-server, ad targeting, api’s for real time bidding platforms, \
-                    api’s for front-end team.",
+                responsibility: `
+                    Develop high-load ad-server, ad targeting, api’s for real time bidding platforms,
+                    api’s for front-end team.
+                    `,
                 techStack: {
                     language: "Java 8",
                     frameworks: "Spring Boot, Spring 4, RxJava, gRPC (netty + protobuf)",
@@ -167,17 +174,20 @@ export const experiences = [
                     start: new Date(2016, 9 - 1, 1),
                     end: new Date(2018, 11 - 1, 1)
                 },
-                achievements: "I’ve been working for Data Science team for about 2 years. \
-                    As a result, I created high-performance java applications by using \
-                    a small number of design patterns and different data structures \
-                    with response ~1ms (99 percentile). I didn't use a lot of frameworks \
-                    and libraries, and it helped with future migrations on new java versions.",
-                responsibility: "\
-                    Develop high-performance high-load applications \
-                    for Data Science team, implement data science algorithms and adopt it for runtime, \
-                    deliver prediction and bidding models to production, \
-                    implement custom transport solutions for big prediction models, \
-                    benchmarking, data structures investigation.",
+                achievements: `
+                    I’ve been working for Data Science team for about 2 years.
+                    As a result, I created high-performance java applications by using
+                    a small number of design patterns and different data structures
+                    with response ~1ms (99 percentile). I didn't use a lot of frameworks
+                    and libraries, and it helped with future migrations on new java versions.
+                    `,
+                responsibility: `
+                    Develop high-performance high-load applications
+                    for Data Science team, implement data science algorithms and adopt it for runtime,
+                    deliver prediction and bidding models to production,
+                    implement custom transport solutions for big prediction models,
+                    benchmarking, data structures investigation.
+                    `,
                 techStack: {
                     language: "Java 8, 9, 10, 11 (currently preparing migration to 12ea)",
                     frameworks: "Mostly Just Java, Spring Boot 2, Spring 5, RxJava 2, gRPC (netty + protobuf)",
@@ -193,8 +203,10 @@ export const experiences = [
     },
     {
         name: "Software Engineer at Ciklum",
-        description: "I’ve been working on LoopMe project when it was Ciklum's outstaff project. \
-            More details in \"Software Engineer at LoopMe\".",
+        description: `
+            I’ve been working on LoopMe project when it was Ciklum's outstaff project.
+            More details in "Software Engineer at LoopMe".
+            `,
         city: "Dnipro, Ukraine",
         dates: {
             start: new Date(2014, 7 - 1, 1),
@@ -212,9 +224,10 @@ export const experiences = [
     },
     {
         name: "Software/Java Engineer at PrivatBank",
-        responsibility: "\
-            Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), \
-            support, bugfix, unit testing, etc.",
+        responsibility: `
+            Small features (clinet messages counters, form "don't block credit card abroad", etc.),
+            support, bugfix, unit testing, etc.
+            `,
         city: "Dnipro, Ukraine",
         dates: {
             start: new Date(2012, 2 - 1, 28),
@@ -238,9 +251,10 @@ export const experiences = [
                     end: new Date(2013, 7 - 1, 1)
                 },
                 city: "Dnipro, Ukraine",
-                responsibility: "\
-                    Small features (clinet messages counters, form \"don't block credit card abroad\", etc.), \
-                    support, bugfix, unit testing, etc.",
+                responsibility: `
+                    Small features (clinet messages counters, form "don't block credit card abroad", etc.),
+                    support, bugfix, unit testing, etc.
+                    `,
                 description: "",
                 techStack: {
                     language: "Java 6, JavaScript",
@@ -261,14 +275,16 @@ export const experiences = [
                 },
                 city: "Dnipro, Ukraine",
                 currentState: "acquired by Bank of Georgia",
-                achievements: "\
-                    The project was written via Netbeans New Project which based \
-                    on custom Netbeans Ant scripts plus Java EE (EJB). It was impossible to move such project to, \
-                    for example, new version of java, etc. I spend 4 weekends (days + nights) \
-                    and migrated this project to Java 7 + Spring + Maven + Git. No mentors helped me. \
-                    It was great experience for me that I remember in nowadays.",
-                responsibility: "\
-                    Develop and support internet banking web application, same as Privat24 Ukraine",
+                achievements: `
+                    The project was written via Netbeans New Project which based
+                    on custom Netbeans Ant scripts plus Java EE (EJB). It was impossible to move such project to,
+                    for example, new version of java, etc. I spend 4 weekends (days + nights)
+                    and migrated this project to Java 7 + Spring + Maven + Git. No mentors helped me.
+                    It was great experience for me that I remember in nowadays.
+                    `,
+                responsibility: `
+                    Develop and support internet banking web application, same as Privat24 Ukraine
+                    `,
                 description: "",
                 techStack: {
                     language: "Java 6, JavaScript → Java 7, JavaScript",
@@ -288,8 +304,9 @@ export const experiences = [
                     end: new Date(2013, 7 - 1, 1)
                 },
                 city: "Dnipro, Ukraine",
-                responsibility: "\
-                    Develop and support internet banking web application, same as Privat24 Ukraine",
+                responsibility: `
+                    Develop and support internet banking web application, same as Privat24 Ukraine
+                    `,
                 description: "",
                 techStack: {
                     language: "Java 6, JavaScript",
