@@ -2,8 +2,11 @@ import React from 'react';
 
 export const Contacts = ({contacts}) => {
     const contactsComponent = contacts
-        .map(({name, link}) => <a href={link} rel="noopener noreferrer" target="_blank">{name}</a>)
-        .map((block) => <li>{block}</li>);
+        .map(({name, link}, index) => (
+            <li key={index}>
+                <a href={link} rel="noopener noreferrer" target="_blank">{name}</a>
+            </li>
+        ));
 
     return (
         <div>

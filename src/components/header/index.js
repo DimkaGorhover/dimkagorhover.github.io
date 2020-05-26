@@ -4,8 +4,8 @@ import './style.scss'
 export const AppHeader = () => {
     return (
         <header>
-            <div class="app-header__header">
-                <div class="container">
+            <div className="app-header__header">
+                <div className="container">
                     <h1>CV: Dmytro Horkhover</h1>
                 </div>
             </div>

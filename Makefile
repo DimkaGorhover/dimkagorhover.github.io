@@ -1,6 +1,7 @@
 # https://hub.docker.com/_/node
 # https://hub.docker.com/_/alpine
-cpu_count=$(shell sysctl -n hw.physicalcpu)
+# cpu_count=$(shell sysctl -n hw.physicalcpu)
+cpu_count=2
 image=localhost/node-14.2.0-alpine3.11
 prefix=docker run -ti \
 	--rm \
@@ -49,10 +50,15 @@ build:
 	$(yarn) build
 
 run:
-	$(prefix) -p 3000:3000 --entrypoint yarn $(image) start
+	$(prefix) -d -p 3000:3000 --entrypoint yarn $(image) start
 
-# run:
-# 	$(prefix) -p 3000:3000 --entrypoint bash $(image)
+container:
+	work_dir=$(shell pwd) && \
+	cd docker/playground && \
+	make run \
+		cpu_count=$(cpu_count) \
+		expose_port=3001 \
+		work_dir=$$work_dir
 
 start: run
 

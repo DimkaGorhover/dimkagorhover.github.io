@@ -1,12 +1,11 @@
 import React from 'react';
-import moment from "moment"; // TODO: replace moment.js by date-fns (https://date-fns.org)
-import {Contacts} from "./Contacts";
-import {contacts} from "../cv_data";
+import { Contacts } from "./Contacts";
+import { contacts, info } from "../../cv_data";
+import { differenceInCalendarMonths } from "date-fns";
 
 export const About = () => {
-    const currentTime = moment();
-    const firstDay = moment([2012, 2-1, 28]);
-    const years_of_exp = (currentTime.diff(firstDay, 'years')) + "+";
+    const firstDay = info.first_working_day
+    const years_of_exp = (Math.floor(differenceInCalendarMonths(new Date(), firstDay) / 12)) + "+";
     return (
         <div>
             <div>

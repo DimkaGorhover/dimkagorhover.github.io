@@ -1,7 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { About } from "../About";
-import { Experience } from "../Experience";
+import { About } from "./About";
+import { Experience } from "./Experience";
+import './style.scss'
 
 export const AppMain = () => {
     return (
