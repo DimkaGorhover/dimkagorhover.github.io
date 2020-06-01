@@ -1,5 +1,5 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 import { About } from "./About";
 import { Experience } from "./Experience";
 import './style.scss'
@@ -11,7 +11,7 @@ export const AppMain = () => {
                 <Col xs={8}>
                     <About />
                 </Col>
-                <Col xs={4}>
+                <Col xs={4} id='photo'>
                     <img src={"static/photo.jpg"} className={'photo'} alt="_photo_" />
                 </Col>
             </Row>

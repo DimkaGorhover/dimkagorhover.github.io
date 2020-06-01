@@ -18,7 +18,7 @@ export const About = () => {
 
                 <h3>What am I looking for:</h3>
                 <p>
-                    New Challenges, Product Company, full time, office || remote, maybe relocation (Ukraine[Kyiv, Dnipro], Europe)
+                    New Challenges, Product Company, full time, office, remote, relocation (Europe)
                 </p>
 
                 <h3>Hobbies</h3>

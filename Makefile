@@ -3,12 +3,13 @@
 # cpu_count=$(shell sysctl -n hw.physicalcpu)
 cpu_count=2
 image=localhost/node-14.2.0-alpine3.11
+container_name=cv-jsnode-container
 prefix=docker run -ti \
 	--rm \
 	--cpus $(cpu_count) \
 	--memory 512m \
 	--memory-swap 0 \
-	--name cv-jsnode-container \
+	--name $(container_name) \
 	-v $(shell pwd):/app \
 	-w /app
 npm=$(prefix) --entrypoint npm $(image)
@@ -51,6 +52,9 @@ build:
 
 run:
 	$(prefix) -d -p 3000:3000 --entrypoint yarn $(image) start
+
+stop:
+	docker container stop $(container_name)
 
 container:
 	work_dir=$(shell pwd) && \

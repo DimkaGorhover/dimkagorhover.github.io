@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom'
 import { App } from "./components/App";
-import 'bootstrap/dist/css/bootstrap.css'
-import './sass/index.scss'
+import './index.scss'
 
 // https://github.com/facebook/create-react-app
 // https://learn.javascript.ru/screencast/react#react-state
