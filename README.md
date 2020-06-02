@@ -1,8 +1,4 @@
-# CV
-
-## Lessons
-
-https://learn.javascript.ru/screencast/react#react-virtual-DOM
+# CV and reactjs playground
 
 ## Run server locally
 

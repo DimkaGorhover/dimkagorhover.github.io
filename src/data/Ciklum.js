@@ -1,5 +1,17 @@
 export const exp = () => {
     return {
+        id: "software_engineer_at_ciklum",
+        links: [
+            {
+                name: "Ciklum.com",
+                url: "https://www.ciklum.com"
+            },
+            {
+                name: "CV: Software Engineer at LoopMe",
+                url: "#software_engineer_at_loopme",
+                target: '_self'
+            }
+        ],
         name: `
             Software Engineer at Ciklum
             `,

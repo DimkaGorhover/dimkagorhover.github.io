@@ -1,24 +1,27 @@
 export const exp = () => {
     return {
+        id: "senior_java_developer_ar_intellias",
         name: "Senior Java Developer ar Intellias",
         city: "Lviv, Ukraine",
         dates: {
             start: new Date(2018, 11 - 1, 1),
             end: new Date(2019, 3 - 1, 15)
         },
-        description: "",
+        description: [
+            ""
+        ],
         responsibility: `
             Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi
             `,
         techStack: {
             language: "Java 8",
-            frameworks: "-",
+            // frameworks: "-",
             prod_env: "unknown",
-            build_tool: "Maven",
+            build_tool: "Apache Maven",
             ci_cd: "Jenkins (all custom scripts on bash)",
-            storage: "AWS (Hadoop, EMR)",
-            vcs: "Git (Gerrit)",
-            metrics: "-"
+            // storage: "AWS (Hadoop, EMR)",
+            // metrics: "-",
+            vcs: "Git (Gerrit)"
         }
     }
 }

@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
-import { About } from "./About";
-import { Experience } from "./Experience";
-import './style.scss'
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { LeftBlock } from "./left";
+import { RightBlock } from './right';
 
 export const AppMain = () => {
     return (
-        <Container>
+        <div className='container-xl'>
             <Row>
-                <Col xs={8}>
-                    <About />
+                <Col xs={3}>
+                    <LeftBlock />
                 </Col>
-                <Col xs={4} id='photo'>
-                    <img src={"static/photo.jpg"} className={'photo'} alt="_photo_" />
+                <Col xs={9}>
+                    <RightBlock />
                 </Col>
             </Row>
-            <Row>
-                <Col xs={12}>
-                    <Experience />
-                </Col>
-            </Row>
-        </Container>
+        </div>
     )
 }

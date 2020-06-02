@@ -1,4 +1,3 @@
-.SILENT:
 # https://hub.docker.com/_/node
 # https://hub.docker.com/_/alpine
 # cpu_count=$(shell sysctl -n hw.physicalcpu)
@@ -33,13 +32,11 @@ deploy-cmd=$(prefix) \
 	$(image) \
 	.docker-yarn-deploy.sh
 
-makefile_cmd=$(shell chmod 755 ./.control/makefile.sh && ./.control/makefile.sh)
-	
 build-docker:
 	cd docker && make build
 
 version:
-	make --makefile $(makefile_cmd) version
+	$(version-cmd)
 
 install:
 	$(yarn) install
@@ -67,8 +64,7 @@ container:
 		expose_port=3001 \
 		work_dir=$$work_dir
 
-start:
-	make --makefile $(makefile_cmd) start
+start: run
 
 deploy:
 	$(deploy-cmd)

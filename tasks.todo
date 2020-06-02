@@ -1,7 +1,9 @@
 Tasks:
+    ☐ https://learn.javascript.ru/screencast/react#react-virtual-DOM
     ☐ Add table of contents
     ☐ create new design
     ✔ use https://date-fns.org instead of moment.js @done (5/26/2020, 17:55:06)
     ☐ inspect https://reactjs.org/docs/lists-and-keys.html
     ☐ https://github.com/Swizec/useAuth
+    ☐ react-bootstrap components - https://react-bootstrap.github.io/components/carousel/
     

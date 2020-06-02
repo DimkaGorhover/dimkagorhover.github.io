@@ -1,14 +1,16 @@
 import React from 'react';
 import './style.scss'
+import { Container } from 'react-bootstrap'
 
 export const AppHeader = () => {
     return (
         <header>
-            <div className="app-header__header">
-                <div className="container">
-                    <h1>CV: Dmytro Horkhover</h1>
-                </div>
-            </div>
+            <Container style={{
+                paddingTop: '10px'
+            }}>
+                <h1>CV: Dmytro Horkhover</h1>
+                <h5>Java Software Engineer</h5>
+            </Container>
         </header>
     )
 }

@@ -1,6 +1,8 @@
 const p24ukraine = () => {
     return {
+        id: "privat24_ukraine",
         name: "Privat24 Ukraine",
+        showDates: false,
         dates: {
             start: new Date(2012, 2 - 1, 28),
             end: new Date(2013, 7 - 1, 1)
@@ -26,20 +28,24 @@ const p24ukraine = () => {
 
 const p24georgia = () => {
     return {
+        id: "privat24_georgia",
         name: "Privat24 Georgia",
+        showDates: false,
         dates: {
             start: new Date(2012, 2 - 1, 28),
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        currentState: "acquired by Bank of Georgia",
-        achievements: `
-            The project was written via Netbeans New Project which based
-            on custom Netbeans Ant scripts plus Java EE (EJB). It was impossible to move such project to,
-            for example, new version of java, etc. I spend 4 weekends (days + nights)
-            and migrated this project to Java 7 + Spring + Maven + Git. No mentors helped me.
-            It was great experience for me that I remember in nowadays.
-            `,
+        // currentState: "acquired by Bank of Georgia",
+        achievements: [`
+            I spend 4 weekends (mostly nights) and migrated this project 
+            from an old stack of technology (Java 6 + Apache Ant) 
+            to a new one (Java 7 + Spring + Apache Maven + Git).
+            `, `
+            Unfortunately, there weren't mentors to help me. 
+            And based on my lack of knowledge it was very stressful for me, 
+            but as a result, I got a great experience that I remember nowadays.
+            `],
         responsibility: `
             Develop and support internet banking web application, same as Privat24 Ukraine
             `,
@@ -48,7 +54,7 @@ const p24georgia = () => {
             language: "Java 6, JavaScript → Java 7, JavaScript",
             frameworks: "Java EE (EJB), jQuery → Spring 3, jQuery",
             prod_env: "custom",
-            build_tool: "Netbeans’ Ant scripts → Apache Maven",
+            build_tool: "Netbeans’ Apache Ant scripts → Apache Maven",
             ci_cd: "Jenkins",
             storage: "Sybase, Redis, RabbitMQ",
             vcs: "Subversion → Git (Gitlab)",
@@ -59,7 +65,9 @@ const p24georgia = () => {
 
 const p24abank = () => {
     return {
+        id: "privat24_a_bank",
         name: "Privat24 A-Bank",
+        showDates: false,
         dates: {
             start: new Date(2012, 2 - 1, 28),
             end: new Date(2013, 7 - 1, 1)
@@ -84,7 +92,18 @@ const p24abank = () => {
 
 export const exp = () => {
     return {
+        id: "software_java_engineer_at_privat_bank",
         name: "Software/Java Engineer at PrivatBank",
+        links: [
+            {
+                name: "PrivatBank.ua",
+                url: "https://privatbank.ua"
+            },
+            {
+                name: "Privat24.ua",
+                url: "https://privat24.ua"
+            }
+        ],
         responsibility: `
             Small features (clinet messages counters, form "don't block credit card abroad", etc.),
             support, bugfix, unit testing, etc.
