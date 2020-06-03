@@ -5,10 +5,41 @@ import * as Ciklum from './data/Ciklum'
 import * as BRTP from './data/privat/BRTP'
 import * as P24 from './data/privat/P24'
 import { CurrentSkills } from './data/CurrentSkills'
+import { yearsOfExp } from './utils/CustomDateUtils'
+
+const first_working_day = new Date(2012, 2, 28)
 
 export const info = {
-    first_working_day: new Date(2012, 2, 28)
+    first_working_day: first_working_day,
+    about_me: [
+        `Software Engineer ${yearsOfExp(first_working_day)} years, mostly Java.`,
+        `Passionate of java, jvm, performance, benchmarking, data structures, reactive streams.`
+    ]
 }
+
+export const education = [
+    // {
+    //     name: "Scool",
+    //     location: "Dnipro, Ukraine",
+    //     dates: {
+    //         start: new Date(2006, 9 - 1, 1),
+    //         end: new Date(2011, 6 - 1, 1)
+    //     }
+    // },
+    {
+        name: "Ukrainian State Chemical Technology University",
+        degree: {
+            name: "Master Degree",
+            subject: "Computer Science",
+            paper: null,
+        },
+        location: "Dnipro, Ukraine",
+        dates: {
+            start: new Date(2006, 9 - 1, 1),
+            end: new Date(2011, 6 - 1, 1)
+        }
+    }
+]
 
 export const contacts = [
     { name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
@@ -45,7 +76,7 @@ const self_employed_exp = () => {
         ],
         techStack: {
             language: [
-                "Java 14", 
+                "Java 14",
                 "Python 3.8",
                 "JavaScript"
             ],

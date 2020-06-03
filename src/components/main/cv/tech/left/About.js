@@ -1,9 +1,11 @@
 import React from 'react';
 import { Contacts } from "./Contacts";
-import { contacts, info } from "../../../cv_data";
-import { yearsOfExp } from '../../../utils/CustomDateUtils';
+import { contacts, info } from "../../../../../cv_data";
 
 export const About = () => {
+
+    const aboutMeText = info.about_me.map(line => (<p>{line}</p>))
+
     return (
         <div>
             <div>
@@ -11,12 +13,7 @@ export const About = () => {
                     <h4 id="about_me">
                         About Me
                     </h4>
-                    <p>
-                        Software Engineer {yearsOfExp(info.first_working_day)} years, mostly Java.
-                    </p>
-                    <p>
-                        Passionate of java, jvm, performance, benchmarking, data structures, reactive streams.
-                    </p>
+                    {aboutMeText}
                 </div>
 
                 <Contacts contacts={contacts} />

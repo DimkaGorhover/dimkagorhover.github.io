@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { current_skills } from '../../../cv_data';
+import { current_skills } from '../../../../../cv_data';
 
 export const CurrentSkills = () => {
 

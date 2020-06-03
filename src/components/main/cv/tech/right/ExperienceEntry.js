@@ -2,7 +2,7 @@ import React from "react";
 import { TechStack } from "./TechStack";
 import { ExperienceEntryTextBlock } from "./ExperienceEntryTextBlock";
 import { InnerExperiences } from "./InnerExperiences";
-import { prettyPeriod } from "../../../utils/CustomDateUtils";
+import { prettyPeriod } from "../../../../../utils/CustomDateUtils";
 import { ExperienceLinks } from "./ExperienceLinks";
 
 export const ExperienceEntry = ({ experience: exp, indexSuffix, index }) => {

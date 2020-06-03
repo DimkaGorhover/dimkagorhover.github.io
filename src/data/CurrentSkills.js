@@ -3,7 +3,7 @@ export const CurrentSkills = () => {
         {
             key: "Languages",
             value: [
-                "Java 6+ (expert)",
+                "Java (Versions 6+)",
                 "Clojure (2 years on production, 5 years ago)",
                 "Python (low-mid)",
                 "Go (beginer)",

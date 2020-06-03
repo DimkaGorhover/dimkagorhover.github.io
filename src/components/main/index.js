@@ -1,19 +1,19 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { LeftBlock } from "./left";
-import { RightBlock } from './right';
+import { Container } from 'react-bootstrap';
+import { CV } from './cv'
 
-export const AppMain = () => {
-    return (
-        <div className='container-xl'>
-            <Row>
-                <Col xs={3}>
-                    <LeftBlock />
-                </Col>
-                <Col xs={9}>
-                    <RightBlock />
-                </Col>
-            </Row>
-        </div>
-    )
+export class AppMain extends React.Component {
+
+    state = {
+        page: <CV />
+    }
+
+    render() {
+        const { page } = this.state
+        return (
+            <Container xl>
+                {page}
+            </Container>
+        )
+    }
 }
