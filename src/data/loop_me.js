@@ -176,34 +176,66 @@ export const exp = () => {
             start: new Date(2014, 7 - 1, 1),
             end: new Date(2018, 10 - 1, 30)
         },
+        // description: [
+        //     `
+        //     LoopMe's full-stack tech platform harnesses mobile data, 
+        //     using a powerful combination of attribution, Artificial Intelligence, 
+        //     and analytics to deliver outstanding campaign performance against 
+        //     brand outcomes — consideration, purchase intent, foot traffic, and offline sales.
+        //     `, `
+        //     The company was founded by experienced mobile advertising executives 
+        //     Stephen Upstone (CEO) and Marco Van de Bergh (CTO) in 2012. 
+        //     LoopMe has global offices in London, New York, Dnipro, Chicago, LA, 
+        //     Atlanta, Boston, Dallas, Detroit, San Francisco, Singapore, Beijing, Dubai, and Johannesburg.
+        //     `
+        // ],
+
         description: [
-            `
-            LoopMe's full-stack tech platform harnesses mobile data, 
-            using a powerful combination of attribution, Artificial Intelligence, 
-            and analytics to deliver outstanding campaign performance against 
-            brand outcomes — consideration, purchase intent, foot traffic, and offline sales.
-            `, `
-            The company was founded by experienced mobile advertising executives 
-            Stephen Upstone (CEO) and Marco Van de Bergh (CTO) in 2012. 
-            LoopMe has global offices in London, New York, Dnipro, Chicago, LA, 
-            Atlanta, Boston, Dallas, Detroit, San Francisco, Singapore, Beijing, Dubai, and Johannesburg.
-            `
+            `I'd been developing a Digital Advertising platform, implementing ad-targeting algorithms 
+            on Clojure, and then rewritten on Java. Also, I'd been developing a Java Application 
+            that uses prediction algorithms to chose the best ad and place the best bid.`
         ],
-        responsibility: [
-            `
-            My responsibility was in developing backend Clojure/Java Applications
-            (APIs) for the front end team and other clients. 
-            `,
-            `
-            The major task was to develop a fault tolerance application 
-            that should handle big amount of traffic and store it to a database.
-            `,
-            `
-            For a better understanding of what I was doing, 
-            I split the description of my experience 
-            in LoopMe into 4 parts (periods) that you can find below.
-            `
-        ],
+        // responsibility: [
+        //     `
+        //     My responsibility was in developing backend Clojure/Java Applications
+        //     (APIs) for the front end team and other clients. 
+        //     `,
+        //     `
+        //     The major task was to develop a fault tolerance application 
+        //     that should handle big amount of traffic and store it to a database.
+        //     `,
+        //     `
+        //     For a better understanding of what I was doing, 
+        //     I split the description of my experience 
+        //     in LoopMe into 4 parts (periods) that you can find below.
+        //     `
+        // ],
+        techStack: {
+            language: [
+                "Clojure → Java (8 → 9 → 10 → 11 → 12ea)"
+            ],
+            frameworks: [
+                "Spring Boot 2", "Spring 5", "RxJava 2", "gRPC (netty + protobuf)"
+            ],
+            prod_env: [
+                "Docker", "Kubernetes"
+            ],
+            build_tool: [
+                "Gradle 5+"
+            ],
+            ci_cd: [
+                "Jenkins (pipelines + Docker Multi-Stage builds)"
+            ],
+            storage: [
+                "Kafka", "Cassandra", "PostgreSQL", "Elasticsearch 6"
+            ],
+            vcs: [
+                "Git (Github)"
+            ],
+            metrics: [
+                "Datadog → Prometheus + Grafana"
+            ],
+        },
         achievements: null,
         currentState: null,
         inner: inner

@@ -79,4 +79,4 @@ deploy:
 		-v $(HOME)/.gitignore_global:/root/.gitignore_global \
 		--entrypoint bash \
 		$(__IMAGE_TAG) \
-		$(shell pwd)/.control/yarn-deploy.sh
+		.control/yarn-deploy.sh
