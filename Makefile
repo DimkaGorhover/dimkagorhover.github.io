@@ -10,7 +10,7 @@ __IMAGE_TAG=$(shell make --makefile docker/git/Makefile get-docker-iamge-tag)
 __DOCKER_PREFIX=docker run -ti \
 	--rm \
 	--cpus $(CPU_COUNT) \
-	--memory 512m \
+	--memory 2g \
 	--memory-swap 0 \
 	--name $(CONTAINER_NAME) \
 	-v $(shell pwd):/app \
@@ -40,6 +40,9 @@ install:
 
 add-%:
 	$(yarn) add $*
+
+# add:
+# 	$(yarn) remove @material-ui/core @material-ui/icons
 
 remove-%:
 	$(yarn) remove $*

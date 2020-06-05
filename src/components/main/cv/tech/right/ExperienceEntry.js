@@ -8,7 +8,7 @@ const TextBlock = ({ title, text }) => {
     if (text != null || (Array.isArray(text) && text.length > 0)) {
         if (!Array.isArray(text))
             text = [text]
-        text = text.map((text_item, index) => <p key={index}>{text_item}</p>)
+        text = text.map((text_item, i) => <p key={i}>{text_item}</p>)
         return (
             <div>
                 <h5>{title}</h5>

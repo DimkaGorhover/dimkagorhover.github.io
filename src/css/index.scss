@@ -24,6 +24,8 @@ td {
     height: 100%;
     transition: margin .5s;
     margin: 0 0 0 -250px;
+    position: fixed;
+    z-index: 10000;
 }
 
 .wrapper.is-nav-open {
@@ -35,7 +37,8 @@ td {
     width: 250px;
     height: 100%;
     padding: 20px;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #999;
+    background-color: #ccc;
 }
 .nav__icon {
     position: absolute;
@@ -45,8 +48,8 @@ td {
     font-size: 20px;
     cursor: pointer;
     transition: color .3s;
-}
 
-.nav__icon:hover {
-    color: #5eb2ff;
+    :hover {
+        color: #5eb2ff;
+    }
 }

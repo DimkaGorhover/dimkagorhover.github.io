@@ -1,22 +1,21 @@
 import React from 'react';
 
+const Link = ({ link }) => {
+    const { name, url, target = "_blank" } = link
+    return (
+        <li>
+            <a href={url} target={target}>{name ? name : url}</a>
+        </li>
+    )
+}
+
 export const ExperienceLinks = ({ links }) => {
-    if (links) {
-
-        links = links.map(({ name, url, target }, index) => (
-            <li key={index}>
-                <a href={url} target={target ? target : "_blank"}>{name ? name : url}</a>
-            </li>
-        ))
-
-        return (
-            <div>
-                <h5>Links</h5>
-                <ul>
-                    {links}
-                </ul>
-            </div>
-        )
-    }
-    return null
+    return links && (
+        <div>
+            <h5>Links</h5>
+            <ul>
+                {links.map((link, index) => (<Link key={index} link={link} />))}
+            </ul>
+        </div>
+    )
 }

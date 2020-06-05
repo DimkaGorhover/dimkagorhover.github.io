@@ -34,14 +34,14 @@ export const education = [
 ]
 
 export const contacts = [
-    { name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
-    { name: "Skype ( dier_89 )", link: "skype:dier_89" },
-    { name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
-    { name: "Github", link: "https://github.com/DimkaGorhover" },
-    { name: "Telegram", link: "https://t.me/hdmytro" },
-    { name: "Twitter", link: "https://twitter.com/dghover" },
-    { name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
-    { name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
+    { main: true, name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
+    { main: true, name: "Skype ( dier_89 )", link: "skype:dier_89" },
+    { main: true, name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
+    { main: true, name: "Github", link: "https://github.com/DimkaGorhover" },
+    { main: true, name: "Telegram", link: "https://t.me/hdmytro" },
+    { main: true, name: "Twitter", link: "https://twitter.com/dghover" },
+    { main: true, name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
+    { main: false, name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
 ];
 
 export const current_skills = CurrentSkills()
@@ -49,10 +49,10 @@ export const current_skills = CurrentSkills()
 const self_employed_exp = () => {
     return ({
         id: "self_employed",
-        name: "Self-Employed Full-Stack Engineer",
+        name: "Self-Employed Full-Stack Engineer (Freelance)",
         city: "Lviv, Ukraine",
         description: [
-            "Working on my internal projects."
+            "Building k8s Cluster on Bare-Metal using Ansible"
         ],
         achievements: [
             `
