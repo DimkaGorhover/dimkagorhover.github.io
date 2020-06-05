@@ -1,10 +1,10 @@
 import React from 'react';
 import { Contacts } from "./Contacts";
-import { contacts, info } from "../../../../../cv_data";
+import { contacts, info } from "../../../../../data/cv_data";
 
 export const About = () => {
 
-    const aboutMeText = info.about_me.map(line => (<p>{line}</p>))
+    const aboutMeText = info.about_me.map((line, index) => (<p key={index}>{line}</p>))
 
     return (
         <div>

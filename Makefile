@@ -3,8 +3,7 @@
 # CPU_COUNT=$(shell sysctl -n hw.physicalcpu)
 CPU_COUNT=2
 DOCKER_ORG=dier
-
-CONTAINER_NAME=cv-jsnode-container
+CONTAINER_NAME=nodejs-$(shell basename "$$PWD")
 
 __IMAGE_TAG=$(shell make --makefile docker/git/Makefile get-docker-iamge-tag)
 

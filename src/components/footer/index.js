@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 export const AppFooter = () => {
     return (
         <footer>
-            <Container xl>
+            <Container fluid='xl'>
                 
             </Container>
         </footer>

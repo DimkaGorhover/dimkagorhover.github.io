@@ -1,7 +1,7 @@
 import React from 'react';
 import { CurrentSkills } from './CurrentSkills';
 import { Experience } from './Experience';
-import { Education } from './Education';
+import { Education } from './edu/Education';
 
 export const RightBlock = () => {
     return (

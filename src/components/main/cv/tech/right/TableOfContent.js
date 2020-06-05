@@ -1,5 +1,5 @@
 import React from 'react';
-import { experiences } from '../../../../../cv_data';
+import { experiences } from '../../../../../data/cv_data';
 import { prettyPeriod } from '../../../../../utils/CustomDateUtils';
 
 export const TableOfContent = () => {

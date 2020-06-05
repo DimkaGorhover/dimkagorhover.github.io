@@ -1,9 +1,9 @@
 import React from 'react';
-import { education } from '../../../../../cv_data';
+import { education } from '../../../../../../data/cv_data';
 
 export const Education = () => {
 
-    let eduText = education.map(({ name, degree, dates }) => {
+    let eduText = education.map(({ name, degree, dates }, index) => {
         let degreeText
 
         if (degree) {
@@ -11,7 +11,7 @@ export const Education = () => {
         }
 
         return (
-            <li>
+            <li key={index}>
                 <strong>{name}</strong>
                 <p style={{ margin: 0}}>{dates.start.getFullYear()} - {dates.end.getFullYear()}</p>
                 {degreeText}

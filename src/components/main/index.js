@@ -11,7 +11,7 @@ export class AppMain extends React.Component {
     render() {
         const { page } = this.state
         return (
-            <Container xl>
+            <Container fluid='xl'>
                 {page}
             </Container>
         )

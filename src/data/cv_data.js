@@ -1,11 +1,11 @@
-import * as Nix from './data/Nix'
-import * as Intellias from './data/Intellias'
-import * as LoopMe from './data/LoopMe'
-import * as Ciklum from './data/Ciklum'
-import * as BRTP from './data/privat/BRTP'
-import * as P24 from './data/privat/P24'
-import { CurrentSkills } from './data/CurrentSkills'
-import { yearsOfExp } from './utils/CustomDateUtils'
+import * as Nix from './Nix'
+import * as Intellias from './intellias'
+import * as LoopMe from './loop_me'
+import * as Ciklum from './ciklum'
+import * as BRTP from './privat/BRTP'
+import * as P24 from './privat/P24'
+import { CurrentSkills } from './CurrentSkills'
+import { yearsOfExp } from '../utils/CustomDateUtils'
 
 const first_working_day = new Date(2012, 2, 28)
 
@@ -18,14 +18,6 @@ export const info = {
 }
 
 export const education = [
-    // {
-    //     name: "Scool",
-    //     location: "Dnipro, Ukraine",
-    //     dates: {
-    //         start: new Date(2006, 9 - 1, 1),
-    //         end: new Date(2011, 6 - 1, 1)
-    //     }
-    // },
     {
         name: "Ukrainian State Chemical Technology University",
         degree: {

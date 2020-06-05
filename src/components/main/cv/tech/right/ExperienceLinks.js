@@ -3,8 +3,8 @@ import React from 'react';
 export const ExperienceLinks = ({ links }) => {
     if (links) {
 
-        links = links.map(({ name, url, target }) => (
-            <li>
+        links = links.map(({ name, url, target }, index) => (
+            <li key={index}>
                 <a href={url} target={target ? target : "_blank"}>{name ? name : url}</a>
             </li>
         ))
