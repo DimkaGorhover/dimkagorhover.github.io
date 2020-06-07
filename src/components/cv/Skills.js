@@ -1,10 +1,8 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { current_skills } from '../../data/cv_data';
+import { current_skills as skills } from '../../data/cv_data';
 
-const Skill = ({ skill }) => {
-
-    let { key, value } = skill
+const Skill = ({ key, value }) => {
 
     if (!Array.isArray(value))
         value = [value]
@@ -19,14 +17,12 @@ const Skill = ({ skill }) => {
 
 export const Skills = () => {
 
-    const content = current_skills.map((s, i) => <Skill key={i} skill={s} />)
-
     return (
         <div>
-            <h3>Current Skills</h3>
+            <h3>Actual Skills</h3>
             <Table>
                 <tbody>
-                    {content}
+                    {skills.map((s, i) => <Skill key={i} {...s} />)}
                 </tbody>
             </Table>
         </div>

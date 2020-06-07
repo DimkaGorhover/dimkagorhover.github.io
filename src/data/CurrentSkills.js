@@ -4,9 +4,10 @@ export const CurrentSkills = () => {
             key: "Languages",
             value: [
                 "Java (Versions 6+)",
-                "Clojure (2 years on production, 5 years ago)",
+                "Clojure (2 years on production, 4 years ago)",
                 "Python (low-mid)",
                 "Go (beginer)",
+                "JavaScript",
                 "Linux Shell {sh, bash, zsh} (low-mid)"
             ]
         },
@@ -17,7 +18,7 @@ export const CurrentSkills = () => {
                 "Spring Boot",
                 "RxJava (varsions: 1.+, 2.+)",
                 "gRPC",
-                "Quarkus (beginer)"
+                "Quarkus"
             ]
         },
         {

@@ -6,8 +6,6 @@ import { Education } from '../../../../cv/Education';
 export const RightBlock = () => {
     return (
         <div>
-            <CurrentSkills />
-            <Education />
             <Experience />
         </div>
     )

@@ -54,6 +54,14 @@ run: __build_docker
 		$(__IMAGE_TAG) \
 		start
 
+rund: __build_docker
+	$(__DOCKER_PREFIX) \
+		-d \
+		-p 3000:3000 \
+		--entrypoint yarn \
+		$(__IMAGE_TAG) \
+		start
+
 yarn-container:
 	cd docker/playground && \
 	make run \

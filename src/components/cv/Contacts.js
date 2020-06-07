@@ -1,18 +1,29 @@
 import React from 'react';
+import { contacts } from "../../data/cv_data";
 
-export const Contacts = ({ contacts }) => {
+const Link = ({ link, name }) => {
 
-    const contactsComponent = contacts.map(({ name, link }, index) => (
-        <li key={index}>
+    return (
+        <li>
             <a href={link} rel="noopener noreferrer" target="_blank">{name}</a>
         </li>
-    ));
+    )
+}
+
+export const Contacts = () => {
 
     return (
         <div>
             <h4>Contacts</h4>
             <ul style={{ marginLeft: "-1rem" }}>
-                {contactsComponent}
+                {contacts.map((props, i) => {
+
+                    if (props.important === false) {
+                        return <></>
+                    }
+
+                    return (<Link key={i} {...props} />)
+                })}
             </ul>
         </div>
     )

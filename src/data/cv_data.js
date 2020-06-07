@@ -11,6 +11,20 @@ const first_working_day = new Date(2012, 2, 28)
 
 export const info = {
     first_working_day: first_working_day,
+    language: [
+        {
+            name: "English",
+            level: "Intermediate"
+        },
+        {
+            name: "Ukrainian",
+            level: "Native"
+        },
+        {
+            name: "Russian",
+            level: "Fluent"
+        }
+    ],
     about_me: [
         `Software Engineer ${yearsOfExp(first_working_day)} years, mostly Java.`,
         `Passionate of java, jvm, performance, benchmarking, data structures, reactive streams.`
@@ -34,14 +48,15 @@ export const education = [
 ]
 
 export const contacts = [
-    { main: true, name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
-    { main: true, name: "Skype ( dier_89 )", link: "skype:dier_89" },
-    { main: true, name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
-    { main: true, name: "Github", link: "https://github.com/DimkaGorhover" },
-    { main: true, name: "Telegram", link: "https://t.me/hdmytro" },
-    { main: true, name: "Twitter", link: "https://twitter.com/dghover" },
-    { main: true, name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
-    { main: false, name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
+    { important: true, name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
+    { important: true, name: "Skype ( dier_89 )", link: "skype:dier_89" },
+    { important: true, name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
+    { important: true, name: "Github", link: "https://github.com/DimkaGorhover" },
+
+    { important: false, name: "Telegram", link: "https://t.me/hdmytro" },
+    { important: false, name: "Twitter", link: "https://twitter.com/dghover" },
+    { important: false, name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
+    { important: false, name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
 ];
 
 export const current_skills = CurrentSkills()
@@ -73,7 +88,9 @@ const self_employed_exp = () => {
                 "JavaScript"
             ],
             frameworks: [
-                "Spring Boot", "RxJava 2", "gRPC",
+                "Spring Boot",
+                "RxJava 2",
+                "gRPC",
                 "React.JS"
             ],
             prod_env: [

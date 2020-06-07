@@ -42,8 +42,7 @@ export const exp = () => {
             It was interesting experience for me`
         ],
         techStack: {
-            language: "Java 6, Java 8",
-            prod_env: "Custom Manual Scripting",
+            language: "Java 6",
             build_tool: "Apache Maven 3.3.1",
             ci_cd: "Jenkins",
             // frameworks: "-",

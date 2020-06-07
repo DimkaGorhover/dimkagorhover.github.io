@@ -14,8 +14,27 @@ h6 {
     margin-bottom: 1rem;
 }
 
-td {
-    padding: 0;
+.main-container {
+    margin-top: 20px;
+}
+
+.bg-dark {
+    padding: 10px;
+
+    
+    h1
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: white;
+    }
+}
+
+.table td {
+    padding: 0.25rem;
 }
 
 .wrapper {

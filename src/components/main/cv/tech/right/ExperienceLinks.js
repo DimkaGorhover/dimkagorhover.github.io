@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Link = ({ link }) => {
-    const { name, url, target = "_blank" } = link
+const Link = ({ name, url, target = "_blank" }) => {
     return (
         <li>
             <a href={url} target={target}>{name ? name : url}</a>
@@ -10,11 +9,15 @@ const Link = ({ link }) => {
 }
 
 export const ExperienceLinks = ({ links }) => {
-    return links && (
+
+    if (!links)
+        return (<></>)
+
+    return (
         <div>
             <h5>Links</h5>
             <ul>
-                {links.map((link, index) => (<Link key={index} link={link} />))}
+                {links.map((link, index) => (<Link key={index} {...link} />))}
             </ul>
         </div>
     )
