@@ -2,15 +2,15 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { current_skills as skills } from '../../data/cv_data';
 
-const Skill = ({ key, value }) => {
+const Skill = ({ name, value }) => {
 
     if (!Array.isArray(value))
-        value = [value]
+        value = [ value ]
 
     return (
         <tr>
-            <td>{key}</td>
-            <td>{value.reduce((a, b) => a + ", " + b)}</td>
+            <td><b>{ name }</b></td>
+            <td>{ value.reduce((a, b) => a + ", " + b) }</td>
         </tr>
     )
 }
@@ -22,7 +22,7 @@ export const Skills = () => {
             <h3>Actual Skills</h3>
             <Table>
                 <tbody>
-                    {skills.map((s, i) => <Skill key={i} {...s} />)}
+                { skills.map((s, i) => <Skill key={ i } { ...s } />) }
                 </tbody>
             </Table>
         </div>

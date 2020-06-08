@@ -39,7 +39,7 @@ const Routers = () => {
     )
 }
 
-export const App = (props) => {
+export const App = () => {
 
     return (
         <Router>

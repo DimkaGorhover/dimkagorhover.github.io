@@ -3,17 +3,20 @@ import { education } from '../../data/cv_data';
 
 const Item = ({ exp }) => {
 
-    let { name, degree, dates } = exp
+    let { name, degree, dates, paper } = exp
 
     const { start, end } = dates
 
     return (
         <li>
             <strong>{name}</strong>
-            <p style={{ margin: 0 }}>
-                {start.getFullYear()} - {end.getFullYear()}
-            </p>
-            {degree ? (<p style={{ margin: 0 }}>{degree.name}, {degree.subject}</p>) : (<></>)}
+            <div>{start.getFullYear()} - {end.getFullYear()}</div>
+            {degree
+                ? (<div>Degree: {degree.name}, {degree.subject}</div>)
+                : (<></>)}
+            {paper
+                ? (<div>Paper: {paper}</div>)
+                : (<></>)}
         </li>
     )
 }

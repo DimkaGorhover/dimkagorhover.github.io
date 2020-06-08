@@ -1,28 +1,27 @@
 export const CurrentSkills = () => {
     return ([
         {
-            key: "Languages",
+            name: "Languages",
             value: [
                 "Java (Versions 6+)",
-                "Clojure (2 years on production, 4 years ago)",
-                "Python (low-mid)",
-                "Go (beginer)",
+                "Clojure (2 years on prod, 4 years ago)",
+                "Python",
+                "Go (beginner)",
                 "JavaScript",
                 "Linux Shell {sh, bash, zsh} (low-mid)"
             ]
         },
         {
-            key: "Frameworks",
+            name: "Frameworks",
             value: [
-                "Spring Framework",
-                "Spring Boot",
-                "RxJava (varsions: 1.+, 2.+)",
+                "Spring (Boot, Web, etc.)",
+                "Reactive Streams (RxJava, Project Reactor)",
                 "gRPC",
                 "Quarkus"
             ]
         },
         {
-            key: "OS",
+            name: "OS",
             value: [
                 "Linux (Ubuntu, Mint, Alpine, CentOS)",
                 "Mac OS",
@@ -30,7 +29,7 @@ export const CurrentSkills = () => {
             ]
         },
         {
-            key: "Data Bases",
+            name: "Data Bases",
             value: [
                 "Redis",
                 "PostgreSQL",
@@ -39,7 +38,7 @@ export const CurrentSkills = () => {
             ]
         },
         {
-            key: "Tools",
+            name: "Tools",
             value: [
                 "Docker",
                 "Docker-Compose",
@@ -47,17 +46,17 @@ export const CurrentSkills = () => {
             ]
         },
         {
-            key: "Clusters",
+            name: "Clusters",
             value: [
                 "Kubernetes",
                 "Docker Swarm"
             ]
         },
         {
-            key: "Clouds",
+            name: "Clouds",
             value: [
                 "Google Cloud Platform (user, 2 years ago)",
-                "AWS (beginer)"
+                "AWS (beginner)"
             ]
         }
     ])

@@ -3,15 +3,16 @@ import { info } from '../../data/cv_data'
 
 export const Languages = () => {
 
-    let contnet = info.language
-        .map(({ name, level }) => (`${name} (${level})`))
-        .reduce((a, b) => (`${a}, ${b}`))
-
+    let content = info.language
+        .map(({ name, level }) => (`${ name } (${ level })`))
+        .reduce((word0, word1) => (`${ word0 }, ${ word1 }`))
 
     return (
         <div>
             <h4>Languages</h4>
-            {contnet}
+            <p>
+                { content }
+            </p>
         </div>
     )
 }

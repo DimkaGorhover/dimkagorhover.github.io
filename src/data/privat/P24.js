@@ -8,10 +8,12 @@ const p24ukraine = () => {
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        responsibility: `
-            Small new features, support current features, bugfix, unit testing, etc.
-            `,
-        description: [],
+        description: [
+            ""
+        ],
+        responsibility: [
+            "New small features, support current features, bugfix, unit testing, etc."
+        ],
         techStack: {
             language: ["Java 6", "JavaScript"],
             frameworks: ["Java EE (EJB, Resin)", "jQuery", "Backbone"],
@@ -92,14 +94,17 @@ export const exp = () => {
 
     return {
         id: "software_java_engineer_at_privat_bank",
-        name: "Software/Java Engineer at PrivatBank",
+        name: "Junior Software/Java Engineer at PrivatBank",
         links: [
             { name: "PrivatBank.ua", url: "https://privatbank.ua" },
             { name: "Privat24.ua", url: "https://privat24.ua" }
         ],
+        description: [
+            "I'd been working for the Ukrainian local internet banking system named Privat24"
+        ],
         responsibility: [`
             Small features (clinet messages counters, form "don't block credit card abroad", etc.),
-            support, bugfix, unit testing, etc.
+            support, bugfixing, unit testing, etc.
             `],
         city: "Dnipro, Ukraine",
         dates: {
@@ -108,11 +113,11 @@ export const exp = () => {
         },
         techStack: {
             language: ["Java (Versions: 6, 7, 8)", "JavaScript"],
-            frameworks: ["Spring 3", "jQuery", "Angular 1"],
+            frameworks: ["Java EE", "EJB", "Spring 3", "jQuery", "Angular 1"],
             build_tool: ["Apache Ant", "Apache Maven"],
             ci_cd: ["Jenkins"],
-            storage: ["Sybase", "PostgreSQL", "Redis", "RabbitMQ"],
-            vcs: ["Gitolite", "Gitlab"],
+            storage: ["Sybase", "Redis", "RabbitMQ"],
+            vcs: ["Subversion", "Gitlab"],
             metrics: ["Zabbix"]
         },
         inner: [

@@ -17,36 +17,43 @@ export const TechCV = () => {
 
     return (
         <div>
-            <Row>
-                <Col xs={12}>
-                    <Header />
-                </Col>
-            </Row>
-            <Row>
-                <Col xs={2} className="bg-dark">
-                    <Photo />
-                    <About />
-                    <Views />
-                    <Hobbies />
-                </Col>
-                <Col xs={10}>
-                    <Row>
-                        <Col xs={12}>
-                            <Education />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12}>
-                            <Skills />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12}>
-                            <Experience />
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
+            <header>
+                <Row>
+                    <Col xs={12}>
+                        <Header />
+                    </Col>
+                </Row>
+            </header>
+            <main>
+                <Row>
+                    <Col xs={2} className="bg-dark">
+                        <Photo />
+                        <About />
+                        <Views />
+                        <Hobbies />
+                    </Col>
+                    <Col xs={10}>
+                        <Row>
+                            <Col xs={12}>
+                                <Education />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={12}>
+                                <Skills />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col xs={12}>
+                                <Experience />
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </main>
+            <footer>
+                
+            </footer>
         </div>
     )
 }

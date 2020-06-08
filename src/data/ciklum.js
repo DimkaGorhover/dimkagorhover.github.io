@@ -1,6 +1,7 @@
 export const exp = () => {
     return {
         id: "software_engineer_at_ciklum",
+        excess: true,
         links: [
             {
                 name: "Ciklum.com",

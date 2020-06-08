@@ -35,7 +35,7 @@ export const education = [
     {
         name: "Ukrainian State Chemical Technology University",
         degree: {
-            name: "Master Degree",
+            name: "Master",
             subject: "Computer Science",
             paper: null,
         },
@@ -67,23 +67,21 @@ const self_employed_exp = () => {
         name: "Self-Employed Full-Stack Engineer (Freelance)",
         city: "Lviv, Ukraine",
         description: [
-            "Building k8s Cluster on Bare-Metal using Ansible"
+            `Building k8s Cluster on Bare-Metal using Ansible from scratch, 
+            Developing Backend Application for Telegram Bot by using Quarkus Framework + Graal Native Image + Docker`
         ],
         achievements: [
-            `
-            Setup k8s Cluster from scratch on VirtualBox (Alpine Linux, CentOS 7, Ubuntu 20.04) 
-            by using Ansible Playbooks
-            `
+            `Setup k8s Cluster from scratch on VirtualBox (Alpine Linux, CentOS 7, Ubuntu 20.04) 
+            by using Ansible Playbooks`
         ],
         dates: {
             start: new Date(2020, 1 - 1, 1),
         },
-        responsibility: [
-            ""
-        ],
+        responsibility: [],
         techStack: {
             language: [
                 "Java 14",
+                "GraalVM 20.1 (Java 11)",
                 "Python 3.8",
                 "JavaScript"
             ],
