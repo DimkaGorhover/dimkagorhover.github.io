@@ -1,5 +1,4 @@
 import React from 'react';
-import { info } from "../../data/cv_data";
 
 export const Header = () => {
 

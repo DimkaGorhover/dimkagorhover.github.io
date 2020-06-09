@@ -14,7 +14,7 @@ const ShortTechStack = ({ t }) => {
         }
 
         if (!Array.isArray(o)) {
-            o = [ o ]
+            o = [o]
         }
 
         if (o.length > 0) {
@@ -25,16 +25,16 @@ const ShortTechStack = ({ t }) => {
         return ""
     }
 
-    const language = _toString(t.language)
-    const frameworks = _toString(t.frameworks)
-    const storage = _toString(t.storage)
-
-    const content = _toString([ language, frameworks, storage ])
+    const content = _toString([
+        _toString(t.language),
+        _toString(t.frameworks),
+        _toString(t.storage)
+    ])
 
     return (
         <div>
             <p>
-                <b>Tech Stack:</b> { content }
+                <b>Tech Stack:</b> {content}
             </p>
         </div>
     )
@@ -42,32 +42,41 @@ const ShortTechStack = ({ t }) => {
 
 const ShortExpItem = ({ n, name, id, dates, description, techStack }) => {
 
+    let title = (
+        <div id={id}>
+            <h5>{name}</h5>
+            <p>
+                <b>{prettyPeriod(dates)}</b>
+            </p>
+        </div>
+    )
+
     return (
         <div>
             <hr />
-            <h5 id={ id }>{ n }. { name } ({ prettyPeriod(dates) })</h5>
-            <p>
-                { description }
-            </p>
-            <ShortTechStack t={ techStack } />
+            {title}
+            <p>{description}</p>
+            <ShortTechStack t={techStack} />
         </div>
     )
 }
 
+const Noop = () => <></>
+
 const ShortExpList = () => {
     return (
         <div>
-            { experiences.map((exp, i) => {
+            {experiences.map((exp, i) => {
 
                 if (exp.excess) {
-                    return <></>
+                    return <Noop key={i} />
                 }
 
                 let newExp = { ...exp, n: (i + 1) }
                 return (
-                    <ShortExpItem key={ i } { ...newExp } />
+                    <ShortExpItem key={i} {...newExp} />
                 )
-            }) }
+            })}
         </div>
     )
 }
@@ -84,7 +93,7 @@ export const ExpList = ({ short = true }) => {
     return (
         <div>
             <h3>Experience</h3>
-            { short ? <ShortExpList /> : <BigExpList /> }
+            {short ? <ShortExpList /> : <BigExpList />}
         </div>
     )
 }

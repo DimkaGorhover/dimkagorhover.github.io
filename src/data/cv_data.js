@@ -12,22 +12,21 @@ const first_working_day = new Date(2012, 2, 28)
 export const info = {
     first_working_day: first_working_day,
     language: [
-        {
-            name: "English",
-            level: "Intermediate"
-        },
-        {
-            name: "Ukrainian",
-            level: "Native"
-        },
-        {
-            name: "Russian",
-            level: "Fluent"
-        }
+        { name: "English", level: "Intermediate" },
+        { name: "Ukrainian", level: "Native" },
+        { name: "Russian", level: "Fluent" }
     ],
     about_me: [
-        `Software Engineer ${yearsOfExp(first_working_day)} years, mostly Java.`,
-        `Passionate of java, jvm, performance, benchmarking, data structures, reactive streams.`
+        `Software Engineer ${yearsOfExp(first_working_day)} years, 
+        mostly Java and JVM based languages, such as Clojure, Groovy.
+        `,
+        `Passionate about Java, JVM, performance, benchmarking, 
+        data structures, reactive streams.
+        `,
+        `Looking for New Challenges, Product Companies is more preferable, 
+        full time, a remote is more preferable for now, 
+        but an office is not the issue, relocation is not an issue as well.
+        `
     ]
 }
 
@@ -48,11 +47,11 @@ export const education = [
 ]
 
 export const contacts = [
-    { important: true, name: "gd.mail.89@gmail.com", link: "mailto:gd.mail.89@gmail.com" },
+    { important: true, name: "Email ( gd.mail.89@gmail.com )", link: "mailto:gd.mail.89@gmail.com" },
     { important: true, name: "Skype ( dier_89 )", link: "skype:dier_89" },
-    { important: true, name: "LinkedIn", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
-    { important: true, name: "Github", link: "https://github.com/DimkaGorhover" },
+    { important: true, name: "LinkedIn ( dmitriy-gorkhover )", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
 
+    { important: false, name: "Github", link: "https://github.com/DimkaGorhover" },
     { important: false, name: "Telegram", link: "https://t.me/hdmytro" },
     { important: false, name: "Twitter", link: "https://twitter.com/dghover" },
     { important: false, name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
@@ -68,11 +67,12 @@ const self_employed_exp = () => {
         city: "Lviv, Ukraine",
         description: [
             `Building k8s Cluster on Bare-Metal using Ansible from scratch, 
-            Developing Backend Application for Telegram Bot by using Quarkus Framework + Graal Native Image + Docker`
+            Developing Backend Application for Telegram Bot by using 
+            Quarkus Framework + Graal Native Image + Docker`
         ],
         achievements: [
-            `Setup k8s Cluster from scratch on VirtualBox (Alpine Linux, CentOS 7, Ubuntu 20.04) 
-            by using Ansible Playbooks`
+            `Setup k8s Cluster from scratch on VirtualBox (Alpine Linux, 
+            CentOS 7, Ubuntu 20.04) by using Ansible Playbooks`
         ],
         dates: {
             start: new Date(2020, 1 - 1, 1),

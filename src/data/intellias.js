@@ -1,7 +1,7 @@
 export const exp = () => {
     return {
-        id: "senior_java_developer_ar_intellias",
-        name: "Senior Java Developer ar Intellias",
+        id: "senior_java_developer_at_intellias",
+        name: "Senior Java Developer at Intellias",
         city: "Lviv, Ukraine",
         dates: {
             start: new Date(2018, 11 - 1, 1),
