@@ -1,23 +1,26 @@
-cpu_count=2
-node_version=14.2.0
-image=localhost/playground-node-$(node_version)-alpine3.11
-work_dir=$(shell pwd)
-expose_port=3000
-build_cmd=docker build \
-	--rm \
-	--compress \
-	-f $(shell pwd)/Dockerfile \
-	-t $(image) \
-	$(shell pwd)
-run_cmd=docker run --rm -it \
-	--cpus $(cpu_count) \
-	-p $(expose_port):$(expose_port) \
-	-v $(work_dir):/work_dir \
-	-w /work_dir \
-	$(image)
+CPU_COUNT=2
+DOCKER_ORG=dier
+
+WORK_DIR=$(shell pwd)
+EXPOSE_PORT=3000
+
+__IMAGE_TAG=$(DOCKER_ORG)/playground-node:14.2.0
 
 build:
-	$(build_cmd)
+	docker build \
+		--rm \
+		--force-rm \
+		--compress \
+		--cpu-quota $(CPU_COUNT)00000 \
+		-f $(shell pwd)/Dockerfile \
+		-t $(__IMAGE_TAG) \
+		$(shell pwd)
 
 run: build
-	$(run_cmd)
+	docker run -i -t \
+		--rm \
+		--cpus $(CPU_COUNT) \
+		-p $(EXPOSE_PORT):$(EXPOSE_PORT) \
+		-v $(WORK_DIR):/work_dir \
+		-w /work_dir \
+		$(__IMAGE_TAG)

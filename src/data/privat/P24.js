@@ -8,20 +8,19 @@ const p24ukraine = () => {
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        responsibility: `
-            Small features (clinet messages counters, form "don't block credit card abroad", etc.),
-            support, bugfix, unit testing, etc.
-            `,
-        description: "",
+        description: [
+            ""
+        ],
+        responsibility: [
+            "New small features, support current features, bugfix, unit testing, etc."
+        ],
         techStack: {
-            language: "Java 6, JavaScript",
-            frameworks: "Java EE (EJB), jQuery, Backbone",
-            prod_env: "",
-            build_tool: "Apache Ant",
-            ci_cd: "Jenkins",
-            storage: "Sybase, Redis, RabbitMQ",
-            vcs: "Subversion",
-            metrics: ""
+            language: ["Java 6", "JavaScript"],
+            frameworks: ["Java EE (EJB, Resin)", "jQuery", "Backbone"],
+            build_tool: ["Apache Ant"],
+            ci_cd: ["Jenkins"],
+            storage: ["Sybase", "Redis", "RabbitMQ"],
+            vcs: ["Subversion"]
         },
     }
 }
@@ -36,7 +35,6 @@ const p24georgia = () => {
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        // currentState: "acquired by Bank of Georgia",
         achievements: [`
             I spend 4 weekends (mostly nights) and migrated this project 
             from an old stack of technology (Java 6 + Apache Ant) 
@@ -46,19 +44,17 @@ const p24georgia = () => {
             And based on my lack of knowledge it was very stressful for me, 
             but as a result, I got a great experience that I remember nowadays.
             `],
-        responsibility: `
+        responsibility: [`
             Develop and support internet banking web application, same as Privat24 Ukraine
-            `,
+            `],
         description: "",
         techStack: {
-            language: "Java 6, JavaScript → Java 7, JavaScript",
-            frameworks: "Java EE (EJB), jQuery → Spring 3, jQuery",
-            prod_env: "custom",
+            language: ["Java 6", "JavaScript"],
+            frameworks: ["Java EE (EJB, Resin)", "jQuery", "Spring 3", "jQuery"],
             build_tool: "Netbeans’ Apache Ant scripts → Apache Maven",
-            ci_cd: "Jenkins",
-            storage: "Sybase, Redis, RabbitMQ",
-            vcs: "Subversion → Git (Gitlab)",
-            metrics: ""
+            ci_cd: ["Jenkins"],
+            storage: ["Sybase", "Redis", "RabbitMQ"],
+            vcs: ["Subversion", "Git (Gitlab)"]
         },
     }
 }
@@ -73,60 +69,61 @@ const p24abank = () => {
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        responsibility: `
+        responsibility: [`
             Develop and support internet banking web application, same as Privat24 Ukraine
-            `,
+            `],
         description: "",
         techStack: {
-            language: "Java 6, JavaScript",
-            frameworks: "Java EE (EJB), jQuery",
-            prod_env: "custom",
-            build_tool: "Netbeans’ Ant scripts",
-            ci_cd: "Jenkins",
-            storage: "Sybase, Redis, RabbitMQ",
-            vcs: "Subversion",
-            metrics: ""
+            language: ["Java 6, JavaScript"],
+            frameworks: ["Java EE (EJB), jQuery"],
+            prod_env: ["custom"],
+            build_tool: ["Netbeans’ Ant scripts"],
+            ci_cd: ["Jenkins"],
+            storage: ["Sybase, Redis, RabbitMQ"],
+            vcs: ["Subversion"],
+            metrics: []
         },
     }
 }
 
 export const exp = () => {
+
+    const __p24ukraine = p24ukraine();
+    const __p24georgia = p24georgia();
+    const __p24abank = p24abank();
+
     return {
         id: "software_java_engineer_at_privat_bank",
-        name: "Software/Java Engineer at PrivatBank",
+        name: "Junior Software/Java Engineer at PrivatBank",
         links: [
-            {
-                name: "PrivatBank.ua",
-                url: "https://privatbank.ua"
-            },
-            {
-                name: "Privat24.ua",
-                url: "https://privat24.ua"
-            }
+            { name: "PrivatBank.ua", url: "https://privatbank.ua" },
+            { name: "Privat24.ua", url: "https://privat24.ua" }
         ],
-        responsibility: `
+        description: [
+            "I'd been working for the Ukrainian local internet banking system named Privat24"
+        ],
+        responsibility: [`
             Small features (clinet messages counters, form "don't block credit card abroad", etc.),
-            support, bugfix, unit testing, etc.
-            `,
+            support, bugfixing, unit testing, etc.
+            `],
         city: "Dnipro, Ukraine",
         dates: {
-            start: new Date(2012, 2 - 1, 28),
-            end: new Date(2013, 7 - 1, 1)
+            start: __p24ukraine.dates.start,
+            end: __p24georgia.dates.end
         },
         techStack: {
-            language: "",
-            frameworks: "",
-            prod_env: "",
-            build_tool: "",
-            ci_cd: "",
-            storage: "",
-            vcs: "",
-            metrics: ""
+            language: ["Java (Versions: 6, 7, 8)", "JavaScript"],
+            frameworks: ["Java EE", "EJB", "Spring 3", "jQuery", "Angular 1"],
+            build_tool: ["Apache Ant", "Apache Maven"],
+            ci_cd: ["Jenkins"],
+            storage: ["Sybase", "Redis", "RabbitMQ"],
+            vcs: ["Subversion", "Gitlab"],
+            metrics: ["Zabbix"]
         },
         inner: [
-            p24ukraine(),
-            p24georgia(),
-            p24abank()
+            __p24ukraine,
+            __p24georgia,
+            __p24abank
         ]
     }
 }

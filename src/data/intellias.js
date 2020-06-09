@@ -8,11 +8,13 @@ export const exp = () => {
             end: new Date(2019, 3 - 1, 15)
         },
         description: [
-            ""
+            `Implement new algorithms for map matching, 
+            Provide comprehensive analysis on different algorithms comparison, 
+            Develop and extend map matching pipelines with multi-algorithms support`
         ],
-        responsibility: `
-            Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi
-            `,
+        responsibility: [
+            `Implementing new Map Matcher algorithm based on Hidden Markov Model + Algorithm Viterbi`
+        ],
         techStack: {
             language: "Java 8",
             // frameworks: "-",

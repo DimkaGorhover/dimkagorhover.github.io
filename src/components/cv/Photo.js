@@ -6,7 +6,7 @@ export const Photo = () => {
             alignSelf: 'center',
             padding: "10px"
         }}>
-            <img src={"static/photo.png"}
+            <img src={"/static/photo.png"}
                 alt="_photo_"
                 style={{
                     width: '100%'

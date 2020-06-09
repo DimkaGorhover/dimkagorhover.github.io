@@ -1,6 +1,6 @@
 import React from 'react';
-import { experiences } from '../../../cv_data';
-import { prettyPeriod } from '../../../utils/CustomDateUtils';
+import { experiences } from '../../../../../data/cv_data';
+import { prettyPeriod } from '../../../../../utils/CustomDateUtils';
 
 export const TableOfContent = () => {
 
@@ -9,7 +9,7 @@ export const TableOfContent = () => {
 
         let period
 
-        if (!(showDates == false)) {
+        if (!(showDates === false)) {
             period = (
                 <span style={{ color: "#555" }}>
                     {` (${prettyPeriod(dates)})`}

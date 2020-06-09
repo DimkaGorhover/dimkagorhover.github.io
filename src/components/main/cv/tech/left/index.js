@@ -1,9 +1,10 @@
 import React from 'react';
-import { Photo } from './Photo';
-import { About } from './About';
 import { } from 'react-bootstrap';
+import { About } from '../../../../cv/About';
+import { Photo } from '../../../../cv/Photo';
 
 export const LeftBlock = () => {
+
     return (
         <div style={{
             backgroundColor: '#333',

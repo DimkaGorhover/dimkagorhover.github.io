@@ -1,11 +1,12 @@
 import React from 'react';
-import './style.scss'
+import { info } from "../../data/cv_data";
 
-export const AppHeader = () => {
+export const Header = () => {
+
     return (
         <div>
-            <h1>CV: Dmytro Horkhover</h1>
+            <h1>Dmytro Horkhover</h1>
             <h5>Java Software Engineer</h5>
         </div>
     )
-}
+};
