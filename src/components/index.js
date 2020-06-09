@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, Route } from 'react-router-dom';
 
 import { MainCV as MainCVPage } from './page/MainCV';
 import { TechCV as TechCVPage } from './page/TechCV';
 import { Home as HomePage } from './page/Home';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Navigation = () => {
     return (
@@ -30,11 +31,11 @@ const Navigation = () => {
 const Routers = () => {
     return (
         <Container fluid='lg' className="main-container">
-
-            <Route exact={true} path='/' component={HomePage} />
-            <Route exact={true} path='/cv/tech' component={TechCVPage} />
-            <Route exact={true} path='/cv/main' component={MainCVPage} />
-
+            <Switch>
+                <Route exact={true} path='/' component={HomePage} />
+                <Route exact={true} path='/cv/tech' component={TechCVPage} />
+                <Route exact={true} path='/cv/main' component={MainCVPage} />
+            </Switch>
         </Container>
     )
 }
@@ -42,7 +43,7 @@ const Routers = () => {
 export const App = () => {
 
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Navigation />
             <Routers />
         </Router>
