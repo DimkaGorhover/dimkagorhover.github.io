@@ -6,6 +6,7 @@ import * as BRTP from './privat/BRTP'
 import * as P24 from './privat/P24'
 import { CurrentSkills } from './CurrentSkills'
 import { yearsOfExp } from '../utils/CustomDateUtils'
+import con from "./contacts";
 
 const first_working_day = new Date(2012, 2, 28)
 
@@ -45,18 +46,7 @@ export const education = [
         }
     }
 ]
-
-export const contacts = [
-    { important: true, name: "Email ( gd.mail.89@gmail.com )", link: "mailto:gd.mail.89@gmail.com" },
-    { important: true, name: "Skype ( dier_89 )", link: "skype:dier_89" },
-    { important: true, name: "LinkedIn ( dmitriy-gorkhover )", link: "https://www.linkedin.com/in/dmitriy-gorkhover/" },
-
-    { important: false, name: "Github", link: "https://github.com/DimkaGorhover" },
-    { important: false, name: "Telegram", link: "https://t.me/hdmytro" },
-    { important: false, name: "Twitter", link: "https://twitter.com/dghover" },
-    { important: false, name: "Facebook", link: "https://www.facebook.com/dmitriy.gorhover" },
-    { important: false, name: "LeetCode", link: "https://leetcode.com/dimkagorhover/" }
-];
+export const contacts = con
 
 export const current_skills = CurrentSkills()
 

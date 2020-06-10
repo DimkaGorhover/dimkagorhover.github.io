@@ -28,11 +28,15 @@ const TextBlock = ({ title, content }, index) => {
 }
 
 export const TechStack = ({ techStack, expIndex }) => {
+
     if (techStack) {
+
+        const tableId = `${Math.random()}`
+
         return (
             <div>
                 <h5>Stack of technologies</h5>
-                <Table id={`${Math.random()}`}>
+                <Table id={tableId}>
                     <tbody>
                         <TextBlock title="Language" content={techStack.language} />
                         <TextBlock title="Frameworks &amp; Libs" content={techStack.frameworks} />

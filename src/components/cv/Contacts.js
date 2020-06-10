@@ -12,14 +12,16 @@ const Link = ({ link, name }) => {
 
 const Noop = () => <></>
 
-export const Contacts = () => {
+export const Contacts = ({ importantOnly = true }) => {
 
     return (
         <div>
             <h4>Contacts</h4>
             <ul style={{ marginLeft: "-1rem" }}>
                 {contacts.map((props, i) => {
-                    return props.important === false ? <Noop key={i} /> : (<Link key={i} {...props} />)
+                    return (importantOnly && props.important === false)
+                        ? <Noop key={i} />
+                        : (<Link key={i} {...props} />)
                 })}
             </ul>
         </div>

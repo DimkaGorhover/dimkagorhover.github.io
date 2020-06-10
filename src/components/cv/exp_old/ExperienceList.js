@@ -1,5 +1,5 @@
 import React from 'react';
-import { experiences } from "../../../../../data/cv_data";
+import { experiences } from "../../../data/cv_data";
 import { ExperienceEntry } from "./ExperienceEntry";
 
 export const ExperienceList = () => {

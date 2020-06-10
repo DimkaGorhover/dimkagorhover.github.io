@@ -1,6 +1,6 @@
 import React from 'react';
-import { experiences } from '../../../../../data/cv_data';
-import { prettyPeriod } from '../../../../../utils/CustomDateUtils';
+import { experiences } from '../../../data/cv_data';
+import { prettyPeriod } from '../../../utils/CustomDateUtils';
 
 export const TableOfContent = () => {
 

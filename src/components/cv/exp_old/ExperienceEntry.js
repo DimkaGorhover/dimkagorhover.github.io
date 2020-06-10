@@ -1,7 +1,7 @@
 import React from "react";
 import { TechStack } from "./TechStack";
 import { InnerExperiences } from "./InnerExperiences";
-import { prettyPeriod } from "../../../../../utils/CustomDateUtils";
+import { prettyPeriod } from "../../../utils/CustomDateUtils";
 import { ExperienceLinks } from "./ExperienceLinks";
 
 const TextBlock = ({ title, text }) => {
