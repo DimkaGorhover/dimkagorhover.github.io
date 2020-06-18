@@ -22,7 +22,7 @@ export const mail = ((() => {
         name: (
             <span>
                 {icon}{" Email ( gd.mail.89@gmail.com )"}
-        </span>
+            </span>
         ),
         link: "mailto:gd.mail.89@gmail.com"
     }
@@ -84,7 +84,7 @@ export const telegram = ((() => {
         name: (
             <span>
                 {icon}{" Telegram"}
-        </span>
+            </span>
         ),
         link: "https://t.me/hdmytro"
     }
@@ -132,6 +132,18 @@ export const leetCode = ((() => {
     }
 })())
 
+export const hackerrank = ((() => {
+
+    return {
+        important: false,
+        target: "_blank",
+        name: (
+            <span>HackerRank</span>
+        ),
+        link: "https://www.hackerrank.com/gd_mail_89"
+    }
+})())
+
 export default [
     mail,
     skype,
@@ -141,5 +153,6 @@ export default [
     telegram,
     twitter,
     facebook,
-    leetCode
-];
+    leetCode,
+    hackerrank
+]

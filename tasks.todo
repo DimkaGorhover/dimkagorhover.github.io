@@ -1,16 +1,23 @@
 Tasks:
-    ☐ https://learn.javascript.ru/screencast/react#react-virtual-DOM
-    ☐ Add table of contents
-    ☐ create new design
+    ✔ https://learn.javascript.ru/screencast/react#react-virtual-DOM @done (6/18/2020, 14:30:04)
+    ☐ Fix links in table of contents (cause react-router)
+    ✔ create new design @done (6/18/2020, 14:30:11)
     ✔ use https://date-fns.org instead of moment.js @done (5/26/2020, 17:55:06)
-    ☐ inspect https://reactjs.org/docs/lists-and-keys.html
+    ✔ inspect https://reactjs.org/docs/lists-and-keys.html @done (6/18/2020, 14:29:50)
     ☐ https://github.com/Swizec/useAuth
-    ☐ react-bootstrap components - https://react-bootstrap.github.io/components/carousel/
-    ☐ Заполнить хайлайты в линкедин
-    ☐ заполнить эбайт в линкедин
-    ☐ Заполнить образование в линкедин
-    ☐ Заполнить образование в CV
-    ☐ Создать короткое резюме
-    ☐ поставить статус в линкедин открыт к предложению (если не посыпится левак)
+    ✔ react-bootstrap components - https://react-bootstrap.github.io/components/carousel/ @done (6/18/2020, 14:29:42)
+    ☐ Add Highlights in LinkedIn
+    ✔ About in LinkedIn @done (6/18/2020, 14:31:29)
+    ✔ Education in LinkedIn @done (6/18/2020, 14:31:20)
+    ✔ Education in CV @done (6/18/2020, 14:32:13)
+    ✔ Create Short CV @done (6/18/2020, 14:32:20)
+    ✘ Set status open in LinkedIn @cancelled (6/18/2020, 14:32:41)
     ☐ Jinni
-    
+    ✔ TYPO: Product companies ARE more.... @done (6/18/2020, 14:28:22)
+    ✔ Remote/ office locations both work as well as relocation to other city/country ( если тебе норм) @done (6/18/2020, 14:28:31)
+    ✔ Add Bachelor Degree @done (6/18/2020, 14:29:08)
+    ✔ was working for  THE company that provides technology and business services for a number of telecommunications companies as well as a variety of other multinational enterprises. @done (6/18/2020, 15:09:14)
+    ✔ Also, I'd been developing a Java Application that uses prediction algorithms to CHOOSE the best ad and place the best bid. @done (6/18/2020, 15:08:42)
+    ☐ Про все, что лежал лучше пиши в "past simple"
+    ✔ I was a member of the team that developed and modernized Ukrainian local internet banking system Privat24 @done (6/18/2020, 15:08:14)
+    ☐ ... keeping myself updated with current technologies I constantly take part in online/offline conferences and forums in various IT topics. Also enroll on courses.... on coursera, udemy, etc

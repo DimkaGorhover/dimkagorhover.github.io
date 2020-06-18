@@ -1,13 +1,15 @@
 export const exp = () => {
     return {
-        name: "Middle Software/Java Engineer at PrivatBank",
+        id: "brtp_middle_software_engineer",
+        position: "Middle Software Engineer",
+        company: { name: "Privat Bank", link: "https://privatbank.ua" },
         city: "Dnipro, Ukraine",
         dates: {
             start: new Date(2013, 7 - 1, 1),
             end: new Date(2014, 7 - 1, 30)
         },
         description: [
-            "I’ve been developing internal web projects for the business department"
+            "I’d been developing internal web projects for the business department"
         ],
         techStack: {
             language: ["Java (Versions: 6, 7, 8)", "JavaScript"],

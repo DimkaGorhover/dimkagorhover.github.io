@@ -1,7 +1,8 @@
 const exp01 = () => {
     return {
         id: 'software_engineer_at_loopme_001',
-        name: "Clojure Developer in Ad Server Team",
+        position: "Clojure Developer",
+        company: { name: "LoopMe Ad Serving Team", link: "https://loopme.com" },
         city: "Dnipro, Ukraine",
         dates: {
             start: new Date(2014, 7 - 1, 1),
@@ -36,10 +37,11 @@ const exp01 = () => {
     }
 }
 
-const exp02 = () => {
+export const exp02 = () => {
     return {
         id: 'software_engineer_at_loopme_002',
-        name: "Clojure/Java Developer in Ad Server Team",
+        position: "Clojure/Java Developer",
+        company: { name: "LoopMe Ad Serving Team", link: "https://loopme.com" },
         city: "Dnipro, Ukraine",
         dates: {
             start: exp01().dates.end,
@@ -77,7 +79,8 @@ const exp02 = () => {
 const exp03 = () => {
     return {
         id: 'software_engineer_at_loopme_003',
-        name: "Java Developer in Ad Server Team",
+        position: "Java Developer",
+        company: { name: "LoopMe Ad Serving Team", link: "https://loopme.com" },
         city: "Dnipro, Ukraine",
         dates: {
             start: exp02().dates.end,
@@ -104,7 +107,8 @@ const exp03 = () => {
 const exp04 = () => {
     return {
         id: 'software_engineer_at_loopme_004',
-        name: "Java Developer in Data Science Team",
+        position: "Java Developer",
+        company: { name: "LoopMe Data Science Team", link: "https://loopme.com" },
         city: "Dnipro, Ukraine",
         dates: {
             start: exp03().dates.end,
@@ -160,7 +164,8 @@ export const exp = () => {
 
     return {
         id: 'software_engineer_at_loopme',
-        name: "Software Engineer at LoopMe",
+        position: "Software Engineer",
+        company: { name: "LoopMe", link: "https://loopme.com" },
         city: "Dnipro, Ukraine",
         links: [
             {
@@ -193,7 +198,7 @@ export const exp = () => {
         description: [
             `I'd been developing a Digital Advertising platform, implementing ad-targeting algorithms 
             on Clojure, and then rewritten on Java. Also, I'd been developing a Java Application 
-            that uses prediction algorithms to chose the best ad and place the best bid.`
+            that uses prediction algorithms to choose the best ad and place the best bid.`
         ],
         // responsibility: [
         //     `

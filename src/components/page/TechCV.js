@@ -8,16 +8,7 @@ import { Contacts } from '../cv/Contacts';
 import { Skills } from '../cv/Skills';
 import { Photo } from '../cv/Photo';
 import { Experience } from '../cv/exp_old/Experience';
-
-const Line = ({ children }) => {
-    return (
-        <Row>
-            <Col xs={12}>
-                {children}
-            </Col>
-        </Row>
-    )
-}
+import { BootstrapLine as Line } from '../commons/BootstrapLine';
 
 export const TechCV = () => {
 

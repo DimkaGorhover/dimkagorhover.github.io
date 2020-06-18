@@ -1,40 +1,40 @@
 import React from 'react';
 import { experiences } from '../../../data/cv_data';
-import { prettyPeriod } from '../../../utils/CustomDateUtils';
+import { ExpPeriod } from '../../cv/ExpPeriod';
+import { ExpTitleText } from '../../cv/ExpTitle';
+
+// FIXME: LINKS DON'T WORK HERE BECAUSE react-router
+const mapperFn = (exp, index) => {
+
+    exp = { index: (index + 1), ...exp }
+    const { id, dates, showDates, inner } = exp
+
+    return (
+        <li key={index}>
+            <a href={'#' + id}>
+                <ExpTitleText {...exp} />
+            </a>
+
+            {(!(showDates === false)) && (
+                <>
+                    {` (`}<ExpPeriod dates={dates} />{`)`}
+                </>
+            )}
+
+            {inner && content({ exps: inner })}
+        </li>
+    )
+}
+
+const content = ({ exps }) => {
+    return (
+        <ul style={{ listStyle: 'none' }}>
+            {exps.map(mapperFn)}
+        </ul>
+    )
+}
 
 export const TableOfContent = () => {
-
-    const mapperFn = (exp, index) => {
-        const { name, id, dates, showDates, inner } = exp
-
-        let period
-
-        if (!(showDates === false)) {
-            period = (
-                <span style={{ color: "#555" }}>
-                    {` (${prettyPeriod(dates)})`}
-                </span>
-            )
-        }
-
-        return (
-            <li key={index}>
-                <span style={{ color: "#222" }}>
-                    <a href={'#' + id}>{`${index + 1}. ${name}`}</a>
-                    {period}
-                </span>
-                {inner && content({ exps: inner })}
-            </li>
-        )
-    }
-
-    const content = ({ exps }) => {
-        return (
-            <ul style={{ listStyle: 'none' }}>
-                {exps.map(mapperFn)}
-            </ul>
-        )
-    }
 
     return (
         <div>
@@ -42,4 +42,4 @@ export const TableOfContent = () => {
             {content({ exps: experiences })}
         </div>
     )
-};
+}

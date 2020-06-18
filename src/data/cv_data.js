@@ -15,7 +15,8 @@ export const info = {
     language: [
         { name: "English", level: "Intermediate" },
         { name: "Ukrainian", level: "Native" },
-        { name: "Russian", level: "Fluent" }
+        { name: "Russian", level: "Fluent" },
+        { name: "Deutsch", level: "Elementary" }
     ],
     about_me: [
         `Software Engineer ${yearsOfExp(first_working_day)} years, 
@@ -24,9 +25,9 @@ export const info = {
         `Passionate about Java, JVM, performance, benchmarking, 
         data structures, reactive streams.
         `,
-        `Looking for New Challenges, Product Companies is more preferable, 
-        full time, a remote is more preferable for now, 
-        but an office is not the issue, relocation is not an issue as well.
+        `Looking for New Challenges, Product Companies are more preferable, 
+        full time, a remote is more preferable for now, but an office 
+        is not the issue, relocation to other city/country is not an issue.
         `
     ]
 }
@@ -34,6 +35,21 @@ export const info = {
 export const education = [
     {
         name: "Ukrainian State Chemical Technology University",
+        link: "https://udhtu.edu.ua/en/",
+        degree: {
+            name: "Bachelor",
+            subject: "Computer Science",
+            paper: null,
+        },
+        location: "Dnipro, Ukraine",
+        dates: {
+            start: new Date(2006, 9 - 1, 1),
+            end: new Date(2010, 6 - 1, 1)
+        }
+    },
+    {
+        name: "Ukrainian State Chemical Technology University",
+        link: "https://udhtu.edu.ua/en/",
         degree: {
             name: "Master",
             subject: "Computer Science",
@@ -41,7 +57,7 @@ export const education = [
         },
         location: "Dnipro, Ukraine",
         dates: {
-            start: new Date(2006, 9 - 1, 1),
+            start: new Date(2010, 9 - 1, 1),
             end: new Date(2011, 6 - 1, 1)
         }
     }
@@ -53,7 +69,8 @@ export const current_skills = CurrentSkills()
 const self_employed_exp = () => {
     return ({
         id: "self_employed",
-        name: "Self-Employed Full-Stack Engineer (Freelance)",
+        position: "Full-Stack Engineer",
+        company: { name: "Self-Employed" },
         city: "Lviv, Ukraine",
         description: [
             `Building k8s Cluster on Bare-Metal using Ansible from scratch, 
@@ -87,14 +104,10 @@ const self_employed_exp = () => {
                 "Docker Swarm → Kubernetes 1.18.2"
             ],
             build_tool: ["Gradle 6+"],
-            ci_cd: [
-                "Jenkins", "Gitlab"
-            ],
+            ci_cd: ["Jenkins", "Gitlab"],
             storage: ["PostgreSQL", "Redis"],
-            vcs: [
-                "Gitlab"
-            ],
-            metrics: "Prometheus + Grafana (in progress...)"
+            vcs: ["Gitlab"],
+            metrics: ["Prometheus + Grafana (in progress...)"]
         }
     })
 }

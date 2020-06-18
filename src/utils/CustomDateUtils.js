@@ -3,12 +3,12 @@ import {
     format as dateFormat
 } from "date-fns";
 
-export const yearsOfExp = (firstDay) => {
-    const years = (Math.floor(diffMonth(new Date(), firstDay) / 12))
-    return `${ years }+`;
+export const yearsOfExp = (firstDay, now = new Date()) => {
+    const years = (Math.floor(diffMonth(now, firstDay) / 12))
+    return `${years}+`;
 }
 
-export const prettyPeriod = ({ start, end }) => {
+export const prettyPeriod = ({ start, end = null }) => {
     let startStr = dateFormat(start, 'MMMM yyyy')
     let endStr;
     if (!end) {
@@ -21,14 +21,14 @@ export const prettyPeriod = ({ start, end }) => {
     let years = Math.floor(months / 12)
     months = Math.ceil(months - (years * 12))
 
-    let monthsSuffix = `month${ ((months > 1) ? "s" : "") }`
-    let yearsSuffix = `year${ ((years > 1) ? "s" : "") }`
-    let periodStr = `${ startStr } - ${ endStr }`
+    let monthsSuffix = `month${((months > 1) ? "s" : "")}`
+    let yearsSuffix = `year${((years > 1) ? "s" : "")}`
+    let periodStr = `${startStr} - ${endStr}`
     let durationStr = ''
     if (years > 0) {
-        durationStr = `${ years } ${ yearsSuffix } `
+        durationStr = `${years} ${yearsSuffix} `
     }
-    durationStr = `${ durationStr }${ months } ${ monthsSuffix }`
+    durationStr = `${durationStr}${months} ${monthsSuffix}`
 
-    return `${ periodStr } (${ durationStr })`
-};
+    return `${periodStr} (${durationStr})`
+}

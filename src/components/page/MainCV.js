@@ -6,18 +6,9 @@ import { Contacts } from '../cv/Contacts';
 import { Education } from '../cv/Education';
 import { Skills } from '../cv/Skills';
 import { Photo } from '../cv/Photo';
-import { ExpList } from '../cv/ExpList';
 import { Languages } from '../cv/Languages'
-
-const Line = ({ children }) => {
-    return (
-        <Row>
-            <Col xs={12}>
-                {children}
-            </Col>
-        </Row>
-    )
-}
+import { ShortExpList } from '../cv/ShortExpList';
+import { BootstrapLine as Line } from '../commons/BootstrapLine';
 
 export const MainCV = () => {
 
@@ -28,11 +19,12 @@ export const MainCV = () => {
     return (
         <div>
             <header>
-                <Line><Header /></Line>
+
             </header>
             <main>
                 <Row>
                     <Col xs={9}>
+                        <Line><Header /></Line>
                         <Line><About /></Line>
                         <Line><Languages /></Line>
                     </Col>
@@ -43,7 +35,7 @@ export const MainCV = () => {
                 <Line><Contacts /></Line>
                 <Line><Education /></Line>
                 <Line><Skills /></Line>
-                <Line><ExpList short={true} /></Line>
+                <Line><ShortExpList /></Line>
             </main>
             <footer>
 

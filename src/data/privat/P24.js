@@ -8,9 +8,7 @@ const p24ukraine = () => {
             end: new Date(2013, 7 - 1, 1)
         },
         city: "Dnipro, Ukraine",
-        description: [
-            ""
-        ],
+        description: [],
         responsibility: [
             "New small features, support current features, bugfix, unit testing, etc."
         ],
@@ -93,14 +91,16 @@ export const exp = () => {
     const __p24abank = p24abank();
 
     return {
-        id: "software_java_engineer_at_privat_bank",
-        name: "Junior Software/Java Engineer at PrivatBank",
+        id: "software_engineer_at_privat_bank",
+        position: "Junior Software Engineer",
+        company: { name: "Privat24 (Privat Bank)", link: "https://privat24.ua" },
         links: [
             { name: "PrivatBank.ua", url: "https://privatbank.ua" },
             { name: "Privat24.ua", url: "https://privat24.ua" }
         ],
         description: [
-            "I'd been working for the Ukrainian local internet banking system named Privat24"
+            `I was a member of the team that developed and 
+            modernized Ukrainian local internet banking system Privat24`
         ],
         responsibility: [`
             Small features (clinet messages counters, form "don't block credit card abroad", etc.),

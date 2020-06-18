@@ -1,14 +1,47 @@
+import React from 'react'
+import { differenceInYears as diffYears } from 'date-fns'
+import { exp02 as clojureExp, exp as loopmeExp } from './loop_me'
+
+import {
+    FaJava as JavaIcon,
+    FaJs as JsIcon,
+    FaPython as PythonIcon,
+    FaLinux as LinuxIcon,
+    FaDocker as DockerIcon
+} from 'react-icons/fa'
+
+import {
+    DiRedis as RedisIcon,
+    DiPostgresql as PostgresIcon,
+    DiWindows as WindowsIcon
+} from 'react-icons/di'
+
+const Icon = ({ icon, children }) => {
+    return (
+        <>
+            {/* {icon()} */}
+            {` ${children}`}
+        </>
+    )
+}
+
+
 export const CurrentSkills = () => {
+
+    const currentDate = new Date()
+    const clojureLastDate = clojureExp().dates.end
+    const gcpLastDate = loopmeExp().dates.end
+
     return ([
         {
             name: "Languages",
             value: [
-                "Java (Versions 6+)",
-                "Clojure (2 years on prod, 4 years ago)",
-                "Python",
+                (<Icon icon={JavaIcon}>Java (Versions 6+)</Icon>),
+                `Clojure (2 years on prod, ${diffYears(currentDate, clojureLastDate)} years ago)`,
+                (<Icon icon={PythonIcon}>Python</Icon>),
+                (<Icon icon={JsIcon}>JavaScript</Icon>),
                 "Go (beginner)",
-                "JavaScript",
-                "Linux Shell {sh, bash, zsh} (low-mid)"
+                (<Icon icon={LinuxIcon}>{"Shell {sh, bash, zsh} (low-mid)"}</Icon>)
             ]
         },
         {
@@ -16,8 +49,9 @@ export const CurrentSkills = () => {
             value: [
                 "Spring (Boot, Web, etc.)",
                 "Reactive Streams (RxJava, Project Reactor)",
+                "Quarkus",
                 "gRPC",
-                "Quarkus"
+                "React.js"
             ]
         },
         {
@@ -25,14 +59,14 @@ export const CurrentSkills = () => {
             value: [
                 "Linux (Ubuntu, Mint, Alpine, CentOS)",
                 "Mac OS",
-                "Windows"
+                (<Icon icon={WindowsIcon}>Windows</Icon>)
             ]
         },
         {
             name: "Data Bases",
             value: [
-                "Redis",
-                "PostgreSQL",
+                (<Icon icon={RedisIcon}>Redis</Icon>),
+                (<Icon icon={PostgresIcon}>PostgreSQL</Icon>),
                 "Zookeeper",
                 "Kafka"
             ]
@@ -40,8 +74,8 @@ export const CurrentSkills = () => {
         {
             name: "Tools",
             value: [
-                "Docker",
-                "Docker-Compose",
+                (<Icon icon={DockerIcon}>Docker</Icon>),
+                (<Icon icon={DockerIcon}>Docker-Compose</Icon>),
                 "Ansible"
             ]
         },
@@ -49,13 +83,13 @@ export const CurrentSkills = () => {
             name: "Clusters",
             value: [
                 "Kubernetes",
-                "Docker Swarm"
+                (<Icon icon={DockerIcon}>Docker Swarm</Icon>)
             ]
         },
         {
             name: "Clouds",
             value: [
-                "Google Cloud Platform (user, 2 years ago)",
+                `Google Cloud Platform (user, ${diffYears(currentDate, gcpLastDate)} years ago)`,
                 "AWS (beginner)"
             ]
         }

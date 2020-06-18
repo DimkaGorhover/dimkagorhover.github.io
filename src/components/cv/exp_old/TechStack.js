@@ -27,7 +27,7 @@ const TextBlock = ({ title, content }, index) => {
     return null;
 }
 
-export const TechStack = ({ techStack, expIndex }) => {
+export const TechStack = ({ techStack }) => {
 
     if (techStack) {
 

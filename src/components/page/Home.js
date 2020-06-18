@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Jumbotron } from "react-bootstrap";
-import { IconContext } from "react-icons";
-import { SocialPanel } from "../cv/SocialPanel";
-
+import { Link } from 'react-router-dom';
+import { links } from '../../data/links';
+import { BootstrapLine as Line } from '../commons/BootstrapLine';
 
 export const Home = () => {
 
@@ -11,19 +10,21 @@ export const Home = () => {
         document.title = "Home Page";
     });
 
-    return (
-        <div>
-            <Jumbotron>
-                <h1>Home Page</h1>
-                <div>
-                    <IconContext.Provider value={{ size: '2em' }}>
-                        <SocialPanel />
-                    </IconContext.Provider>
-                </div>
-            </Jumbotron>
+    const linksContent = [
+        links.cv_main,
+        links.cv_tech
+    ].map(({ name, url }) => (
+        <Line>
+            <Link to={url()}>{name()}</Link>
+        </Line>
+    ))
 
-            <Link to='/cv/main' className='nav-link'>Short CV</Link>
-            <Link to='/cv/tech' className='nav-link'>Technical CV</Link>
-        </div>
+    return (
+        <Jumbotron>
+            <Line>
+                <h1>Home Page</h1>
+            </Line>
+            {linksContent}
+        </Jumbotron>
     )
 }

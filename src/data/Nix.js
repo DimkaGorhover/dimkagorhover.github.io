@@ -1,7 +1,8 @@
 export const exp = () => {
     return {
         id: "software_engineer_at_n_ix",
-        name: "Software Engineer at N-IX",
+        position: "Software Java Engineer",
+        company: { name: "N-IX", link: "https://n-ix.com" },
         city: "Lviv, Ukraine",
         dates: {
             start: new Date(2019, 8 - 1, 1),
@@ -9,8 +10,9 @@ export const exp = () => {
         },
         description: [
             `
-            I was working for a company that provides technology and business services for a number 
-            of telecommunications companies as well as a variety of other multinational enterprises.
+            I'd been working for the company that provides technology 
+            and business services for a number of telecommunications 
+            companies as well as a variety of other multinational enterprises.
             `
         ],
         responsibility: [
@@ -42,13 +44,13 @@ export const exp = () => {
             It was interesting experience for me`
         ],
         techStack: {
-            language: "Java 6",
-            build_tool: "Apache Maven 3.3.1",
-            ci_cd: "Jenkins",
-            // frameworks: "-",
-            // storage: "-",
-            // metrics: "-",
-            vcs: "Subversion (git svn plugin)"
+            language: ["Java 6"],
+            build_tool: ["Apache Maven 3.3.1"],
+            ci_cd: ["Jenkins"],
+            frameworks: [],
+            storage: [],
+            metrics: [],
+            vcs: ["Subversion (git svn plugin)"]
         }
     }
 }

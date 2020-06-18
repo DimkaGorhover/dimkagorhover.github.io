@@ -8,4 +8,4 @@ export const Header = () => {
             <h5>Java Software Engineer</h5>
         </div>
     )
-};
+}

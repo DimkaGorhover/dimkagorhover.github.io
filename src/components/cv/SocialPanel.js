@@ -1,8 +1,7 @@
 import React from "react";
-
 import { Nav } from "react-bootstrap";
-import { github, mail, skype, telegram } from "../../data/contacts";
 import { IconContext } from "react-icons";
+import { github, mail, skype, telegram } from "../../data/contacts";
 
 const SocialItem = ({ link, icon, target = "_blank" }) => {
     return (
@@ -19,7 +18,7 @@ export const SocialPanel = ({ iconsSize = '1.6em' }) => {
         skype
     ]
 
-    const content = panelContacts.map((contact, i) => (<SocialItem {...contact} />))
+    const content = panelContacts.map((contact, i) => (<SocialItem key={i} {...contact} />))
 
     return (
         <IconContext.Provider value={{ size: iconsSize }}>

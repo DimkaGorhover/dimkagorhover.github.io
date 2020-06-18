@@ -8,13 +8,14 @@ export const Blog = () => {
     });
 
     return (
-        <div>
+        <>
             <Jumbotron>
                 <h1>Blog</h1>
             </Jumbotron>
+
             <Alert variant={"warning"}>
                 The blog is currently unavailable
             </Alert>
-        </div>
+        </>
     )
 }

@@ -9,7 +9,7 @@ export const About = () => {
 
     return (
         <div>
-            <h4 id="about_me">About Me</h4>
+            <h4 id={"about_me"}>About Me</h4>
             {content}
         </div>
     )

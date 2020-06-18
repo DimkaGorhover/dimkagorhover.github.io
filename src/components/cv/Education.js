@@ -1,23 +1,44 @@
 import React from 'react';
 import { education } from '../../data/cv_data';
+import { BlankLink } from '../commons/BlankLink';
+import './education.scss'
 
-const Item = ({ exp }) => {
+const Name = ({ name, link }) => {
 
-    let { name, degree, dates, paper } = exp
+    if (link) {
+        name = (<BlankLink name={name} href={link} />)
+    }
+
+    return (<span className={"name"}>{name}</span>)
+}
+
+const Degree = ({ name, subject }) => {
+    return (
+        <div>
+            <span>Degree: {name}, {subject}</span>
+        </div>
+    )
+}
+
+const Item = ({ education }) => {
+
+    let { degree, dates, paper } = education
 
     const { start, end } = dates
 
     return (
-        <li>
-            <strong>{name}</strong>
-            <div>{start.getFullYear()} - {end.getFullYear()}</div>
-            {degree
-                ? (<div>Degree: {degree.name}, {degree.subject}</div>)
-                : (<></>)}
-            {paper
-                ? (<div>Paper: {paper}</div>)
-                : (<></>)}
-        </li>
+        <div className={"education"}>
+            <div>
+                <Name {...education} />
+            </div>
+            <div>
+                <span>{start.getFullYear()} - {end.getFullYear()}</span>
+            </div>
+            {degree && <Degree {...degree} />}
+            {paper && (<div>
+                Paper: {paper}
+            </div>)}
+        </div>
     )
 }
 
@@ -27,7 +48,11 @@ export const Education = () => {
         <div>
             <h3>Education</h3>
             <ul>
-                {education.map((e, index) => <Item key={index} exp={e} />)}
+                {education.map((e, index) => (
+                    <li key={index}>
+                        <Item education={e} />
+                    </li>
+                ))}
             </ul>
         </div>
     )
