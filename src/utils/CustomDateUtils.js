@@ -24,11 +24,17 @@ export const prettyPeriod = ({ start, end = null }) => {
     let monthsSuffix = `month${((months > 1) ? "s" : "")}`
     let yearsSuffix = `year${((years > 1) ? "s" : "")}`
     let periodStr = `${startStr} - ${endStr}`
-    let durationStr = ''
-    if (years > 0) {
-        durationStr = `${years} ${yearsSuffix} `
-    }
-    durationStr = `${durationStr}${months} ${monthsSuffix}`
 
-    return `${periodStr} (${durationStr})`
+    if (years > 0 || months > 0) {
+        let durationList = []
+        if (years > 0) {
+            durationList.push(`${years} ${yearsSuffix}`);
+        }
+        if (months > 0) {
+            durationList.push(`${months} ${monthsSuffix}`);
+        }
+        return `${periodStr} (${durationList.join(' ')})`;
+    }
+
+    return `${periodStr}`
 }
