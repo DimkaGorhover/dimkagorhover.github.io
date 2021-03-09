@@ -1,3 +1,5 @@
+import { MARCH, NOVEMBER } from "../common/dates";
+
 export const exp = () => {
     
     return {
@@ -6,8 +8,8 @@ export const exp = () => {
         company: { name: "Intellias", link: "https://intellias.com" },
         city: "Lviv, Ukraine",
         dates: {
-            start: new Date(2018, 11 - 1, 1),
-            end: new Date(2019, 3 - 1, 15)
+            start: new Date(2018, NOVEMBER, 1),
+            end: new Date(2019, MARCH, 15)
         },
         description: [
             `I'd been working on implementing new algorithms 

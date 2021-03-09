@@ -1,3 +1,5 @@
+import { JULY, NOVEMBER } from "../common/dates";
+
 export const exp = () => {
     return {
         id: "software_engineer_at_ciklum",
@@ -18,8 +20,8 @@ export const exp = () => {
             `,
         city: "Dnipro, Ukraine",
         dates: {
-            start: new Date(2014, 7 - 1, 1),
-            end: new Date(2015, 11 - 1, 1)
+            start: new Date(2014, JULY, 1),
+            end: new Date(2015, NOVEMBER, 1)
         }
     }
 }

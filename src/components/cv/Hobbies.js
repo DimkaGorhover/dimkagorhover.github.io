@@ -1,10 +1,21 @@
 import React from 'react';
 
-export const Hobbies = () => {
-    return (
-        <div className={"hobbies"}>
-            <h4>Hobbies</h4>
-            <p>Traveling, Motorcycles, Gym, Football, Cars, Bicycles</p>
-        </div>
-    )
-}
+const hobbies = [
+  'Traveling',
+  'Motorcycles',
+  'Gym',
+  'Football',
+  'Cars',
+  'Bicycles',
+]
+
+export const Hobbies = () => (
+  <div className={"hobbies"}>
+    <h4>Hobbies</h4>
+    <p>
+      {hobbies.reduce((acc, hobby) => {
+        return `${acc}, ${hobby}`
+      })}
+    </p>
+  </div>
+);

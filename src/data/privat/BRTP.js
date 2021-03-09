@@ -1,3 +1,5 @@
+import { JULY } from "../../common/dates";
+
 export const exp = () => {
     return {
         id: "brtp_middle_software_engineer",
@@ -5,8 +7,8 @@ export const exp = () => {
         company: { name: "Privat Bank", link: "https://privatbank.ua" },
         city: "Dnipro, Ukraine",
         dates: {
-            start: new Date(2013, 7 - 1, 1),
-            end: new Date(2014, 7 - 1, 30)
+            start: new Date(2013, JULY, 1),
+            end: new Date(2014, JULY, 30)
         },
         description: [
             "I’d been developing internal web projects for the business department"

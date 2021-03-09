@@ -4,11 +4,13 @@ import { ExperienceEntry } from "./ExperienceEntry";
 
 export const ExperienceList = () => {
 
-    const content = experiences.map((experience, i) => (
-        <ExperienceEntry key={i} index={i + 1} experience={experience} />
-    ));
+  const content = experiences.map((experience, index) => (
+    <ExperienceEntry key={index}
+                     index={index + 1}
+                     experience={experience}/>
+  ));
 
-    return (
-        <div>{content}</div>
-    )
+  return (
+    <div>{content}</div>
+  )
 };

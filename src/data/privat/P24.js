@@ -1,11 +1,13 @@
+import { FEBRUARY, JULY } from "../../common/dates";
+
 const p24ukraine = () => {
     return {
         id: "privat24_ukraine",
         name: "Privat24 Ukraine",
         showDates: false,
         dates: {
-            start: new Date(2012, 2 - 1, 28),
-            end: new Date(2013, 7 - 1, 1)
+            start: new Date(2012, FEBRUARY, 28),
+            end: new Date(2013, JULY, 1)
         },
         city: "Dnipro, Ukraine",
         description: [],
@@ -29,8 +31,8 @@ const p24georgia = () => {
         name: "Privat24 Georgia",
         showDates: false,
         dates: {
-            start: new Date(2012, 2 - 1, 28),
-            end: new Date(2013, 7 - 1, 1)
+            start: new Date(2012, FEBRUARY, 28),
+            end: new Date(2013, JULY, 1)
         },
         city: "Dnipro, Ukraine",
         achievements: [`
@@ -63,8 +65,8 @@ const p24abank = () => {
         name: "Privat24 A-Bank",
         showDates: false,
         dates: {
-            start: new Date(2012, 2 - 1, 28),
-            end: new Date(2013, 7 - 1, 1)
+            start: new Date(2012, FEBRUARY, 28),
+            end: new Date(2013, JULY, 1)
         },
         city: "Dnipro, Ukraine",
         responsibility: [`

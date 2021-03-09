@@ -1,3 +1,5 @@
+import { AUGUST, DECEMBER } from "../common/dates";
+
 export const exp = () => {
     return {
         id: "software_engineer_at_n_ix",
@@ -5,8 +7,8 @@ export const exp = () => {
         company: { name: "N-IX", link: "https://n-ix.com" },
         city: "Lviv, Ukraine",
         dates: {
-            start: new Date(2019, 8 - 1, 1),
-            end: new Date(2019, 12 - 1, 31)
+            start: new Date(2019, AUGUST, 1),
+            end: new Date(2019, DECEMBER, 31)
         },
         description: [
             `

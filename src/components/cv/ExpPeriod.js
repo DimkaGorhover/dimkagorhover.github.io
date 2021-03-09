@@ -1,11 +1,9 @@
-import React from 'react'
-import { prettyPeriod } from '../../utils/CustomDateUtils'
+import { prettyPeriod } from '../../common/dates'
 
 export const ExpPeriod = ({ dates }) => {
-
-    return (
-        <span className={"exp_period"}>
-            {prettyPeriod(dates)}
-        </span>
-    )
-}
+  return (
+    <span>
+      {prettyPeriod(dates)}
+    </span>
+  );
+};
