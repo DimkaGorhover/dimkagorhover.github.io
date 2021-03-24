@@ -1,7 +1,6 @@
-import React from 'react'
-import { differenceInYears as diffYears } from 'date-fns'
-import { exp as loopmeExp, exp02 as clojureExp } from './loopme'
-
+import React from 'react';
+import { differenceInYears as diffYears } from 'date-fns';
+import { exp as loopmeExp, exp02 as clojureExp } from './loopme';
 import {
   FaApple as AppleIcon,
   FaDocker as DockerIcon,
@@ -9,9 +8,8 @@ import {
   FaJs as JsIcon,
   FaLinux as LinuxIcon,
   FaPython as PythonIcon,
-  FaStream as RxIcon
-} from 'react-icons/fa'
-
+  FaStream as RxIcon,
+} from 'react-icons/fa';
 import {
   SiAlpinelinux as AlpineIcon,
   SiAnsible as AnsibleIcon,
@@ -21,102 +19,102 @@ import {
   SiLinuxmint as MintIcon,
   SiQuarkus as QuarkusIcon,
   SiSpring as SpringIcon,
-  SiUbuntu as UbuntuIcon
-} from 'react-icons/si'
-
+  SiUbuntu as UbuntuIcon,
+} from 'react-icons/si';
 import {
   DiAws as AwsIcon,
+  DiClojure as ClojureIcon,
   DiGoogleCloudPlatform as GCPIcon,
   DiPostgresql as PostgresIcon,
   DiRedis as RedisIcon,
+  DiSpark as SparkIcon,
   DiWindows as WindowsIcon,
-  DiSpark as SparkIcon
-} from 'react-icons/di'
-import { GrGolang as GoIcon, GrReactjs as ReactJsIcon } from "react-icons/gr";
+} from 'react-icons/di';
+import { GrGolang as GoIcon, GrReactjs as ReactJsIcon } from 'react-icons/gr';
 
 const Icon = ({ icon, children }) => {
+  if (!icon) {
+    return <span>{children}</span>;
+  }
   return (
-    <>
-      {/*{icon()}*/}
+    <span>
+      {icon()}
       {` ${children}`}
-    </>
-  )
-}
-
+    </span>
+  );
+};
 
 export const CurrentSkills = () => {
+  const currentDate = new Date();
+  const clojureLastDate = clojureExp().dates.end;
+  const gcpLastDate = loopmeExp().dates.end;
 
-  const currentDate = new Date()
-  const clojureLastDate = clojureExp().dates.end
-  const gcpLastDate = loopmeExp().dates.end
-
-  return ([
+  return [
     {
       name : 'Languages',
       value: [
-        (<Icon icon={JavaIcon}>Java (Versions 6+)</Icon>),
-        `Clojure (2 years on prod, ${diffYears(currentDate, clojureLastDate)} years ago)`,
-        (<Icon icon={PythonIcon}>Python</Icon>),
-        (<Icon icon={JsIcon}>JavaScript</Icon>),
-        (<Icon icon={GoIcon}>Go</Icon>),
-        (<Icon icon={LinuxIcon}>{'Shell {sh, bash, zsh} (low-mid)'}</Icon>)
-      ]
+        <Icon icon={JavaIcon}>Java (Versions 6+)</Icon>,
+        <Icon icon={ClojureIcon}>{`Clojure (2 years on prod, ${diffYears(
+          currentDate,
+          clojureLastDate,
+        )} years ago)`}</Icon>,
+        <Icon icon={PythonIcon}>Python</Icon>,
+        <Icon icon={JsIcon}>JavaScript</Icon>,
+        <Icon icon={GoIcon}>Go</Icon>,
+        <Icon icon={LinuxIcon}>{'Shell {sh, bash, zsh} (low-mid)'}</Icon>,
+      ],
     },
     {
       name : 'Frameworks',
       value: [
-        (<Icon icon={SpringIcon}>Spring (Boot, Web, etc.)</Icon>),
-        (<Icon icon={RxIcon}>Reactive Streams (RxJava, Project Reactor)</Icon>),
-        (<Icon icon={QuarkusIcon}>Quarkus</Icon>),
+        <Icon icon={SpringIcon}>Spring (Boot, Web, etc.)</Icon>,
+        <Icon icon={RxIcon}>Reactive Streams (RxJava, Project Reactor)</Icon>,
         'gRPC',
-        (<Icon icon={QuarkusIcon}>Quarkus</Icon>),
-        (<Icon icon={ReactJsIcon}>ReactJS</Icon>),
-        (<Icon icon={SparkIcon}>Apache Spark</Icon>),
-      ]
+        <Icon icon={QuarkusIcon}>Quarkus</Icon>,
+        <Icon icon={ReactJsIcon}>ReactJS</Icon>,
+        <Icon icon={SparkIcon}>Apache Spark</Icon>,
+      ],
     },
     {
       name : 'OS',
       value: [
-        (<Icon icon={MintIcon}>Linux Mint</Icon>),
-        (<Icon icon={UbuntuIcon}>Ubuntu</Icon>),
-        (<Icon icon={AlpineIcon}>Linux Alpine</Icon>),
-        (<Icon icon={CentosIcon}>CentOS</Icon>),
-        (<Icon icon={AppleIcon}>Mac OS</Icon>),
-        (<Icon icon={WindowsIcon}>Windows</Icon>)
-      ]
+        <Icon icon={MintIcon}>Linux Mint</Icon>,
+        <Icon icon={UbuntuIcon}>Ubuntu</Icon>,
+        <Icon icon={AlpineIcon}>Linux Alpine</Icon>,
+        <Icon icon={CentosIcon}>CentOS</Icon>,
+        <Icon icon={AppleIcon}>Mac OS</Icon>,
+        <Icon icon={WindowsIcon}>Windows</Icon>,
+      ],
     },
     {
       name : 'Data Bases',
       value: [
-        (<Icon icon={RedisIcon}>Redis</Icon>),
-        (<Icon icon={PostgresIcon}>PostgreSQL</Icon>),
+        <Icon icon={RedisIcon}>Redis</Icon>,
+        <Icon icon={PostgresIcon}>PostgreSQL</Icon>,
         'Zookeeper',
-        (<Icon icon={KafkaIcon}>Kafka</Icon>)
-      ]
+        <Icon icon={KafkaIcon}>Kafka</Icon>,
+      ],
     },
     {
       name : 'Tools',
       value: [
-        (<Icon icon={DockerIcon}>Docker</Icon>),
-        (<Icon icon={DockerIcon}>Docker-Compose</Icon>),
-        (<Icon icon={AnsibleIcon}>Ansible</Icon>)
-      ]
+        <Icon icon={DockerIcon}>Docker</Icon>,
+        <Icon icon={DockerIcon}>Docker-Compose</Icon>,
+        <Icon icon={AnsibleIcon}>Ansible</Icon>,
+      ],
     },
     {
       name : 'Clusters',
-      value: [
-        (<Icon icon={K8SIcon}>Kubernetes</Icon>),
-        (<Icon icon={DockerIcon}>Docker Swarm</Icon>)
-      ]
+      value: [<Icon icon={K8SIcon}>Kubernetes</Icon>, <Icon icon={DockerIcon}>Docker Swarm</Icon>],
     },
     {
       name : 'Clouds',
       value: [
         // `Google Cloud Platform (user, ${diffYears(currentDate, gcpLastDate)} years ago)`,
-        (<Icon icon={GCPIcon}>Google Cloud Platform</Icon>),
+        <Icon icon={GCPIcon}>Google Cloud Platform</Icon>,
         // 'AWS (beginner)',
-        (<Icon icon={AwsIcon}>AWS</Icon>),
-      ]
-    }
-  ])
-}
+        <Icon icon={AwsIcon}>AWS</Icon>,
+      ],
+    },
+  ];
+};

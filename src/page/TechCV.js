@@ -18,10 +18,8 @@ export const TechCV = () => {
   return (
     <>
       <Line>
-        <div>
-          <h1>Dmytro Horkhover</h1>
-          <h5>Java Software Engineer</h5>
-        </div>
+        <h1>Dmytro Horkhover</h1>
+        <h5>Java Software Engineer</h5>
       </Line>
       <Row>
         <Col xs={leftSize} className="bg-dark">

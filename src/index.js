@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { App } from "./App";
-import './index.scss'
+import { render } from 'react-dom';
+import { App } from './App';
+import './index.scss';
 
 // https://github.com/facebook/create-react-app
 // https://learn.javascript.ru/screencast/react#react-state
@@ -9,6 +9,7 @@ import './index.scss'
 
 render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
-  document.getElementById("root"));
+  document.getElementById('root'),
+);

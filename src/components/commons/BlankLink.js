@@ -1,5 +1,5 @@
 import styles from './BlankLink.module.scss';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 export const BlankLink = ({ href, name }) => {
   if (href) {
@@ -10,14 +10,14 @@ export const BlankLink = ({ href, name }) => {
     );
   }
 
-  return <>{name}</>
+  return <>{name}</>;
 };
 
 BlankLink.propTypes = {
   href: PropTypes.string,
   name: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.object]
-  ).isRequired,
+    PropTypes.object,
+  ]).isRequired,
 };
 

@@ -1,41 +1,34 @@
 import { BlankLink } from '../commons/BlankLink';
-import styles from './ExpTitle.module.scss'
+import styles from './ExpTitle.module.scss';
+import PropTypes from 'prop-types';
+import { Company } from '../../data/types';
 
 export const ExpTitleText = ({ index, name, position, company }) => {
-  index = index ? (`${index}. `) : ("")
+  index = index ? (`${index}. `) : ('');
   if (position && company) {
     return (
       <>
         {index}
         {position}
         {' @ '}
-
         <span className={styles.company}>
-          <BlankLink
-            name={company.name}
-            href={company.link}/>
+          <BlankLink name={company.name} href={company.link} />
         </span>
-      </>)
+      </>);
   }
 
-  return `${index}${name}`
-}
+  return `${index}${name}`;
+};
 
 export const ExpTitle = (props) => {
+  return (
+    <h4 className={styles.title}>
+      <ExpTitleText {...props} />
+    </h4>
+  );
+};
 
-  let { name, position, company } = props
-
-  if (position && company) {
-    return (
-      <h4 className={"title"}>
-        <ExpTitleText {...props} />
-      </h4>
-    )
-  } else {
-
-    // TODO: remove it
-    console.log("WARNING: field [exp.name] is deprecated")
-
-    return <h5 className={"title"}>{name}</h5>
-  }
-}
+ExpTitle.propTypes = {
+  position: PropTypes.string.isRequired,
+  company : Company,
+};

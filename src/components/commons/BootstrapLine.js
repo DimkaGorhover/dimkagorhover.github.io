@@ -7,5 +7,5 @@ export const BootstrapLine = ({ children }) => {
         {children}
       </Col>
     </Row>
-  )
-}
+  );
+};

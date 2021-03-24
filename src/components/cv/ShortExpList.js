@@ -1,51 +1,78 @@
 import { experiences } from '../../data/cv_data';
-import { ExpTitle } from './ExpTitle'
+import { ExpTitle } from './ExpTitle';
 import { Noop } from '../commons/Noop';
 import { ExpPeriod } from './ExpPeriod';
-import Strings from "../../common/strings";
-import styles from './ShortExpList.module.scss'
+import Strings from '../../common/strings';
+import styles from './ShortExpList.module.scss';
+import { Experience } from '../../data/types';
 
 const ShortTechStack = ({ data }) => {
   if (!data) {
-    return <Noop/>;
+    return <Noop />;
   }
   const content = Strings.join([
     Strings.join(data.language),
     Strings.join(data.frameworks),
     Strings.join(data.storage),
     Strings.join(data.metrics),
-  ])
+  ]);
   return (
-    <p>
+    <>
       <b>Tech Stack:</b> {content}
-    </p>
+    </>
   );
 };
 
-const ShortExpItem = (props) => {
-  const { city, id, dates, description, techStack } = props
+const ShortExpItemDescription = ({ data }) => {
+  if (!data) {
+    return <Noop />;
+  }
   return (
-    <div id={id}>
-      <hr/>
-      <ExpTitle {...props} />
-      <p>
-        <ExpPeriod dates={dates}/>
-        {' | '}
-        <span className={styles.location}>({city})</span>
-      </p>
-      {description.map((text, index) => <p key={index}>{text}</p>)}
-      <ShortTechStack data={techStack}/>
-    </div>
+    <>
+      {data.map((text, i) => <p key={i}>{text}</p>)}
+    </>
   );
+};
+
+const ShortExpItem = ({ data }) => {
+  const { dates, description, techStack } = data;
+  const { city, country } = data.location;
+  return (
+    <>
+      <ExpTitle {...data} />
+      <p>
+        <ExpPeriod dates={dates} />
+        {' | '}
+        <span className={styles.location}>
+          ({city}, {country})
+        </span>
+      </p>
+
+      <ShortExpItemDescription data={description} />
+      <ShortTechStack data={techStack} />
+    </>
+  );
+};
+
+ShortExpItem.propTypes = {
+  data: Experience,
 };
 
 export const ShortExpList = () => {
   return (
-    <div className={"exp_list"}>
-      {experiences.filter(exp => !exp.excess).map((exp, index) => {
-        let newExp = { ...exp, n: (index + 1) }
-        return (<ShortExpItem key={index} {...newExp} />)
-      })}
-    </div>
+    <>
+      {experiences
+        .filter(exp => !exp.excess)
+        .map((exp, i) => {
+          return <ShortExpItem key={i} data={({ index: i + 1, ...exp })} />;
+        })
+        .reduce((exp0, exp1) => {
+          return (<>
+            {exp0}
+            <hr />
+            {exp1}
+          </>);
+        })}
+    </>
   );
 };

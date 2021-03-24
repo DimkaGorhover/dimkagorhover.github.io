@@ -5,44 +5,44 @@ import { Contacts } from '../components/cv/Contacts';
 import { Education } from '../components/cv/Education';
 import { Skills } from '../components/cv/Skills';
 import { Photo } from '../components/cv/Photo';
-import { Languages } from '../components/cv/Languages'
+import { Languages } from '../components/cv/Languages';
 import { ShortExpList } from '../components/cv/ShortExpList';
-import { useTitle } from "../common";
+import { useTitle } from '../common';
 
 export const MainCV = () => {
-  useTitle('CV: Dmytro Horkhover')
+  useTitle('CV: Dmytro Horkhover');
   return (
     <>
       <Row>
         <Col xs={9}>
-          <Header/>
-          <About/>
-          <Languages/>
+          <Header />
+          <About />
+          <Languages />
         </Col>
         <Col xs={3}>
-          <Photo/>
+          <Photo />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Contacts/>
+          <Contacts />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Education/>
+          <Education />
         </Col>
       </Row>
       <Row>
         <Col>
-          <Skills/>
+          <Skills />
         </Col>
       </Row>
       <Row>
         <Col>
-          <ShortExpList/>
+          <ShortExpList />
         </Col>
       </Row>
     </>
-  )
-}
+  );
+};

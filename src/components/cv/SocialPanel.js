@@ -17,7 +17,9 @@ export const SocialPanel = ({ iconsSize = '1.6em' }) => {
     github,
     mail,
     skype
-  ].map((contact, index) => <SocialItem key={index} {...contact} />)
+  ].map((contact, index) => (
+    <SocialItem key={index} {...contact} />
+  ))
 
   return (
     <IconContext.Provider value={{ size: iconsSize }}>

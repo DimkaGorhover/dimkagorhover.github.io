@@ -11,7 +11,7 @@ export const Navigation = () => {
         <Navbar.Brand as={RouterLink} to={links.home.url()}>
           Dmytro Horkhover
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls={'basic-navbar-nav'}/>
+        <Navbar.Toggle aria-controls={'basic-navbar-nav'} />
         <Navbar.Collapse id={'basic-navbar-nav'}>
 
           <Nav className={'mr-auto'}>
@@ -28,7 +28,7 @@ export const Navigation = () => {
               <NavDropdown.Item as={RouterLink} to={links.cv_main.url()}>
                 Main CV
               </NavDropdown.Item>
-              <NavDropdown.Divider/>
+              <NavDropdown.Divider />
               <NavDropdown.Item as={RouterLink} to={links.cv_tech.url()}>
                 Technical CV
               </NavDropdown.Item>
@@ -37,7 +37,7 @@ export const Navigation = () => {
           </Nav>
 
           <Nav className={'mr-right'}>
-            <SocialPanel/>
+            <SocialPanel />
           </Nav>
 
           {/*<Form inline>*/}

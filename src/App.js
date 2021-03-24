@@ -1,25 +1,21 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
-import { Navigation } from "./Navigation";
-import { Routers } from "./Routers";
-import { Noop } from "./components/commons/Noop";
+import { HashRouter as ReactRouter } from 'react-router-dom';
+import { Navigation } from './Navigation';
+import { Routers } from './Routers';
+import { Noop } from './components/commons/Noop';
 
 export const App = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-
+    <ReactRouter basename={process.env.PUBLIC_URL}>
       <header>
-        <Navigation/>
+        <Navigation />
       </header>
-
       <main>
-        <Routers/>
+        <Routers />
       </main>
-
       <footer>
-        <Noop/>
+        <Noop />
       </footer>
-
-    </Router>
+    </ReactRouter>
   );
 };

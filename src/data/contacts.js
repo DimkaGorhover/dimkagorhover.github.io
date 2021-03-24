@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   FaFacebook as FacebookIcon,
@@ -6,101 +6,101 @@ import {
   FaLinkedin as LinkedInIcon,
   FaSkype as SkypeIcon,
   FaTelegram as TelegramIcon,
-  FaTwitter as TwitterIcon
-} from 'react-icons/fa'
+  FaTwitter as TwitterIcon,
+} from 'react-icons/fa';
 
-import { FiMail as MailIcon } from 'react-icons/fi'
+import { FiMail as MailIcon } from 'react-icons/fi';
 
 export const mail = ((() => {
-  const icon = (<MailIcon/>)
+  const icon = (<MailIcon />);
   return {
     important: true,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
-    name     : <span>{icon}{" Email ( gd.mail.89@gmail.com )"}</span>,
-    link     : "mailto:gd.mail.89@gmail.com"
-  }
-})())
+    name     : <span>{icon}{' Email ( gd.mail.89@gmail.com )'}</span>,
+    link     : 'mailto:gd.mail.89@gmail.com',
+  };
+})());
 
 export const skype = ((() => {
-  const icon = (<SkypeIcon/>)
+  const icon = (<SkypeIcon />);
   return {
     important: true,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
-    name     : <span>{icon}{" Skype ( dier_89 )"}</span>,
-    link     : "skype:dier_89"
-  }
-})())
+    name     : <span>{icon}{' Skype ( dier_89 )'}</span>,
+    link     : 'skype:dier_89',
+  };
+})());
 
 export const linkedIn = ((() => {
-  const icon = (<LinkedInIcon/>)
+  const icon = (<LinkedInIcon />);
   return {
     important: true,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
-    name     : <span>{icon}{" LinkedIn ( dmitriy-gorkhover )"}</span>,
-    link     : "https://www.linkedin.com/in/dmitriy-gorkhover/"
-  }
-})())
+    name     : <span>{icon}{' LinkedIn ( dmitriy-gorkhover )'}</span>,
+    link     : 'https://www.linkedin.com/in/dmitriy-gorkhover/',
+  };
+})());
 
 export const github = ((() => {
-  const icon = (<GithubIcon/>)
+  const icon = (<GithubIcon />);
   return {
     important: false,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
-    name     : <span>{icon}{" Github"}</span>,
-    link     : "https://github.com/DimkaGorhover"
-  }
-})())
+    name     : <span>{icon}{' Github'}</span>,
+    link     : 'https://github.com/DimkaGorhover',
+  };
+})());
 
 export const telegram = ((() => {
-  const icon = (<TelegramIcon/>)
+  const icon = (<TelegramIcon />);
   return {
     important: false,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
-    name     : <span>{icon}{" Telegram"}</span>,
-    link     : "https://t.me/hdmytro"
-  }
-})())
+    name     : <span>{icon}{' Telegram'}</span>,
+    link     : 'https://t.me/hdmytro',
+  };
+})());
 
 export const twitter = ((() => {
-  const icon = (<TwitterIcon/>)
+  const icon = (<TwitterIcon />);
   return {
     important: false,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
     name     : <span>{icon}{` Twitter`}</span>,
-    link     : "https://twitter.com/dghover"
-  }
-})())
+    link     : 'https://twitter.com/dghover',
+  };
+})());
 
 export const facebook = ((() => {
-  const icon = (<FacebookIcon/>)
+  const icon = (<FacebookIcon />);
   return {
     important: false,
-    target   : "_blank",
+    target   : '_blank',
     icon     : icon,
     name     : <span>{icon}{` Facebook`}</span>,
-    link     : "https://www.facebook.com/dmitriy.gorhover"
-  }
-})())
+    link     : 'https://www.facebook.com/dmitriy.gorhover',
+  };
+})());
 
 export const leetCode = (() => ({
   important: false,
-  target   : "_blank",
+  target   : '_blank',
   name     : <span>LeetCode</span>,
-  link     : "https://leetcode.com/dimkagorhover/"
-}))()
+  link     : 'https://leetcode.com/dimkagorhover/',
+}))();
 
 export const hackerrank = (() => ({
   important: false,
-  target   : "_blank",
+  target   : '_blank',
   name     : <span>HackerRank</span>,
-  link     : "https://www.hackerrank.com/gd_mail_89"
-}))()
+  link     : 'https://www.hackerrank.com/gd_mail_89',
+}))();
 
 const contacts = [
   mail,
@@ -112,7 +112,7 @@ const contacts = [
   twitter,
   facebook,
   leetCode,
-  hackerrank
-]
+  hackerrank,
+];
 
-export default contacts
+export default contacts;

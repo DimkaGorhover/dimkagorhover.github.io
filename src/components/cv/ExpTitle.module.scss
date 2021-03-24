@@ -1,3 +1,10 @@
+.title {
+}
+
 .company {
-  color: #552200;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
