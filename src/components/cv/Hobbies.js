@@ -7,15 +7,15 @@ const hobbies = [
   'Football',
   'Cars',
   'Bicycles',
-]
+];
 
 export const Hobbies = () => (
-  <div className={"hobbies"}>
+  <>
     <h4>Hobbies</h4>
     <p>
       {hobbies.reduce((acc, hobby) => {
-        return `${acc}, ${hobby}`
+        return `${acc}, ${hobby}`;
       })}
     </p>
-  </div>
+  </>
 );

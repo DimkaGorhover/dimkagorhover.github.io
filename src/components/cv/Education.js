@@ -1,6 +1,6 @@
 import React from 'react';
 import { education } from '../../data/cv_data';
-import { BlankLink } from '../commons/BlankLink';
+import { BlankLink } from '../common';
 import styles from './Education.module.scss'
 
 const Name = ({ name, link }) => {

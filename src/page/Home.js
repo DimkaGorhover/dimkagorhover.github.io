@@ -3,8 +3,11 @@ import { Link as RouterLink } from 'react-router-dom';
 import { links } from '../data/links';
 import { useTitle } from '../common';
 
+const title = 'Home Page';
+
 export const Home = () => {
-  useTitle('Home Page');
+
+  useTitle(title);
 
   const linksContent = [links.cv_main, links.cv_tech].map(({ name, url }, index) => (
     <ListGroup.Item key={index} as={RouterLink} to={url()}>
@@ -15,10 +18,11 @@ export const Home = () => {
   return (
     <>
       <Jumbotron>
-        <h1>Home Page</h1>
+        <h1>{title}</h1>
+        <ListGroup>
+          {linksContent}
+        </ListGroup>
       </Jumbotron>
-
-      <ListGroup>{linksContent}</ListGroup>
     </>
   );
 };

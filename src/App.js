@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as ReactRouter } from 'react-router-dom';
 import { Navigation } from './Navigation';
 import { Routers } from './Routers';
-import { Noop } from './components/commons/Noop';
+import { Noop } from './components/common';
 
 export const App = () => {
   return (

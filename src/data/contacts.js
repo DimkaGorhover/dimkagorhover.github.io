@@ -11,8 +11,10 @@ import {
 
 import { FiMail as MailIcon } from 'react-icons/fi';
 
+import { SiHackerrank as HackerRankIcon, SiLeetcode as LeetCodeIcon } from 'react-icons/si';
+
 export const mail = ((() => {
-  const icon = (<MailIcon />);
+  const icon = <MailIcon />;
   return {
     important: true,
     target   : '_blank',
@@ -23,7 +25,7 @@ export const mail = ((() => {
 })());
 
 export const skype = ((() => {
-  const icon = (<SkypeIcon />);
+  const icon = <SkypeIcon />;
   return {
     important: true,
     target   : '_blank',
@@ -34,7 +36,7 @@ export const skype = ((() => {
 })());
 
 export const linkedIn = ((() => {
-  const icon = (<LinkedInIcon />);
+  const icon = <LinkedInIcon />;
   return {
     important: true,
     target   : '_blank',
@@ -45,7 +47,7 @@ export const linkedIn = ((() => {
 })());
 
 export const github = ((() => {
-  const icon = (<GithubIcon />);
+  const icon = <GithubIcon />;
   return {
     important: false,
     target   : '_blank',
@@ -56,7 +58,7 @@ export const github = ((() => {
 })());
 
 export const telegram = ((() => {
-  const icon = (<TelegramIcon />);
+  const icon = <TelegramIcon />;
   return {
     important: false,
     target   : '_blank',
@@ -67,7 +69,7 @@ export const telegram = ((() => {
 })());
 
 export const twitter = ((() => {
-  const icon = (<TwitterIcon />);
+  const icon = <TwitterIcon />;
   return {
     important: false,
     target   : '_blank',
@@ -78,7 +80,7 @@ export const twitter = ((() => {
 })());
 
 export const facebook = ((() => {
-  const icon = (<FacebookIcon />);
+  const icon = <FacebookIcon />;
   return {
     important: false,
     target   : '_blank',
@@ -88,19 +90,28 @@ export const facebook = ((() => {
   };
 })());
 
-export const leetCode = (() => ({
-  important: false,
-  target   : '_blank',
-  name     : <span>LeetCode</span>,
-  link     : 'https://leetcode.com/dimkagorhover/',
-}))();
 
-export const hackerrank = (() => ({
-  important: false,
-  target   : '_blank',
-  name     : <span>HackerRank</span>,
-  link     : 'https://www.hackerrank.com/gd_mail_89',
-}))();
+export const leetCode = (() => {
+  const icon = <LeetCodeIcon />;
+  return {
+    important: false,
+    target   : '_blank',
+    icon     : icon,
+    name     : <span>{icon}{` LeetCode`}</span>,
+    link     : 'https://leetcode.com/dimkagorhover/',
+  };
+})();
+
+export const hackerrank = (() => {
+  const icon = <HackerRankIcon />;
+  return {
+    important: false,
+    target   : '_blank',
+    icon     : icon,
+    name     : <span>{icon}{` HackerRank`}</span>,
+    link     : 'https://www.hackerrank.com/gd_mail_89',
+  };
+})();
 
 const contacts = [
   mail,

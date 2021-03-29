@@ -1,44 +1,47 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
 import { current_skills as skills } from '../../data/cv_data';
-import styles from './Skills.module.scss'
-import { Noop } from "../commons/Noop";
+import styles from './Skills.module.scss';
 
-const Skill = ({ name, value }) => {
-
-  if (!(name && value)) {
-    return <Noop/>
-  }
-
+const SkillTableItem = ({ name, value }) => {
   if (!Array.isArray(value)) {
-    value = [value]
+    value = [value];
   }
-
-  const content = value.reduce((a, b) => (<>{a}{`, `}{b}</>))
-
   return (
     <tr>
       <td className={styles.name}>
         {name}
       </td>
       <td className={styles.value}>
-        {content}
+        {value.reduce((a, b) => <>{a}{`, `}{b}</>)}
       </td>
     </tr>
   );
+};
+
+SkillTableItem.propTypes = {
+  name : PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.string,
+    ])),
+  ]).isRequired,
 };
 
 export const Skills = () => {
   return (
     <>
       <h3>Actual Skills</h3>
-
       <Table className={styles.table}>
         <tbody>
-        {skills.map((skill, index) => (<Skill key={index} {...skill} />))}
+        {skills.map(({ name, value }, idx) => {
+          return <SkillTableItem key={idx} name={name} value={value} />;
+        })}
         </tbody>
       </Table>
-
     </>
   );
 };

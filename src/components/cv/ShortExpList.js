@@ -1,6 +1,6 @@
 import { experiences } from '../../data/cv_data';
 import { ExpTitle } from './ExpTitle';
-import { Noop } from '../commons/Noop';
+import { Noop } from '../common/Noop';
 import { ExpPeriod } from './ExpPeriod';
 import Strings from '../../common/strings';
 import styles from './ShortExpList.module.scss';

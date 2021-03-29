@@ -1,4 +1,4 @@
-import { BlankLink } from '../commons/BlankLink';
+import { BlankLink } from '../common';
 import styles from './ExpTitle.module.scss';
 import PropTypes from 'prop-types';
 import { Company } from '../../data/types';

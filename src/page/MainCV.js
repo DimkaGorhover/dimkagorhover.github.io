@@ -8,6 +8,7 @@ import { Photo } from '../components/cv/Photo';
 import { Languages } from '../components/cv/Languages';
 import { ShortExpList } from '../components/cv/ShortExpList';
 import { useTitle } from '../common';
+import { BootstrapLine } from '../components/common/BootstrapLine';
 
 export const MainCV = () => {
   useTitle('CV: Dmytro Horkhover');
@@ -23,26 +24,22 @@ export const MainCV = () => {
           <Photo />
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <Contacts />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Education />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Skills />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <ShortExpList />
-        </Col>
-      </Row>
+
+      <BootstrapLine>
+        <Contacts />
+      </BootstrapLine>
+
+      <BootstrapLine>
+        <Education />
+      </BootstrapLine>
+
+      <BootstrapLine>
+        <Skills />
+      </BootstrapLine>
+
+      <BootstrapLine>
+        <ShortExpList />
+      </BootstrapLine>
     </>
   );
 };
