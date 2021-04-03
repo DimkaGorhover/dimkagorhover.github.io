@@ -18,7 +18,7 @@ const ShortTechStack = ({ data }) => {
   ]);
   return (
     <>
-      <b>Tech Stack:</b> {content}
+      <span className={styles.group}>Tech Stack:</span> {content}
     </>
   );
 };
@@ -29,7 +29,9 @@ const ShortExpItemDescription = ({ data }) => {
   }
   return (
     <>
-      {data.map((text, i) => <p key={i}>{text}</p>)}
+      {data.map((text, i) => (
+        <p key={i}>{text}</p>
+      ))}
     </>
   );
 };
@@ -64,14 +66,16 @@ export const ShortExpList = () => {
       {experiences
         .filter(exp => !exp.excess)
         .map((exp, i) => {
-          return <ShortExpItem key={i} data={({ index: i + 1, ...exp })} />;
+          return <ShortExpItem key={i} data={{ index: i + 1, ...exp }} />;
         })
         .reduce((exp0, exp1) => {
-          return (<>
-            {exp0}
-            <hr />
-            {exp1}
-          </>);
+          return (
+            <>
+              {exp0}
+              <hr />
+              {exp1}
+            </>
+          );
         })}
     </>
   );

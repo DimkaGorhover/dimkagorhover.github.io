@@ -3,22 +3,44 @@ export {
   FaDocker as Docker,
   FaJava as Java,
   FaJs as Js,
+  FaJenkins as Jenkins,
   FaLinux as Linux,
   FaPython as Python,
   FaStream as Rx,
+  FaStream as RxJava,
+  FaGitlab as Gitlab,
+  FaGithub as Github,
+  FaStream as Reactor,
+  FaStream as ProjectReactor,
+  FaStream as ReactorCore,
+  FaFacebook as Facebook,
+  FaSkype as Skype,
+  FaTelegram as Telegram,
+  FaTwitter as Twitter,
+  FaDatabase as Database,
 } from 'react-icons/fa';
 
 export {
   SiAlpinelinux as Alpine,
   SiAnsible as Ansible,
   SiApachekafka as Kafka,
+  SiApachekafka as ApacheKafka,
   SiCentos as Centos,
   SiKubernetes as K8S,
+  SiKubernetes as Kubernetes,
   SiLinuxmint as Mint,
   SiQuarkus as Quarkus,
   SiRedux as Redux,
   SiSpring as Spring,
   SiUbuntu as Ubuntu,
+  SiCassandra as Cassandra,
+  SiCassandra as ApacheCassandra,
+  SiHackerrank as HackerRank,
+  SiLeetcode as LeetCode,
+  SiDatadog as Datadog,
+  SiApachemaven as Maven,
+  SiGradle as Gradle,
+  SiGrafana as Grafana,
 } from 'react-icons/si';
 
 export {
@@ -27,9 +49,18 @@ export {
   DiGoogleCloudPlatform as GCP,
   DiGoogleCloudPlatform as GoogleCloudPlatform,
   DiPostgresql as Postgres,
+  DiPostgresql as Postgresql,
   DiRedis as Redis,
   DiSpark as Spark,
   DiWindows as Windows,
 } from 'react-icons/di';
 
-export { GrGolang as Go, GrReactjs as ReactJs } from 'react-icons/gr';
+export {
+  GrGolang as Go,
+  GrGolang as Golang,
+  GrReactjs as ReactJs,
+  GrReactjs as React,
+  GrMysql as Mysql,
+  GrMail as Mail,
+  GrLinkedin as LinkedIn,
+} from 'react-icons/gr';

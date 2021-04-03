@@ -1,10 +1,10 @@
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark as style } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 function creatCodeComponent(language) {
-
   return function CodeComponent({ children }) {
     return (
-      <SyntaxHighlighter language={language} showLineNumbers>
+      <SyntaxHighlighter style={style} language={language} showLineNumbers>
         {children}
       </SyntaxHighlighter>
     );

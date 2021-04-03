@@ -1,129 +1,149 @@
-import React from 'react';
+import * as Icons from '../components/icons';
 
-import {
-  FaFacebook as FacebookIcon,
-  FaGithub as GithubIcon,
-  FaLinkedin as LinkedInIcon,
-  FaSkype as SkypeIcon,
-  FaTelegram as TelegramIcon,
-  FaTwitter as TwitterIcon,
-} from 'react-icons/fa';
-
-import { FiMail as MailIcon } from 'react-icons/fi';
-
-import { SiHackerrank as HackerRankIcon, SiLeetcode as LeetCodeIcon } from 'react-icons/si';
-
-export const mail = ((() => {
-  const icon = <MailIcon />;
+export const mail = (() => {
+  const icon = <Icons.Mail />;
   return {
     important: true,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{' Email ( gd.mail.89@gmail.com )'}</span>,
-    link     : 'mailto:gd.mail.89@gmail.com',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {' Email ( gd.mail.89@gmail.com )'}
+      </span>
+    ),
+    link: 'mailto:gd.mail.89@gmail.com',
   };
-})());
+})();
 
-export const skype = ((() => {
-  const icon = <SkypeIcon />;
+export const skype = (() => {
+  const icon = <Icons.Skype />;
   return {
     important: true,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{' Skype ( dier_89 )'}</span>,
-    link     : 'skype:dier_89',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {' Skype ( dier_89 )'}
+      </span>
+    ),
+    link: 'skype:dier_89',
   };
-})());
+})();
 
-export const linkedIn = ((() => {
-  const icon = <LinkedInIcon />;
+export const linkedIn = (() => {
+  const icon = <Icons.LinkedIn />;
   return {
     important: true,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{' LinkedIn ( dmitriy-gorkhover )'}</span>,
-    link     : 'https://www.linkedin.com/in/dmitriy-gorkhover/',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {' LinkedIn ( dmitriy-gorkhover )'}
+      </span>
+    ),
+    link: 'https://www.linkedin.com/in/dmitriy-gorkhover/',
   };
-})());
+})();
 
-export const github = ((() => {
-  const icon = <GithubIcon />;
+export const github = (() => {
+  const icon = <Icons.Github />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{' Github'}</span>,
-    link     : 'https://github.com/DimkaGorhover',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {' Github'}
+      </span>
+    ),
+    link: 'https://github.com/DimkaGorhover',
   };
-})());
+})();
 
-export const telegram = ((() => {
-  const icon = <TelegramIcon />;
+export const telegram = (() => {
+  const icon = <Icons.Telegram />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{' Telegram'}</span>,
-    link     : 'https://t.me/hdmytro',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {' Telegram'}
+      </span>
+    ),
+    link: 'https://t.me/hdmytro',
   };
-})());
+})();
 
-export const twitter = ((() => {
-  const icon = <TwitterIcon />;
+export const twitter = (() => {
+  const icon = <Icons.Twitter />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{` Twitter`}</span>,
-    link     : 'https://twitter.com/dghover',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {` Twitter`}
+      </span>
+    ),
+    link: 'https://twitter.com/dghover',
   };
-})());
+})();
 
-export const facebook = ((() => {
-  const icon = <FacebookIcon />;
+export const facebook = (() => {
+  const icon = <Icons.Facebook />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{` Facebook`}</span>,
-    link     : 'https://www.facebook.com/dmitriy.gorhover',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {` Facebook`}
+      </span>
+    ),
+    link: 'https://www.facebook.com/dmitriy.gorhover',
   };
-})());
-
+})();
 
 export const leetCode = (() => {
-  const icon = <LeetCodeIcon />;
+  const icon = <Icons.LeetCode />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{` LeetCode`}</span>,
-    link     : 'https://leetcode.com/dimkagorhover/',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {` LeetCode`}
+      </span>
+    ),
+    link: 'https://leetcode.com/dimkagorhover/',
   };
 })();
 
-export const hackerrank = (() => {
-  const icon = <HackerRankIcon />;
+export const hackerRank = (() => {
+  const icon = <Icons.HackerRank />;
   return {
     important: false,
-    target   : '_blank',
-    icon     : icon,
-    name     : <span>{icon}{` HackerRank`}</span>,
-    link     : 'https://www.hackerrank.com/gd_mail_89',
+    target: '_blank',
+    icon: icon,
+    name: (
+      <span>
+        {icon}
+        {` HackerRank`}
+      </span>
+    ),
+    link: 'https://www.hackerrank.com/gd_mail_89',
   };
 })();
 
-const contacts = [
-  mail,
-  skype,
-  linkedIn,
-
-  github,
-  telegram,
-  twitter,
-  facebook,
-  leetCode,
-  hackerrank,
-];
+const contacts = [mail, skype, linkedIn, github, telegram, twitter, facebook, leetCode, hackerRank];
 
 export default contacts;
