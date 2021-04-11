@@ -12,6 +12,8 @@ function creatCodeComponent(language) {
 }
 
 export const Java = creatCodeComponent('java');
+export const Groovy = creatCodeComponent('groovy');
+export const Gradle = creatCodeComponent('gradle');
 export const Json = creatCodeComponent('json');
 export const Properties = creatCodeComponent('properties');
 export const Shell = creatCodeComponent('shell');

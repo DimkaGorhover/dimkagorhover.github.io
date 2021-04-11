@@ -5,6 +5,10 @@ import styles from './Technology.module.scss';
 
 const all = {};
 
+export function find(name) {
+  return all[name];
+}
+
 function createTechnologyComponent({ name, icon: Icon, link = '' }) {
   const defLink = link;
   const defTitle = name;
@@ -22,21 +26,35 @@ function createTechnologyComponent({ name, icon: Icon, link = '' }) {
     }
     return (
       <>
-        <Icon /> {title}
+        <span className={styles.icon}>
+          <Icon />{' '}
+        </span>
+        <span>{title}</span>
       </>
     );
   }
 
   Technology.propTypes = {
     title: PropTypes.string,
-    link: PropTypes.string,
+    link : PropTypes.string,
   };
 
   return Technology;
 }
 
-export const Java = createTechnologyComponent({ name: 'Java', icon: Icons.Java, link: 'https://java.com' });
+export const Java = createTechnologyComponent({
+  name: 'Java',
+  icon: Icons.Java,
+  link: 'https://java.com',
+});
 all.java = Java;
+
+export const Python = createTechnologyComponent({
+  name: 'Python',
+  icon: Icons.Python,
+  link: 'https://www.python.org/',
+});
+all.python = Python;
 
 export const Kafka = createTechnologyComponent({
   name: 'Apache Kafka',
@@ -44,6 +62,13 @@ export const Kafka = createTechnologyComponent({
   link: 'https://kafka.apache.org/',
 });
 all.kafka = Kafka;
+
+export const Spark = createTechnologyComponent({
+  name: 'Apache Spark',
+  icon: Icons.Spark,
+  link: 'http://spark.apache.org/',
+});
+all.spark = Spark;
 
 export const Cassandra = createTechnologyComponent({
   name: 'Cassandra',
@@ -80,12 +105,6 @@ export const Clojure = createTechnologyComponent({
 });
 all.clojure = Clojure;
 
-export const Python = createTechnologyComponent({
-  name: 'Python',
-  icon: Icons.Python,
-});
-all.python = Python;
-
 export const Spring = createTechnologyComponent({
   name: 'Spring',
   icon: Icons.Spring,
@@ -103,6 +122,7 @@ all.quarkus = Quarkus;
 export const Js = createTechnologyComponent({
   name: 'Js',
   icon: Icons.Js,
+  link: 'https://en.wikipedia.org/wiki/JavaScript',
 });
 export const JavaScript = Js;
 all.js = Js;
@@ -123,7 +143,11 @@ export const Redux = createTechnologyComponent({
 });
 all.redux = Redux;
 
-export const Go = createTechnologyComponent({ name: 'Go', icon: Icons.Go });
+export const Go = createTechnologyComponent({
+  name: 'Go',
+  icon: Icons.Go,
+  link: 'https://golang.org/',
+});
 export const Golang = Go;
 all.go = Go;
 all.golang = Golang;
@@ -134,6 +158,28 @@ export const Ansible = createTechnologyComponent({
   link: 'https://www.ansible.com/',
 });
 all.ansible = Ansible;
+
+export const Kubernetes = createTechnologyComponent({
+  name: 'Kubernetes',
+  icon: Icons.Kubernetes,
+  link: 'https://kubernetes.io/',
+});
+all.kubernetes = Kubernetes;
+all.k8s = Kubernetes;
+
+export const Aws = createTechnologyComponent({
+  name: 'Aws',
+  icon: Icons.Aws,
+  link: 'https://aws.amazon.com/',
+});
+all.aws = Aws;
+
+export const GCP = createTechnologyComponent({
+  name: 'Google Cloud Platform',
+  icon: Icons.GCP,
+  link: 'https://cloud.google.com/',
+});
+all.gcp = GCP;
 
 export const Datadog = createTechnologyComponent({
   name: 'Datadog',
@@ -162,3 +208,25 @@ export const Gitlab = createTechnologyComponent({
   link: 'https://www.gitlab.com/',
 });
 all.gitlab = Gitlab;
+
+export const Grafana = createTechnologyComponent({
+  name: 'Grafana',
+  icon: Icons.Grafana,
+  link: 'https://grafana.com/',
+});
+all.grafana = Grafana;
+
+export const Prometheus = createTechnologyComponent({
+  name: 'Prometheus',
+  icon: Icons.Prometheus,
+  link: 'https://prometheus.io/',
+});
+all.prometheus = Prometheus;
+
+export const Elasticsearch = createTechnologyComponent({
+  name: 'Elasticsearch',
+  icon: Icons.Elasticsearch,
+  link: 'https://www.elastic.co/',
+});
+all.elastic = Elasticsearch;
+all.elasticsearch = Elasticsearch;

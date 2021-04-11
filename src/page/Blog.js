@@ -1,11 +1,22 @@
 import { Jumbotron, ListGroup, Pagination } from 'react-bootstrap';
 import { useTitle } from '../common';
 import { Link as RouterLink, Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { Minio } from './blog/Minio';
-import { JacksonStream } from './blog/JacksonStream';
+import { SimpleMinioCluster, title as simpleMinioClusterTitle } from './blog/SimpleMinioCluster';
+import { JacksonStream, title as jacksonStreamTitle } from './blog/JacksonStream';
+import { GradleSources, title as gradleTitle } from './blog/GradleSources';
+
+function useBlogRoutes() {
+  const { path } = useRouteMatch();
+  return {
+    jacksonStreaming: `${path}/jacksonStreaming`,
+    minioCluster    : `${path}/minio`,
+    gradleSources   : `${path}/gradleSources`,
+    root            : path,
+  };
+}
 
 const BlogPage = () => {
-  const { url } = useRouteMatch();
+  const routes = useBlogRoutes();
   useTitle('Blog Page');
   return (
     <>
@@ -14,11 +25,14 @@ const BlogPage = () => {
       </Jumbotron>
 
       <ListGroup>
-        <ListGroup.Item as={RouterLink} to={`${url}/minio`}>
-          Minio Cluster
+        <ListGroup.Item as={RouterLink} to={routes.minioCluster}>
+          {simpleMinioClusterTitle}
         </ListGroup.Item>
-        <ListGroup.Item as={RouterLink} to={`${url}/jackson_streaming`}>
-          Jackson Stream Parsing
+        <ListGroup.Item as={RouterLink} to={routes.jacksonStreaming}>
+          {jacksonStreamTitle}
+        </ListGroup.Item>
+        <ListGroup.Item as={RouterLink} to={routes.gradleSources}>
+          {gradleTitle}
         </ListGroup.Item>
       </ListGroup>
 
@@ -36,15 +50,16 @@ const BlogPage = () => {
 };
 
 const Routes = () => {
-  const { path } = useRouteMatch();
+  const routes = useBlogRoutes();
   return (
     <>
       <Switch>
-        <Route exact path={`${path}/jackson_streaming`} component={JacksonStream} />
-        <Route exact path={`${path}/minio`} component={Minio} />
-        <Route exact path={`${path}`} component={BlogPage} />
+        <Route exact path={routes.jacksonStreaming} component={JacksonStream} />
+        <Route exact path={routes.minioCluster} component={SimpleMinioCluster} />
+        <Route exact path={routes.gradleSources} component={GradleSources} />
+        <Route exact path={routes.root} component={BlogPage} />
         <Route path={'*'}>
-          <Redirect to={`${path}`} />
+          <Redirect to={routes.root} />
         </Route>
       </Switch>
     </>

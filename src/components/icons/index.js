@@ -25,6 +25,7 @@ export {
   SiAnsible as Ansible,
   SiApachekafka as Kafka,
   SiApachekafka as ApacheKafka,
+  SiElasticsearch as Elasticsearch,
   SiCentos as Centos,
   SiKubernetes as K8S,
   SiKubernetes as Kubernetes,
@@ -41,6 +42,12 @@ export {
   SiApachemaven as Maven,
   SiGradle as Gradle,
   SiGrafana as Grafana,
+  SiPrometheus as Prometheus,
+  SiApacheant as Ant,
+  SiApachenetbeanside as NetBeans,
+  SiOneplus as OnePlus,
+  SiCss3 as Css,
+  SiSass as Sass,
 } from 'react-icons/si';
 
 export {
@@ -52,6 +59,7 @@ export {
   DiPostgresql as Postgresql,
   DiRedis as Redis,
   DiSpark as Spark,
+  DiSpark as ApacheSpark,
   DiWindows as Windows,
 } from 'react-icons/di';
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { useTitle } from '../../common';
 import { Tab, Tabs } from 'react-bootstrap';
 import { Java, Json } from '../../components/code';
-import { BlankLink } from '../../components/common/BlankLink';
+import { BlankLink } from '../../components/common';
 
-const title = 'How to parse large JSON file';
+export const title = 'How to parse large JSON file';
 
 const userClass = `
 @ToString
@@ -184,7 +184,9 @@ export function JacksonStream() {
       <section>
         <ul>
           <li>
-            <BlankLink href={'https://github.com/FasterXML/jackson'} name={'Github: FasterXML/jackson'}/>
+            <BlankLink href={'https://github.com/FasterXML/jackson'}>
+              Github: FasterXML/jackson
+            </BlankLink>
           </li>
           <li>
             <BlankLink href={'https://github.com/reactor/reactor-core'}>

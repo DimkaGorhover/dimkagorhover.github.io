@@ -1,7 +1,7 @@
 import { useTitle } from '../../common';
 import { Properties, Shell, Yaml } from '../../components/code';
 import { Tab, Tabs } from 'react-bootstrap';
-import { BlankLink } from '../../components/common/BlankLink';
+import { BlankLink } from '../../components/common';
 
 const dockerComposeCode = `
 version: "3.8"
@@ -186,31 +186,15 @@ http {
 
 `.trim();
 
+const links = [
+  { name: 'Minio: Home Page', href: 'https://min.io/' },
+  { name: 'Github: minio/minio', href: 'https://github.com/minio/minio' },
+  { name: 'MinIO Docker Quickstart Guide', href: 'https://docs.min.io/docs/minio-docker-quickstart-guide' },
+  { name: 'MinIo для самых маленьких', href: 'https://habr.com/ru/company/veeam/blog/517392/' },
+  { name: 'Deploy MinIO on Docker Compose', href: 'https://docs.min.io/docs/deploy-minio-on-docker-compose.html' },
+];
+
 const Links = () => {
-
-  const links = [
-    {
-      name: 'Minio: Home Page',
-      href: 'https://min.io/',
-    },
-    {
-      name: 'Github: minio/minio',
-      href: 'https://github.com/minio/minio',
-    },
-    {
-      name: 'MinIO Docker Quickstart Guide',
-      href: 'https://docs.min.io/docs/minio-docker-quickstart-guide',
-    },
-    {
-      name: 'MinIo для самых маленьких',
-      href: 'https://habr.com/ru/company/veeam/blog/517392/',
-    },
-    {
-      name: 'Deploy MinIO on Docker Compose',
-      href: 'https://docs.min.io/docs/deploy-minio-on-docker-compose.html',
-    },
-  ];
-
   return (
     <ul>
       {links.map((link, idx) => {
@@ -224,18 +208,17 @@ const Links = () => {
   );
 };
 
-export const Minio = () => {
-  useTitle('Blog: Minio Cluster');
+export const title = 'Simple Minio Cluster';
 
+export const SimpleMinioCluster = () => {
+  useTitle(title);
   return (
     <>
-      <h1>Minio Cluster</h1>
+      <h1>{title}</h1>
 
       <h3>Description</h3>
       <section>
-        <p>
-          TBD
-        </p>
+        <p>TBD</p>
       </section>
 
       <h3>Links</h3>

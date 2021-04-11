@@ -4,7 +4,7 @@ import { Noop } from '../common/Noop';
 import { ExpPeriod } from './ExpPeriod';
 import Strings from '../../common/strings';
 import styles from './ShortExpList.module.scss';
-import { Experience } from '../../data/types';
+import * as Types from '../../data/types';
 
 const ShortTechStack = ({ data }) => {
   if (!data) {
@@ -21,6 +21,10 @@ const ShortTechStack = ({ data }) => {
       <span className={styles.group}>Tech Stack:</span> {content}
     </>
   );
+};
+
+ShortTechStack.propTypes = {
+  data: Types.TechStack,
 };
 
 const ShortExpItemDescription = ({ data }) => {
@@ -57,7 +61,7 @@ const ShortExpItem = ({ data }) => {
 };
 
 ShortExpItem.propTypes = {
-  data: Experience,
+  data: Types.Experience,
 };
 
 export const ShortExpList = () => {
