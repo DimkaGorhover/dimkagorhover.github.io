@@ -4,14 +4,16 @@ import { Link as RouterLink, Redirect, Route, Switch, useRouteMatch } from 'reac
 import { SimpleMinioCluster, title as simpleMinioClusterTitle } from './blog/SimpleMinioCluster';
 import { JacksonStream, title as jacksonStreamTitle } from './blog/JacksonStream';
 import { GradleSources, title as gradleTitle } from './blog/GradleSources';
+import { MavenBuildInDocker, title as mavenBuildInDockerTitle } from './blog/MavenBuildInDocker';
 
 function useBlogRoutes() {
   const { path } = useRouteMatch();
   return {
-    jacksonStreaming: `${path}/jacksonStreaming`,
-    minioCluster    : `${path}/minio`,
-    gradleSources   : `${path}/gradleSources`,
-    root            : path,
+    jacksonStreaming  : `${path}/jacksonStreaming`,
+    minioCluster      : `${path}/minio`,
+    gradleSources     : `${path}/gradleSources`,
+    mavenBuildInDocker: `${path}/mavenBuildInDocker`,
+    root              : path,
   };
 }
 
@@ -33,6 +35,9 @@ const BlogPage = () => {
         </ListGroup.Item>
         <ListGroup.Item as={RouterLink} to={routes.gradleSources}>
           {gradleTitle}
+        </ListGroup.Item>
+        <ListGroup.Item as={RouterLink} to={routes.mavenBuildInDocker}>
+          {mavenBuildInDockerTitle}
         </ListGroup.Item>
       </ListGroup>
 
@@ -57,6 +62,7 @@ const Routes = () => {
         <Route exact path={routes.jacksonStreaming} component={JacksonStream} />
         <Route exact path={routes.minioCluster} component={SimpleMinioCluster} />
         <Route exact path={routes.gradleSources} component={GradleSources} />
+        <Route exact path={routes.mavenBuildInDocker} component={MavenBuildInDocker} />
         <Route exact path={routes.root} component={BlogPage} />
         <Route path={'*'}>
           <Redirect to={routes.root} />

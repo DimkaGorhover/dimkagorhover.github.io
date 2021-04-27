@@ -19,3 +19,4 @@ export const Properties = creatCodeComponent('properties');
 export const Shell = creatCodeComponent('shell');
 export const Yaml = creatCodeComponent('yaml');
 export const Nginx = creatCodeComponent('nginx');
+export const Makefile = creatCodeComponent('makefile');
