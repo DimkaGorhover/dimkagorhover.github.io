@@ -57,10 +57,25 @@ education:
     end: 2010-06
 
 experience:
+  - position: Data Platform Lead
+    company: Fozzy Group
+    url: https://fozzy.group
+    location: Remote
+    start: 2021-05
+    tech: Go, Java
+
+  - position: Senior Java Software Engineer
+    company: Grid Dynamics
+    url: https://www.griddynamics.com
+    location: Lviv, Ukraine
+    start: 2020-10
+    end: 2021-08
+
   - position: Full-Stack Engineer
     company: Self-Employed
     location: Lviv, Ukraine
     start: 2020-01
+    end: 2020-09
     highlights:
       - >-
         Personal R&D project — built a Kubernetes cluster on bare metal from
