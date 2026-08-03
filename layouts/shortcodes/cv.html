@@ -1,0 +1,62 @@
+{{- $cv := hugo.Data.cv -}}
+
+<h2 id="about">About</h2>
+<p>
+  Software Engineer with {{ sub now.Year $cv.first_working_year }}+ years of
+  experience, mostly Java and JVM-based languages such as Clojure and Groovy.
+</p>
+{{ range $cv.about }}<p>{{ . }}</p>{{ end }}
+
+<h2 id="contacts">Contacts</h2>
+<ul>
+  {{ range $cv.contacts }}
+  <li>{{ .name }}: <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a></li>
+  {{ end }}
+</ul>
+
+<h2 id="skills">Skills</h2>
+<ul>
+  {{ range $cv.skills }}
+  <li><strong>{{ .name }}:</strong> {{ delimit .items ", " }}</li>
+  {{ end }}
+</ul>
+
+<h2 id="experience">Experience</h2>
+{{ range $cv.experience }}
+<h3>
+  {{ .position }} —
+  {{ if .url }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .company }}</a>{{ else }}{{ .company }}{{ end }}
+</h3>
+<p>
+  <em>
+    {{ partial "cv-date.html" .start }} –
+    {{ with .end }}{{ partial "cv-date.html" . }}{{ else }}Present{{ end }}
+    · {{ .location }}
+  </em>
+</p>
+{{ with .highlights }}
+<ul>
+  {{ range . }}<li>{{ . }}</li>{{ end }}
+</ul>
+{{ end }}
+{{ with .tech }}<p><strong>Tech:</strong> {{ . }}</p>{{ end }}
+{{ end }}
+
+<h2 id="education">Education</h2>
+{{ range $cv.education }}
+<p>
+  <strong>{{ .degree }}</strong> —
+  <a href="{{ .url }}" target="_blank" rel="noopener">{{ .school }}</a><br />
+  <em>{{ partial "cv-date.html" .start }} – {{ partial "cv-date.html" .end }} · {{ .location }}</em>
+</p>
+{{ end }}
+
+<h2 id="languages">Languages</h2>
+<ul>
+  {{ range $cv.languages }}
+  <li><strong>{{ .name }}:</strong> {{ .level }}</li>
+  {{ end }}
+</ul>
+
+<h2 id="hobbies">Hobbies</h2>
+<p>{{ delimit $cv.hobbies ", " }}</p>

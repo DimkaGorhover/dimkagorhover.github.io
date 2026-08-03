@@ -1,0 +1,27 @@
+disabled = false
+locale = "en"
+label = "English"
+weight = 1
+title = "Dmytro Horkhover"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Personal site of Dmytro Horkhover — Software Engineer (Java/JVM)"
+
+[params.author]
+  name = "Dmytro Horkhover"
+  email = "gd.mail.89@gmail.com"
+  image = "img/author.jpg"
+  imageQuality = 96
+  headline = "Software Engineer — Java / JVM"
+  bio = "Passionate about Java, JVM, performance, benchmarking, data structures and reactive streams."
+  links = [
+    { email = "mailto:gd.mail.89@gmail.com" },
+    { github = "https://github.com/DimkaGorhover" },
+    { linkedin = "https://www.linkedin.com/in/dmitriy-gorkhover/" },
+    { telegram = "https://t.me/hdmytro" },
+    { x-twitter = "https://twitter.com/dghover" },
+  ]

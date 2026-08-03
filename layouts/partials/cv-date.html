@@ -1,0 +1,4 @@
+{{- /* Formats "YYYY-MM" as "Jan YYYY". */ -}}
+{{- $p := split . "-" -}}
+{{- $months := slice "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec" -}}
+{{- index $months (sub (int (strings.TrimLeft "0" (index $p 1))) 1) }} {{ index $p 0 -}}

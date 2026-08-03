@@ -1,100 +1,78 @@
-# CV and reactjs playground
+# dimkagorhover.github.io
 
-## Run server locally
+Personal site: CV + blog. Static site built with [Hugo](https://gohugo.io/)
+and the [Blowfish](https://blowfish.page/) theme, deployed to GitHub Pages.
 
-```bash
-yarn start
+## Prerequisites
+
+- [Hugo](https://gohugo.io/installation/) extended, v0.158.0+ (`brew install hugo`)
+- Clone with submodules: `git clone --recurse-submodules` (or run
+  `git submodule update --init` after a plain clone — the theme lives in
+  `themes/blowfish`)
+
+## Everyday tasks
+
+| Task | How |
+|------|-----|
+| Run locally | `make serve` → <http://localhost:1313> (drafts included) |
+| Add a CV entry | Append to `experience:` in `data/cv.yaml` (newest first) |
+| Write a post | Create `content/posts/<slug>/index.md` (see below) |
+| Production build | `make build` |
+
+## Writing a post
+
+```
+content/posts/my-post/
+└─ index.md
 ```
 
-or (if you don't have node pre-installed locally, but you have docker)
+```markdown
+---
+title: "My Post"
+date: 2026-08-03
+tags: ["java"]
+draft: true          # remove when ready to publish
+---
 
-```bash
-make start
+Content here. Images go next to index.md and are referenced by filename.
 ```
 
-## Deploy to Github
+## CV
 
-```bash
-yarn deploy
+All CV content lives in [`data/cv.yaml`](data/cv.yaml) — about, contacts,
+skills, experience, education, languages. The page at `/cv` is rendered from
+it by `layouts/shortcodes/cv.html`. Years of experience are computed from
+`first_working_year`, so they never go stale.
+
+## Colors / theming
+
+The color scheme is set in `config/_default/params.toml`:
+
+```toml
+colorScheme = "ocean"
 ```
 
-or (if you don't have node pre-installed locally, but you have docker)
+Built-in schemes: `blowfish`, `avocado`, `fire`, `ocean`, `forest`,
+`princess`, `neon`, `bloody`, `terminal`, `marvel`, `noir`, `autumn`,
+`congo`, `slate`, `github`, `one-light`. To define your own palette, create
+`assets/css/schemes/<name>.css` (copy one from
+`themes/blowfish/assets/css/schemes/` and change the color values), then set
+`colorScheme = "<name>"`. Docs: <https://blowfish.page/docs/getting-started/#colour-schemes>
 
-```bash
-make deploy
-```
+Other appearance settings (light/dark default, homepage layout, header
+style) are in `params.toml`; author name, headline, bio and social links are
+in `config/_default/languages.en.toml`.
 
-## Some Themes
+## Deployment
 
-[bootswatch - Free themes for Bootstrap](https://bootswatch.com/)
+Every push to `master` triggers `.github/workflows/deploy.yml`, which builds
+the site with Hugo and publishes it via the official GitHub Pages actions.
+No deploy branch, no manual steps.
 
-------
+## Testing locally
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`make serve` for a live preview. For automated verification there is a
+Claude Code skill at `.claude/skills/test-site/` that builds the site and
+drives it in a headless browser
+([agent-browser](https://github.com/vercel-labs/agent-browser)) — in a
+Claude Code session, ask it to "test the site".
