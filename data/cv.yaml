@@ -24,29 +24,11 @@ languages:
 
 contacts:
   - name: Email
-    url: mailto:gd.mail.89@gmail.com
-    label: gd.mail.89@gmail.com
+    url: mailto:hdpmail@pm.me
+    label: hdpmail@pm.me
   - name: LinkedIn
     url: https://www.linkedin.com/in/dmitriy-gorkhover/
     label: dmitriy-gorkhover
-  - name: GitHub
-    url: https://github.com/DimkaGorhover
-    label: DimkaGorhover
-  - name: Telegram
-    url: https://t.me/hdmytro
-    label: hdmytro
-  - name: Twitter
-    url: https://twitter.com/dghover
-    label: dghover
-  - name: Facebook
-    url: https://www.facebook.com/dmitriy.gorhover
-    label: dmitriy.gorhover
-  - name: LeetCode
-    url: https://leetcode.com/dimkagorhover/
-    label: dimkagorhover
-  - name: HackerRank
-    url: https://www.hackerrank.com/gd_mail_89
-    label: gd_mail_89
 
 skills:
   - name: Languages
