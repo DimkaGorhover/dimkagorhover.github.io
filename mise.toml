@@ -1,0 +1,14 @@
+[tools]
+hugo = "0.164.0"
+
+[tasks.serve]
+description = "Local dev server with drafts, http://localhost:1313"
+run = "hugo server --buildDrafts"
+
+[tasks.build]
+description = "Production build into ./public"
+run = "hugo --gc --minify"
+
+[tasks.clean]
+description = "Remove build artifacts"
+run = "rm -rf public resources .hugo_build.lock"

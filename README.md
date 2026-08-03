@@ -5,7 +5,8 @@ and the [Blowfish](https://blowfish.page/) theme, deployed to GitHub Pages.
 
 ## Prerequisites
 
-- [Hugo](https://gohugo.io/installation/) extended, v0.158.0+ (`brew install hugo`)
+- [mise](https://mise.jdx.dev/) (`brew install mise`) — installs the pinned
+  Hugo extended version from `mise.toml` via `mise install`
 - Clone with submodules: `git clone --recurse-submodules` (or run
   `git submodule update --init` after a plain clone — the theme lives in
   `themes/blowfish`)
@@ -14,10 +15,10 @@ and the [Blowfish](https://blowfish.page/) theme, deployed to GitHub Pages.
 
 | Task | How |
 |------|-----|
-| Run locally | `make serve` → <http://localhost:1313> (drafts included) |
+| Run locally | `mise run serve` → <http://localhost:1313> (drafts included) |
 | Add a CV entry | Append to `experience:` in `data/cv.yaml` (newest first) |
 | Write a post | Create `content/posts/<slug>/index.md` (see below) |
-| Production build | `make build` |
+| Production build | `mise run build` |
 
 ## Writing a post
 
@@ -71,7 +72,7 @@ No deploy branch, no manual steps.
 
 ## Testing locally
 
-`make serve` for a live preview. For automated verification there is a
+`mise run serve` for a live preview. For automated verification there is a
 Claude Code skill at `.claude/skills/test-site/` that builds the site and
 drives it in a headless browser
 ([agent-browser](https://github.com/vercel-labs/agent-browser)) — in a
