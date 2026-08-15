@@ -57,7 +57,7 @@ projects:
   - molty
   - openclaw
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: donnemartin/system-design-primer
   url: https://github.com/donnemartin/system-design-primer
@@ -138,7 +138,7 @@ projects:
   - superpowers
   - subagent-driven-development
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: affaan-m/ECC
   url: https://github.com/affaan-m/ECC
@@ -154,7 +154,7 @@ projects:
   - mcp
   - productivity
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: JavaScript
 - id: trimstray/the-book-of-secret-knowledge
   url: https://github.com/trimstray/the-book-of-secret-knowledge
@@ -189,7 +189,7 @@ projects:
   - codex
   - hermes
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Python
 - id: TheAlgorithms/Python
   url: https://github.com/TheAlgorithms/Python
@@ -215,7 +215,7 @@ projects:
   stars: 218142
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: multica-ai/andrej-karpathy-skills
   url: https://github.com/multica-ai/andrej-karpathy-skills
@@ -223,7 +223,7 @@ projects:
   stars: 202675
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
 - id: n8n-io/n8n
   url: https://github.com/n8n-io/n8n
   description: Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
@@ -248,7 +248,7 @@ projects:
   stars: 197704
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   - Tools
   language: TypeScript
 - id: ultraworkers/claw-code
@@ -257,7 +257,7 @@ projects:
   stars: 195048
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Rust
 - id: ohmyzsh/ohmyzsh
   url: https://github.com/ohmyzsh/ohmyzsh
@@ -320,7 +320,7 @@ projects:
   - llama3
   - deepseek
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   - Go
   language: Go
 - id: microsoft/markitdown
@@ -336,7 +336,7 @@ projects:
   - microsoft-office
   - pdf
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   - Python
   language: Python
 - id: anthropics/skills
@@ -346,7 +346,7 @@ projects:
   topics:
   - agent-skills
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Python
 - id: f/prompts.chat
   url: https://github.com/f/prompts.chat
@@ -364,7 +364,7 @@ projects:
   - gpt-4
   - llm
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   - Awesome Lists
   language: HTML
 - id: jlevy/the-art-of-command-line
@@ -414,7 +414,7 @@ projects:
   - rag
   - ai
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: msitarzewski/agency-agents
   url: https://github.com/msitarzewski/agency-agents
@@ -422,7 +422,7 @@ projects:
   stars: 145587
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: vercel/next.js
   url: https://github.com/vercel/next.js
@@ -448,7 +448,7 @@ projects:
   stars: 141547
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Python
 - id: labuladong/fucking-algorithm
   url: https://github.com/labuladong/fucking-algorithm
@@ -476,7 +476,7 @@ projects:
   - python
   - agents
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   - Awesome Lists
   language: Python
 - id: Chalarangelo/30-seconds-of-code
@@ -503,7 +503,7 @@ projects:
   stars: 128099
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: TypeScript
 - id: farion1231/cc-switch
   url: https://github.com/farion1231/cc-switch
@@ -521,7 +521,7 @@ projects:
   - mcp
   - provider-management
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   language: Rust
 - id: kubernetes/kubernetes
   url: https://github.com/kubernetes/kubernetes
@@ -568,7 +568,7 @@ projects:
   - kiro
   - landing-page
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: rust-lang/rust
   url: https://github.com/rust-lang/rust
@@ -685,7 +685,7 @@ projects:
   - leiden
   - rag
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: google-gemini/gemini-cli
   url: https://github.com/google-gemini/gemini-cli
@@ -700,7 +700,7 @@ projects:
   - mcp-client
   - mcp-server
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   - Tools
   language: TypeScript
 - id: openai/codex
@@ -709,7 +709,7 @@ projects:
   stars: 106090
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Rust
 - id: DietrichGebert/ponytail
   url: https://github.com/DietrichGebert/ponytail
@@ -727,7 +727,7 @@ projects:
   - prompt-engineering
   - yagni
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: JavaScript
 - id: mui/material-ui
   url: https://github.com/mui/material-ui
@@ -758,7 +758,7 @@ projects:
   - skill
   - tokens
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Go
 - id: TauricResearch/TradingAgents
   url: https://github.com/TauricResearch/TradingAgents
@@ -771,7 +771,7 @@ projects:
   - multiagent
   - trading
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: nvbn/thefuck
   url: https://github.com/nvbn/thefuck
@@ -825,14 +825,14 @@ projects:
   - ai
   - mcp
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Awesome Lists
 - id: deepseek-ai/DeepSeek-R1
   url: https://github.com/deepseek-ai/DeepSeek-R1
   stars: 92021
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
 - id: thedotmack/claude-mem
   url: https://github.com/thedotmack/claude-mem
   description: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More
@@ -849,7 +849,7 @@ projects:
   - claude-code
   - claude-code-plugin
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: JavaScript
 - id: earendil-works/pi
   url: https://github.com/earendil-works/pi
@@ -857,7 +857,7 @@ projects:
   stars: 90797
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: louislam/uptime-kuma
   url: https://github.com/louislam/uptime-kuma
@@ -900,7 +900,7 @@ projects:
   stars: 89580
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: TypeScript
 - id: sherlock-project/sherlock
   url: https://github.com/sherlock-project/sherlock
@@ -918,7 +918,6 @@ projects:
   - information-gathering
   - hacktoberfest
   categories:
-  - AI & LLMs
   - Tools
   language: Python
 - id: gohugoio/hugo
@@ -999,7 +998,7 @@ projects:
   - skills
   - codex
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: JavaScript
 - id: ByteByteGoHq/system-design-101
   url: https://github.com/ByteByteGoHq/system-design-101
@@ -1070,7 +1069,7 @@ projects:
   - agent
   - mcp
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: jesseduffield/lazygit
   url: https://github.com/jesseduffield/lazygit
@@ -1129,7 +1128,7 @@ projects:
   - langgraph
   - llm
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Python
 - id: anuraghazra/github-readme-stats
   url: https://github.com/anuraghazra/github-readme-stats
@@ -1168,7 +1167,7 @@ projects:
   stars: 78192
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   - Tools
   language: Python
 - id: opendatalab/MinerU
@@ -1205,7 +1204,7 @@ projects:
   - llms
   - agent
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: MDX
 - id: grafana/grafana
   url: https://github.com/grafana/grafana
@@ -1242,7 +1241,7 @@ projects:
   - llm
   - open-source
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   language: Rust
 - id: caddyserver/caddy
   url: https://github.com/caddyserver/caddy
@@ -1345,7 +1344,7 @@ projects:
   - cursor
   - gemini-cli
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Python
 - id: NationalSecurityAgency/ghidra
   url: https://github.com/NationalSecurityAgency/ghidra
@@ -1423,7 +1422,7 @@ projects:
   - multi-agent
   - ai-assistant
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: TypeScript
 - id: code-yeongyu/oh-my-openagent
   url: https://github.com/code-yeongyu/oh-my-openagent
@@ -1441,7 +1440,7 @@ projects:
   - openai
   - orchestration
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: BurntSushi/ripgrep
   url: https://github.com/BurntSushi/ripgrep
@@ -1542,7 +1541,7 @@ projects:
   - specification
   - sdd
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: TypeScript
 - id: microsoft/AI-For-Beginners
   url: https://github.com/microsoft/AI-For-Beginners
@@ -1560,7 +1559,7 @@ projects:
   - gan
   - microsoft-for-beginners
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   - Education
   language: Jupyter Notebook
 - id: nocodb/nocodb
@@ -1597,7 +1596,7 @@ projects:
   - claude-code-commands
   - claude-code-skills
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: HTML
 - id: traefik/traefik
   url: https://github.com/traefik/traefik
@@ -1651,7 +1650,7 @@ projects:
   - interview-prep
   - job-search
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: JavaScript
 - id: scrapy/scrapy
   url: https://github.com/scrapy/scrapy
@@ -1721,7 +1720,7 @@ projects:
   - generative-ai
   - google
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: JavaScript
 - id: pathwaycom/pathway
   url: https://github.com/pathwaycom/pathway
@@ -1770,7 +1769,7 @@ projects:
   - mcp-server
   - vibe-coding
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: TypeScript
 - id: tw93/Pake
   url: https://github.com/tw93/Pake
@@ -1929,7 +1928,7 @@ projects:
   - memory
   - python
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: mvanhorn/last30days-skill
   url: https://github.com/mvanhorn/last30days-skill
@@ -1947,7 +1946,7 @@ projects:
   - youtube
   - ai-skill
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: deepfakes/faceswap
   url: https://github.com/deepfakes/faceswap
@@ -1965,7 +1964,7 @@ projects:
   - fakeapp
   - neural-networks
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
 - id: go-gitea/gitea
   url: https://github.com/go-gitea/gitea
@@ -2037,7 +2036,7 @@ projects:
   - ai
   - ai-agents
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Rust
 - id: jesseduffield/lazydocker
   url: https://github.com/jesseduffield/lazydocker
@@ -2081,7 +2080,7 @@ projects:
   - agentic-code
   - agentic-coding
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Python
 - id: usestrix/strix
   url: https://github.com/usestrix/strix
@@ -2099,7 +2098,6 @@ projects:
   - ctf-tools
   - cybersecurity-tools
   categories:
-  - AI & LLMs
   - Security
   language: Python
 - id: etcd-io/etcd
@@ -2138,14 +2136,14 @@ projects:
   - openclaw
   - openclaw-skills
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
 - id: bmad-code-org/BMAD-METHOD
   url: https://github.com/bmad-code-org/BMAD-METHOD
   description: Breakthrough Method for Agile Ai Driven Development
   stars: 51936
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: JavaScript
 - id: google/guava
   url: https://github.com/google/guava
@@ -2290,7 +2288,7 @@ projects:
   - audio-generation
   - image-generation
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Go
 - id: ReactiveX/RxJava
   url: https://github.com/ReactiveX/RxJava
@@ -2376,7 +2374,7 @@ projects:
   - codex
   - antigravity
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   - Go
   language: Go
 - id: slab/quill
@@ -2419,7 +2417,7 @@ projects:
   - llms
   - local-llm
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Python
 - id: KeygraphHQ/shannon
   url: https://github.com/KeygraphHQ/shannon
@@ -2437,7 +2435,6 @@ projects:
   - ethical-hacking
   - offensive-security
   categories:
-  - AI & LLMs
   - Security
   - Tools
   language: TypeScript
@@ -2457,7 +2454,7 @@ projects:
   - generative-ai
   - llm
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   - Education
   language: Python
 - id: microsoft/monaco-editor
@@ -2580,7 +2577,7 @@ projects:
   - gemini-cli
   - skill-library
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Python
 - id: vercel/hyper
   url: https://github.com/vercel/hyper
@@ -2765,7 +2762,7 @@ projects:
   - guide
   - tutorial
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Python
 - id: ashishps1/awesome-system-design-resources
   url: https://github.com/ashishps1/awesome-system-design-resources
@@ -2935,7 +2932,7 @@ projects:
   - cowork
   - deepseek
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Databases
   language: Makefile
 - id: ToolJet/ToolJet
@@ -2980,7 +2977,7 @@ projects:
   - docling
   - mineru
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: RSSNext/Folo
   url: https://github.com/RSSNext/Folo
@@ -3057,7 +3054,7 @@ projects:
   - multi-agent-systems
   - parallel-execution
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: kilimchoi/engineering-blogs
   url: https://github.com/kilimchoi/engineering-blogs
@@ -3140,7 +3137,7 @@ projects:
   - awesome
   - custom-agents
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   - Awesome Lists
   language: Python
 - id: PostHog/posthog
@@ -3167,7 +3164,7 @@ projects:
   stars: 37675
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Jupyter Notebook
 - id: bojieli/ai-agent-book
   url: https://github.com/bojieli/ai-agent-book
@@ -3185,7 +3182,7 @@ projects:
   - mcp
   - multi-agent
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Python
 - id: aquasecurity/trivy
   url: https://github.com/aquasecurity/trivy
@@ -3296,7 +3293,7 @@ projects:
   stars: 36300
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Rust
 - id: AdguardTeam/AdGuardHome
   url: https://github.com/AdguardTeam/AdGuardHome
@@ -3380,7 +3377,7 @@ projects:
   - clawdbot
   - cli-tool
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: alan2207/bulletproof-react
   url: https://github.com/alan2207/bulletproof-react
@@ -3495,7 +3492,7 @@ projects:
   - retrieval
   - retrieval-augmented-generation
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: netty/netty
   url: https://github.com/netty/netty
@@ -3770,7 +3767,7 @@ projects:
   stars: 32674
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: labstack/echo
   url: https://github.com/labstack/echo
@@ -3804,7 +3801,7 @@ projects:
   - os
   - zeroclaw
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Rust
 - id: shadps4-emu/shadPS4
   url: https://github.com/shadps4-emu/shadPS4
@@ -3873,7 +3870,7 @@ projects:
   - developer-tools
   - nextjs
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: JavaScript
 - id: facebook/rocksdb
   url: https://github.com/facebook/rocksdb
@@ -3906,7 +3903,7 @@ projects:
   stars: 31904
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: JavaScript
 - id: dandavison/delta
   url: https://github.com/dandavison/delta
@@ -3958,7 +3955,7 @@ projects:
   - ai
   - llm
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: jumpserver/jumpserver
   url: https://github.com/jumpserver/jumpserver
@@ -4100,7 +4097,7 @@ projects:
   - mcp
   - python
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Investment
   language: Python
 - id: herrbischoff/awesome-macos-command-line
@@ -4144,7 +4141,7 @@ projects:
   - cli
   - coding
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: nanocoai/nanoclaw
   url: https://github.com/nanocoai/nanoclaw
@@ -4157,7 +4154,7 @@ projects:
   - claude-skills
   - openclaw
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: spf13/viper
   url: https://github.com/spf13/viper
@@ -4216,7 +4213,7 @@ projects:
   - stock-market
   - opensource
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Investment
   language: C++
 - id: CloakHQ/CloakBrowser
@@ -4235,7 +4232,7 @@ projects:
   - stealth-browser
   - web-scraping
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: Python
 - id: sipeed/picoclaw
   url: https://github.com/sipeed/picoclaw
@@ -4243,7 +4240,7 @@ projects:
   stars: 29858
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Go
   language: Go
 - id: apolloconfig/apollo
@@ -4332,7 +4329,7 @@ projects:
   - ai
   - transcription
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Tools
   language: Rust
 - id: goharbor/harbor
@@ -4370,7 +4367,7 @@ projects:
   - embeddings
   - nlp
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Jupyter Notebook
 - id: supermemoryai/supermemory
   url: https://github.com/supermemoryai/supermemory
@@ -4388,7 +4385,7 @@ projects:
   - vite
   - agent-memory
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: TypeScript
 - id: voideditor/void
   url: https://github.com/voideditor/void
@@ -4405,7 +4402,7 @@ projects:
   - openai
   - visual-studio-code
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   - Tools
   language: TypeScript
   archived: true
@@ -4555,7 +4552,7 @@ projects:
   - self-evolving
   - agent-plugins
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: garrytan/gbrain
   url: https://github.com/garrytan/gbrain
@@ -4563,7 +4560,7 @@ projects:
   stars: 28472
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: TypeScript
 - id: opendataloader-project/opendataloader-pdf
   url: https://github.com/opendataloader-project/opendataloader-pdf
@@ -4581,7 +4578,7 @@ projects:
   - pdf-parser
   - rag
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: Java
 - id: netbirdio/netbird
   url: https://github.com/netbirdio/netbird
@@ -4635,7 +4632,7 @@ projects:
   - claude-code
   - codex
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Python
 - id: mukul975/Anthropic-Cybersecurity-Skills
   url: https://github.com/mukul975/Anthropic-Cybersecurity-Skills
@@ -4653,7 +4650,8 @@ projects:
   - cloud-security
   - malware-analysis
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
+  - Security
   language: Python
 - id: p-e-w/heretic
   url: https://github.com/p-e-w/heretic
@@ -4664,7 +4662,7 @@ projects:
   - llm
   - transformer
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
 - id: facebook/zstd
   url: https://github.com/facebook/zstd
@@ -4680,7 +4678,7 @@ projects:
   stars: 27520
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: trufflesecurity/trufflehog
   url: https://github.com/trufflesecurity/trufflehog
@@ -4726,7 +4724,7 @@ projects:
   - statusline
   - typescript
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: JavaScript
 - id: charmbracelet/crush
   url: https://github.com/charmbracelet/crush
@@ -4738,7 +4736,7 @@ projects:
   - llms
   - ravishing
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   - Tools
   language: Go
 - id: hcengineering/platform
@@ -4795,7 +4793,7 @@ projects:
   - genai
   - harness
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: TypeScript
 - id: rethinkdb/rethinkdb
   url: https://github.com/rethinkdb/rethinkdb
@@ -5183,7 +5181,7 @@ projects:
   - codex
   - copilot
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   language: JavaScript
 - id: gocolly/colly
   url: https://github.com/gocolly/colly
@@ -5217,7 +5215,7 @@ projects:
   - rag
   - 12-factor
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: TypeScript
 - id: gpakosz/.tmux
   url: https://github.com/gpakosz/.tmux
@@ -5250,14 +5248,14 @@ projects:
   - claude-code-plugins
   - claude-cowork-plugin
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
 - id: xai-org/grok-build
   url: https://github.com/xai-org/grok-build
   description: SpaceXAI's coding agent harness and TUI. Fullscreen, mouse interactive, extensible.
   stars: 25277
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: Rust
 - id: tsenart/vegeta
   url: https://github.com/tsenart/vegeta
@@ -5303,7 +5301,7 @@ projects:
   - claude
   - mcp
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: cilium/cilium
   url: https://github.com/cilium/cilium
@@ -5399,7 +5397,7 @@ projects:
   - awesome
   - awesome-list
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: letta-ai/letta
   url: https://github.com/letta-ai/letta
@@ -5411,7 +5409,7 @@ projects:
   - ai
   - ai-agents
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Python
 - id: urfave/cli
   url: https://github.com/urfave/cli
@@ -5484,7 +5482,7 @@ projects:
   stars: 23493
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: Python
 - id: valyala/fasthttp
   url: https://github.com/valyala/fasthttp
@@ -5817,7 +5815,7 @@ projects:
   stars: 22282
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: gildas-lormeau/SingleFile
   url: https://github.com/gildas-lormeau/SingleFile
@@ -5887,8 +5885,8 @@ projects:
   - security-automation
   - security-testing
   categories:
-  - AI & LLMs
   - Go
+  - Security
   language: Go
 - id: dgraph-io/dgraph
   url: https://github.com/dgraph-io/dgraph
@@ -5908,7 +5906,7 @@ projects:
   stars: 21749
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: lima-vm/lima
   url: https://github.com/lima-vm/lima
@@ -5981,7 +5979,7 @@ projects:
   - puppeteer
   - rust
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: Rust
 - id: dockur/macos
   url: https://github.com/dockur/macos
@@ -6035,7 +6033,7 @@ projects:
   - mlops
   - production
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Jupyter Notebook
 - id: vitessio/vitess
   url: https://github.com/vitessio/vitess
@@ -6195,7 +6193,7 @@ projects:
   - repository-level-context
   - agent-skills
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Go
 - id: nats-io/nats-server
   url: https://github.com/nats-io/nats-server
@@ -6310,7 +6308,7 @@ projects:
   - antigravity
   - kiro
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: TypeScript
 - id: bluenviron/mediamtx
   url: https://github.com/bluenviron/mediamtx
@@ -6443,7 +6441,7 @@ projects:
   stars: 18827
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: golang-migrate/migrate
   url: https://github.com/golang-migrate/migrate
@@ -6549,7 +6547,7 @@ projects:
   stars: 18198
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: HTML
 - id: TheAlgorithms/Go
   url: https://github.com/TheAlgorithms/Go
@@ -6601,7 +6599,7 @@ projects:
   - ai
   - onnx
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
 - id: unixorn/awesome-zsh-plugins
   url: https://github.com/unixorn/awesome-zsh-plugins
@@ -6683,7 +6681,7 @@ projects:
   stars: 17735
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Python
 - id: jmoiron/sqlx
   url: https://github.com/jmoiron/sqlx
@@ -6871,7 +6869,7 @@ projects:
   - modelcontextprotocol
   - python
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Jupyter Notebook
 - id: argoproj/argo-workflows
   url: https://github.com/argoproj/argo-workflows
@@ -7468,7 +7466,7 @@ projects:
   - agentic-coding
   - anthropic
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   - Awesome Lists
 - id: dwarvesf/hidden
   url: https://github.com/dwarvesf/hidden
@@ -7784,7 +7782,7 @@ projects:
   - self-evolving
   - metaclaw
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: cert-manager/cert-manager
   url: https://github.com/cert-manager/cert-manager
@@ -7916,7 +7914,7 @@ projects:
   - web-automation
   - manus
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: TypeScript
 - id: tink-crypto/tink
   url: https://github.com/tink-crypto/tink
@@ -7948,7 +7946,7 @@ projects:
   stars: 13362
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: C#
 - id: dbcli/pgcli
   url: https://github.com/dbcli/pgcli
@@ -8071,7 +8069,7 @@ projects:
   - system-design
   - html-diagram
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: HTML
 - id: rmyndharis/OpenWA
   url: https://github.com/rmyndharis/OpenWA
@@ -8199,7 +8197,7 @@ projects:
   - speech-to-text
   - speech-translation
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
 - id: Snapchat/KeyDB
   url: https://github.com/Snapchat/KeyDB
@@ -8336,7 +8334,7 @@ projects:
   - aiops
   - workflow-automation
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Python
 - id: FelixKratz/SketchyBar
   url: https://github.com/FelixKratz/SketchyBar
@@ -8662,7 +8660,7 @@ projects:
   - rust
   - semantic-search
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: Rust
 - id: php/frankenphp
   url: https://github.com/php/frankenphp
@@ -8867,7 +8865,7 @@ projects:
   stars: 10799
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
 - id: fsnotify/fsnotify
   url: https://github.com/fsnotify/fsnotify
@@ -9034,7 +9032,7 @@ projects:
   - mcp
   - ai-coding
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: JavaScript
 - id: stakater/Reloader
   url: https://github.com/stakater/Reloader
@@ -9079,7 +9077,7 @@ projects:
   - macos
   - swift
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Tools
   language: Swift
 - id: devhubapp/devhub
@@ -9196,7 +9194,7 @@ projects:
   stars: 9960
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
 - id: rgcr/m-cli
   url: https://github.com/rgcr/m-cli
   description: ' Swiss Army Knife for macOS '
@@ -9217,7 +9215,7 @@ projects:
   stars: 9889
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
 - id: aphyr/distsys-class
   url: https://github.com/aphyr/distsys-class
   description: Class materials for a distributed systems lecture series
@@ -9349,7 +9347,7 @@ projects:
   - golang
   - langchain
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   - Go
   language: Go
 - id: awslabs/mcp
@@ -9367,7 +9365,7 @@ projects:
   - mcp-tools
   - modelcontextprotocol
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Cloud
   language: Python
 - id: reviewdog/reviewdog
@@ -9423,7 +9421,7 @@ projects:
   - token-usage
   - cursor-ide
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   - Tools
   language: TypeScript
 - id: canonical/microk8s
@@ -9447,7 +9445,7 @@ projects:
   stars: 9303
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Python
   archived: true
 - id: kubernetes-sigs/kubebuilder
@@ -9836,7 +9834,7 @@ projects:
   stars: 8625
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: TypeScript
 - id: jo-inc/camofox-browser
   url: https://github.com/jo-inc/camofox-browser
@@ -9854,7 +9852,7 @@ projects:
   - javascript
   - nodejs
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   - Tools
   language: JavaScript
 - id: ko-build/ko
@@ -9914,7 +9912,7 @@ projects:
   - sapling
   - terminal
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   - Tools
   language: TypeScript
 - id: thesysdev/openui
@@ -9931,7 +9929,7 @@ projects:
   - help-wanted
   - looking-for-contributors
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   - Frontend
   language: TypeScript
 - id: metallb/metallb
@@ -9980,7 +9978,7 @@ projects:
   - generative-ai
   - html
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: HTML
 - id: cloudflare/cloudflare-os
   url: https://github.com/cloudflare/cloudflare-os
@@ -9988,7 +9986,7 @@ projects:
   stars: 8303
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: usekaneo/kaneo
   url: https://github.com/usekaneo/kaneo
@@ -10125,7 +10123,7 @@ projects:
   - opencode
   - orchestration
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: kyverno/kyverno
   url: https://github.com/kyverno/kyverno
@@ -10177,7 +10175,7 @@ projects:
   - personal
   - zig
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Zig
 - id: fatih/color
   url: https://github.com/fatih/color
@@ -10316,7 +10314,7 @@ projects:
   - graph-rag
   - knowledge-graph
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Python
 - id: backnotprop/plannotator
   url: https://github.com/backnotprop/plannotator
@@ -10333,7 +10331,7 @@ projects:
   - code-review
   - skills
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: adithya-s-k/omniparse
   url: https://github.com/adithya-s-k/omniparse
@@ -10349,7 +10347,7 @@ projects:
   - web-crawler
   - whisper-api
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   language: Python
 - id: woodpecker-ci/woodpecker
   url: https://github.com/woodpecker-ci/woodpecker
@@ -10372,7 +10370,6 @@ projects:
   stars: 7645
   topics: []
   categories:
-  - AI & LLMs
   - Security
   language: TypeScript
 - id: uber-go/fx
@@ -10436,7 +10433,7 @@ projects:
   - cli
   - kubernetes
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Kubernetes
   - Tools
   language: Go
@@ -10513,7 +10510,7 @@ projects:
   - pixel-art
   - status-visiualzation
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: HTML
 - id: Col-E/Recaf
   url: https://github.com/Col-E/Recaf
@@ -10896,7 +10893,7 @@ projects:
   stars: 6804
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Shell
 - id: olimorris/codecompanion.nvim
   url: https://github.com/olimorris/codecompanion.nvim
@@ -10914,7 +10911,7 @@ projects:
   - llm
   - nvim
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   - Tools
   language: Lua
 - id: external-secrets/external-secrets
@@ -11078,7 +11075,7 @@ projects:
   - gemini
   - ocr-recognition
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: trailofbits/skills
   url: https://github.com/trailofbits/skills
@@ -11087,7 +11084,8 @@ projects:
   topics:
   - agent-skills
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
+  - Security
   language: Python
 - id: shuaibiyy/awesome-tf
   url: https://github.com/shuaibiyy/awesome-tf
@@ -11109,7 +11107,7 @@ projects:
   stars: 6552
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: xataio/pgroll
   url: https://github.com/xataio/pgroll
@@ -11132,7 +11130,7 @@ projects:
   stars: 6542
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   language: Jupyter Notebook
 - id: steipete/agent-scripts
   url: https://github.com/steipete/agent-scripts
@@ -11141,7 +11139,7 @@ projects:
   topics:
   - ai-agents
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: k3d-io/k3d
   url: https://github.com/k3d-io/k3d
@@ -11345,7 +11343,7 @@ projects:
   - inference
   - ollama
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
   - Tools
   language: Python
 - id: vmware-archive/octant
@@ -11528,7 +11526,7 @@ projects:
   stars: 6022
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: JavaScript
 - id: prometheus/client_golang
   url: https://github.com/prometheus/client_golang
@@ -11544,7 +11542,7 @@ projects:
   stars: 6011
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: Go
 - id: MontFerret/ferret
   url: https://github.com/MontFerret/ferret
@@ -11649,7 +11647,7 @@ projects:
   - macos-app
   - swift
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Tools
   language: Swift
 - id: volcano-sh/volcano
@@ -11681,7 +11679,7 @@ projects:
   - jira
   - mcp
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Python
 - id: letsencrypt/boulder
   url: https://github.com/letsencrypt/boulder
@@ -11791,7 +11789,7 @@ projects:
   - durable-objects
   - workflows
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   - Frontend
   language: TypeScript
 - id: grafana/tempo
@@ -11838,7 +11836,7 @@ projects:
   - opensource
   - orchestration
   categories:
-  - AI & LLMs
+  - AI · Coding Agents
   language: TypeScript
 - id: LFDT-web3j/web3j
   url: https://github.com/LFDT-web3j/web3j
@@ -12252,7 +12250,7 @@ projects:
   - skills
   - awsome-list
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
 - id: querydsl/querydsl
   url: https://github.com/querydsl/querydsl
   description: Unified Queries for Java
@@ -12273,7 +12271,7 @@ projects:
   - developer-platform
   - gemini
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   - Go
   language: Go
 - id: mock-server/mockserver-monorepo
@@ -12575,7 +12573,7 @@ projects:
   - claude-commands
   - claude-desktop
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Python
 - id: tmux-python/tmuxp
   url: https://github.com/tmux-python/tmuxp
@@ -12668,7 +12666,7 @@ projects:
   - standards
   - web-components
   categories:
-  - AI & LLMs
+  - Frontend
   language: MDX
 - id: bitnami/containers
   url: https://github.com/bitnami/containers
@@ -12690,7 +12688,7 @@ projects:
   stars: 4433
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: MuhammedKalkan/OpenLens
   url: https://github.com/MuhammedKalkan/OpenLens
@@ -12714,7 +12712,7 @@ projects:
   - wasm
   - webassembly
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Rust
 - id: kubero-dev/kubero
   url: https://github.com/kubero-dev/kubero
@@ -12759,7 +12757,7 @@ projects:
   stars: 4379
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Document & Web Extraction
   - Tools
   language: TypeScript
 - id: agentgateway/agentgateway
@@ -12778,7 +12776,7 @@ projects:
   - reverse-proxy
   - service-mesh
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Rust
 - id: openziti/ziti
   url: https://github.com/openziti/ziti
@@ -13087,7 +13085,7 @@ projects:
   - gemini
   - multi-ai
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: Shell
 - id: 0xNyk/council-of-high-intelligence
   url: https://github.com/0xNyk/council-of-high-intelligence
@@ -13146,7 +13144,7 @@ projects:
   stars: 3887
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Python
 - id: Adembc/lazyssh
   url: https://github.com/Adembc/lazyssh
@@ -13236,7 +13234,7 @@ projects:
   stars: 3795
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Markdown
 - id: undertow-io/undertow
   url: https://github.com/undertow-io/undertow
@@ -13262,7 +13260,7 @@ projects:
   stars: 3713
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: TypeScript
 - id: browserbase/skills
   url: https://github.com/browserbase/skills
@@ -13270,7 +13268,7 @@ projects:
   stars: 3691
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: JavaScript
 - id: doitintl/kube-no-trouble
   url: https://github.com/doitintl/kube-no-trouble
@@ -13600,7 +13598,7 @@ projects:
   stars: 3357
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Go
 - id: dockersamples/docker-swarm-visualizer
   url: https://github.com/dockersamples/docker-swarm-visualizer
@@ -13809,7 +13807,7 @@ projects:
   stars: 3192
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Databases
   - SQL
   language: Python
@@ -14059,7 +14057,7 @@ projects:
   - ai-agents
   - ai-tools
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Python
 - id: OpenHFT/Chronicle-Map
   url: https://github.com/OpenHFT/Chronicle-Map
@@ -14085,7 +14083,7 @@ projects:
   - data-engineering
   - huggingface
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Jupyter Notebook
 - id: samber/cc-skills-golang
   url: https://github.com/samber/cc-skills-golang
@@ -14103,7 +14101,7 @@ projects:
   - copilot
   - cursor
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   - Go
   language: Go
 - id: dakshshah96/awesome-startup-credits
@@ -14183,7 +14181,7 @@ projects:
   stars: 2869
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: event-catalog/eventcatalog
   url: https://github.com/event-catalog/eventcatalog
@@ -14488,7 +14486,7 @@ projects:
   - skills
   - workers
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: nolar/kopf
   url: https://github.com/nolar/kopf
@@ -14561,7 +14559,7 @@ projects:
   - self-hosted
   - mcp-to-openapi
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Tools
   language: TypeScript
 - id: hashicorp/go-multierror
@@ -14601,7 +14599,7 @@ projects:
   stars: 2546
   topics: []
   categories:
-  - AI & LLMs
+  - Security
   language: Python
 - id: danielqsj/kafka_exporter
   url: https://github.com/danielqsj/kafka_exporter
@@ -14648,7 +14646,7 @@ projects:
   stars: 2497
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: facebookincubator/below
   url: https://github.com/facebookincubator/below
@@ -14837,7 +14835,7 @@ projects:
   - speech-to-text
   - transcription
   categories:
-  - AI & LLMs
+  - AI · Models & Inference
 - id: VictoriaMetrics/fastcache
   url: https://github.com/VictoriaMetrics/fastcache
   description: Fast thread-safe inmemory cache for big number of entries in Go. Minimizes GC overhead
@@ -14997,7 +14995,7 @@ projects:
   - claude-code
   - agent-skills
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
 - id: MarquezProject/marquez
   url: https://github.com/MarquezProject/marquez
   description: Collect, aggregate, and visualize a data ecosystem's metadata
@@ -15064,6 +15062,16 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: huseyinbabal/taws
+  url: https://github.com/huseyinbabal/taws
+  description: Terminal UI for AWS (taws) - A terminal-based AWS resource viewer and manager
+  stars: 2247
+  topics: []
+  categories:
+  - Cloud
+  - Rust
+  - Tools
+  language: Rust
 - id: plibither8/2048.cpp
   url: https://github.com/plibither8/2048.cpp
   description: 🎮 Fully featured terminal version of the game "2048" written in C++
@@ -15446,7 +15454,7 @@ projects:
   - modelcontextprotocol
   - kubernetes-mcp
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Kubernetes
   language: Go
 - id: David-Crty/databasement
@@ -15574,7 +15582,7 @@ projects:
   - claude-code-plugin
   - claude-code-plugin-marketplace
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   - Awesome Lists
   language: JavaScript
 - id: zereight/gitlab-mcp
@@ -15583,7 +15591,7 @@ projects:
   stars: 1889
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: TypeScript
 - id: denisenkom/go-mssqldb
   url: https://github.com/denisenkom/go-mssqldb
@@ -15747,7 +15755,7 @@ projects:
   - slack-api
   - govslack
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Go
 - id: kubetail-org/kubetail
   url: https://github.com/kubetail-org/kubetail
@@ -16018,7 +16026,7 @@ projects:
   - codex-cli
   - coding-agents
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: kdl-org/kdl
   url: https://github.com/kdl-org/kdl
@@ -16108,7 +16116,7 @@ projects:
   - agent
   - ai-agent
   categories:
-  - AI & LLMs
+  - AI · Memory, Context & RAG
   language: TypeScript
 - id: pyrra-dev/pyrra
   url: https://github.com/pyrra-dev/pyrra
@@ -16137,7 +16145,7 @@ projects:
   - mcp
   - server
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Kubernetes
   language: TypeScript
 - id: BemiHQ/BemiDB
@@ -16310,7 +16318,7 @@ projects:
   - search
   - telegram
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Python
 - id: hawtio/hawtio
   url: https://github.com/hawtio/hawtio
@@ -16447,7 +16455,7 @@ projects:
   - threat-detection
   - claude
   categories:
-  - AI & LLMs
+  - Security
   language: Python
 - id: Shopify/krane
   url: https://github.com/Shopify/krane
@@ -16788,7 +16796,7 @@ projects:
   stars: 1238
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: TypeScript
 - id: lacymorrow/crossover
   url: https://github.com/lacymorrow/crossover
@@ -16900,7 +16908,7 @@ projects:
   stars: 1173
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Go
 - id: pentaho/mondrian
   url: https://github.com/pentaho/mondrian
@@ -16929,7 +16937,7 @@ projects:
   stars: 1160
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Ruby
 - id: jattach/jattach
   url: https://github.com/jattach/jattach
@@ -16986,7 +16994,7 @@ projects:
   stars: 1146
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: Yazelix/nova
   url: https://github.com/Yazelix/nova
@@ -17069,7 +17077,8 @@ projects:
   - mitre-attack
   - model-context-protocol
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
+  - Security
   language: Python
 - id: njpatel/grpcc
   url: https://github.com/njpatel/grpcc
@@ -17165,7 +17174,7 @@ projects:
   stars: 1095
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: Swift
 - id: pgjdbc/r2dbc-postgresql
   url: https://github.com/pgjdbc/r2dbc-postgresql
@@ -17288,7 +17297,7 @@ projects:
   - learning
   - vibecoding
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Shell
 - id: immanuwell/dockerfile-roast
   url: https://github.com/immanuwell/dockerfile-roast
@@ -17477,7 +17486,7 @@ projects:
   - productivity
   - prompt-engineering
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Shell
 - id: stateless4j/stateless4j
   url: https://github.com/stateless4j/stateless4j
@@ -17534,7 +17543,7 @@ projects:
   stars: 913
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: TypeScript
 - id: FLOCK4H/Freeway
   url: https://github.com/FLOCK4H/Freeway
@@ -17604,7 +17613,7 @@ projects:
   stars: 868
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
 - id: cybertec-postgresql/pgwatch
   url: https://github.com/cybertec-postgresql/pgwatch
   description: '🔬pgwatch: PostgreSQL metrics monitor/dashboard '
@@ -17659,7 +17668,7 @@ projects:
   - prompt-engineering
   - research-papers
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
 - id: OpenHFT/Zero-Allocation-Hashing
   url: https://github.com/OpenHFT/Zero-Allocation-Hashing
   description: Zero-allocation hashing for Java
@@ -18032,7 +18041,7 @@ projects:
   - developer-tools
   - java
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: Vrun-design/openflowkit
   url: https://github.com/Vrun-design/openflowkit
@@ -18099,7 +18108,7 @@ projects:
   - automation
   - developer-tools
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: JavaScript
 - id: segmentio/topicctl
   url: https://github.com/segmentio/topicctl
@@ -18261,7 +18270,7 @@ projects:
   stars: 574
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
 - id: argoproj-labs/argocd-agent
   url: https://github.com/argoproj-labs/argocd-agent
   description: Redefining the multi cluster story of Argo CD
@@ -18335,7 +18344,7 @@ projects:
   - typescript
   - opencode-plugin
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: Azure/karpenter-provider-azure
   url: https://github.com/Azure/karpenter-provider-azure
@@ -18463,7 +18472,7 @@ projects:
   stars: 528
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: tak-bro/aicommit2
   url: https://github.com/tak-bro/aicommit2
@@ -18481,7 +18490,7 @@ projects:
   - mistral
   - groq
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Tools
   language: TypeScript
 - id: truecourse-ai/truecourse
@@ -18500,7 +18509,7 @@ projects:
   - javascript
   - python
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   language: TypeScript
 - id: ClickHouse/agent-skills
   url: https://github.com/ClickHouse/agent-skills
@@ -18510,7 +18519,7 @@ projects:
   - agents
   - clickhouse
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   - ClickHouse
   language: TypeScript
 - id: hypertrace/hypertrace
@@ -18536,7 +18545,7 @@ projects:
   stars: 512
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: nikepan/clickhouse-bulk
   url: https://github.com/nikepan/clickhouse-bulk
@@ -18579,7 +18588,7 @@ projects:
   - orchestration
   - qwen
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Python
 - id: astronomer/astronomer
   url: https://github.com/astronomer/astronomer
@@ -18626,7 +18635,7 @@ projects:
   - orchestration
   - self-hosted
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: Rust
 - id: sobolevbel/jdg
   url: https://github.com/sobolevbel/jdg
@@ -18657,7 +18666,7 @@ projects:
   stars: 479
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: Python
 - id: valyala/gozstd
   url: https://github.com/valyala/gozstd
@@ -18695,7 +18704,7 @@ projects:
   stars: 474
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: gitlabform/gitlabform
   url: https://github.com/gitlabform/gitlabform
@@ -18960,7 +18969,7 @@ projects:
   - cli-tool
   - usage-tracking
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   - Tools
   language: Python
 - id: protonpass/pass-cli
@@ -19156,7 +19165,7 @@ projects:
   stars: 288
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: linnykoleh/awesome-system-design
   url: https://github.com/linnykoleh/awesome-system-design
@@ -19564,7 +19573,7 @@ projects:
   stars: 210
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Assistants & Apps
   - Databases
   language: Rust
 - id: tommy-muehle/go-mnd
@@ -19596,7 +19605,7 @@ projects:
   - big-data
   - data-processing
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   - Spark
   language: Python
 - id: jhg023/SimpleNet
@@ -19668,7 +19677,7 @@ projects:
   - copilot
   - cursor
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: CSS
 - id: thanos-io/objstore
   url: https://github.com/thanos-io/objstore
@@ -19778,7 +19787,7 @@ projects:
   stars: 166
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: devantler-tech/ksail
   url: https://github.com/devantler-tech/ksail
@@ -19856,7 +19865,7 @@ projects:
   - codex
   - cursor
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   - Go
   language: HTML
 - id: lukaszlach/clip
@@ -19913,7 +19922,7 @@ projects:
   stars: 137
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Python
 - id: druzsan/justetf-scraping
   url: https://github.com/druzsan/justetf-scraping
@@ -19965,7 +19974,7 @@ projects:
   stars: 117
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Plugins & Extensions
   language: TypeScript
 - id: samber/slog-sampling
   url: https://github.com/samber/slog-sampling
@@ -19991,7 +20000,7 @@ projects:
   stars: 112
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Gateways, Proxies & Cost
   language: JavaScript
 - id: crumbhole/argocd-vault-replacer
   url: https://github.com/crumbhole/argocd-vault-replacer
@@ -20111,7 +20120,7 @@ projects:
   stars: 76
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: olegchir/freeasinfreedom-ru
   url: https://github.com/olegchir/freeasinfreedom-ru
@@ -20244,7 +20253,7 @@ projects:
   stars: 45
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Frameworks & Orchestration
   language: TypeScript
 - id: takari/takari-local-repository
   url: https://github.com/takari/takari-local-repository
@@ -20260,7 +20269,7 @@ projects:
   stars: 44
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Shell
 - id: l0s/fernet-java8
   url: https://github.com/l0s/fernet-java8
@@ -20281,7 +20290,7 @@ projects:
   stars: 44
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Skill Collections
   language: Python
 - id: dinstone/beanstalkc
   url: https://github.com/dinstone/beanstalkc
@@ -20332,7 +20341,7 @@ projects:
   topics:
   - agent-skills
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   - Go
   language: Makefile
 - id: OpenHFT/Chronicle-Salt
@@ -20434,7 +20443,7 @@ projects:
   stars: 23
   topics: []
   categories:
-  - AI & LLMs
+  - AI · MCP Servers
   language: Python
 - id: samber/slog-slack
   url: https://github.com/samber/slog-slack
@@ -20468,7 +20477,7 @@ projects:
   stars: 19
   topics: []
   categories:
-  - AI & LLMs
+  - AI · Agent Skills
   language: Python
 - id: war1oc/jwt-auth
   url: https://github.com/war1oc/jwt-auth
@@ -20587,7 +20596,7 @@ projects:
   - machine-learning
   - awesome-list
   categories:
-  - AI & LLMs
+  - AI · Learning & Prompt Engineering
   language: Astro
 - id: DimkaGorhover/leetcode-go
   url: https://github.com/DimkaGorhover/leetcode-go
