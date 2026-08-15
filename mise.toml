@@ -9,6 +9,20 @@ run = "hugo server --buildDrafts"
 description = "Production build into ./public"
 run = "hugo --gc --minify"
 
+[tasks.deploy]
+description = "Manual release: build and force-push ./public to the gh-page branch"
+depends = ["build"]
+run = """
+set -eu
+touch public/.nojekyll
+cd public
+git init -q
+git add -A
+git commit -qm "deploy $(git -C .. rev-parse --short HEAD)"
+git push -qf "$(git -C .. remote get-url origin)" HEAD:gh-page
+rm -rf .git
+"""
+
 [tasks.clean]
 description = "Remove build artifacts"
 quiet = true
