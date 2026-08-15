@@ -7,6 +7,8 @@ showReadingTime: false
 showWordCount: false
 showPagination: false
 showTableOfContents: true
+aliases:
+  - /projects/
 ---
 
 {{< projects >}}

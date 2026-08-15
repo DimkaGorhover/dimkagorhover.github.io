@@ -1,6 +1,6 @@
 ---
 name: add-project
-description: Use when asked to add a repo, star or project to the projects catalog, data/projects.yaml or the /projects page.
+description: Use when asked to add a repo, star or project to the projects catalog, data/projects.yaml or the /awesome page.
 ---
 
 # Add a project
@@ -14,7 +14,7 @@ Prereq: `gh auth status` must be logged in.
 
 ## 1. Pick categories
 
-Categories must already exist in `data/categories.yaml` — `/projects` renders
+Categories must already exist in `data/categories.yaml` — `/awesome` renders
 by iterating that list, so an unknown category makes the project invisible.
 Read the file and pick one or more that fit; `Other Stars` is the catch-all.
 
@@ -50,7 +50,7 @@ one comes back instead of working around it.
 - `git diff data/projects.yaml` — expect exactly one added record, plus the
   reordering that the star-sort implies. If step 1 introduced a new category,
   `data/categories.yaml` changes too; nothing else should.
-- Run the `test-site` skill and check `/projects` shows the new entry under
+- Run the `test-site` skill and check `/awesome` shows the new entry under
   each category you picked.
 
 Star counts of everything else go stale on their own — that is the

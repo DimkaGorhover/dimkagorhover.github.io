@@ -7,7 +7,7 @@
 
 Usage: uv run scripts/add_project.py owner/repo "Category" ["Category"...]
 
-Categories must already exist in data/categories.yaml — the /projects
+Categories must already exist in data/categories.yaml — the /awesome
 shortcode iterates that list, so an unknown category renders nowhere.
 """
 

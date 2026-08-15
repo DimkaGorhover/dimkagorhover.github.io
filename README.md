@@ -50,7 +50,7 @@ it by `layouts/shortcodes/cv.html`. Years of experience are computed from
 ## Projects
 
 The starred-projects catalog lives in [`data/projects.yaml`](data/projects.yaml)
-and [`data/categories.yaml`](data/categories.yaml). The page at `/projects` is
+and [`data/categories.yaml`](data/categories.yaml). The page at `/awesome` is
 rendered from them by `layouts/shortcodes/projects.html`, with a client-side
 filter.
 

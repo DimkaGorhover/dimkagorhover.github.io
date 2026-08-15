@@ -34,7 +34,7 @@ agent-browser open http://localhost:1313/cv/
 agent-browser snapshot # CV: About, Contacts, Skills, Experience, Education sections
 agent-browser open http://localhost:1313/posts/
 agent-browser snapshot # posts list renders (drafts visible with --buildDrafts)
-agent-browser open http://localhost:1313/projects/
+agent-browser open http://localhost:1313/awesome/
 agent-browser snapshot # projects: cards with star counts, category filter works
 ```
 

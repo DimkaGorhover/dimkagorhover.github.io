@@ -1,6 +1,6 @@
 ---
 name: refresh-projects
-description: Use when asked to refresh, update or re-fetch the starred projects data (stars, topics, descriptions, archived flags) in data/projects.yaml for the /projects page.
+description: Use when asked to refresh, update or re-fetch the starred projects data (stars, topics, descriptions, archived flags) in data/projects.yaml for the /awesome page.
 ---
 
 # Refresh projects stars
@@ -88,7 +88,7 @@ differ, shards are fetched at slightly different times).
   and `collected_at` moved.
 - Report any `not found on GitHub` ids the subagents printed; they keep their
   stale data and may need removing from the catalog.
-- Run the `test-site` skill (the `/projects` page renders from this data).
+- Run the `test-site` skill (the `/awesome` page renders from this data).
 
 ## Fallback
 
