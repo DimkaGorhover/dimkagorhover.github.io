@@ -5,23 +5,23 @@ weight = 1
 title = "Dmytro Horkhover"
 
 [params]
-  displayName = "EN"
-  isoCode = "en"
-  rtl = false
-  dateFormat = "2 January 2006"
-  description = "Personal site of Dmytro Horkhover — Software Engineer (Go, Python, JVM) · SRE / DevOps / Kubernetes"
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+description = "Personal site of Dmytro Horkhover — Software Engineer (Go, Python, JVM) · SRE / DevOps / Kubernetes"
 
 [params.author]
-  name = "Dmytro Horkhover"
-  email = "hdpmail@pm.me"
-  image = "img/author.jpg"
-  imageQuality = 96
-  headline = "Software Engineer — Go / Python / JVM · SRE / DevOps / Kubernetes"
-  bio = "Passionate about Java, JVM, performance, benchmarking, data structures and reactive streams."
-  links = [
-    { email = "mailto:hdpmail@pm.me" },
-    { github = "https://github.com/DimkaGorhover" },
-    { linkedin = "https://www.linkedin.com/in/dmitriy-gorkhover/" },
-    { telegram = "https://t.me/hdmytro" },
-    { x-twitter = "https://twitter.com/dghover" },
-  ]
+name = "Dmytro Horkhover"
+email = "hdpmail@pm.me"
+image = "img/author.jpg"
+imageQuality = 96
+headline = "Software Engineer — Go / Python / JVM · SRE / DevOps / Kubernetes"
+bio = "Passionate about Java, JVM, performance, benchmarking, data structures and reactive streams."
+links = [
+  { email = "mailto:hdpmail@pm.me" },
+  { github = "https://github.com/DimkaGorhover" },
+  { linkedin = "https://www.linkedin.com/in/dmitriy-gorkhover/" },
+  { telegram = "https://t.me/hdmytro" },
+  { x-twitter = "https://twitter.com/dghover" },
+]
