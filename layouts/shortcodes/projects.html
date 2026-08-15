@@ -1,0 +1,45 @@
+{{- /* layouts/shortcodes/projects.html */ -}}
+{{- $doc := hugo.Data.projects -}}
+{{- $cats := hugo.Data.categories.categories -}}
+{{- $placements := 0 -}}
+{{- range $doc.projects }}{{ $placements = add $placements (len .categories) }}{{ end -}}
+
+<p>
+  {{ lang.FormatNumber 0 (len $doc.projects) }} unique projects ·
+  {{ lang.FormatNumber 0 $placements }} category placements ·
+  metadata collected {{ $doc.collected_at }}.
+  Projects may appear in more than one category.
+</p>
+
+<p>
+  <input
+    type="search"
+    id="project-filter"
+    aria-label="Filter projects"
+    placeholder="Filter projects — name, topic, language, category…"
+    autocomplete="off"
+    style="width: 100%; padding: 0.5rem 0.75rem"
+  />
+  <small id="project-filter-count" aria-live="polite"></small>
+</p>
+
+{{- range $cat := $cats }}
+<section class="project-category">
+  <h2 id="{{ anchorize $cat }}">{{ $cat }}</h2>
+  <ul>
+    {{- range $doc.projects }}{{ if in .categories $cat }}
+    <li
+      data-search="{{ printf `%s %s %s %s %s` .id (or .description ``) (delimit .topics ` `) (or .language ``) (delimit .categories ` `) | lower }}"
+    >
+      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .id }}</a>
+      {{- with .description }} — {{ . }}{{ end }}
+      {{- if .archived }} <em>(archived)</em>{{ end }}
+      <small>
+        {{ with .language }}{{ . }} · {{ end }}⭐ {{ partial "star-count.html" .stars }}
+        {{- range .topics }} <code>#{{ . }}</code>{{ end }}
+      </small>
+    </li>
+    {{- end }}{{ end }}
+  </ul>
+</section>
+{{- end }}

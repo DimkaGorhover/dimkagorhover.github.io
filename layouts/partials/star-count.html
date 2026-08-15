@@ -1,0 +1,8 @@
+{{- /* layouts/partials/star-count.html — 42123 -> "42.1k", 24 -> "24" */ -}}
+{{- if ge . 1000000 -}}
+{{ strings.TrimSuffix ".0" (lang.FormatNumberCustom 1 (div (float .) 1000000)) }}m
+{{- else if ge . 1000 -}}
+{{ strings.TrimSuffix ".0" (lang.FormatNumberCustom 1 (div (float .) 1000)) }}k
+{{- else -}}
+{{ . }}
+{{- end -}}
