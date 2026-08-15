@@ -3,7 +3,11 @@
 # requires-python = ">=3.12"
 # dependencies = ["pyyaml"]
 # ///
-"""One-shot migration: parse my-awesome-list README.md into data/*.yaml."""
+"""One-shot migration: parse my-awesome-list README.md into data/*.yaml.
+
+Superseded by refresh_projects.py — rerunning this discards API-enriched
+topics and exact star counts.
+"""
 
 import re
 import sys

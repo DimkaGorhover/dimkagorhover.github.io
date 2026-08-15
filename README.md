@@ -13,12 +13,13 @@ and the [Blowfish](https://blowfish.page/) theme, deployed to GitHub Pages.
 
 ## Everyday tasks
 
-| Task | How |
-|------|-----|
-| Run locally | `mise run serve` → <http://localhost:1313> (drafts included) |
-| Add a CV entry | Append to `experience:` in `data/cv.yaml` (newest first) |
-| Write a post | Create `content/posts/<slug>/index.md` (see below) |
-| Production build | `mise run build` |
+| Task                  | How                                                          |
+| --------------------- | ------------------------------------------------------------ |
+| Run locally           | `mise run serve` → <http://localhost:1313> (drafts included) |
+| Add a CV entry        | Append to `experience:` in `data/cv.yaml` (newest first)     |
+| Write a post          | Create `content/posts/<slug>/index.md` (see below)           |
+| Refresh projects data | `mise run refresh-projects`                                  |
+| Production build      | `mise run build`                                             |
 
 ## Writing a post
 
@@ -44,6 +45,31 @@ All CV content lives in [`data/cv.yaml`](data/cv.yaml) — about, contacts,
 skills, experience, education, languages. The page at `/cv` is rendered from
 it by `layouts/shortcodes/cv.html`. Years of experience are computed from
 `first_working_year`, so they never go stale.
+
+## Projects
+
+The starred-projects catalog lives in [`data/projects.yaml`](data/projects.yaml)
+and [`data/categories.yaml`](data/categories.yaml). The page at `/projects` is
+rendered from them by `layouts/shortcodes/projects.html`, with a client-side
+filter.
+
+Refresh it with live GitHub metadata (requires `gh auth status` to be logged
+in):
+
+```
+uv run scripts/refresh_projects.py
+```
+
+Run the script tests:
+
+```
+uv run --with pytest --with pyyaml pytest scripts/
+```
+
+`scripts/migrate_readme.py` was the one-shot import from the original
+`my-awesome-list` README and must not be rerun — it would discard the
+API-enriched topics and exact star counts that `refresh_projects.py` since
+added.
 
 ## Colors / theming
 

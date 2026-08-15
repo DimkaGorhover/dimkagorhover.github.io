@@ -70,6 +70,7 @@ def fetch(batch: list[dict]) -> dict:
         ["gh", "api", "graphql", "-f", f"query={build_query(batch)}"],
         capture_output=True,
         text=True,
+        timeout=60,
     )
     try:
         payload = json.loads(proc.stdout)

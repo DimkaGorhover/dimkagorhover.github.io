@@ -12,3 +12,7 @@ run = "hugo --gc --minify"
 [tasks.clean]
 description = "Remove build artifacts"
 run = "rm -rf public resources .hugo_build.lock"
+
+[tasks.refresh-projects]
+description = "Refresh data/projects.yaml with live GitHub metadata"
+run = "uv run scripts/refresh_projects.py"
