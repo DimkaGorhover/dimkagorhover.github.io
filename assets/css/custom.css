@@ -1,0 +1,8 @@
+/* Full-width layout: lift the theme's max-w-7xl body cap and max-w-prose
+   content cap; the body's responsive px-* padding still applies. */
+body {
+  max-width: 100% !important;
+}
+.max-w-prose {
+  max-width: 100% !important;
+}
