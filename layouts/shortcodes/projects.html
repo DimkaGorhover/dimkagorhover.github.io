@@ -43,3 +43,29 @@
   </ul>
 </section>
 {{- end }}
+
+<script>
+  (function () {
+    const input = document.getElementById("project-filter");
+    const count = document.getElementById("project-filter-count");
+    const items = Array.from(document.querySelectorAll("li[data-search]"));
+    const sections = Array.from(
+      document.querySelectorAll("section.project-category"),
+    );
+    input.addEventListener("input", function () {
+      const terms = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+      let visible = 0;
+      for (const li of items) {
+        const show = terms.every((t) => li.dataset.search.includes(t));
+        li.hidden = !show;
+        if (show) visible++;
+      }
+      for (const section of sections) {
+        section.hidden = !section.querySelector("li:not([hidden])");
+      }
+      count.textContent = terms.length
+        ? visible + " of " + items.length + " entries"
+        : "";
+    });
+  })();
+</script>
