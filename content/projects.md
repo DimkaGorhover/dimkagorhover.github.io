@@ -1,5 +1,5 @@
 ---
-title: "Projects"
+title: "Awesome"
 description: "GitHub projects starred by Dmytro Horkhover, grouped by topic — mirror of the my-awesome-list catalog"
 showDate: false
 showAuthor: false
