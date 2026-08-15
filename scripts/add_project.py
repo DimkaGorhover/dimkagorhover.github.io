@@ -19,7 +19,7 @@ import yaml
 from refresh_projects import fetch, merge
 
 # key order of the existing records, kept so diffs stay readable
-ORDER = ["id", "url", "description", "stars", "topics", "categories", "language", "archived"]
+ORDER = ["id", "url", "description", "stars", "topics", "categories", "language", "archived", "stale"]
 
 
 def main() -> None:

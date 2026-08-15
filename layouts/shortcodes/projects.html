@@ -34,6 +34,7 @@
       <a href="{{ .url }}" target="_blank" rel="noopener">{{ .id }}</a>
       {{- with .description }} — {{ . }}{{ end }}
       {{- if .archived }} <em>(archived)</em>{{ end }}
+      {{- if .stale }} <em>(stale)</em>{{ end }}
       <small>
         {{ with .language }}{{ . }} · {{ end }}⭐ {{ partial "star-count.html" .stars }}
         {{- range .topics }} <code>#{{ . }}</code>{{ end }}

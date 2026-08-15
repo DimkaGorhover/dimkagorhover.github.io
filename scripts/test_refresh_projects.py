@@ -1,12 +1,18 @@
 import json
+from datetime import date, timedelta
 
 from refresh_projects import build_query, fatal_errors, merge
+
+TODAY = date.today().isoformat()
+TWO_YEARS_AGO = (date.today() - timedelta(days=730)).isoformat()
 
 NODE = {
     "description": "Fast OLAP database",
     "stargazerCount": 42123,
     "isArchived": False,
     "primaryLanguage": {"name": "C++"},
+    "defaultBranchRef": {"target": {"committedDate": f"{TODAY}T09:00:00Z"}},
+    "latestRelease": {"publishedAt": f"{TWO_YEARS_AGO}T09:00:00Z"},
     "repositoryTopics": {
         "nodes": [{"topic": {"name": "olap"}}, {"topic": {"name": "sql"}}]
     },
@@ -41,6 +47,22 @@ def test_merge_sets_and_clears_archived():
     assert record["archived"] is True
     merge(record, NODE)
     assert "archived" not in record
+
+
+def test_merge_sets_and_clears_stale():
+    record = make_record()
+    old = f"{TWO_YEARS_AGO}T09:00:00Z"
+    # no commit and no release for a year, whichever is newer decides
+    merge(record, {**NODE, "defaultBranchRef": {"target": {"committedDate": old}}})
+    assert record["stale"] is True
+    # a fresh release alone keeps it out of stale
+    fresh_release = {"publishedAt": f"{TODAY}T09:00:00Z"}
+    merge(record, {**NODE, "defaultBranchRef": {"target": {"committedDate": old}},
+                   "latestRelease": fresh_release})
+    assert "stale" not in record
+    # empty repo: no default branch, no release
+    merge(record, {**NODE, "defaultBranchRef": None, "latestRelease": None})
+    assert record["stale"] is True
 
 
 def test_merge_keeps_old_data_when_node_missing():

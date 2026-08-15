@@ -5,19 +5,20 @@
 # ///
 """Refresh data/projects.yaml with live GitHub metadata via `gh api graphql`.
 
-Updates topics, stars, description, language, archived. Never touches
+Updates topics, stars, description, language, archived, stale. Never touches
 categories (curated) — records the API can't resolve keep their old data.
 """
 
 import json
 import subprocess
 import sys
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import yaml
 
 BATCH = 50
+STALE_AFTER = timedelta(days=365)
 
 
 def build_query(batch: list[dict]) -> str:
@@ -28,9 +29,20 @@ def build_query(batch: list[dict]) -> str:
             f"r{i}: repository(owner: {json.dumps(owner)}, name: {json.dumps(name)}) {{"
             " description stargazerCount isArchived"
             " primaryLanguage { name }"
+            " defaultBranchRef { target { ... on Commit { committedDate } } }"
+            " latestRelease { publishedAt }"
             " repositoryTopics(first: 10) { nodes { topic { name } } } }"
         )
     return "query { " + " ".join(parts) + " }"
+
+
+def last_activity(node: dict) -> str:
+    """Newest of default-branch commit and latest release, as an ISO timestamp
+    (empty when GitHub reports neither — an empty repo counts as stale)."""
+    return max(
+        ((node.get("defaultBranchRef") or {}).get("target") or {}).get("committedDate") or "",
+        (node.get("latestRelease") or {}).get("publishedAt") or "",
+    )
 
 
 def merge(record: dict, node: dict | None) -> bool:
@@ -53,6 +65,12 @@ def merge(record: dict, node: dict | None) -> bool:
         record["archived"] = True
     else:
         record.pop("archived", None)
+    # ISO-8601 timestamps compare lexicographically; a bare cutoff date sorts
+    # before any same-day timestamp, so "today minus a year" still counts fresh.
+    if last_activity(node) < (date.today() - STALE_AFTER).isoformat():
+        record["stale"] = True
+    else:
+        record.pop("stale", None)
     return True
 
 
