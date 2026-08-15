@@ -98,6 +98,7 @@ def test_parse_stars():
     assert parse_stars("92k") == 92000
     assert parse_stars("1.1m") == 1100000
     assert parse_stars("24") == 24
+    assert parse_stars("32.3k") == 32300  # requires round(): int(32.3 * 1000) == 32299
 
 
 def test_unparsed_line_reported():
@@ -142,7 +143,7 @@ ENTRY = re.compile(
 def parse_stars(text: str) -> int:
     for suffix, mult in (("m", 1_000_000), ("k", 1_000)):
         if text.endswith(suffix):
-            return int(float(text[: -len(suffix)]) * mult)
+            return round(float(text[: -len(suffix)]) * mult)
     return int(text)
 
 
@@ -251,8 +252,23 @@ If the totals differ or unparsed-entry errors appear, fix the parser regex in Ta
 
 - [ ] **Step 2: Spot-check the output**
 
-Run: `uv run --with pyyaml python -c " import yaml doc = yaml.safe_load(open('data/projects.yaml')) cats = yaml.safe_load(open('data/categories.yaml'))['categories'] assert len(doc['projects']) == 1480 assert sum(len(p['categories']) for p in doc['projects']) == 1740 assert len(cats) == 31 and cats[-1] == 'Other Stars' ids = [p['id'].lower() for p in doc['projects']] assert len(set(p['url'] for p in doc['projects'])) == 1480 multi = [p['id'] for p in doc['projects'] if len(p['categories']) > 1] print('multi-category projects:', len(multi)) stars = [p['stars'] for p in doc['projects']] print('OK; top:', doc['projects'][0]['id'], stars[0]) "`
-Expected: `multi-category projects: 231`, top entry `sindresorhus/awesome` (the highest-starred repo, ~495700).
+```bash
+uv run --with pyyaml python - <<'EOF'
+import yaml
+
+doc = yaml.safe_load(open("data/projects.yaml"))
+cats = yaml.safe_load(open("data/categories.yaml"))["categories"]
+assert len(doc["projects"]) == 1480
+assert sum(len(p["categories"]) for p in doc["projects"]) == 1740
+assert len(cats) == 31 and cats[-1] == "Other Stars"
+assert len({p["url"] for p in doc["projects"]}) == 1480
+multi = [p for p in doc["projects"] if len(p["categories"]) > 1]
+print("multi-category projects:", len(multi))
+print("top:", doc["projects"][0]["id"], doc["projects"][0]["stars"])
+EOF
+```
+
+Expected: `multi-category projects: 231`, then `top: codecrafters-io/build-your-own-x 539700` (the global star maximum across all sections, not the first entry of the README's first section).
 
 - [ ] **Step 3: Commit**
 
@@ -275,7 +291,7 @@ ______________________________________________________________________
 
 - Consumes: `data/projects.yaml` from Task 2 (record shape from Task 1).
 
-- Produces: `merge(record: dict, node: dict | None) -> bool` (applies one GraphQL repository node onto a record in place; False when node is None) and `build_query(batch: list[dict]) -> str`. CLI: `uv run scripts/refresh_projects.py [path-to-projects.yaml]` — rerunnable; later phases reuse it for scheduled refreshes. After it runs, every record's `topics` is populated from GitHub (`repositoryTopics`, first 10) and `stars`/`description`/`language`/`archived` hold exact API values; records the API can't find keep their old data and are listed on stdout.
+- Produces: `merge(record: dict, node: dict | None) -> bool` (applies one GraphQL repository node onto a record in place; when the repo resolves, API values win and nulls clear `description`/`language`; False when node is None), `build_query(batch: list[dict]) -> str`, and `fatal_errors(payload: dict) -> list[dict]` (GraphQL errors excluding per-alias NOT_FOUND). CLI: `uv run scripts/refresh_projects.py [path-to-projects.yaml]` — rerunnable; later phases reuse it for scheduled refreshes. After it runs, every record's `topics` is populated from GitHub (`repositoryTopics`, first 10) and `stars`/`description`/`language`/`archived` hold exact API values; records the API can't find keep their old data and are listed on stdout. GraphQL follows renames, so only deleted repos land in that list; any other API error (auth, rate limit, transport) aborts before the file is written.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -283,7 +299,7 @@ ______________________________________________________________________
 # scripts/test_refresh_projects.py
 import json
 
-from refresh_projects import build_query, merge
+from refresh_projects import build_query, fatal_errors, merge
 
 NODE = {
     "description": "Fast OLAP database",
@@ -333,11 +349,24 @@ def test_merge_keeps_old_data_when_node_missing():
     assert record["description"] == "old rounded description"
 
 
-def test_merge_handles_null_description_and_language():
+def test_merge_clears_fields_github_reports_empty():
+    # spec: when the repo resolves, API values win — nulls clear the field
     record = make_record()
+    record["language"] = "C++"
     merge(record, {**NODE, "description": None, "primaryLanguage": None})
-    assert record["description"] == "old rounded description"
-    assert record["language"] == "C++"  # pre-existing value retained
+    assert "description" not in record
+    assert "language" not in record
+
+
+def test_fatal_errors_ignores_not_found_only():
+    payload = {
+        "errors": [
+            {"type": "NOT_FOUND", "message": "Could not resolve r3"},
+            {"type": "RATE_LIMITED", "message": "API rate limit exceeded"},
+        ]
+    }
+    assert [e["type"] for e in fatal_errors(payload)] == ["RATE_LIMITED"]
+    assert fatal_errors({"data": {}}) == []
 
 
 def test_build_query_aliases_and_escapes():
@@ -392,14 +421,21 @@ def build_query(batch: list[dict]) -> str:
 
 
 def merge(record: dict, node: dict | None) -> bool:
+    """Apply one GraphQL node onto a record. When the repo resolves, API values
+    win: null description/language clears the field (spec: omitted when GitHub
+    reports none). Only an unresolved repo (node is None) keeps old data."""
     if node is None:
         return False
-    if node.get("description"):
-        record["description"] = node["description"]
+    for field, value in (
+        ("description", node.get("description")),
+        ("language", (node.get("primaryLanguage") or {}).get("name")),
+    ):
+        if value:
+            record[field] = value
+        else:
+            record.pop(field, None)
     record["stars"] = node["stargazerCount"]
     record["topics"] = [t["topic"]["name"] for t in node["repositoryTopics"]["nodes"]]
-    if node.get("primaryLanguage"):
-        record["language"] = node["primaryLanguage"]["name"]
     if node["isArchived"]:
         record["archived"] = True
     else:
@@ -407,8 +443,16 @@ def merge(record: dict, node: dict | None) -> bool:
     return True
 
 
+def fatal_errors(payload: dict) -> list[dict]:
+    """GraphQL errors other than per-alias NOT_FOUND (deleted repos) are fatal:
+    auth, rate-limit, or transport problems must abort before anything is written."""
+    return [e for e in (payload.get("errors") or []) if e.get("type") != "NOT_FOUND"]
+
+
 def fetch(batch: list[dict]) -> dict:
-    # gh exits non-zero when some aliases 404, but still returns partial data
+    # gh exits non-zero when any alias 404s, but still returns partial data,
+    # so the exit code alone can't distinguish "deleted repo" from "API down" —
+    # classify via the errors array instead.
     proc = subprocess.run(
         ["gh", "api", "graphql", "-f", f"query={build_query(batch)}"],
         capture_output=True,
@@ -417,8 +461,15 @@ def fetch(batch: list[dict]) -> dict:
     try:
         payload = json.loads(proc.stdout)
     except json.JSONDecodeError:
-        sys.exit(f"gh api graphql produced no JSON: {proc.stderr[:500]}")
-    return payload.get("data") or {}
+        sys.exit(
+            f"gh api graphql produced no JSON (exit {proc.returncode}): {proc.stderr[:500]}"
+        )
+    if fatal := fatal_errors(payload):
+        sys.exit(f"aborting, GraphQL errors: {fatal[:3]}")
+    data = payload.get("data")
+    if data is None:
+        sys.exit(f"no data in response (exit {proc.returncode}): {proc.stderr[:500]}")
+    return data
 
 
 def main() -> None:
@@ -450,16 +501,26 @@ if __name__ == "__main__":
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `uv run --with pytest --with pyyaml pytest scripts/ -v`
-Expected: 10 passed (5 from Task 1 + 5 here)
+Expected: 11 passed (5 from Task 1 + 6 here)
 
 - [ ] **Step 5: Run the enrichment for real**
 
 Run: `uv run scripts/refresh_projects.py` (requires `gh auth status` OK — already verified for account DimkaGorhover; ~30 batches, about a minute)
-Expected: `updated N/1480 projects` with N close to 1480; a short `not found` list of renamed/deleted repos is normal.
+Expected: `updated N/1480 projects` with N close to 1480; a short `not found` list of deleted repos is normal (renames are followed by the API and update in place under the old id). An abort with `GraphQL errors:` means auth/rate-limit trouble — nothing was written; fix and rerun.
 
 - [ ] **Step 6: Verify topics landed**
 
-Run: `uv run --with pyyaml python -c " import yaml doc = yaml.safe_load(open('data/projects.yaml')) with_topics = sum(1 for p in doc['projects'] if p['topics']) assert len(doc['projects']) == 1480 print(f'{with_topics}/1480 records have topics; collected_at={doc[\"collected_at\"]}') "`
+```bash
+uv run --with pyyaml python - <<'EOF'
+import yaml
+
+doc = yaml.safe_load(open("data/projects.yaml"))
+with_topics = sum(1 for p in doc["projects"] if p["topics"])
+assert len(doc["projects"]) == 1480
+print(f"{with_topics}/1480 records have topics; collected_at={doc['collected_at']}")
+EOF
+```
+
 Expected: a clear majority of records with topics (many repos legitimately have none) and today's `collected_at`.
 
 - [ ] **Step 7: Commit**
@@ -519,6 +580,7 @@ ______________________________________________________________________
   <input
     type="search"
     id="project-filter"
+    aria-label="Filter projects"
     placeholder="Filter projects — name, topic, language, category…"
     autocomplete="off"
     style="width: 100%; padding: 0.5rem 0.75rem"
@@ -569,6 +631,8 @@ showTableOfContents: true
 
 (File: `content/projects.md`. The shortcode call is written here with Hugo comment-escaping so this plan file stays renderable; in the real file it is the plain shortcode delimiters with `projects` inside.)
 
+Note: `showTableOfContents: true` matches the CV page but is inert on both — Hugo builds the TOC from markdown headings, and goldmark never sees headings emitted by a shortcode, so Blowfish renders no TOC sidebar (verified on the built CV page). Kept for consistency; a hand-rolled category nav is a later upgrade if wanted.
+
 - [ ] **Step 4: Add the menu entry**
 
 Append to `config/_default/menus.en.toml`:
@@ -586,7 +650,7 @@ Run: `hugo --gc --minify --printPathWarnings`
 Expected: exit 0, no ERROR lines. Then:
 
 Run: `grep -o 'data-search' public/projects/index.html | wc -l`
-Expected: `1740` (grep -o, not -c — the minified HTML is one line)
+Expected: `1740` (grep -o, not -c — the minified HTML is one line). This count is only valid before Task 5: the filter JS mentions `li[data-search]` once, so after Task 5 the same grep yields 1741.
 
 - [ ] **Step 6: Commit**
 
@@ -648,7 +712,7 @@ Expected: exit 0, no ERROR lines.
 
 Follow `.claude/skills/test-site/SKILL.md` (build + agent-browser). On `http://localhost:1313/projects/` verify specifically:
 
-1. The page loads with all 31 category headings and the TOC sidebar lists them.
+1. The page loads with all 31 category headings (no TOC sidebar — shortcode headings are invisible to Hugo's TOC builder; see Task 4 note).
 1. Type `kubernetes` into `#project-filter`: the count shows `N of 1740 entries` with 0 < N < 1740, and sections without matches disappear.
 1. Type `kubernetes go` (two terms): N shrinks further (AND semantics).
 1. Clear the input: count text empties and all entries are visible again.

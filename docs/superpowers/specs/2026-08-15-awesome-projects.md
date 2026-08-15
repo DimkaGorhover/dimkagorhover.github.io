@@ -50,8 +50,11 @@ Rules:
 - The projects list is stored pre-sorted by stars descending, then `id`
   (case-insensitive) — templates never sort.
 - No derived display strings (e.g. `` `Go · ⭐ 3.1k` ``) in the data.
-- Repos the API no longer finds (renamed/deleted) keep their README data;
-  the enrichment script reports them instead of erasing them.
+- When a repo resolves on the API, API values win: a null description or
+  language clears the field. Only repos the API no longer finds keep their
+  README data, and the enrichment script reports them instead of erasing
+  them. GraphQL follows renames, so that report effectively lists deleted
+  repos; renamed ones update in place under their old `id`.
 
 `data/categories.yaml` — display order (README section order: alphabetical
 with `Other Stars` last):
@@ -71,7 +74,10 @@ categories:
   to the main menu at weight 30.
 - One `<h2>` section per category in `categories.yaml` order; a project
   renders in every category it belongs to (matches the README's
-  cross-listing). Blowfish's TOC sidebar navigates the sections.
+  cross-listing). No TOC sidebar: Hugo builds TOCs from markdown headings
+  only, and shortcode-emitted `<h2>`s are invisible to goldmark (verified on
+  the built CV page). A hand-rolled category nav is a possible later
+  upgrade.
 - Entry line: linked `id` — description, `(archived)` marker, then small
   metadata: language, formatted stars (`12.3k` / `1.1m`), topics as `#tag`
   chips.
