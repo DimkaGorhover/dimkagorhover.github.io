@@ -18,6 +18,7 @@ and the [Blowfish](https://blowfish.page/) theme, deployed to GitHub Pages.
 | Run locally           | `mise run serve` → <http://localhost:1313> (drafts included) |
 | Add a CV entry        | Append to `experience:` in `data/cv.yaml` (newest first)     |
 | Write a post          | Create `content/posts/<slug>/index.md` (see below)           |
+| Add a project         | `uv run scripts/add_project.py owner/repo "Category"`        |
 | Refresh projects data | `mise run refresh-projects`                                  |
 | Production build      | `mise run build`                                             |
 
@@ -52,6 +53,13 @@ The starred-projects catalog lives in [`data/projects.yaml`](data/projects.yaml)
 and [`data/categories.yaml`](data/categories.yaml). The page at `/projects` is
 rendered from them by `layouts/shortcodes/projects.html`, with a client-side
 filter.
+
+Add one repo (categories must already exist in `data/categories.yaml`; the
+rest is fetched from GitHub and the file is re-sorted by stars):
+
+```
+uv run scripts/add_project.py apache/iceberg "Storage" "Java & JVM"
+```
 
 Refresh it with live GitHub metadata (requires `gh auth status` to be logged
 in):
