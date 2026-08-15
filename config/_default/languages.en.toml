@@ -9,14 +9,14 @@ title = "Dmytro Horkhover"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "Personal site of Dmytro Horkhover — Software Engineer (Java/JVM)"
+  description = "Personal site of Dmytro Horkhover — Software Engineer (Go, Python, JVM) · SRE / DevOps / Kubernetes"
 
 [params.author]
   name = "Dmytro Horkhover"
   email = "hdpmail@pm.me"
   image = "img/author.jpg"
   imageQuality = 96
-  headline = "Software Engineer — Java / JVM"
+  headline = "Software Engineer — Go / Python / JVM · SRE / DevOps / Kubernetes"
   bio = "Passionate about Java, JVM, performance, benchmarking, data structures and reactive streams."
   links = [
     { email = "mailto:hdpmail@pm.me" },
