@@ -2,11 +2,23 @@
 title: "How to parse large JSON file"
 date: 2021-03-01
 draft: true
+description: >-
+  Parse JSON files too large to fit in memory by combining Jackson's streaming
+  JsonParser with ObjectMapper data binding — plus a reactive variant that
+  exposes the stream as a Project Reactor Flux for async processing.
 tags: ["java", "jackson", "reactive"]
 ---
 
-How to parse a large JSON file by using FasterXML Jackson Streaming and
-`ObjectMapper` combination.
+Calling `objectMapper.readValue()` on a multi-gigabyte JSON file loads the
+whole document into memory and ends in an `OutOfMemoryError`. When the file is
+a large array of records, you don't need the whole array at once — you need
+one element at a time.
+
+Jackson's streaming API (`JsonParser`) reads token by token with constant
+memory, but working with raw tokens is tedious. The trick is to combine both
+layers: let `JsonParser` walk the array and hand each element to an
+`ObjectReader` for regular data binding. Memory usage stays bounded by the
+size of a single element, not the whole file.
 
 ## Links
 
@@ -14,6 +26,10 @@ How to parse a large JSON file by using FasterXML Jackson Streaming and
 - [Github: reactor/reactor-core](https://github.com/reactor/reactor-core)
 
 ## Data Objects
+
+Plain immutable value classes with `@JsonCreator` constructors — nothing
+streaming-specific here, they deserialize the same way as with a regular
+`ObjectMapper` call.
 
 `User.java`:
 
@@ -73,6 +89,11 @@ JSON example:
 
 ## Simple Parser
 
+The parser advances to the opening `[`, then loops: each `nextToken()` call
+positions the stream at the start of the next element, and
+`objectReader.readValue(jsonParser)` binds just that element to a `User`.
+Only one `User` is ever held in memory at a time.
+
 ```java
 class Parser {
 
@@ -89,18 +110,24 @@ class Parser {
 
             while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
                 User user = objectReader.readValue(jsonParser);
-                // do some processing with "user"
+                // process "user" here — it's the only element in memory
             }
         }
     }
 
     static java.io.InputStream ioSource() {
-        // return io source
+        // open the JSON input: FileInputStream, HTTP response body, etc.
     }
 }
 ```
 
 ## Reactive Solution (Project Reactor)
+
+The while-loop works, but processing is synchronous: parsing blocks until each
+element is handled. Wrapping the same streaming logic in a `Flux` decouples
+parsing from processing — each `User` is emitted as it's read, downstream
+operators can process it asynchronously, and the parser is closed when the
+stream terminates for any reason.
 
 `ReactiveParser.java`:
 
@@ -110,35 +137,38 @@ class ReactiveParser {
     static void test() {
 
         ObjectMapper objectMapper = new ObjectMapper();
-        // configure objectMapper ...
+        // register modules, enable/disable features, etc.
 
         JsonFactory jsonFactory = objectMapper.getFactory();
 
         Mono.fromCallable(() -> jsonFactory.createParser(ioSource()))
                 .flatMapMany(jsonParser -> {
-                    // reads all values and closes "jsonParser"
+                    // emit each array element as a User;
+                    // doFinally guarantees the parser is closed on
+                    // complete, error, and cancel
                     return ReactiveUtils.readArrayValues(jsonParser, User.class)
                             .doFinally(ReactiveUtils.closeFn(jsonParser));
                 })
                 .flatMap(user -> {
-                    // do some async processing with user
-                    // for instance, let's use Lettuce Redis API
+                    // async processing per element — here: store the user
+                    // in Redis via the reactive Lettuce API
                     return lettuceRedisConnection.reactive()
                             .hset("users", user.getId(), user);
                 })
                 .doOnError(e -> {
-                    // handle error
+                    // parsing and processing errors both end up here
                 })
                 .subscribe();
     }
 
     static java.io.InputStream ioSource() {
-        // return io source
+        // open the JSON input: FileInputStream, HTTP response body, etc.
     }
 }
 ```
 
-`ReactiveUtils.java`:
+`ReactiveUtils.java` — the same token loop as the simple parser, wrapped in
+`Flux.create` so each element becomes an emission:
 
 ```java
 class ReactiveUtils {
@@ -182,7 +212,8 @@ class ReactiveUtils {
             try {
                 closeable.close();
             } catch (Exception e) {
-                // handle close exception or just ignore it ;)
+                // stream already terminated at this point —
+                // log the close failure or deliberately ignore it
             }
         };
     }
