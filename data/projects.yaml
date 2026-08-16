@@ -10582,6 +10582,14 @@ projects:
   categories:
   - AI · Agent Plugins & Extensions
   language: HTML
+- id: googleapis/release-please
+  url: https://github.com/googleapis/release-please
+  description: generate release PRs based on the conventionalcommits.org spec
+  stars: 7348
+  topics: []
+  categories:
+  - Tools
+  language: TypeScript
 - id: Col-E/Recaf
   url: https://github.com/Col-E/Recaf
   description: The modern Java bytecode editor
