@@ -12887,6 +12887,18 @@ projects:
   categories:
   - AI · MCP Servers
   language: Rust
+- id: deuxfleurs-org/garage
+  url: https://github.com/deuxfleurs-org/garage
+  description: '(Mirror) S3-compatible object store for small self-hosted geo-distributed deployments. Main repo: https://git.deuxfleurs.fr/Deuxfleurs/garage'
+  stars: 4358
+  topics:
+  - s3
+  - object-storage
+  - rust
+  categories:
+  - Storage
+  - Rust
+  language: Rust
 - id: openziti/ziti
   url: https://github.com/openziti/ziti
   description: The parent project for OpenZiti. Here you will find the executables for a fully zero-trust, programmable network @OpenZiti
