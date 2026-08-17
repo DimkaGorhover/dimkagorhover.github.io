@@ -453,6 +453,19 @@ projects:
   categories:
   - AI · Coding Agents
   language: Python
+- id: deepseek-ai/deepseek-harness
+  url: https://github.com/deepseek-ai/deepseek-harness
+  description: 'DeepSeek Harness: Everything is a Plugin.'
+  stars: 139674
+  topics:
+  - cordis
+  - dsh
+  - dsh-plugin
+  - ai-agents
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  - AI · Agent Plugins & Extensions
+  language: TypeScript
 - id: labuladong/fucking-algorithm
   url: https://github.com/labuladong/fucking-algorithm
   description: 'Crack LeetCode, not only how, but also why. '
