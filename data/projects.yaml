@@ -13734,6 +13734,23 @@ projects:
   categories:
   - Kubernetes
   language: Go
+- id: slatedb/slatedb
+  url: https://github.com/slatedb/slatedb
+  description: A cloud native embedded storage engine built on object storage.
+  stars: 3359
+  topics:
+  - database
+  - embedded-database
+  - lsm-tree
+  - object-storage
+  - storage-engine
+  - rust
+  - rocksdb
+  categories:
+  - Databases
+  - Rust
+  - Storage
+  language: Rust
 - id: grafana/mcp-grafana
   url: https://github.com/grafana/mcp-grafana
   description: MCP server for Grafana
@@ -16858,6 +16875,24 @@ projects:
   - tui
   categories:
   - Tools
+  language: Rust
+- id: zenbu-labs/terminal-browser
+  url: https://github.com/zenbu-labs/terminal-browser
+  description: A browser that runs directly inside your existing terminal
+  stars: 1314
+  topics:
+  - browser
+  - cli
+  - rust
+  - terminal
+  - web
+  - claude-code
+  - claude-skills
+  - codex
+  - herdr-plugin
+  categories:
+  - Tools
+  - Rust
   language: Rust
 - id: rootless-containers/rootlesskit
   url: https://github.com/rootless-containers/rootlesskit
