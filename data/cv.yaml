@@ -137,6 +137,16 @@ experience:
     location: Lviv, Ukraine
     start: 2020-10
     end: 2021-08
+    highlights:
+      - >-
+        Full-stack engineer on e-commerce services for a major US retail
+        client — reactive Java/Spring backend, Angular frontend.
+      - >-
+        Owned features end to end: API design, implementation, tests,
+        and deployment to the client's Kubernetes cluster.
+    tech: >-
+      Java, Spring Boot, Spring WebFlux / Project Reactor, Angular,
+      TypeScript, Kubernetes, Docker
 
   - position: Full-Stack Engineer
     company: Self-Employed
