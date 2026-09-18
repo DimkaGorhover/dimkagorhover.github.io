@@ -145,14 +145,15 @@ experience:
     end: 2020-09
     highlights:
       - >-
-        Personal R&D project — built a Kubernetes cluster on bare metal from
-        scratch with Ansible playbooks (VirtualBox: Alpine, CentOS, Ubuntu).
+        Owned data processing for a retail company's recommendation platform
+        end to end — ingestion, Spark jobs and the admin-console UI.
       - >-
-        Developed a backend for a Telegram bot for scheduling different
-        services (Java 11, Quarkus, GraalVM native image, Docker).
+        Built and operated a bare-metal Kubernetes cluster from scratch with
+        Ansible playbooks (Alpine, CentOS, Ubuntu nodes) as an R&D project
+        that became the basis for later platform work.
       - >-
-        Data processing for a retail company's recommendation platform,
-        including some admin-console UI work.
+        Designed and shipped a Telegram scheduling bot backend on Java 11 /
+        Quarkus compiled to a GraalVM native image.
     tech: >-
       Java, Go, Python, TypeScript, Quarkus, Spring Boot, Apache Spark, Kafka,
       Redis, PostgreSQL, Kubernetes, Docker, Ansible, Azure Data Lake,
@@ -166,15 +167,15 @@ experience:
     end: 2019-12
     highlights:
       - >-
-        Implemented a new gateway protocol — SMGP (Short Message Gateway
-        Protocol) — with extensive unit-test coverage, for a client providing
-        technology services to telecommunications companies.
+        Owned the implementation of a new SMS gateway protocol (SMGP) for a
+        telecom-services client, delivered with extensive unit-test coverage.
       - >-
-        Fixed security vulnerabilities found with Fortify on Demand and
-        SonarQube.
+        Drove remediation of security findings from Fortify on Demand and
+        SonarQube across the codebase.
       - >-
-        Set up a Docker Swarm cluster with GitLab, Jenkins and SonarQube on a
-        local Azure cloud to speed up the vulnerability-fix feedback loop.
+        Set up a Docker Swarm environment with GitLab, Jenkins and SonarQube
+        on the client's Azure cloud, cutting the vulnerability-fix feedback
+        loop from days to minutes.
     tech: Java 6, Apache Maven, Jenkins, SonarQube, Docker Swarm, Subversion
 
   - position: Senior Java Developer
@@ -185,11 +186,12 @@ experience:
     end: 2019-03
     highlights:
       - >-
-        Implemented a new map-matching algorithm based on Hidden Markov Model
-        + Viterbi algorithm.
+        Designed and implemented a new map-matching algorithm (Hidden Markov
+        Model + Viterbi) for an automotive navigation client.
       - >-
-        Provided a comprehensive comparison of map-matching algorithms and
-        extended the matching pipelines with multi-algorithm support.
+        Delivered a comparative evaluation of map-matching algorithms and
+        refactored the matching pipeline to run multiple algorithms
+        side by side.
     tech: Java 8, Apache Maven, Jenkins, Git (Gerrit)
 
   - position: Software Engineer
@@ -200,19 +202,20 @@ experience:
     end: 2018-10
     highlights:
       - >-
-        Developed a digital-advertising platform — high-load ad server,
-        ad-targeting algorithms and real-time-bidding APIs — first in Clojure,
-        then migrated fully to Java.
+        Core engineer on a high-load digital-advertising platform — ad
+        server, targeting algorithms and real-time-bidding APIs — from the
+        original Clojure implementation through the full migration to Java.
       - >-
-        Received the "Company Hero" award (given once every six months) for
-        single-handedly delivering a difficult cross-language PoC integration.
+        Spent ~2 years in the Data Science team owning the Java services that
+        serve prediction and bidding models in production at ~1 ms p99
+        latency.
       - >-
-        Spent ~2 years in the Data Science team building high-performance Java
-        services delivering prediction and bidding models to production with
-        ~1 ms response at the 99th percentile.
+        Awarded "Company Hero" (given once every six months) for
+        single-handedly delivering a difficult cross-language PoC
+        integration.
       - >-
-        Kept the framework footprint deliberately small, which eased later
-        migrations across Java versions (8 through 12).
+        Kept the framework footprint deliberately small, which made the
+        upgrades across Java 8 → 12 low-risk and fast.
     tech: >-
       Java (8–12), Clojure, Spring Boot, RxJava, gRPC, Spark, Kafka,
       Cassandra, PostgreSQL, Redis, Elasticsearch, Clickhouse, Docker,
@@ -226,8 +229,8 @@ experience:
     end: 2015-11
     highlights:
       - >-
-        Worked on the LoopMe project while it was Ciklum's outstaff project —
-        see the LoopMe entry above.
+        Outstaffed to LoopMe for the whole engagement, then transferred
+        in-house — see the LoopMe entry above.
 
   - position: Middle Software Engineer
     company: Privat Bank
@@ -236,7 +239,9 @@ experience:
     start: 2013-07
     end: 2014-07
     highlights:
-      - Developed internal web projects for the business department.
+      - >-
+        Owned delivery of internal web applications for the business
+        department, from requirements through production support.
     tech: >-
       Java (6–8), JavaScript, Spring 3, jQuery, Angular 1, PostgreSQL, Redis,
       Apache Maven, Jenkins
@@ -249,13 +254,12 @@ experience:
     end: 2013-07
     highlights:
       - >-
-        Developed and modernized the Ukrainian internet-banking system
-        Privat24 (Ukraine, Georgia and A-Bank flavours) — features, support,
-        bugfixing, unit testing.
+        Developed and maintained the Privat24 internet-banking system
+        (Ukraine, Georgia and A-Bank editions) — features, support,
+        bug fixing and unit testing.
       - >-
-        Migrated the Privat24 Georgia project from Java 6 + Apache Ant to
-        Java 7 + Spring + Apache Maven + Git over four weekends, without a
-        mentor — stressful, but a formative experience.
+        Single-handedly migrated the Privat24 Georgia project from Java 6 +
+        Ant to Java 7 + Spring + Maven + Git over four weekends.
     tech: >-
       Java 6/7, JavaScript, Java EE (EJB, Resin), Spring 3, jQuery, Backbone,
       Sybase, Redis, RabbitMQ, Jenkins
