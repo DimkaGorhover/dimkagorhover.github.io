@@ -57,12 +57,62 @@ education:
     end: 2010-06
 
 experience:
-  - position: Data Platform Lead
-    company: Fozzy Group
+  - position: Team Lead / Senior DevOps Engineer, Data Platform
+    company: Fozzy Group (Temabit / Foodtech)
     url: https://fozzy.group
     location: Remote
     start: 2021-05
-    tech: Go, Java
+    highlights:
+      - >-
+        Designed and built the group's Kubernetes-based analytics platform
+        from an empty repo to production: a 40-node bare-metal RKE2 cluster
+        (Cilium eBPF, keepalived HA) plus CI-runner, test and Azure AKS
+        clusters, all managed with ArgoCD GitOps from a repository I founded
+        (66 Helm charts, 102 applications, 57% of 9.7k commits).
+      - >-
+        Delivered the multi-tenant data stack — Spark on Kubernetes, Kyuubi,
+        Hive Metastore, Airflow 2/3, dbt, ClickHouse, Kafka/Confluent,
+        DataHub, JupyterHub, Superset — serving ~45 internal analytics teams.
+      - >-
+        Built a 192-drive encrypted MinIO object store with 702 IAM policies
+        as code and identity-based short-lived S3 credentials for every
+        Spark job (Keycloak/AD → STS; custom Kyuubi auth plugin in Scala).
+      - >-
+        Founded and owned the container image supply chain: 122 image
+        variants, Jsonnet-generated GitLab pipelines, multi-arch BuildKit
+        builds, cosign signing, Trivy/SBOM gates and air-gapped Nexus mirrors
+        of 51 upstream registries.
+      - >-
+        First in the company to manage TeamCity as unit-tested Kotlin DSL
+        (200+ build configs); later executed the TFS/TeamCity → GitLab
+        migration and wrote a GitLab CI template library consumed by ~100
+        Airflow/dbt/Go/Helm repos.
+      - >-
+        Ran secrets and identity: Vault HA + External Secrets Operator,
+        Terraform-managed tenant model and GitLab token automation for 49
+        teams; Keycloak SSO across the platform.
+      - >-
+        Wrote ~42k lines of Go (35% tests) across 17 services for storage,
+        identity, catalog and observability glue.
+      - >-
+        Bootstrapped the Azure AKS production data platform (Airflow 3,
+        Workload Identity, ACR, Key Vault) — dev → prod cut-over in four
+        months.
+      - >-
+        Owned reliability: kube-prometheus-stack/Thanos/Loki/Grafana with 129
+        dashboards as code, SLO programme, 18 post-mortems — including
+        root-causing a recurring Cilium identity-explosion outage and
+        eliminating 88k/week HTTP 503s for BI users.
+      - >-
+        Led a 3–6-person DevOps/SRE team for 3.5 years as team lead and
+        Product Owner: hiring, PDPs, assessments, scrum ceremonies, OKRs.
+    tech: >-
+      Kubernetes (RKE2, AKS, EKS), Cilium, ArgoCD, Helm, Kustomize, Ansible,
+      Terraform, GitLab CI, TeamCity Kotlin DSL, Docker/BuildKit, cosign,
+      Nexus, Trivy, HashiCorp Vault, External Secrets, Keycloak, MinIO,
+      Apache Spark, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka,
+      DataHub, PostgreSQL (CloudNativePG), Prometheus, Thanos, Loki, Grafana,
+      OpenTelemetry, Go, Python, Kotlin, Scala, Bash, Azure, AWS
 
   - position: Senior Java Software Engineer
     company: Grid Dynamics
