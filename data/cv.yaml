@@ -99,7 +99,7 @@ experience:
       - >-
         Founded and owned the container image supply chain: 122 image
         variants, Jsonnet-generated GitLab pipelines, multi-arch BuildKit
-        builds, cosign signing, Trivy/SBOM gates and air-gapped Nexus mirrors
+        builds, cosign signing, Trivy/SBOM gates, and air-gapped Nexus mirrors
         of 51 upstream registries.
       - >-
         First in the company to manage TeamCity as unit-tested Kotlin DSL
@@ -112,14 +112,14 @@ experience:
         teams; Keycloak SSO across the platform.
       - >-
         Wrote ~42k lines of Go (35% tests) across 17 services for storage,
-        identity, catalog and observability glue.
+        identity, catalog, and observability glue.
       - >-
         Bootstrapped the Azure AKS production data platform (Airflow 3,
-        Workload Identity, ACR, Key Vault) — dev → prod cut-over in four
+        Workload Identity, ACR, Key Vault) — dev → prod cutover in four
         months.
       - >-
         Owned reliability: kube-prometheus-stack/Thanos/Loki/Grafana with 129
-        dashboards as code, SLO programme, 18 post-mortems — including
+        dashboards as code, SLO program, 18 post-mortems — including
         root-causing a recurring Cilium identity-explosion outage and
         eliminating 88k/week HTTP 503s for BI users.
       - >-
