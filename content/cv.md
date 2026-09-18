@@ -1,6 +1,6 @@
 ---
 title: "CV"
-description: "CV of Dmytro Horkhover — Software Engineer (Java/JVM)"
+description: "CV of Dmytro Horkhover — Platform Engineer & Team Lead"
 showDate: false
 showAuthor: false
 showReadingTime: false

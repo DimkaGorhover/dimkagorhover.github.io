@@ -9,15 +9,15 @@ displayName = "EN"
 isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
-description = "Personal site of Dmytro Horkhover — Software Engineer (Go, Python, JVM) · SRE / DevOps / Kubernetes"
+description = "Personal site of Dmytro Horkhover — Platform Engineer & Team Lead · Kubernetes / Data Platform / SRE"
 
 [params.author]
 name = "Dmytro Horkhover"
 email = "hdpmail@pm.me"
 image = "img/author.jpg"
 imageQuality = 96
-headline = "Software Engineer — Go / Python / JVM · SRE / DevOps / Kubernetes"
-bio = "Passionate about Java, JVM, performance, benchmarking, data structures and reactive streams."
+headline = "Platform Engineer & Team Lead — Kubernetes · Data Platform · SRE / DevOps"
+bio = "Building and running data platforms on Kubernetes; leading engineering teams. Care about reliability, delivery and the boring-but-correct solution."
 links = [
   { email = "mailto:hdpmail@pm.me" },
   { github = "https://github.com/DimkaGorhover" },

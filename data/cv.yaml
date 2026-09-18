@@ -5,12 +5,21 @@ first_working_year: 2012
 
 about:
   - >-
-    Passionate about Java, JVM, performance, benchmarking, data structures
-    and reactive streams.
+    Platform engineer and team lead. Spent the first decade as a
+    backend/JVM engineer on high-load systems, then five years building and
+    running a Kubernetes-based data platform from scratch for Ukraine's
+    largest retail group. Care about engineering as a whole rather
+    than any one language: reliability, observability, delivery pipelines,
+    supply-chain security, cost, and the boring-but-correct solution.
   - >-
-    Looking for new challenges. Product companies are preferable, full time,
-    remote is preferable for now, but an office is not an issue; relocation
-    to another city/country is not an issue.
+    Enjoy leading teams: 3.5 years as team lead and Product Owner of a
+    DevOps/SRE team — hiring, growth plans, assessments, scrum ceremonies,
+    OKRs, post-mortem culture — while staying hands-on.
+  - >-
+    Looking for new challenges: platform / infrastructure / SRE engineering
+    or an engineering-lead role. Product companies are preferable, full
+    time, remote is preferable; relocation to another city/country is not
+    an issue.
 
 languages:
   - name: Ukrainian
@@ -31,16 +40,24 @@ contacts:
     label: dmitriy-gorkhover
 
 skills:
+  - name: Platform & Kubernetes
+    items: ["Kubernetes (RKE2, AKS, EKS)", Cilium, ArgoCD / GitOps, Helm, Kustomize, Kyverno, Ansible, Terraform, Bare-metal ops]
+  - name: CI/CD & Supply Chain
+    items: [GitLab CI, TeamCity Kotlin DSL, Docker / BuildKit, cosign, Trivy, Nexus, Jsonnet, Air-gapped mirrors]
+  - name: Data Platform
+    items: [Apache Spark on K8s, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka / Confluent, DataHub, MinIO / S3, Delta Lake]
+  - name: Reliability & Observability
+    items: [Prometheus, Thanos, Loki, Grafana, OpenTelemetry, SLOs, Post-mortems, Runbooks]
+  - name: Identity & Secrets
+    items: [HashiCorp Vault, External Secrets, Keycloak, OIDC / LDAP / AD, Sigstore]
   - name: Languages
-    items: [Java (6+), Clojure, Python, JavaScript, Go, "Shell (sh, bash, zsh)"]
-  - name: Frameworks
-    items: ["Spring (Boot, Web, etc.)", "Reactive Streams (RxJava, Project Reactor)", gRPC, Quarkus, Apache Spark, ReactJS, Redux]
+    items: [Go, Python, Java / Kotlin / Scala (JVM), Clojure, Bash, HCL]
   - name: Databases & Messaging
-    items: [PostgreSQL, Redis, Kafka]
-  - name: DevOps
-    items: [Docker, Docker Compose, Docker Swarm, Kubernetes, Ansible, Google Cloud Platform, AWS]
-  - name: OS
-    items: [Linux (Mint, Ubuntu, Alpine, CentOS), macOS, Windows]
+    items: [PostgreSQL (CloudNativePG), Redis, Kafka, Elasticsearch]
+  - name: Cloud
+    items: [Azure (AKS, Entra ID, ACR, Key Vault), AWS (EKS, S3, IAM), GCP]
+  - name: Leadership
+    items: [Team lead (3–6 engineers), Product ownership, Hiring, PDPs & assessments, Scrum, OKRs]
 
 education:
   - school: Ukrainian State Chemical Technology University
