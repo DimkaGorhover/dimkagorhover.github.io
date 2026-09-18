@@ -28,6 +28,8 @@ languages:
     level: Intermediate
   - name: Russian
     level: Fluent
+  - name: Polish
+    level: Elementary (A2–B1)
   - name: German
     level: Elementary
 
