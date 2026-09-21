@@ -9455,6 +9455,24 @@ projects:
   categories:
   - Other Stars
   language: Go
+- id: Agents365-ai/drawio-skill
+  url: https://github.com/Agents365-ai/drawio-skill
+  description: 'Agent skill that turns natural language, code, Terraform/K8s, SQL, OpenAPI, AsyncAPI, Protobuf and GraphQL sources into editable, tested draw.io architecture diagrams: incremental sync, multi-view projection, drift diff, CI architecture tests, whiteboard derasterize, interactive HTML/PPTX/Mermaid exports.'
+  stars: 9463
+  topics:
+  - drawio
+  - diagram
+  - agent-skills
+  - architecture-diagram
+  - claude-code
+  - flowchart
+  - uml
+  - sysml
+  - bpmn
+  - image-to-diagram
+  categories:
+  - AI · Agent Skills
+  language: Python
 - id: anchore/syft
   url: https://github.com/anchore/syft
   description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems
@@ -19414,6 +19432,25 @@ projects:
   - Other Stars
   language: Java
   stale: true
+- id: ckelsoe/prompt-architect
+  url: https://github.com/ckelsoe/prompt-architect
+  description: Agent skill for analyzing and improving prompts using 31 frameworks across 7 intent categories. Works with Claude Code, Gemini CLI, Cursor, Copilot, and 30+ Agent Skills compatible tools.
+  stars: 299
+  topics:
+  - agent-skills
+  - ai-coding-agents
+  - ai-tools
+  - chain-of-thought
+  - chatgpt
+  - claude-code
+  - claude-skill
+  - cursor
+  - gemini-cli
+  - github-copilot
+  categories:
+  - AI · Agent Skills
+  - AI · Learning & Prompt Engineering
+  language: JavaScript
 - id: tbroyer/gradle-apt-plugin
   url: https://github.com/tbroyer/gradle-apt-plugin
   description: '[OBSOLETE] Gradle plugin making it easier/safer to use Java annotation processors'
