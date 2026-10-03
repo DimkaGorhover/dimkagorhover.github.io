@@ -1262,6 +1262,15 @@ projects:
   categories:
   - AI · Gateways, Proxies & Cost
   language: Rust
+- id: pbakaus/impeccable
+  url: https://github.com/pbakaus/impeccable
+  description: The design language that makes your AI harness better at design.
+  stars: 75076
+  topics: []
+  categories:
+  - AI · Agent Skills
+  - Frontend
+  language: JavaScript
 - id: caddyserver/caddy
   url: https://github.com/caddyserver/caddy
   description: Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS
