@@ -12491,6 +12491,13 @@ projects:
   categories:
   - Other Stars
   language: HTML
+- id: humanlayer/skills
+  url: https://github.com/humanlayer/skills
+  stars: 4870
+  topics: []
+  categories:
+  - AI · Skill Collections
+  language: TypeScript
 - id: variadico/noti
   url: https://github.com/variadico/noti
   description: Moved to Codeberg
