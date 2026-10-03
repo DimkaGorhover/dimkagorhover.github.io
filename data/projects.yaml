@@ -19574,14 +19574,6 @@ projects:
   language: Groovy
   archived: true
   stale: true
-- id: jeremiah-masters/dlht
-  url: https://github.com/jeremiah-masters/dlht
-  description: High-performance, lock-free concurrent hash table in Go, based on DLHT, with cooperative resizing and cache-efficient buckets
-  stars: 291
-  topics: []
-  categories:
-  - Go
-  language: Go
 - id: WilliamJudge94/oh-my-opencode-dashboard
   url: https://github.com/WilliamJudge94/oh-my-opencode-dashboard
   description: A simple dashboard to track OpenCode + Oh-My-Opencode agents
