@@ -21055,6 +21055,16 @@ projects:
   - Other Stars
   language: Shell
   stale: true
+- id: georgekobaidze/georgekobaidze
+  url: https://github.com/georgekobaidze/georgekobaidze
+  description: Config files for my GitHub profile.
+  stars: 4
+  topics:
+  - config
+  - github-config
+  categories:
+  - Other Stars
+  language: Python
 - id: DimkaGorhover/leetcode-go
   url: https://github.com/DimkaGorhover/leetcode-go
   stars: 1
