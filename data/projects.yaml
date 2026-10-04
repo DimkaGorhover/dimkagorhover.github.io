@@ -3203,6 +3203,17 @@ projects:
   - AI · Skill Collections
   - Awesome Lists
   language: JavaScript
+- id: google/styleguide
+  url: https://github.com/google/styleguide
+  description: Style guides for Google-originated open-source projects
+  stars: 39647
+  topics:
+  - cpplint
+  - styleguide
+  - style-guide
+  categories:
+  - Education
+  language: HTML
 - id: Yeachan-Heo/oh-my-claudecode
   url: https://github.com/Yeachan-Heo/oh-my-claudecode
   description: Teams-first Multi-agent orchestration for Claude Code
