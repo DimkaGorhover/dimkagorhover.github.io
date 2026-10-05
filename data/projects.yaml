@@ -1036,6 +1036,25 @@ projects:
   categories:
   - Go
   language: Go
+- id: Egonex-AI/Understand-Anything
+  url: https://github.com/Egonex-AI/Understand-Anything
+  description: Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.
+  stars: 85351
+  topics:
+  - claude-code
+  - claude-skills
+  - understandcode
+  - codex
+  - codex-skills
+  - knowledge-graph
+  - opencode-skills
+  - antigravity-skills
+  - gemini-cli-skills
+  - pi-agent
+  categories:
+  - AI · Agent Skills
+  - AI · Memory, Context & RAG
+  language: TypeScript
 - id: bregman-arie/devops-exercises
   url: https://github.com/bregman-arie/devops-exercises
   description: Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions
