@@ -2404,7 +2404,7 @@ projects:
   language: Go
 - id: karpathy/442a6bf555914893e9891c11519de94f
   url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-  description: llm-wiki
+  description: "An idea file for your LLM agent: instead of re-retrieving chunks RAG-style, the LLM incrementally builds and maintains a persistent, interlinked markdown wiki from your sources."
   stars: 49375
   topics: []
   categories:
