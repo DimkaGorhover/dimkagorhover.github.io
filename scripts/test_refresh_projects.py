@@ -1,7 +1,7 @@
 import json
 from datetime import date, timedelta
 
-from refresh_projects import build_query, fatal_errors, merge
+from refresh_projects import build_query, fatal_errors, gist_node, merge
 
 TODAY = date.today().isoformat()
 TWO_YEARS_AGO = (date.today() - timedelta(days=730)).isoformat()
@@ -97,3 +97,17 @@ def test_build_query_aliases_and_escapes():
     assert 'r0: repository(owner: "a", name: "b")' in query
     assert json.dumps('we"ird') in query
     assert "repositoryTopics(first: 10)" in query
+
+
+def test_gist_query_and_merge():
+    gist = {"id": "karpathy/abc", "gist": True, "categories": ["Education"]}
+    assert 'r0: user(login: "karpathy") { gist(name: "abc")' in build_query([gist])
+    node = gist_node({"gist": {
+        "description": "llm-wiki", "stargazerCount": 7,
+        "pushedAt": f"{TWO_YEARS_AGO}T09:00:00Z",
+        "files": [{"language": {"name": "Markdown"}}],
+    }})
+    assert merge(gist, node) is True
+    assert (gist["stars"], gist["language"], gist["topics"]) == (7, "Markdown", [])
+    assert gist["stale"] is True and "archived" not in gist
+    assert gist_node({"gist": None}) is None and gist_node(None) is None

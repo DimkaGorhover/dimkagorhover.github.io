@@ -6,6 +6,7 @@
 """Add one repo to data/projects.yaml with live GitHub metadata.
 
 Usage: uv run scripts/add_project.py owner/repo "Category" ["Category"...]
+       uv run scripts/add_project.py https://gist.github.com/owner/id "Category"...
 
 Categories must already exist in data/categories.yaml — the /awesome
 shortcode iterates that list, so an unknown category renders nowhere.
@@ -18,14 +19,17 @@ import yaml
 
 from refresh_projects import fetch, merge
 
+GIST = "https://gist.github.com/"
 # key order of the existing records, kept so diffs stay readable
-ORDER = ["id", "url", "description", "stars", "topics", "categories", "language", "archived", "stale"]
+ORDER = ["id", "url", "description", "stars", "topics", "categories", "language", "archived", "stale", "gist"]
 
 
 def main() -> None:
     if len(sys.argv) < 3 or "/" not in sys.argv[1]:
         sys.exit(__doc__)
     repo_id, categories = sys.argv[1], sys.argv[2:]
+    gist = repo_id.startswith(GIST)
+    repo_id = repo_id.removeprefix(GIST).strip("/")
 
     cats_path = Path("data/categories.yaml")
     known = yaml.safe_load(cats_path.read_text())["categories"]
@@ -41,9 +45,11 @@ def main() -> None:
 
     record = {
         "id": repo_id,
-        "url": f"https://github.com/{repo_id}",
+        "url": f"{GIST if gist else 'https://github.com/'}{repo_id}",
         "categories": categories,
     }
+    if gist:
+        record["gist"] = True
     if not merge(record, fetch([record]).get("r0")):
         sys.exit(f"{repo_id} not found on GitHub")
 

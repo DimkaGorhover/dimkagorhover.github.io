@@ -7,7 +7,8 @@ description: Use when asked to refresh, update or re-fetch the starred projects 
 
 `scripts/refresh_projects.py` pulls live GitHub metadata (stars, topics,
 description, language, archived, stale) into `data/projects.yaml`. Curated
-`categories` are never touched. It takes the YAML path as `$1`, so the work
+`categories` are never touched. Records with `gist: true` are fetched as
+gists (stars, description, first file's language, stale from last push). It takes the YAML path as `$1`, so the work
 shards across agents by file.
 
 Two health flags, both written as `true` or omitted, both rendered as markers

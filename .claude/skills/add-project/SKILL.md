@@ -7,7 +7,8 @@ description: Use when asked to add a repo, star or project to the projects catal
 
 `scripts/add_project.py` appends one repo to `data/projects.yaml`, filling
 description, stars, topics, language and archived from GitHub, then re-sorts
-the file. Categories are the only curated field, so they are the only thing
+the file. A gist works too: pass its full `https://gist.github.com/owner/id`
+URL instead of `owner/repo` (stored with `gist: true`, no topics). Categories are the only curated field, so they are the only thing
 you have to decide.
 
 Prereq: `gh auth status` must be logged in.

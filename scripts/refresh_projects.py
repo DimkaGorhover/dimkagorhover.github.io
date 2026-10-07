@@ -7,6 +7,7 @@
 
 Updates topics, stars, description, language, archived, stale. Never touches
 categories (curated) — records the API can't resolve keep their old data.
+Records with `gist: true` are gists (id is owner/gist-id), not repos.
 """
 
 import json
@@ -25,6 +26,12 @@ def build_query(batch: list[dict]) -> str:
     parts = []
     for i, project in enumerate(batch):
         owner, name = project["id"].split("/", 1)
+        if project.get("gist"):
+            parts.append(
+                f"r{i}: user(login: {json.dumps(owner)}) {{ gist(name: {json.dumps(name)}) {{"
+                " description stargazerCount pushedAt files(limit: 1) { language { name } } } }"
+            )
+            continue
         parts.append(
             f"r{i}: repository(owner: {json.dumps(owner)}, name: {json.dumps(name)}) {{"
             " description stargazerCount isArchived"
@@ -43,6 +50,23 @@ def last_activity(node: dict) -> str:
         ((node.get("defaultBranchRef") or {}).get("target") or {}).get("committedDate") or "",
         (node.get("latestRelease") or {}).get("publishedAt") or "",
     )
+
+
+def gist_node(user: dict | None) -> dict | None:
+    """Reshape a gist response into a repository node so merge() handles both:
+    no topics, never archived, last push stands in for the last commit."""
+    gist = (user or {}).get("gist")
+    if gist is None:
+        return None
+    files = gist["files"] or [{}]
+    return {
+        "description": gist["description"],
+        "stargazerCount": gist["stargazerCount"],
+        "isArchived": False,
+        "primaryLanguage": files[0].get("language"),
+        "defaultBranchRef": {"target": {"committedDate": gist["pushedAt"]}},
+        "repositoryTopics": {"nodes": []},
+    }
 
 
 def merge(record: dict, node: dict | None) -> bool:
@@ -101,6 +125,9 @@ def fetch(batch: list[dict]) -> dict:
     data = payload.get("data")
     if data is None:
         sys.exit(f"no data in response (exit {proc.returncode}): {proc.stderr[:500]}")
+    for i, project in enumerate(batch):
+        if project.get("gist"):
+            data[f"r{i}"] = gist_node(data.get(f"r{i}"))
     return data
 
 
