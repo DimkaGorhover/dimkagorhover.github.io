@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Dmytro Horkhover — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 12mm 14mm; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 10.5pt/1.4 Montserrat, Helvetica, Arial, sans-serif; color: #333; }
+a { color: inherit; text-decoration: none; }
+.page { max-width: 210mm; margin: 0 auto; padding: 12mm 14mm; background: #fff; }
+header { display: flex; gap: 18px; align-items: flex-start; }
+.avatar { flex: 0 0 90px; height: 90px; background: #1c73c9; color: #fff; font-size: 30pt; display: flex; align-items: center; justify-content: center; }
+h1 { margin: 0; font-size: 22pt; font-weight: 700; text-transform: uppercase; color: #222; }
+h1 span { color: #1c73c9; font-weight: 400; }
+.title { margin: 0 0 8px; font-size: 11pt; text-transform: uppercase; color: #777; }
+header p { margin: 0 0 4px; font-size: 9.5pt; }
+.contacts { background: #eee; margin: 14px -14mm 0; padding: 6px 14mm; font-size: 9.5pt; display: flex; gap: 28px; }
+h2 { color: #1c73c9; font-size: 11.5pt; text-transform: uppercase; margin: 18px 0 6px; }
+h3 { margin: 0; font-size: 11pt; font-weight: 600; color: #222; }
+.entry { margin-bottom: 10px; break-inside: avoid; }
+.meta { margin: 0 0 2px; font-size: 9.5pt; }
+.date { color: #777; font-style: italic; margin-left: 12px; }
+ul { margin: 2px 0; padding-left: 18px; }
+li { margin-bottom: 2px; }
+.skill { margin: 2px 0; font-size: 9.5pt; }
+@media print { .page { padding: 0; max-width: none; } }
+</style></head><body><div class="page">
+<header><div class="avatar">DH</div><div>
+<h1>Dmytro <span>Horkhover</span></h1>
+<p class="title">Platform Engineer &amp; Team Lead · 14+ years</p>
+<p>Platform engineer and team lead. Spent the first decade as a backend/JVM engineer on high-load systems, then five years building and running a Kubernetes-based data platform from scratch for Ukraine's largest retail group. Care about engineering as a whole rather than any one language: reliability, observability, delivery pipelines, supply-chain security, cost, and the boring-but-correct solution.</p>
+<p>Enjoy leading teams: 3.5 years as team lead and Product Owner of a DevOps/SRE team — hiring, growth plans, assessments, scrum ceremonies, OKRs, post-mortem culture — while staying hands-on.</p>
+<p>Open to platform / infrastructure / SRE or engineering-lead roles; product companies and remote preferred, relocation is not an issue.</p>
+</div></header>
+<div class="contacts"><a href="mailto:hdpmail@pm.me">hdpmail@pm.me</a><a href="https://www.linkedin.com/in/dmitriy-gorkhover/">linkedin.com/in/dmitriy-gorkhover</a></div>
+
+<h2>Experience</h2>
+
+<div class="entry"><h3>Team Lead / Senior DevOps Engineer, Data Platform</h3>
+<p class="meta"><b>Fozzy Group (Temabit / Foodtech), Remote</b><span class="date">May 2021 - Present</span></p>
+<ul>
+<li>Designed and built the group's Kubernetes-based analytics platform from an empty repo to production: a 40-node bare-metal RKE2 cluster (Cilium eBPF, keepalived HA) plus CI-runner, test and Azure AKS clusters, all managed with ArgoCD GitOps from a repository I founded (66 Helm charts, 102 applications).</li>
+<li>Delivered the multi-tenant data stack — Spark on Kubernetes, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka, DataHub, JupyterHub, Superset — serving ~45 internal analytics teams.</li>
+<li>Built a 192-drive encrypted MinIO object store with 702 IAM policies as code and identity-based short-lived S3 credentials for every Spark job (Keycloak/AD → STS).</li>
+<li>Founded and owned the container image supply chain: 122 image variants, Jsonnet-generated GitLab pipelines, multi-arch BuildKit builds, cosign signing, Trivy/SBOM gates, and air-gapped Nexus mirrors of 51 upstream registries.</li>
+<li>Executed the TFS/TeamCity → GitLab migration and wrote a GitLab CI template library consumed by ~100 repos; ran secrets and identity — Vault HA + External Secrets, Terraform-managed tenant model for 49 teams, Keycloak SSO.</li>
+<li>Owned reliability: Prometheus/Thanos/Loki/Grafana with 129 dashboards as code, SLO program, 18 post-mortems — including root-causing a recurring Cilium identity-explosion outage and eliminating 88k/week HTTP 503s for BI users.</li>
+<li>Led a 3–6-person DevOps/SRE team for 3.5 years as team lead and Product Owner: hiring, PDPs, assessments, scrum ceremonies, OKRs.</li>
+</ul></div>
+
+<div class="entry"><h3>Senior Java Software Engineer</h3>
+<p class="meta"><b>Grid Dynamics, Lviv, Ukraine</b><span class="date">Oct 2020 - Aug 2021</span></p>
+<ul>
+<li>Full-stack engineer on e-commerce services for a major US retail client — reactive Java/Spring backend, Angular frontend; owned features end to end, from API design to deployment on the client's Kubernetes cluster.</li>
+</ul></div>
+
+<div class="entry"><h3>Full-Stack Engineer</h3>
+<p class="meta"><b>Self-Employed, Lviv, Ukraine</b><span class="date">Jan 2020 - Sep 2020</span></p>
+<ul>
+<li>Owned data processing for a retail company's recommendation platform end to end — ingestion, Spark jobs and the admin-console UI.</li>
+<li>Built and operated a bare-metal Kubernetes cluster from scratch with Ansible as an R&amp;D project that became the basis for later platform work.</li>
+</ul></div>
+
+<div class="entry"><h3>Software Java Engineer</h3>
+<p class="meta"><b>N-IX, Lviv, Ukraine</b><span class="date">Aug 2019 - Dec 2019</span></p>
+<ul>
+<li>Owned the implementation of a new SMS gateway protocol (SMGP) for a telecom-services client, delivered with extensive unit-test coverage.</li>
+<li>Set up a Docker Swarm environment with GitLab, Jenkins and SonarQube on the client's Azure cloud, cutting the vulnerability-fix feedback loop from days to minutes.</li>
+</ul></div>
+
+<div class="entry"><h3>Senior Java Developer</h3>
+<p class="meta"><b>Intellias, Lviv, Ukraine</b><span class="date">Nov 2018 - Mar 2019</span></p>
+<ul>
+<li>Designed and implemented a new map-matching algorithm (Hidden Markov Model + Viterbi) for an automotive navigation client and refactored the pipeline to evaluate multiple algorithms side by side.</li>
+</ul></div>
+
+<div class="entry"><h3>Software Engineer</h3>
+<p class="meta"><b>LoopMe (via Ciklum until Nov 2015), Dnipro, Ukraine</b><span class="date">Jul 2014 - Oct 2018</span></p>
+<ul>
+<li>Core engineer on a high-load digital-advertising platform — ad server, targeting algorithms and real-time-bidding APIs — from the original Clojure implementation through the full migration to Java.</li>
+<li>Spent ~2 years in the Data Science team owning the Java services that serve prediction and bidding models in production at ~1 ms p99 latency.</li>
+<li>Awarded "Company Hero" (given once every six months) for single-handedly delivering a difficult cross-language PoC integration.</li>
+</ul></div>
+
+<div class="entry"><h3>Middle Software Engineer</h3>
+<p class="meta"><b>Privat Bank, Dnipro, Ukraine</b><span class="date">Jul 2013 - Jul 2014</span></p>
+<ul>
+<li>Owned delivery of internal web applications for the business department, from requirements through production support.</li>
+</ul></div>
+
+<div class="entry"><h3>Junior Software Engineer</h3>
+<p class="meta"><b>Privat24 (Privat Bank), Dnipro, Ukraine</b><span class="date">Feb 2012 - Jul 2013</span></p>
+<ul>
+<li>Developed and maintained the Privat24 internet-banking system (Ukraine, Georgia and A-Bank editions); single-handedly migrated the Georgia project from Java 6 + Ant to Java 7 + Spring + Maven + Git.</li>
+</ul></div>
+
+<h2>Skills</h2>
+<p class="skill"><b>Platform &amp; Kubernetes:</b> Kubernetes (RKE2, AKS, EKS), Cilium, ArgoCD / GitOps, Helm, Kustomize, Kyverno, Ansible, Terraform, Bare-metal ops</p>
+<p class="skill"><b>CI/CD &amp; Supply Chain:</b> GitLab CI, TeamCity Kotlin DSL, Docker / BuildKit, cosign, Trivy, Nexus, Jsonnet, Air-gapped mirrors</p>
+<p class="skill"><b>Data Platform:</b> Apache Spark on K8s, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka / Confluent, DataHub, MinIO / S3, Delta Lake</p>
+<p class="skill"><b>Reliability &amp; Observability:</b> Prometheus, Thanos, Loki, Grafana, OpenTelemetry, SLOs, Post-mortems, Runbooks</p>
+<p class="skill"><b>Identity &amp; Secrets:</b> HashiCorp Vault, External Secrets, Keycloak, OIDC / LDAP / AD, Sigstore</p>
+<p class="skill"><b>Languages:</b> Go, Python, Java / Kotlin / Scala (JVM), Clojure, Bash, HCL</p>
+<p class="skill"><b>Databases &amp; Messaging:</b> PostgreSQL (CloudNativePG), Redis, Kafka, Elasticsearch</p>
+<p class="skill"><b>Cloud:</b> Azure (AKS, Entra ID, ACR, Key Vault), AWS (EKS, S3, IAM), GCP</p>
+<p class="skill"><b>Leadership:</b> Team lead (3–6 engineers), Product ownership, Hiring, PDPs &amp; assessments, Scrum, OKRs</p>
+
+<h2>Education</h2>
+<div class="entry"><h3>Master of Computer Science</h3>
+<p class="meta"><b>Ukrainian State Chemical Technology University, Dnipro, Ukraine</b><span class="date">Sep 2010 - Jun 2011</span></p></div>
+<div class="entry"><h3>Bachelor of Computer Science</h3>
+<p class="meta"><b>Ukrainian State Chemical Technology University, Dnipro, Ukraine</b><span class="date">Sep 2006 - Jun 2010</span></p></div>
+
+<h2>Languages</h2>
+<p>Ukrainian — Native · English — Intermediate · Russian — Fluent · Polish — Elementary (A2–B1) · German — Elementary</p>
+</div></body></html>
