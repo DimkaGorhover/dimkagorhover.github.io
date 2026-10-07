@@ -21102,6 +21102,22 @@ projects:
   - Other Stars
   language: Shell
   stale: true
+- id: InsaneArts/herdrbar
+  url: https://github.com/InsaneArts/herdrbar
+  description: Every herdr agent in your Mac's menu bar, get beautiful OS level notifications and jump to any agent which needs you
+  stars: 5
+  topics:
+  - coding-agents
+  - herdr
+  - homebrew
+  - macos
+  - menu-bar
+  - open-source
+  - swift
+  categories:
+  - macOS
+  - AI · Agent Plugins & Extensions
+  language: Swift
 - id: georgekobaidze/georgekobaidze
   url: https://github.com/georgekobaidze/georgekobaidze
   description: Config files for my GitHub profile.
