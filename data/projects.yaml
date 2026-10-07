@@ -21128,6 +21128,21 @@ projects:
   categories:
   - Other Stars
   language: Python
+- id: InsaneArts/Spacewalk
+  url: https://github.com/InsaneArts/Spacewalk
+  description: Instant or animated Spaces switcher for macOS
+  stars: 2
+  topics:
+  - animation
+  - macos
+  - menu-bar-app
+  - mission-control
+  - productivity
+  - spaces
+  - swift
+  categories:
+  - macOS
+  language: Swift
 - id: DimkaGorhover/leetcode-go
   url: https://github.com/DimkaGorhover/leetcode-go
   stars: 1
