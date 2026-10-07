@@ -2402,6 +2402,15 @@ projects:
   categories:
   - Other Stars
   language: Go
+- id: karpathy/442a6bf555914893e9891c11519de94f
+  url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+  description: llm-wiki
+  stars: 49375
+  topics: []
+  categories:
+  - AI · Memory, Context & RAG
+  language: Markdown
+  gist: true
 - id: mudler/LocalAI
   url: https://github.com/mudler/LocalAI
   description: LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.
@@ -19198,6 +19207,14 @@ projects:
   - Other Stars
   language: Java
   stale: true
+- id: poteto/noodle
+  url: https://github.com/poteto/noodle
+  description: Orchestrate agents using skills
+  stars: 426
+  topics: []
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  language: Go
 - id: gliderlabs/sigil
   url: https://github.com/gliderlabs/sigil
   description: Standalone string interpolator and template processor
