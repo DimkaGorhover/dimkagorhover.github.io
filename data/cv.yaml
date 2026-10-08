@@ -12,14 +12,15 @@ about:
     than any one language: reliability, observability, delivery pipelines,
     supply-chain security, cost, and the boring-but-correct solution.
   - >-
-    Enjoy leading teams: 3.5 years as team lead and Product Owner of a
-    DevOps/SRE team — hiring, growth plans, assessments, scrum ceremonies,
+    Enjoy leading teams: team lead and Product Owner of a DevOps/SRE
+    team — hiring, growth plans, assessments, scrum ceremonies,
     OKRs, post-mortem culture — while staying hands-on.
   - >-
     Looking for new challenges: platform / infrastructure / SRE engineering
     or an engineering-lead role. Product companies are preferable, full
     time, remote is preferable; relocation to another city/country is not
-    an issue.
+    an issue. Currently building an AI-powered bot that automates code
+    review of GitLab merge requests, now in pilot on real projects.
 
 languages:
   - name: Ukrainian
@@ -50,6 +51,8 @@ skills:
     items: [Apache Spark on K8s, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka / Confluent, DataHub, MinIO / S3, Delta Lake]
   - name: Reliability & Observability
     items: [Prometheus, Thanos, Loki, Grafana, OpenTelemetry, SLOs, Post-mortems, Runbooks]
+  - name: AI-Assisted Engineering
+    items: ["Claude Code (plugins, skills, agents, hooks)", MCP servers, "Spec-driven development (OpenSpec, Superpowers)", Codex, Cursor, GitHub Copilot, AGENTS.md / agent guidance, LLM code review automation, Plugin evals]
   - name: Identity & Secrets
     items: [HashiCorp Vault, External Secrets, Keycloak, OIDC / LDAP / AD, Sigstore]
   - name: Languages
@@ -123,8 +126,14 @@ experience:
         root-causing a recurring Cilium identity-explosion outage and
         eliminating 88k/week HTTP 503s for BI users.
       - >-
-        Led a 3–6-person DevOps/SRE team for 3.5 years as team lead and
-        Product Owner: hiring, PDPs, assessments, scrum ceremonies, OKRs.
+        Introduced AI-assisted engineering on the team: repo-level agent
+        guidance with cluster-safety rules and per-chart conventions, and
+        shared AI agent plugins for a spec-driven workflow, from task
+        refinement to specs, plans and ADRs, with delivery tracked in the
+        team's tools.
+      - >-
+        Led a 3–6-person DevOps/SRE team as team lead and Product Owner:
+        hiring, PDPs, assessments, scrum ceremonies, OKRs.
     tech: >-
       Kubernetes (RKE2, AKS, EKS), Cilium, ArgoCD, Helm, Kustomize, Ansible,
       Terraform, GitLab CI, TeamCity Kotlin DSL, Docker/BuildKit, cosign,
