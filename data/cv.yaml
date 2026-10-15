@@ -8,16 +8,16 @@ about:
     Platform engineer and team lead. Spent the first decade as a
     backend/JVM engineer on high-load systems, then five years building and
     running a Kubernetes-based data platform from scratch for Ukraine's
-    largest retail group. Care about engineering as a whole rather
-    than any one language: reliability, observability, delivery pipelines,
+    largest retail group. Care about engineering beyond any single
+    language: reliability, observability, delivery pipelines,
     supply-chain security, cost, and the boring-but-correct solution.
   - >-
-    Enjoy leading teams: team lead and Product Owner of a DevOps/SRE
-    team — hiring, growth plans, assessments, scrum ceremonies,
-    OKRs, post-mortem culture — while staying hands-on.
+    Enjoy leading teams while staying hands-on: team lead and Product
+    Owner of a DevOps/SRE team, responsible for hiring, growth plans,
+    assessments, scrum ceremonies, OKRs and post-mortem culture.
   - >-
-    Looking for new challenges: platform / infrastructure / SRE engineering
-    or an engineering-lead role. Product companies are preferable, full
+    Looking for a platform / infrastructure / SRE engineering or
+    engineering-lead role. Product companies are preferable, full
     time, remote is preferable; relocation to another city/country is not
     an issue. Currently building an AI-powered bot that automates code
     review of GitLab merge requests, now in pilot on real projects.
@@ -92,9 +92,9 @@ experience:
         clusters, all managed with ArgoCD GitOps from a repository I founded
         (66 Helm charts, 102 applications, 57% of 9.7k commits).
       - >-
-        Delivered the multi-tenant data stack — Spark on Kubernetes, Kyuubi,
+        Delivered the multi-tenant data stack (Spark on Kubernetes, Kyuubi,
         Hive Metastore, Airflow 2/3, dbt, ClickHouse, Kafka/Confluent,
-        DataHub, JupyterHub, Superset — serving ~45 internal analytics teams.
+        DataHub, JupyterHub, Superset) serving ~45 internal analytics teams.
       - >-
         Built a 192-drive encrypted MinIO object store with 702 IAM policies
         as code and identity-based short-lived S3 credentials for every
@@ -118,11 +118,11 @@ experience:
         identity, catalog, and observability glue.
       - >-
         Bootstrapped the Azure AKS production data platform (Airflow 3,
-        Workload Identity, ACR, Key Vault) — dev → prod cutover in four
-        months.
+        Workload Identity, ACR, Key Vault) and took it from dev to
+        production in four months.
       - >-
         Owned reliability: kube-prometheus-stack/Thanos/Loki/Grafana with 129
-        dashboards as code, SLO program, 18 post-mortems — including
+        dashboards as code, SLO program, 18 post-mortems, including
         root-causing a recurring Cilium identity-explosion outage and
         eliminating 88k/week HTTP 503s for BI users.
       - >-
@@ -151,7 +151,7 @@ experience:
     highlights:
       - >-
         Full-stack engineer on e-commerce services for a major US retail
-        client — reactive Java/Spring backend, Angular frontend.
+        client, with a reactive Java/Spring backend and an Angular frontend.
       - >-
         Owned features end to end: API design, implementation, tests,
         and deployment to the client's Kubernetes cluster.
@@ -167,7 +167,7 @@ experience:
     highlights:
       - >-
         Owned data processing for a retail company's recommendation platform
-        end to end — ingestion, Spark jobs and the admin-console UI.
+        end to end: ingestion, Spark jobs and the admin-console UI.
       - >-
         Built and operated a bare-metal Kubernetes cluster from scratch with
         Ansible playbooks (Alpine, CentOS, Ubuntu nodes) as an R&D project
@@ -223,8 +223,8 @@ experience:
     end: 2018-10
     highlights:
       - >-
-        Core engineer on a high-load digital-advertising platform — ad
-        server, targeting algorithms and real-time-bidding APIs — from the
+        Core engineer on a high-load digital-advertising platform (ad
+        server, targeting algorithms, real-time-bidding APIs) from the
         original Clojure implementation through the full migration to Java.
       - >-
         Spent ~2 years in the Data Science team owning the Java services that
@@ -251,7 +251,7 @@ experience:
     highlights:
       - >-
         Outstaffed to LoopMe for the whole engagement, then transferred
-        in-house — see the LoopMe entry above.
+        in-house (see the LoopMe entry above).
 
   - position: Middle Software Engineer
     company: Privat Bank
@@ -276,7 +276,7 @@ experience:
     highlights:
       - >-
         Developed and maintained the Privat24 internet-banking system
-        (Ukraine, Georgia and A-Bank editions) — features, support,
+        (Ukraine, Georgia and A-Bank editions): features, support,
         bug fixing and unit testing.
       - >-
         Single-handedly migrated the Privat24 Georgia project from Java 6 +
