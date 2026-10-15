@@ -2404,7 +2404,7 @@ projects:
   language: Go
 - id: karpathy/442a6bf555914893e9891c11519de94f
   url: https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-  description: "An idea file for your LLM agent: instead of re-retrieving chunks RAG-style, the LLM incrementally builds and maintains a persistent, interlinked markdown wiki from your sources."
+  description: 'An idea file for your LLM agent: instead of re-retrieving chunks RAG-style, the LLM incrementally builds and maintains a persistent, interlinked markdown wiki from your sources.'
   stars: 49375
   topics: []
   categories:
@@ -21065,6 +21065,15 @@ projects:
   categories:
   - Go
   language: Go
+- id: PakhomovAlexander/afactory
+  url: https://github.com/PakhomovAlexander/afactory
+  description: Multi-agent coding factory made fast
+  stars: 15
+  topics: []
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  - AI · Coding Agents
+  language: Rust
 - id: samber/awesome-ai-native
   url: https://github.com/samber/awesome-ai-native
   description: 'A curated list of AI-native products: apps and tools where the LLM is the product itself, not a bolted-on feature.'
