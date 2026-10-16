@@ -23,5 +23,6 @@ links = [
   { github = "https://github.com/DimkaGorhover" },
   { linkedin = "https://www.linkedin.com/in/dmitriy-gorkhover/" },
   { telegram = "https://t.me/hdmytro" },
+  { calendar = "https://dmytro-horkhover.youcanbook.me/" },
   { x-twitter = "https://twitter.com/dghover" },
 ]
