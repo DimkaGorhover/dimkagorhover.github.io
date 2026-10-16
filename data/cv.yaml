@@ -5,22 +5,28 @@ first_working_year: 2012
 
 about:
   - >-
-    Platform engineer and team lead. Spent the first decade as a
-    backend/JVM engineer on high-load systems, then five years building and
-    running a Kubernetes-based data platform from scratch for Ukraine's
-    largest retail group. Care about engineering beyond any single
-    language: reliability, observability, delivery pipelines,
-    supply-chain security, cost, and the boring-but-correct solution.
+    Platform engineer and team lead who designed and built a Kubernetes
+    data platform from an empty repo to production for Ukraine's largest
+    retail group: a 40-node bare-metal cluster plus Azure AKS, GitOps, a
+    signed supply chain, Vault/Keycloak identity, and a multi-tenant
+    Spark/Airflow/ClickHouse stack serving ~45 analytics teams. Led its
+    3–6-person DevOps/SRE team as team lead and Product Owner while
+    staying hands-on.
   - >-
-    Enjoy leading teams while staying hands-on: team lead and Product
-    Owner of a DevOps/SRE team, responsible for hiring, growth plans,
-    assessments, scrum ceremonies, OKRs and post-mortem culture.
+    AI-native in daily practice: most of my engineering work is delivered
+    through coding agents (Claude Code, Kiro, OpenCode), including
+    merge-request review, Helm chart upgrades and documentation, with me
+    owning the spec, review and verification. Packaged the workflow into
+    skills and CLI helpers shared with the team, cutting the platform's
+    support load enough to move teammates onto feature work.
+  - >-
+    Background: a decade of backend/JVM engineering on high-load systems,
+    including real-time ad bidding and ML model serving at ~1 ms p99.
   - >-
     Looking for a platform / infrastructure / SRE engineering or
-    engineering-lead role. Product companies are preferable, full
-    time, remote is preferable; relocation to another city/country is not
-    an issue. Currently building an AI-powered bot that automates code
-    review of GitLab merge requests, now in pilot on real projects.
+    engineering-lead role. Product companies and remote preferred,
+    relocation welcome. Currently building an AI-powered bot that automates code
+    review of GitLab merge requests (pre-alpha).
 
 languages:
   - name: Ukrainian
@@ -52,7 +58,7 @@ skills:
   - name: Reliability & Observability
     items: [Prometheus, Thanos, Loki, Grafana, OpenTelemetry, SLOs, Post-mortems, Runbooks]
   - name: AI-Assisted Engineering
-    items: ["Claude Code (plugins, skills, agents, hooks)", MCP servers, "Spec-driven development (OpenSpec, Superpowers)", Codex, Cursor, GitHub Copilot, AGENTS.md / agent guidance, LLM code review automation, Plugin evals]
+    items: ["Claude Code (plugins, skills, agents, hooks)", "Kiro (IDE + CLI)", OpenCode, MCP servers, "Spec-driven development (OpenSpec, Superpowers)", Codex, Cursor, GitHub Copilot, AGENTS.md / agent guidance, LLM code review automation, Plugin evals]
   - name: Identity & Secrets
     items: [HashiCorp Vault, External Secrets, Keycloak, OIDC / LDAP / AD, Sigstore]
   - name: Languages
@@ -82,7 +88,7 @@ experience:
   - position: Team Lead / Senior DevOps Engineer, Data Platform
     company: Fozzy Group (Temabit / Foodtech)
     url: https://fozzy.group
-    location: Remote
+    location: Ukraine-based company, 100% remote
     start: 2021-05
     highlights:
       - >-
@@ -90,7 +96,7 @@ experience:
         from an empty repo to production: a 40-node bare-metal RKE2 cluster
         (Cilium eBPF, keepalived HA) plus CI-runner, test and Azure AKS
         clusters, all managed with ArgoCD GitOps from a repository I founded
-        (66 Helm charts, 102 applications, 57% of 9.7k commits).
+        (66 Helm charts, 102 applications).
       - >-
         Delivered the multi-tenant data stack (Spark on Kubernetes, Kyuubi,
         Hive Metastore, Airflow 2/3, dbt, ClickHouse, Kafka/Confluent,
@@ -114,8 +120,8 @@ experience:
         Terraform-managed tenant model and GitLab token automation for 49
         teams; Keycloak SSO across the platform.
       - >-
-        Wrote ~42k lines of Go (35% tests) across 17 services for storage,
-        identity, catalog, and observability glue.
+        Built 17 Go microservices for the data platform's infrastructure
+        layer: storage, identity, catalog and observability integrations.
       - >-
         Bootstrapped the Azure AKS production data platform (Airflow 3,
         Workload Identity, ACR, Key Vault) and took it from dev to
@@ -131,6 +137,13 @@ experience:
         shared AI agent plugins for a spec-driven workflow, from task
         refinement to specs, plans and ADRs, with delivery tracked in the
         team's tools.
+      - >-
+        Moved platform support to an AI-agent workflow (Kiro IDE/CLI):
+        agents handle merge-request review, routine Helm chart upgrades and
+        keeping documentation current, with every change human-reviewed.
+        Built a team plugin of agent skills and CLI helpers, covered by evals
+        and compatible with Claude Code, Codex and Cursor. Support work that used to take three engineers now takes about
+        half of my time, so the rest of the team works on new features.
       - >-
         Led a 3–6-person DevOps/SRE team as team lead and Product Owner:
         hiring, PDPs, assessments, scrum ceremonies, OKRs.
@@ -216,7 +229,7 @@ experience:
     tech: Java 8, Apache Maven, Jenkins, Git (Gerrit)
 
   - position: Software Engineer
-    company: LoopMe
+    company: LoopMe (via Ciklum until Nov 2015, then in-house)
     url: https://loopme.com
     location: Dnipro, Ukraine
     start: 2014-07
@@ -242,37 +255,12 @@ experience:
       Cassandra, PostgreSQL, Redis, Elasticsearch, Clickhouse, Docker,
       Kubernetes, Jenkins, Grafana, Prometheus, Datadog
 
-  - position: Java Developer
-    company: Ciklum
-    url: https://ciklum.com
-    location: Dnipro, Ukraine
-    start: 2014-07
-    end: 2015-11
-    highlights:
-      - >-
-        Outstaffed to LoopMe for the whole engagement, then transferred
-        in-house (see the LoopMe entry above).
-
-  - position: Middle Software Engineer
+  - position: Junior → Middle Software Engineer
     company: Privat Bank
     url: https://privatbank.ua
     location: Dnipro, Ukraine
-    start: 2013-07
-    end: 2014-07
-    highlights:
-      - >-
-        Owned delivery of internal web applications for the business
-        department, from requirements through production support.
-    tech: >-
-      Java (6–8), JavaScript, Spring 3, jQuery, Angular 1, PostgreSQL, Redis,
-      Apache Maven, Jenkins
-
-  - position: Junior Software Engineer
-    company: Privat24 (Privat Bank)
-    url: https://privat24.ua
-    location: Dnipro, Ukraine
     start: 2012-02
-    end: 2013-07
+    end: 2014-07
     highlights:
       - >-
         Developed and maintained the Privat24 internet-banking system
@@ -281,8 +269,13 @@ experience:
       - >-
         Single-handedly migrated the Privat24 Georgia project from Java 6 +
         Ant to Java 7 + Spring + Maven + Git over four weekends.
+      - >-
+        Promoted to middle engineer; owned delivery of internal web
+        applications for the business department, from requirements
+        through production support.
     tech: >-
-      Java 6/7, JavaScript, Java EE (EJB, Resin), Spring 3, jQuery, Backbone,
-      Sybase, Redis, RabbitMQ, Jenkins
+      Java (6–8), JavaScript, Java EE (EJB, Resin), Spring 3, jQuery,
+      Backbone, Angular 1, Sybase, PostgreSQL, Redis, RabbitMQ, Apache Maven,
+      Jenkins
 
 hobbies: [Traveling, Motorcycles, Gym, Football, Cars, Bicycles]
