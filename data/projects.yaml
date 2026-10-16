@@ -4990,6 +4990,19 @@ projects:
   categories:
   - Other Stars
   language: TypeScript
+- id: charmbracelet/glow
+  url: https://github.com/charmbracelet/glow
+  description: Render markdown on the CLI, with pizzazz! 💅🏻
+  stars: 27716
+  topics:
+  - markdown
+  - cli
+  - excitement
+  - hacktoberfest
+  categories:
+  - Go
+  - Tools
+  language: Go
 - id: virattt/dexter
   url: https://github.com/virattt/dexter
   description: An autonomous agent for deep financial research
@@ -8719,6 +8732,21 @@ projects:
   - Databases
   - Full-Text Search
   language: C++
+- id: charmbracelet/lipgloss
+  url: https://github.com/charmbracelet/lipgloss
+  description: Style definitions for nice terminal layouts 👄
+  stars: 11933
+  topics:
+  - tui
+  - go
+  - golang
+  - cli
+  - layout
+  - style
+  - hacktoberfest
+  categories:
+  - Go
+  language: Go
 - id: yahoo/CMAK
   url: https://github.com/yahoo/CMAK
   description: CMAK is a tool for managing Apache Kafka clusters
@@ -13570,6 +13598,20 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: charmbracelet/glamour
+  url: https://github.com/charmbracelet/glamour
+  description: Stylesheet-based markdown rendering for your CLI apps 💇🏻‍♀️
+  stars: 3733
+  topics:
+  - markdown
+  - go
+  - golang
+  - cli
+  - hacktoberfest
+  - tui
+  categories:
+  - Go
+  language: Go
 - id: browserbase/skills
   url: https://github.com/browserbase/skills
   description: Browserbase's official collection of agent skills to access the web.
