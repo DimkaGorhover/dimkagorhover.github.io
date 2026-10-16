@@ -47,6 +47,9 @@ contacts:
   - name: LinkedIn
     url: https://www.linkedin.com/in/dmitriy-gorkhover/
     label: dmitriy-gorkhover
+  - name: Book a call
+    url: https://dmytro-horkhover.youcanbook.me/
+    label: dmytro-horkhover.youcanbook.me
 
 skills:
   - name: Platform & Kubernetes
