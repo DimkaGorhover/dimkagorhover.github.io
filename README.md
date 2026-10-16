@@ -100,7 +100,7 @@ in `config/_default/languages.en.toml`.
 
 ## Deployment
 
-Every push to `master` triggers `.github/workflows/deploy.yml`, which builds
+Every push to `main` triggers `.github/workflows/deploy.yml`, which builds
 the site with Hugo and publishes it via the official GitHub Pages actions.
 No deploy branch, no manual steps.
 
