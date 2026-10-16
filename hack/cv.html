@@ -28,37 +28,39 @@ li { margin-bottom: 2px; }
 <header><div class="avatar">DH</div><div>
 <h1>Dmytro <span>Horkhover</span></h1>
 <p class="title">Platform Engineer &amp; Team Lead · 14+ years</p>
-<p>Platform engineer and team lead. Spent the first decade as a backend/JVM engineer on high-load systems, then five years building and running a Kubernetes-based data platform from scratch for Ukraine's largest retail group. Care about engineering as a whole rather than any one language: reliability, observability, delivery pipelines, supply-chain security, cost, and the boring-but-correct solution.</p>
-<p>Enjoy leading teams: team lead and Product Owner of a DevOps/SRE team — hiring, growth plans, assessments, scrum ceremonies, OKRs, post-mortem culture — while staying hands-on.</p>
-<p>Open to platform / infrastructure / SRE or engineering-lead roles; product companies and remote preferred, relocation is not an issue. Currently building an AI-powered bot that automates code review of GitLab merge requests, now in pilot on real projects.</p>
+<p>Platform engineer and team lead who designed and built a Kubernetes data platform from an empty repo to production for Ukraine's largest retail group: a 40-node bare-metal cluster plus Azure AKS, GitOps, a signed supply chain, Vault/Keycloak identity, and a multi-tenant Spark/Airflow/ClickHouse stack serving ~45 analytics teams. Led its 3–6-person DevOps/SRE team as team lead and Product Owner while staying hands-on.</p>
+<p>AI-native in daily practice: most of my engineering work is delivered through coding agents (Claude Code, Kiro, OpenCode), including merge-request review, Helm chart upgrades and documentation, with me owning the spec, review and verification. Packaged the workflow into skills and CLI helpers shared with the team, cutting the platform's support load enough to move teammates onto feature work.</p>
+<p>Background: a decade of backend/JVM engineering on high-load systems, including real-time ad bidding and ML model serving at ~1 ms p99.</p>
+<p>Open to platform / infrastructure / SRE or engineering-lead roles; product companies and remote preferred, relocation welcome. Currently building an AI-powered bot that automates code review of GitLab merge requests (pre-alpha).</p>
 </div></header>
 <div class="contacts"><a href="mailto:hdpmail@pm.me">hdpmail@pm.me</a><a href="https://www.linkedin.com/in/dmitriy-gorkhover/">linkedin.com/in/dmitriy-gorkhover</a></div>
 
 <h2>Experience</h2>
 
 <div class="entry"><h3>Team Lead / Senior DevOps Engineer, Data Platform</h3>
-<p class="meta"><b>Fozzy Group (Temabit / Foodtech), Remote</b><span class="date">May 2021 - Present</span></p>
+<p class="meta"><b>Fozzy Group (Temabit / Foodtech), Ukraine-based, 100% remote</b><span class="date">May 2021 - Present</span></p>
 <ul>
 <li>Designed and built the group's Kubernetes-based analytics platform from an empty repo to production: a 40-node bare-metal RKE2 cluster (Cilium eBPF, keepalived HA) plus CI-runner, test and Azure AKS clusters, all managed with ArgoCD GitOps from a repository I founded (66 Helm charts, 102 applications).</li>
-<li>Delivered the multi-tenant data stack — Spark on Kubernetes, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka, DataHub, JupyterHub, Superset — serving ~45 internal analytics teams.</li>
+<li>Delivered the multi-tenant data stack (Spark on Kubernetes, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka, DataHub, JupyterHub, Superset) serving ~45 internal analytics teams.</li>
 <li>Built a 192-drive encrypted MinIO object store with 702 IAM policies as code and identity-based short-lived S3 credentials for every Spark job (Keycloak/AD → STS).</li>
 <li>Founded and owned the container image supply chain: 122 image variants, Jsonnet-generated GitLab pipelines, multi-arch BuildKit builds, cosign signing, Trivy/SBOM gates, and air-gapped Nexus mirrors of 51 upstream registries.</li>
 <li>Executed the TFS/TeamCity → GitLab migration and wrote a GitLab CI template library consumed by ~100 repos; ran secrets and identity — Vault HA + External Secrets, Terraform-managed tenant model for 49 teams, Keycloak SSO.</li>
-<li>Owned reliability: Prometheus/Thanos/Loki/Grafana with 129 dashboards as code, SLO program, 18 post-mortems — including root-causing a recurring Cilium identity-explosion outage and eliminating 88k/week HTTP 503s for BI users.</li>
+<li>Owned reliability: Prometheus/Thanos/Loki/Grafana with 129 dashboards as code, SLO program, 18 post-mortems, including root-causing a recurring Cilium identity-explosion outage and eliminating 88k/week HTTP 503s for BI users.</li>
 <li>Introduced AI-assisted engineering on the team: repo-level agent guidance with cluster-safety rules and per-chart conventions, and shared AI agent plugins for a spec-driven workflow, from task refinement to specs, plans and ADRs, with delivery tracked in the team's tools.</li>
+<li>Moved platform support to an AI-agent workflow (Kiro IDE/CLI): agents handle merge-request review, routine Helm chart upgrades and documentation, with every change human-reviewed. Built a team plugin of agent skills and CLI helpers, covered by evals and compatible with Claude Code, Codex and Cursor. Support work that used to take three engineers now takes about half of my time, so the rest of the team works on new features.</li>
 <li>Led a 3–6-person DevOps/SRE team as team lead and Product Owner: hiring, PDPs, assessments, scrum ceremonies, OKRs.</li>
 </ul></div>
 
 <div class="entry"><h3>Senior Java Software Engineer</h3>
 <p class="meta"><b>Grid Dynamics, Lviv, Ukraine</b><span class="date">Oct 2020 - Aug 2021</span></p>
 <ul>
-<li>Full-stack engineer on e-commerce services for a major US retail client — reactive Java/Spring backend, Angular frontend; owned features end to end, from API design to deployment on the client's Kubernetes cluster.</li>
+<li>Full-stack engineer on e-commerce services for a major US retail client, with a reactive Java/Spring backend and an Angular frontend; owned features end to end, from API design to deployment on the client's Kubernetes cluster.</li>
 </ul></div>
 
 <div class="entry"><h3>Full-Stack Engineer</h3>
 <p class="meta"><b>Self-Employed, Lviv, Ukraine</b><span class="date">Jan 2020 - Sep 2020</span></p>
 <ul>
-<li>Owned data processing for a retail company's recommendation platform end to end — ingestion, Spark jobs and the admin-console UI.</li>
+<li>Owned data processing for a retail company's recommendation platform end to end: ingestion, Spark jobs and the admin-console UI.</li>
 <li>Built and operated a bare-metal Kubernetes cluster from scratch with Ansible as an R&amp;D project that became the basis for later platform work.</li>
 </ul></div>
 
@@ -78,21 +80,16 @@ li { margin-bottom: 2px; }
 <div class="entry"><h3>Software Engineer</h3>
 <p class="meta"><b>LoopMe (via Ciklum until Nov 2015), Dnipro, Ukraine</b><span class="date">Jul 2014 - Oct 2018</span></p>
 <ul>
-<li>Core engineer on a high-load digital-advertising platform — ad server, targeting algorithms and real-time-bidding APIs — from the original Clojure implementation through the full migration to Java.</li>
+<li>Core engineer on a high-load digital-advertising platform (ad server, targeting algorithms, real-time-bidding APIs) from the original Clojure implementation through the full migration to Java.</li>
 <li>Spent ~2 years in the Data Science team owning the Java services that serve prediction and bidding models in production at ~1 ms p99 latency.</li>
 <li>Awarded "Company Hero" (given once every six months) for single-handedly delivering a difficult cross-language PoC integration.</li>
 </ul></div>
 
-<div class="entry"><h3>Middle Software Engineer</h3>
-<p class="meta"><b>Privat Bank, Dnipro, Ukraine</b><span class="date">Jul 2013 - Jul 2014</span></p>
-<ul>
-<li>Owned delivery of internal web applications for the business department, from requirements through production support.</li>
-</ul></div>
-
-<div class="entry"><h3>Junior Software Engineer</h3>
-<p class="meta"><b>Privat24 (Privat Bank), Dnipro, Ukraine</b><span class="date">Feb 2012 - Jul 2013</span></p>
+<div class="entry"><h3>Junior → Middle Software Engineer</h3>
+<p class="meta"><b>Privat Bank, Dnipro, Ukraine</b><span class="date">Feb 2012 - Jul 2014</span></p>
 <ul>
 <li>Developed and maintained the Privat24 internet-banking system (Ukraine, Georgia and A-Bank editions); single-handedly migrated the Georgia project from Java 6 + Ant to Java 7 + Spring + Maven + Git.</li>
+<li>Promoted to middle engineer; owned delivery of internal web applications for the business department, from requirements through production support.</li>
 </ul></div>
 
 <h2>Skills</h2>
@@ -100,7 +97,7 @@ li { margin-bottom: 2px; }
 <p class="skill"><b>CI/CD &amp; Supply Chain:</b> GitLab CI, TeamCity Kotlin DSL, Docker / BuildKit, cosign, Trivy, Nexus, Jsonnet, Air-gapped mirrors</p>
 <p class="skill"><b>Data Platform:</b> Apache Spark on K8s, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka / Confluent, DataHub, MinIO / S3, Delta Lake</p>
 <p class="skill"><b>Reliability &amp; Observability:</b> Prometheus, Thanos, Loki, Grafana, OpenTelemetry, SLOs, Post-mortems, Runbooks</p>
-<p class="skill"><b>AI-Assisted Engineering:</b> Claude Code (plugins, skills, agents, hooks), MCP servers, Spec-driven development (OpenSpec, Superpowers), Codex, Cursor, GitHub Copilot, AGENTS.md / agent guidance, LLM code review automation, Plugin evals</p>
+<p class="skill"><b>AI-Assisted Engineering:</b> Claude Code (plugins, skills, agents, hooks), Kiro (IDE + CLI), OpenCode, MCP servers, Spec-driven development (OpenSpec, Superpowers), Codex, Cursor, GitHub Copilot, AGENTS.md / agent guidance, LLM code review automation, Plugin evals</p>
 <p class="skill"><b>Identity &amp; Secrets:</b> HashiCorp Vault, External Secrets, Keycloak, OIDC / LDAP / AD, Sigstore</p>
 <p class="skill"><b>Languages:</b> Go, Python, Java / Kotlin / Scala (JVM), Clojure, Bash, HCL</p>
 <p class="skill"><b>Databases &amp; Messaging:</b> PostgreSQL (CloudNativePG), Redis, Kafka, Elasticsearch</p>
