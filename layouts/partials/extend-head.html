@@ -1,0 +1,25 @@
+<script>
+  // Runs after the theme's appearance.js. A manual switcher choice only
+  // holds until the OS appearance changes; then the site follows the OS again.
+  (() => {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const system = () => (mq.matches ? "dark" : "light");
+    const follow = () => {
+      localStorage.removeItem("appearance");
+      localStorage.setItem("appearance-system", system());
+      document.documentElement.classList.toggle("dark", system() === "dark");
+    };
+
+    if (localStorage.getItem("appearance") === null ||
+        localStorage.getItem("appearance-system") !== system()) {
+      follow();
+    }
+
+    mq.addEventListener("change", () => {
+      follow();
+      window.updateMeta?.();
+      window.updateMermaidTheme?.();
+      window.updateLogo?.(system());
+    });
+  })();
+</script>
