@@ -3038,6 +3038,22 @@ projects:
   categories:
   - Other Stars
   language: TypeScript
+- id: schollz/croc
+  url: https://github.com/schollz/croc
+  description: 'Easily and securely send things from one computer to another :crocodile: :package:'
+  stars: 40625
+  topics:
+  - file-sharing
+  - tcp
+  - golang
+  - peer-to-peer
+  - data-transfer
+  - pake
+  - transfer
+  categories:
+  - Go
+  - Tools
+  language: Go
 - id: pingcap/tidb
   url: https://github.com/pingcap/tidb
   description: TiDB is built for agentic workloads that grow unpredictably, with ACID guarantees and native support for transactions, analytics, and vector search. No data silos. No noisy neighbors. No infrastructure ceiling.
@@ -3454,6 +3470,21 @@ projects:
   categories:
   - Other Stars
   language: Go
+- id: AlexsJones/llmfit
+  url: https://github.com/AlexsJones/llmfit
+  description: Hundreds of models & providers. One command to find what runs on your hardware.
+  stars: 38055
+  topics:
+  - llm
+  - skill
+  - localai
+  - gguf
+  - mlx
+  - unsloth
+  categories:
+  - AI · Models & Inference
+  - Rust
+  language: Rust
 - id: glanceapp/glance
   url: https://github.com/glanceapp/glance
   description: A self-hosted dashboard that puts all your feeds in one place
@@ -9813,6 +9844,25 @@ projects:
   categories:
   - Kubernetes
   language: Python
+- id: saulpw/visidata
+  url: https://github.com/saulpw/visidata
+  description: A terminal spreadsheet multitool for discovering and arranging data
+  stars: 9359
+  topics:
+  - python
+  - cli
+  - csv
+  - tsv
+  - json
+  - hdf5
+  - sqlite
+  - datawrangling
+  - unix-toolkit
+  - datajournalism
+  categories:
+  - Python
+  - Tools
+  language: Python
 - id: GoogleCloudPlatform/knowledge-catalog
   url: https://github.com/GoogleCloudPlatform/knowledge-catalog
   description: Google Cloud Knowledge Catalog Tools and Samples
@@ -10338,6 +10388,25 @@ projects:
   language: Shell
   archived: true
   stale: true
+- id: pemistahl/grex
+  url: https://github.com/pemistahl/grex
+  description: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases
+  stars: 8232
+  topics:
+  - command-line-tool
+  - tool
+  - regex
+  - regexp
+  - regex-pattern
+  - regular-expression
+  - regular-expressions
+  - rust
+  - cli
+  - rust-cli
+  categories:
+  - Rust
+  - Tools
+  language: Rust
 - id: samber/awesome-prometheus-alerts
   url: https://github.com/samber/awesome-prometheus-alerts
   description: 🚨 Collection of Prometheus alerting rules
@@ -12416,6 +12485,25 @@ projects:
   - awsome-list
   categories:
   - AI · Skill Collections
+- id: unhappychoice/gitlogue
+  url: https://github.com/unhappychoice/gitlogue
+  description: A cinematic Git commit replay tool for the terminal, turning your Git history into a living, animated story.
+  stars: 5134
+  topics:
+  - cli-tool
+  - code-animation
+  - developer-tools
+  - git
+  - git-history
+  - git-visualization
+  - productivity
+  - ratatui
+  - rust
+  - screensaver
+  categories:
+  - Rust
+  - Tools
+  language: Rust
 - id: tlbootcamp/tlroadmap
   url: https://github.com/tlbootcamp/tlroadmap
   description: Тимлид – это ❄️, потому что в каждой компании он уникален и неповторим.
@@ -15087,6 +15175,25 @@ projects:
   categories:
   - Go
   language: Go
+- id: tbillington/kondo
+  url: https://github.com/tbillington/kondo
+  description: Cleans dependencies and build artifacts from your projects.
+  stars: 2464
+  topics:
+  - command-line
+  - disk-space
+  - rust
+  - cleaner
+  - gui
+  - cli
+  - unity
+  - unity3d
+  - cargo
+  - windows
+  categories:
+  - Rust
+  - Tools
+  language: Rust
 - id: unetbootin/unetbootin
   url: https://github.com/unetbootin/unetbootin
   description: UNetbootin installs Linux/BSD distributions to a partition or USB drive
@@ -15951,6 +16058,22 @@ projects:
   categories:
   - Kubernetes
   language: Go
+- id: mrjackwills/oxker
+  url: https://github.com/mrjackwills/oxker
+  description: 'A simple tui to view & control docker containers '
+  stars: 1931
+  topics:
+  - async
+  - docker
+  - rust
+  - terminal
+  - tui
+  - tokio
+  categories:
+  - Docker
+  - Rust
+  - Tools
+  language: Rust
 - id: composio-community/awesome-claude-plugins
   url: https://github.com/composio-community/awesome-claude-plugins
   description: A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and MCP servers through the plugin system.
@@ -17231,6 +17354,22 @@ projects:
   language: Go
   stale: true
   archived: true
+- id: 514-labs/dnsglobe
+  url: https://github.com/514-labs/dnsglobe
+  description: Global DNS propagation checker TUI — watch a DNS record propagate across 34 public resolvers worldwide, on a world map in your terminal
+  stars: 1261
+  topics:
+  - cli
+  - dns
+  - dns-checker
+  - dns-propagation
+  - ratatui
+  - rust
+  - tui
+  categories:
+  - Rust
+  - Tools
+  language: Rust
 - id: unjs/changelogen
   url: https://github.com/unjs/changelogen
   description: 💅 Beautiful Changelogs using Conventional Commits
@@ -18116,6 +18255,15 @@ projects:
   categories:
   - Java & JVM
   language: Java
+- id: lab421/forel
+  url: https://github.com/lab421/forel
+  description: File automation for macOS. The open source Hazel alternative for macOS.
+  stars: 846
+  topics: []
+  categories:
+  - macOS
+  - Tools
+  language: Swift
 - id: salesforce/reactive-grpc
   url: https://github.com/salesforce/reactive-grpc
   description: Reactive stubs for gRPC
