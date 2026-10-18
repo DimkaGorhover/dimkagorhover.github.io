@@ -1,0 +1,8 @@
+# Websites for /awesome — hand-curated, no GitHub metadata, never refreshed.
+# Categories must exist in data/categories.yaml.
+sites:
+- id: aicodingdictionary.com
+  url: https://www.aicodingdictionary.com/
+  description: Plain-language definitions of AI coding terms (tokens, context windows, agents, handoffs) wired into an explorable 3D graph. From aihero.dev.
+  categories:
+  - AI · Learning & Prompt Engineering

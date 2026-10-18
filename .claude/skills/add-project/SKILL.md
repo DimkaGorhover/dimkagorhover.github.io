@@ -11,6 +11,10 @@ the file. A gist works too: pass its full `https://gist.github.com/owner/id`
 URL instead of `owner/repo` (stored with `gist: true`, no topics). Categories are the only curated field, so they are the only thing
 you have to decide.
 
+A plain website (not on GitHub) skips the script: append it by hand to
+`data/sites.yaml` with `id` (the domain), `url`, a one-line `description` and
+`categories`, then go straight to step 3.
+
 Prereq: `gh auth status` must be logged in.
 
 ## 1. Pick categories

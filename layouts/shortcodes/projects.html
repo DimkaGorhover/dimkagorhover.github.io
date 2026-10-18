@@ -2,10 +2,13 @@
 {{- $doc := hugo.Data.projects -}}
 {{- $cats := hugo.Data.categories.categories -}}
 {{- $placements := 0 -}}
+{{- $sites := hugo.Data.sites.sites -}}
 {{- range $doc.projects }}{{ $placements = add $placements (len .categories) }}{{ end -}}
+{{- range $sites }}{{ $placements = add $placements (len .categories) }}{{ end -}}
 
 <p>
   {{ lang.FormatNumber 0 (len $doc.projects) }} unique projects ·
+  {{ lang.FormatNumber 0 (len $sites) }} websites ·
   {{ lang.FormatNumber 0 $placements }} category placements ·
   metadata collected {{ $doc.collected_at }}.
   Projects may appear in more than one category.
@@ -40,6 +43,14 @@
         {{ with .language }}{{ . }} · {{ end }}⭐ {{ partial "star-count.html" .stars }}
         {{- range .topics }} <code>#{{ . }}</code>{{ end }}
       </small>
+    </li>
+    {{- end }}{{ end }}
+    {{- range $sites }}{{ if in .categories $cat }}
+    <li
+      data-search="{{ printf `%s %s %s site` .id .description (delimit .categories ` `) | lower }}"
+    >
+      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .id }}</a>
+      — {{ .description }} <em>(site)</em>
     </li>
     {{- end }}{{ end }}
   </ul>
