@@ -422,6 +422,20 @@ projects:
   categories:
   - AI · Skill Collections
   language: Shell
+- id: langflow-ai/langflow
+  url: https://github.com/langflow-ai/langflow
+  description: Langflow is a powerful tool for building and deploying AI-powered agents and workflows.
+  stars: 155797
+  topics:
+  - react-flow
+  - chatgpt
+  - large-language-models
+  - generative-ai
+  - agents
+  - multiagent
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  language: Python
 - id: open-webui/open-webui
   url: https://github.com/open-webui/open-webui
   description: User-friendly AI Interface (Supports Ollama, OpenAI API, ...)
@@ -466,6 +480,24 @@ projects:
   categories:
   - AI · Coding Agents
   language: TypeScript
+- id: langchain-ai/langchain
+  url: https://github.com/langchain-ai/langchain
+  description: The agent engineering platform.
+  stars: 148021
+  topics:
+  - ai
+  - anthropic
+  - gemini
+  - langchain
+  - llm
+  - openai
+  - python
+  - agents
+  - ai-agents
+  - chatgpt
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  language: Python
 - id: vercel/next.js
   url: https://github.com/vercel/next.js
   description: The React Framework
@@ -2872,6 +2904,24 @@ projects:
   categories:
   - AI · Assistants & Apps
   language: Go
+- id: langchain-ai/langgraph
+  url: https://github.com/langchain-ai/langgraph
+  description: Build resilient agents.
+  stars: 43440
+  topics:
+  - agents
+  - ai
+  - ai-agents
+  - chatgpt
+  - deepagents
+  - enterprise
+  - framework
+  - gemini
+  - generative-ai
+  - langchain
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  language: Python
 - id: cathrynlavery/diagram-design
   url: https://github.com/cathrynlavery/diagram-design
   description: Editorial diagram design for Claude Code, Codex, GitHub Copilot, Factory Droid, and Pi. 42 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.
