@@ -30,15 +30,15 @@ about:
 
 languages:
   - name: Ukrainian
-    level: Native
-  - name: English
-    level: Upper-Intermediate (B2)
+    level: Native or bilingual proficiency
   - name: Russian
-    level: Fluent
+    level: Native or bilingual proficiency
+  - name: English
+    level: Professional working proficiency
   - name: Polish
-    level: Elementary (A2–B1)
+    level: Limited working proficiency
   - name: German
-    level: Elementary
+    level: Elementary proficiency
 
 contacts:
   - name: Email
