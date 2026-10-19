@@ -32,15 +32,17 @@
   <ul>
     {{- range $doc.projects }}{{ if in .categories $cat }}
     <li
-      data-search="{{ printf `%s %s %s %s %s` .id (or .description ``) (delimit .topics ` `) (or .language ``) (delimit .categories ` `) | lower }}"
+      data-search="{{ printf `%s %s %s %s %s%s%s` .id (or .description ``) (delimit .topics ` `) (or .language ``) (delimit .categories ` `) (cond .archived ` archived` ``) (cond .stale ` stale` ``) | lower }}"
     >
-      <a href="{{ .url }}" target="_blank" rel="noopener">{{ .id }}</a>
+      <a href="{{ .url }}" target="_blank" rel="noopener">
+        {{- if or .stale .archived }}<s>{{ .id }}</s>{{ else }}{{ .id }}{{ end -}}
+      </a>
       {{- with .description }} — {{ . }}{{ end }}
       {{- if .gist }} <em>(gist)</em>{{ end }}
-      {{- if .archived }} <em>(archived)</em>{{ end }}
-      {{- if .stale }} <em>(stale)</em>{{ end }}
       <small>
         {{ with .language }}{{ . }} · {{ end }}⭐ {{ partial "star-count.html" .stars }}
+        {{- if .archived }} <code>#archived</code>{{ end }}
+        {{- if .stale }} <code>#stale</code>{{ end }}
         {{- range .topics }} <code>#{{ . }}</code>{{ end }}
       </small>
     </li>
