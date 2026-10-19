@@ -16370,6 +16370,25 @@ projects:
   - Kubernetes
   - Tools
   language: Go
+- id: nklmilojevic/sofka
+  url: https://github.com/nklmilojevic/sofka
+  description: A Kubernetes TUI, reimagined in Rust - built on kube-rs and ratatui, async-first from the ground up.
+  stars: 1765
+  topics:
+  - argocd
+  - devops
+  - eks
+  - flux
+  - fluxcd
+  - gke
+  - k8s
+  - k9s
+  - k9s-alternative
+  - kube-rs
+  categories:
+  - Kubernetes
+  - Rust
+  language: Rust
 - id: chigwell/telegram-mcp
   url: https://github.com/chigwell/telegram-mcp
   description: Telegram MCP server powered by Telethon to let MCP clients read chats, manage groups, and send/modify messages, media, contacts, and settings.
