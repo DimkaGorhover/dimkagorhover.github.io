@@ -13273,6 +13273,12 @@ projects:
   categories:
   - Frontend
   language: MDX
+- id: unclebob/ub-mode
+  url: https://github.com/unclebob/ub-mode
+  stars: 4502
+  topics: []
+  categories:
+  - AI · Agent Skills
 - id: bitnami/containers
   url: https://github.com/bitnami/containers
   description: Bitnami container images
