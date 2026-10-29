@@ -2993,6 +2993,25 @@ projects:
   - Awesome Lists
   - Education
   language: Java
+- id: wshobson/agents
+  url: https://github.com/wshobson/agents
+  description: Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi
+  stars: 41971
+  topics:
+  - anthropic
+  - agent-skills
+  - agentic-ai
+  - ai-agents
+  - cursor
+  - cursor-rules
+  - mcp
+  - multi-agent
+  - opencode
+  - claude-code
+  categories:
+  - AI · Agent Plugins & Extensions
+  - AI · Skill Collections
+  language: Python
 - id: duckdb/duckdb
   url: https://github.com/duckdb/duckdb
   description: DuckDB is an analytical in-process SQL database management system
@@ -8279,6 +8298,25 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: sirmalloc/ccstatusline
+  url: https://github.com/sirmalloc/ccstatusline
+  description: 🚀 Beautiful highly customizable statusline for Claude Code CLI with powerline support, themes, and more.
+  stars: 13460
+  topics:
+  - ai-tools
+  - claude-code
+  - cli
+  - developer-tools
+  - git
+  - powerline
+  - statusbar
+  - statusline
+  - terminal
+  - themeing
+  categories:
+  - AI · Agent Plugins & Extensions
+  - Tools
+  language: TypeScript
 - id: dbcli/pgcli
   url: https://github.com/dbcli/pgcli
   description: Postgres CLI with autocompletion and syntax highlighting
@@ -11302,6 +11340,15 @@ projects:
   - AI · Coding Agents
   - Tools
   language: Lua
+- id: cncf/curriculum
+  url: https://github.com/cncf/curriculum
+  description: 📚Open Source Curriculum for CNCF Certification Courses
+  stars: 6872
+  topics:
+  - cncf
+  categories:
+  - Kubernetes
+  - Education
 - id: buildship-ai/rowy
   url: https://github.com/buildship-ai/rowy
   description: Low-code backend platform. Manage database on spreadsheet-like UI and build cloud functions workflows in JS/TS, all in your browser.
@@ -12082,6 +12129,20 @@ projects:
   categories:
   - AI · Coding Agents
   language: TypeScript
+- id: pgsty/pigsty
+  url: https://github.com/pgsty/pigsty
+  description: Enterprise-Grade OSS PostgreSQL Distribution with HA, PITR, IaC, Monitor, 12 kernel forks and 575 PG extensions. Best-of-breed products integrated as a platform. Self-host Postgres like a Pro!
+  stars: 5876
+  topics:
+  - postgres
+  - graphics
+  - infra
+  - service
+  - toolbox
+  - yours
+  categories:
+  - Databases
+  language: Shell
 - id: cloudflare/agents
   url: https://github.com/cloudflare/agents
   description: 'Build and deploy AI Agents on Cloudflare '
@@ -13280,6 +13341,19 @@ projects:
   - AI · Document & Web Extraction
   - Tools
   language: TypeScript
+- id: pgsty/silo
+  url: https://github.com/pgsty/silo
+  description: S3-Compatible Object Storage. A MinIO fork maintained by PGSTY
+  stars: 4388
+  topics:
+  - object-storage
+  - minio
+  - s3
+  - pigsty
+  categories:
+  - Storage
+  - Go
+  language: Go
 - id: mholt/archiver
   url: https://github.com/mholt/archiver
   description: DEPRECATED. Please use mholt/archives instead.
@@ -18704,6 +18778,19 @@ projects:
   - Other Stars
   language: Go
   stale: true
+- id: plannotator/herdr-annotate
+  url: https://github.com/plannotator/herdr-annotate
+  description: Annotate terminal text, review documents and agent replies in Herdr, and send the feedback straight back to the agent.
+  stars: 713
+  topics:
+  - annotation
+  - herdr
+  - herdr-plugin
+  - multiplexer
+  categories:
+  - AI · Agent Plugins & Extensions
+  - Rust
+  language: Rust
 - id: VictoriaMetrics/metrics
   url: https://github.com/VictoriaMetrics/metrics
   description: Lightweight alternative to github.com/prometheus/client_golang
@@ -19628,6 +19715,22 @@ projects:
   stars: 366
   topics: []
   categories:
+  - Go
+  language: Go
+- id: pgsty/pg_exporter
+  url: https://github.com/pgsty/pg_exporter
+  description: Advanced PostgreSQL & Pgbouncer Metrics Exporter for Prometheus
+  stars: 366
+  topics:
+  - postgres
+  - prometheus
+  - prometheus-exporter
+  - pgbouncer
+  - pg-exporter
+  - monitoring
+  categories:
+  - Metrics & Observability
+  - Databases
   - Go
   language: Go
 - id: mintoolkit/mint
