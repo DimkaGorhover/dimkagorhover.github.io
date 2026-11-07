@@ -254,7 +254,7 @@ experience:
         Kept the framework footprint deliberately small, which made the
         upgrades across Java 8 → 12 low-risk and fast.
     tech: >-
-      Java (8–12), Clojure, Spring Boot, RxJava, gRPC, Spark, Kafka,
+      Java (8–12), Clojure, Spring Boot, RxJava, gRPC, Protobuf, Spark, Kafka,
       Cassandra, PostgreSQL, Redis, Elasticsearch, Clickhouse, Docker,
       Kubernetes, Jenkins, Grafana, Prometheus, Datadog
 
