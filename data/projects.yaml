@@ -9045,6 +9045,18 @@ projects:
   categories:
   - Kubernetes
   language: Go
+- id: google/osv-scanner
+  url: https://github.com/google/osv-scanner
+  description: Vulnerability scanner written in Go which uses the data provided by https://osv.dev
+  stars: 11469
+  topics:
+  - scanner
+  - security-audit
+  - security-tools
+  - vulnerability-scanner
+  categories:
+  - Security
+  language: Go
 - id: cobusgreyling/loop-engineering
   url: https://github.com/cobusgreyling/loop-engineering
   description: Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.
@@ -18907,6 +18919,13 @@ projects:
   categories:
   - Kubernetes
   language: Go Template
+- id: warpdotdev/common-skills
+  url: https://github.com/warpdotdev/common-skills
+  stars: 681
+  topics: []
+  categories:
+  - AI · Skill Collections
+  language: Python
 - id: wk8/go-ordered-map
   url: https://github.com/wk8/go-ordered-map
   description: Optimal implementation of ordered maps for Golang - ie maps that remember the order in which keys were inserted.
