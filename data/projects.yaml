@@ -6776,6 +6776,24 @@ projects:
   - Databases
   - Go
   language: Go
+- id: milind-soni/OpenMausBot
+  url: https://github.com/milind-soni/OpenMausBot
+  description: Open-source Grok Bot alternative with a virtual machine that bots can use
+  stars: 18933
+  topics:
+  - ai-agents
+  - claude-code
+  - codex
+  - computer-use
+  - docker
+  - electron
+  - self-hosted
+  - typescript
+  - grok-bot
+  - grok
+  categories:
+  - AI · Assistants & Apps
+  language: TypeScript
 - id: kubernetes-sigs/kubespray
   url: https://github.com/kubernetes-sigs/kubespray
   description: Deploy a Production Ready Kubernetes Cluster
@@ -10313,6 +10331,25 @@ projects:
   - Go
   - SQL
   language: Go
+- id: tw93/MiaoYan
+  url: https://github.com/tw93/MiaoYan
+  description: ⛷ A light, native Markdown notebook for Mac, iPhone and iPad.
+  stars: 8755
+  topics:
+  - swift
+  - markdown-editor
+  - macos
+  - notes-app
+  - markdown
+  - local-first
+  - editor
+  - ios
+  - ipad
+  - latex
+  categories:
+  - macOS
+  - Tools
+  language: Swift
 - id: EndlessCheng/codeforces-go
   url: https://github.com/EndlessCheng/codeforces-go
   description: 算法竞赛模板库 by 灵茶山艾府 💭💡🎈
@@ -10630,6 +10667,25 @@ projects:
   language: Go
   archived: true
   stale: true
+- id: l0ng-ai/openidea
+  url: https://github.com/l0ng-ai/openidea
+  description: 'The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.'
+  stars: 8017
+  topics:
+  - code-editor
+  - cross-platform
+  - dap
+  - database-client
+  - debugger
+  - desktop-app
+  - developer-tools
+  - git
+  - http-client
+  - ide
+  categories:
+  - Tools
+  - Rust
+  language: TypeScript
 - id: longhorn/longhorn
   url: https://github.com/longhorn/longhorn
   description: Cloud-Native distributed storage built on and for Kubernetes
@@ -20900,6 +20956,25 @@ projects:
   categories:
   - Other Stars
   language: Go
+- id: sinhong2011/triwarden
+  url: https://github.com/sinhong2011/triwarden
+  description: A native Mac password manager for Vaultwarden and Bitwarden — Swift/SwiftUI, AutoFill with passkeys and one-time codes, Touch ID, command palette, SSH agent.
+  stars: 93
+  topics:
+  - 2fa
+  - autofill
+  - bitwarden
+  - encryption
+  - macos
+  - macos-app
+  - menubar-app
+  - passkeys
+  - password-manager
+  - security
+  categories:
+  - macOS
+  - Security
+  language: Swift
 - id: bakdata/fluent-kafka-streams-tests
   url: https://github.com/bakdata/fluent-kafka-streams-tests
   description: Fluent Kafka Streams Test with Java
