@@ -3654,6 +3654,15 @@ projects:
   categories:
   - Awesome Lists
   - Docker
+- id: block/buzz
+  url: https://github.com/block/buzz
+  description: A hive mind communication platform
+  stars: 36821
+  topics: []
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  - Rust
+  language: Rust
 - id: doocs/leetcode
   url: https://github.com/doocs/leetcode
   description: 🔥LeetCode solutions in any programming language | 多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解
