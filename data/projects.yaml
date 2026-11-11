@@ -816,6 +816,25 @@ projects:
   - AI · Coding Agents
   - Tools
   language: TypeScript
+- id: D4Vinci/Scrapling
+  url: https://github.com/D4Vinci/Scrapling
+  description: '🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don''t be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev'
+  stars: 101430
+  topics:
+  - crawler
+  - crawling
+  - crawling-python
+  - playwright
+  - python
+  - scraping
+  - selectors
+  - stealth
+  - web-scraper
+  - web-scraping
+  categories:
+  - AI · Document & Web Extraction
+  - Python
+  language: Python
 - id: addyosmani/agent-skills
   url: https://github.com/addyosmani/agent-skills
   description: Production-grade engineering skills for AI coding agents.
@@ -1315,6 +1334,25 @@ projects:
   categories:
   - Other Stars
   language: JavaScript
+- id: headroomlabs-ai/headroom
+  url: https://github.com/headroomlabs-ai/headroom
+  description: Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.
+  stars: 79344
+  topics:
+  - agent
+  - ai
+  - anthropic
+  - compression
+  - context-engineering
+  - context-window
+  - fastapi
+  - langchain
+  - llm
+  - mcp
+  categories:
+  - AI · Gateways, Proxies & Cost
+  - AI · Memory, Context & RAG
+  language: Python
 - id: dair-ai/Prompt-Engineering-Guide
   url: https://github.com/dair-ai/Prompt-Engineering-Guide
   description: 🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents.
@@ -2193,6 +2231,22 @@ projects:
   categories:
   - Other Stars
   language: Shell
+- id: ChromeDevTools/chrome-devtools-mcp
+  url: https://github.com/ChromeDevTools/chrome-devtools-mcp
+  description: Chrome DevTools for coding agents
+  stars: 55092
+  topics:
+  - mcp-server
+  - puppeteer
+  - chrome-devtools
+  - browser
+  - chrome
+  - debugging
+  - devtools
+  - mcp
+  categories:
+  - AI · MCP Servers
+  language: TypeScript
 - id: hesreallyhim/awesome-claude-code
   url: https://github.com/hesreallyhim/awesome-claude-code
   description: A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins
@@ -17055,15 +17109,6 @@ projects:
   - Other Stars
   language: Java
   stale: true
-- id: doy/rbw
-  url: https://github.com/doy/rbw
-  description: unofficial bitwarden cli
-  stars: 1517
-  topics: []
-  categories:
-  - Security
-  - Tools
-  language: Rust
 - id: projectnessie/nessie
   url: https://github.com/projectnessie/nessie
   description: 'Nessie: Transactional Catalog for Data Lakes with Git-like semantics'
@@ -21660,3 +21705,12 @@ projects:
   - LeetCode
   language: Python
   stale: true
+- id: torreirow/rbw
+  url: https://github.com/torreirow/rbw
+  description: unofficial bitwarden cli
+  stars: 0
+  topics: []
+  categories:
+  - Security
+  - Tools
+  language: Rust
