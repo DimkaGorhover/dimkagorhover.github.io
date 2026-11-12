@@ -5610,6 +5610,18 @@ projects:
   categories:
   - Other Stars
   language: C++
+- id: toon-format/toon
+  url: https://github.com/toon-format/toon
+  description: 🎒 Token-Oriented Object Notation (TOON) – compact, human-readable serialization of JSON data for LLM prompts. TypeScript SDK, CLI, benchmarks.
+  stars: 25628
+  topics:
+  - data-format
+  - llm
+  - serialization
+  - tokenization
+  categories:
+  - AI · Memory, Context & RAG
+  language: TypeScript
 - id: cilium/cilium
   url: https://github.com/cilium/cilium
   description: eBPF-based Networking, Security, and Observability
@@ -8858,6 +8870,20 @@ projects:
   categories:
   - Other Stars
   language: Objective-C
+- id: GitoxideLabs/gitoxide
+  url: https://github.com/GitoxideLabs/gitoxide
+  description: A tasteful, lean, fast & safe pure Rust implementation of Git
+  stars: 12124
+  topics:
+  - git
+  - cli
+  - blazingly-fast
+  - built-with-rust
+  - version-control
+  categories:
+  - Rust
+  - Tools
+  language: Rust
 - id: dhamaniasad/awesome-postgres
   url: https://github.com/dhamaniasad/awesome-postgres
   description: A curated list of awesome PostgreSQL software, libraries, tools and resources, inspired by awesome-mysql
