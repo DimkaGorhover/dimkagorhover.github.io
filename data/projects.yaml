@@ -20841,6 +20841,25 @@ projects:
   language: Scala
   archived: true
   stale: true
+- id: levi-qiao/herdr-agent-usage
+  url: https://github.com/levi-qiao/herdr-agent-usage
+  description: Credential-scoped AI usage, context, and cache in Herdr for Claude, Codex, Grok, Agy, OpenCode, Pi, omp, Devin, Muse, MiMo, Kilo, Antigravity, and Cursor.
+  stars: 161
+  topics:
+  - agent-usage
+  - ai-agents
+  - claude-code
+  - codex
+  - grok
+  - herdr
+  - herdr-plugin
+  - provider-usage
+  - quota-monitor
+  - rust
+  categories:
+  - AI · Agent Plugins & Extensions
+  - Rust
+  language: Rust
 - id: minio/minlz
   url: https://github.com/minio/minlz
   description: MinLZ is a LZ77 compressor, focused on realtime data compression
