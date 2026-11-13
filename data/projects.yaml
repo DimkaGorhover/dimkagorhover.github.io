@@ -2386,6 +2386,24 @@ projects:
   categories:
   - AI · Learning & Prompt Engineering
   language: Python
+- id: obsidianmd/obsidian-skills
+  url: https://github.com/obsidianmd/obsidian-skills
+  description: Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.
+  stars: 52160
+  topics:
+  - claude
+  - codex
+  - obsidian
+  - skills
+  - clawdbot
+  - cli
+  - defuddle
+  - opencode
+  - openclaw
+  - bases
+  categories:
+  - AI · Skill Collections
+  language: Shell
 - id: google/guava
   url: https://github.com/google/guava
   description: Google core libraries for Java
@@ -9701,6 +9719,21 @@ projects:
   categories:
   - Other Stars
   language: JavaScript
+- id: kepano/defuddle
+  url: https://github.com/kepano/defuddle
+  description: Get the main content of any page as Markdown.
+  stars: 10006
+  topics:
+  - defuddle
+  - cli
+  - html
+  - markdown
+  - md
+  - readability
+  - obsidian
+  categories:
+  - AI · Document & Web Extraction
+  language: TypeScript
 - id: thesysdev/openui
   url: https://github.com/thesysdev/openui
   description: The Open Standard for Generative UI
