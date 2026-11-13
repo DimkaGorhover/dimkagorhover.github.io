@@ -9704,6 +9704,14 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: GoogleChrome/modern-web-guidance
+  url: https://github.com/GoogleChrome/modern-web-guidance
+  description: Keep your coding agent up to date with the latest web best practices
+  stars: 10094
+  topics: []
+  categories:
+  - AI · Agent Skills
+  - Frontend
 - id: i18next/react-i18next
   url: https://github.com/i18next/react-i18next
   description: Internationalization for react done right. Using the i18next i18n ecosystem.
@@ -11750,6 +11758,15 @@ projects:
   - AI · Assistants & Apps
   - Tools
   language: Swift
+- id: aws/aws-emulator
+  url: https://github.com/aws/aws-emulator
+  description: AWS Emulator is a local emulator of the AWS APIs.
+  stars: 6632
+  topics: []
+  categories:
+  - Cloud
+  - Tools
+  language: Rust
 - id: shuaibiyy/awesome-tf
   url: https://github.com/shuaibiyy/awesome-tf
   description: Curated list of resources on HashiCorp's Terraform and OpenTofu
