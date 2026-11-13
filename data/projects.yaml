@@ -21722,6 +21722,14 @@ projects:
   - Other Stars
   language: Shell
   stale: true
+- id: hsz/intellij-custom-splash-screen
+  url: https://github.com/hsz/intellij-custom-splash-screen
+  description: Custom Splash Screen plugin for JetBrains IDEs
+  stars: 7
+  topics: []
+  categories:
+  - Tools
+  language: Kotlin
 - id: InsaneArts/herdrbar
   url: https://github.com/InsaneArts/herdrbar
   description: Every herdr agent in your Mac's menu bar, get beautiful OS level notifications and jump to any agent which needs you
