@@ -21,7 +21,7 @@ about:
     support load enough to move teammates onto feature work.
   - >-
     Background: a decade of backend/JVM engineering on high-load systems,
-    including real-time ad bidding and ML model serving at ~1 ms p99.
+    including real-time ad bidding and low-latency ML model serving.
   - >-
     Looking for a platform / infrastructure / SRE engineering or
     engineering-lead role. Product companies and remote preferred,
@@ -243,9 +243,10 @@ experience:
         server, targeting algorithms, real-time-bidding APIs) from the
         original Clojure implementation through the full migration to Java.
       - >-
-        Spent ~2 years in the Data Science team owning the Java services that
-        serve prediction and bidding models in production at ~1 ms p99
-        latency.
+        Spent ~2 years in the Data Science team owning the Java gRPC
+        microservices that serve prediction models in production — one hop in
+        a multi-service request flow with a strict response-time SLA — at
+        ~1 ms p98 server-side latency (handler time, excluding network).
       - >-
         Awarded "Company Hero" (given once every six months) for
         single-handedly delivering a difficult cross-language PoC
