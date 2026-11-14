@@ -5855,6 +5855,24 @@ projects:
   - Go
   language: Go
   stale: true
+- id: walkinglabs/learn-harness-engineering
+  url: https://github.com/walkinglabs/learn-harness-engineering
+  description: Harness engineering beginner tutorial, from 0 to 1
+  stars: 24798
+  topics:
+  - agent
+  - harness
+  - harness-engineering
+  - harness-framework
+  - llm
+  - ai
+  - ai-agent
+  - agentic
+  - agentic-ai
+  - dsh-plugin
+  categories:
+  - AI · Learning & Prompt Engineering
+  language: TypeScript
 - id: uber-go/zap
   url: https://github.com/uber-go/zap
   description: Blazing fast, structured, leveled logging in Go.
