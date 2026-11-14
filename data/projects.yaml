@@ -14333,6 +14333,22 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: libracoder/kiri
+  url: https://github.com/libracoder/kiri
+  description: A small, fast container runtime for macOS, Windows and Linux with free Ngrok alternative
+  stars: 3506
+  topics:
+  - containers
+  - docker
+  - kubernetes
+  - linux
+  - macos
+  - oci
+  - windows
+  categories:
+  - Docker
+  - Rust
+  language: Rust
 - id: collabnix/kubetools
   url: https://github.com/collabnix/kubetools
   description: Kubetools - Curated List of Kubernetes Tools
