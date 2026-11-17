@@ -11186,6 +11186,24 @@ projects:
   categories:
   - AI · Skill Collections
   language: Markdown
+- id: microsoft/TokenEconomizer
+  url: https://github.com/microsoft/TokenEconomizer
+  description: Experience-Driven Black-Box Cost Control for Coding Agents
+  stars: 7419
+  topics:
+  - agentic-ai
+  - agentic-coding
+  - ai-coding
+  - ai-coding-assistant
+  - anthropic
+  - artificial-intelligence
+  - claude-code
+  - codex
+  - coding-agent
+  - coding-agents
+  categories:
+  - AI · Gateways, Proxies & Cost
+  language: Python
 - id: Col-E/Recaf
   url: https://github.com/Col-E/Recaf
   description: The modern Java bytecode editor
