@@ -17912,6 +17912,20 @@ projects:
   categories:
   - Other Stars
   language: Clojure
+- id: Owloops/claude-powerline
+  url: https://github.com/Owloops/claude-powerline
+  description: Beautiful vim-style powerline for Claude Code
+  stars: 1179
+  topics:
+  - claude-code
+  - cli
+  - developer-tools
+  - git
+  - lightweight
+  - statusline
+  categories:
+  - AI · Agent Plugins & Extensions
+  language: TypeScript
 - id: mattprusak/autoresearch-genealogy
   url: https://github.com/mattprusak/autoresearch-genealogy
   description: Structured prompts, vault templates, and archive guides for AI-assisted genealogy research. Built for Claude Code.
