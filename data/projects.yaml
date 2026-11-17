@@ -10421,6 +10421,25 @@ projects:
   categories:
   - Other Stars
   language: Java
+- id: elementalsouls/Claude-BugHunter
+  url: https://github.com/elementalsouls/Claude-BugHunter
+  description: A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.
+  stars: 8897
+  topics:
+  - ai-security
+  - anthropic
+  - application-security
+  - bug-bounty
+  - bugbounty
+  - bugcrowd
+  - claude
+  - claude-code
+  - claude-skills
+  - ethical-hacking
+  categories:
+  - AI · Skill Collections
+  - Security
+  language: Python
 - id: evilmartians/lefthook
   url: https://github.com/evilmartians/lefthook
   description: Fast and powerful Git hooks manager for any type of projects.
