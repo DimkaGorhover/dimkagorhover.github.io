@@ -14728,6 +14728,23 @@ projects:
   categories:
   - Other Stars
   language: Rust
+- id: kite-org/kite
+  url: https://github.com/kite-org/kite
+  description: 🪁 A lightweight, modern Kubernetes dashboard. All your clusters. One workspace.
+  stars: 3228
+  topics:
+  - dashboard
+  - kubernetes
+  - kubernetes-addons
+  - cloud-native
+  - monitoring
+  - multi-cluster
+  - prometheus
+  - ai-agent
+  - helm-manager
+  categories:
+  - Kubernetes
+  language: TypeScript
 - id: hairyhenderson/gomplate
   url: https://github.com/hairyhenderson/gomplate
   description: A flexible commandline tool for template rendering. Supports lots of local and remote datasources.
