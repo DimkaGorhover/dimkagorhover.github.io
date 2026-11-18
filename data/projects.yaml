@@ -18448,6 +18448,24 @@ projects:
   - Other Stars
   language: Go
   stale: true
+- id: Aryanutkarsh/SeeCode
+  url: https://github.com/Aryanutkarsh/SeeCode
+  description: Animated, explorable diagrams for Claude and other coding agents, from a short JSON spec.
+  stars: 979
+  topics:
+  - agent-skills
+  - ai-agents
+  - architecture-diagram
+  - claude-code
+  - claude-skills
+  - codex
+  - coding-agents
+  - data-visualization
+  - developer-tools
+  - diagrams
+  categories:
+  - AI · Agent Skills
+  language: JavaScript
 - id: rancher/system-upgrade-controller
   url: https://github.com/rancher/system-upgrade-controller
   description: In your Kubernetes, upgrading your nodes
