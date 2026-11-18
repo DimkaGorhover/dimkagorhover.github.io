@@ -21825,6 +21825,24 @@ projects:
   - Other Stars
   language: Shell
   stale: true
+- id: vanchonlee/krust
+  url: https://github.com/vanchonlee/krust
+  description: Native macOS Kubernetes dashboard and Lens alternative for logs, YAML, Helm, topology, port forwarding, and production ops.
+  stars: 8
+  topics:
+  - devops
+  - helm
+  - k9s-alternative
+  - kubernetes
+  - kubernetes-dashboard
+  - kubernetes-gui
+  - lens-alternative
+  - macos
+  - rust
+  - sre
+  categories:
+  - Kubernetes
+  - macOS
 - id: hsz/intellij-custom-splash-screen
   url: https://github.com/hsz/intellij-custom-splash-screen
   description: Custom Splash Screen plugin for JetBrains IDEs
