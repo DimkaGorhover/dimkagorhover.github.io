@@ -10,9 +10,19 @@ tags: ["ssh", "bitwarden", "fnox", "security"]
 ---
 
 Moving SSH private keys into a password manager is the easy part. Bitwarden
-can store SSH keys, and [rbw](https://github.com/doy/rbw) runs an SSH agent
-that serves them, so `SSH_AUTH_SOCK` points at rbw and the private halves
-never touch the disk.
+can store SSH keys, and [rbw](https://github.com/torreirow/rbw) runs an SSH
+agent that serves them, so `SSH_AUTH_SOCK` points at rbw and the private
+halves never touch the disk.
+
+{{< alert >}}
+The original [doy/rbw](https://github.com/doy/rbw) has gone quiet. Its README
+calls it feature-complete, and the last release, 1.15.0, came out on
+2025-12-31. I use the fork [torreirow/rbw](https://github.com/torreirow/rbw),
+which still merges fixes: the SSH agent no longer dies when a client
+disconnects during the pinentry prompt, dependencies with RUSTSEC advisories
+are patched, and `rbw edit` no longer corrupts items that have their own
+encryption key. See [Installing rbw](#installing-rbw) for how I install it.
+{{< /alert >}}
 
 The public halves are what stayed behind. Every host in my `~/.ssh/config`
 still had an `IdentityFile ~/.ssh/pub/<name>.pub` line, which meant a folder
@@ -21,7 +31,8 @@ that folder too: ssh asks Bitwarden for the public key at connection time.
 
 ## Links
 
-- [Github: doy/rbw](https://github.com/doy/rbw)
+- [Github: torreirow/rbw](https://github.com/torreirow/rbw), the fork I use
+- [Github: doy/rbw](https://github.com/doy/rbw), the original
 - [fnox](https://fnox.jdx.dev/) and its
   [Bitwarden provider](https://fnox.jdx.dev/providers/bitwarden)
 - [ssh_config(5)](https://man.openbsd.org/ssh_config)
@@ -51,7 +62,28 @@ key, which is why it's fine to generate it on the fly.
 
 There are three pieces: a fnox provider for Bitwarden, a small script that
 writes the public key to a temp file, and a `Match exec` block that runs the
-script and points `IdentityFile` at the result.
+script and points `IdentityFile` at the result. All of them sit on top of
+rbw, so it goes in first.
+
+### Installing rbw
+
+I install rbw with [mise](https://mise.jdx.dev/). The fork publishes no
+release binaries after 2.0.0, so mise builds it from source with its cargo
+backend, which needs a Rust toolchain. Two entries in
+`~/.config/mise/config.toml` do it:
+
+```toml
+[tools]
+rbw = "tag:v2.0.3"
+
+[tool_alias]
+rbw = "cargo:torreirow/rbw"
+```
+
+The alias maps the short name `rbw` to the fork's git repository, and
+`tag:v2.0.3` builds that tag. I pin the tag because the fork has one
+maintainer and rbw holds the keys to my vault, so I read the diff before
+I move to a new tag.
 
 ### fnox provider
 
