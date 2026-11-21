@@ -38,14 +38,14 @@ li { margin-bottom: 2px; }
 <h2>Experience</h2>
 
 <div class="entry"><h3>Team Lead / Senior DevOps Engineer, Data Platform</h3>
-<p class="meta"><b>Fozzy Group (Temabit / Foodtech), Ukraine-based, 100% remote</b><span class="date">May 2021 - Present</span></p>
+<p class="meta"><b>Fozzy Group (Temabit / Foodtech)</b>, one of Ukraine's largest holdings, mostly retail (largest supermarket chain in Ukraine, 30,000+ employees), 100% remote<span class="date">May 2021 - Present</span></p>
 <ul>
 <li>Designed and built the group's Kubernetes-based analytics platform from an empty repo to production: a 40-node bare-metal RKE2 cluster (Cilium eBPF, keepalived HA) plus CI-runner, test and Azure AKS clusters, all managed with ArgoCD GitOps from a repository I founded (66 Helm charts, 102 applications).</li>
 <li>Delivered the multi-tenant data stack (Spark on Kubernetes, Kyuubi, Hive Metastore, Airflow, dbt, ClickHouse, Kafka, DataHub, JupyterHub, Superset) serving ~45 internal analytics teams.</li>
-<li>Built a 192-drive encrypted MinIO object store with 702 IAM policies as code and identity-based short-lived S3 credentials for every Spark job (Keycloak/AD → STS).</li>
+<li>Built a 16-server, 192-drive encrypted MinIO object store (768 TB raw, ~500 TB usable) with 702 IAM policies as code and identity-based short-lived S3 credentials for every Spark job (Keycloak/AD → STS).</li>
 <li>Founded and owned the container image supply chain: 122 image variants, Jsonnet-generated GitLab pipelines, multi-arch BuildKit builds, cosign signing, Trivy/SBOM gates, and air-gapped Nexus mirrors of 51 upstream registries.</li>
 <li>Executed the TFS/TeamCity → GitLab migration and wrote a GitLab CI template library consumed by ~100 repos; ran secrets and identity — Vault HA + External Secrets, Terraform-managed tenant model for 49 teams, Keycloak SSO.</li>
-<li>Owned reliability: Prometheus/Thanos/Loki/Grafana with 129 dashboards as code, SLO program, 18 post-mortems, including root-causing a recurring Cilium identity-explosion outage and eliminating 88k/week HTTP 503s for BI users.</li>
+<li>Owned reliability: Prometheus/Thanos/Loki/Grafana with 129 dashboards as code, an SLO program (99% availability target), 18 post-mortems, including root-causing a recurring Cilium identity-explosion outage and eliminating 88k/week HTTP 503s for BI users.</li>
 <li>Introduced AI-assisted engineering on the team: repo-level agent guidance with cluster-safety rules and per-chart conventions, and shared AI agent plugins for a spec-driven workflow, from task refinement to specs, plans and ADRs, with delivery tracked in the team's tools.</li>
 <li>Moved platform support to an AI-agent workflow (Kiro IDE/CLI): agents handle merge-request review, routine Helm chart upgrades and documentation, with every change human-reviewed. Built a team plugin of agent skills and CLI helpers, covered by evals and compatible with Claude Code, Codex and Cursor. Support work that used to take three engineers now takes about half of my time, so the rest of the team works on new features.</li>
 <li>Led a 3–6-person DevOps/SRE team as team lead and Product Owner: hiring, PDPs, assessments, scrum ceremonies, OKRs.</li>
@@ -54,20 +54,21 @@ li { margin-bottom: 2px; }
 <div class="entry"><h3>Senior Java Software Engineer</h3>
 <p class="meta"><b>Grid Dynamics, Lviv, Ukraine</b><span class="date">Oct 2020 - Apr 2021</span></p>
 <ul>
-<li>Full-stack engineer on e-commerce services for a major US retail client, with a reactive Java/Spring backend and an Angular frontend; owned features end to end, from API design to deployment on the client's Kubernetes cluster.</li>
+<li>Full-stack engineer in a ~10-engineer team on e-commerce services for a major US retail client (reactive Java/Spring backend, plus contributions to the Angular admin UI); owned features end to end, from API design to deployment on the client's Kubernetes cluster.</li>
+<li>Refactored large JSON imports from in-memory loading to stream processing, cutting memory from gigabytes to a constant few megabytes and eliminating out-of-memory failures.</li>
 </ul></div>
 
 <div class="entry"><h3>Full-Stack Engineer</h3>
 <p class="meta"><b>Self-Employed, Lviv, Ukraine</b><span class="date">Jan 2020 - Sep 2020</span></p>
 <ul>
 <li>Owned data processing for a retail company's recommendation platform end to end: ingestion, Spark jobs and the admin-console UI.</li>
-<li>Built and operated a bare-metal Kubernetes cluster from scratch with Ansible as an R&amp;D project that became the basis for later platform work.</li>
+<li>Built and operated a bare-metal Kubernetes cluster of up to 10 nodes from scratch with Ansible as an R&amp;D project that became the basis for later platform work.</li>
 </ul></div>
 
 <div class="entry"><h3>Software Java Engineer</h3>
 <p class="meta"><b>N-IX, Lviv, Ukraine</b><span class="date">Aug 2019 - Dec 2019</span></p>
 <ul>
-<li>Owned the implementation of a new SMS gateway protocol (SMGP) for a telecom-services client, delivered with extensive unit-test coverage.</li>
+<li>Owned the implementation of a new SMS gateway protocol (SMGP) for a telecom-services client, delivered with 80%+ unit-test coverage.</li>
 <li>Set up a Docker Swarm environment with GitLab, Jenkins and SonarQube on the client's Azure cloud, cutting the vulnerability-fix feedback loop from days to minutes.</li>
 </ul></div>
 
@@ -78,17 +79,17 @@ li { margin-bottom: 2px; }
 </ul></div>
 
 <div class="entry"><h3>Software Engineer</h3>
-<p class="meta"><b>LoopMe (via Ciklum until Nov 2015), Dnipro, Ukraine</b><span class="date">Jul 2014 - Oct 2018</span></p>
+<p class="meta"><b>LoopMe (via Ciklum until Nov 2015)</b>, UK-based adtech company, Dnipro, Ukraine<span class="date">Jul 2014 - Oct 2018</span></p>
 <ul>
-<li>Core engineer on a high-load digital-advertising platform (ad server, targeting algorithms, real-time-bidding APIs) from the original Clojure implementation through the full migration to Java.</li>
+<li>Core engineer on a high-load digital-advertising platform serving 10k–50k req/s (ad server, targeting algorithms, real-time-bidding APIs) from the original Clojure implementation through the full migration to Java.</li>
 <li>Spent ~2 years in the Data Science team owning the Java gRPC microservices that serve prediction models in production — one hop in a multi-service request flow with a strict response-time SLA — at ~1 ms p98 server-side latency (handler time, excluding network).</li>
 <li>Awarded "Company Hero" (given once every six months) for single-handedly delivering a difficult cross-language PoC integration.</li>
 </ul></div>
 
 <div class="entry"><h3>Junior → Middle Software Engineer</h3>
-<p class="meta"><b>Privat Bank, Dnipro, Ukraine</b><span class="date">Feb 2012 - Jul 2014</span></p>
+<p class="meta"><b>Privat Bank</b>, Ukraine's largest bank, Dnipro, Ukraine<span class="date">Feb 2012 - Jul 2014</span></p>
 <ul>
-<li>Developed and maintained the Privat24 internet-banking system (Ukraine, Georgia and A-Bank editions); single-handedly migrated the Georgia project from Java 6 + Ant to Java 7 + Spring + Maven + Git.</li>
+<li>Developed and maintained Privat24, an internet-banking system used by millions of customers (Ukraine, Georgia and A-Bank editions); single-handedly migrated the Georgia project from Java 6 + Ant to Java 7 + Spring + Maven + Git.</li>
 <li>Promoted to middle engineer; owned delivery of internal web applications for the business department, from requirements through production support.</li>
 </ul></div>
 

@@ -91,7 +91,9 @@ experience:
   - position: Team Lead / Senior DevOps Engineer, Data Platform
     company: Fozzy Group (Temabit / Foodtech)
     url: https://fozzy.group
-    location: Ukraine-based company, 100% remote
+    location: >-
+      One of Ukraine's largest holdings, mostly retail (largest supermarket
+      chain in Ukraine, 30,000+ employees) · 100% remote
     start: 2021-05
     highlights:
       - >-
@@ -105,8 +107,8 @@ experience:
         Hive Metastore, Airflow 2/3, dbt, ClickHouse, Kafka/Confluent,
         DataHub, JupyterHub, Superset) serving ~45 internal analytics teams.
       - >-
-        Built a 192-drive encrypted MinIO object store with 702 IAM policies
-        as code and identity-based short-lived S3 credentials for every
+        Built a 16-server, 192-drive encrypted MinIO object store (768 TB
+        raw, ~500 TB usable) with 702 IAM policies as code and identity-based short-lived S3 credentials for every
         Spark job (Keycloak/AD → STS; custom Kyuubi auth plugin in Scala).
       - >-
         Founded and owned the container image supply chain: 122 image
@@ -131,7 +133,8 @@ experience:
         production in four months.
       - >-
         Owned reliability: kube-prometheus-stack/Thanos/Loki/Grafana with 129
-        dashboards as code, SLO program, 18 post-mortems, including
+        dashboards as code, an SLO program (99% availability target for the
+        internal analytics platform), 18 post-mortems, including
         root-causing a recurring Cilium identity-explosion outage and
         eliminating 88k/week HTTP 503s for BI users.
       - >-
@@ -166,8 +169,13 @@ experience:
     end: 2021-04
     highlights:
       - >-
-        Full-stack engineer on e-commerce services for a major US retail
-        client, with a reactive Java/Spring backend and an Angular frontend.
+        Full-stack engineer in a ~10-engineer team on e-commerce services
+        for a major US retail client, with a reactive Java/Spring backend,
+        plus contributions to the Angular admin UI.
+      - >-
+        Refactored large JSON imports from in-memory loading to stream
+        processing, cutting memory use from gigabytes to a constant few
+        megabytes and eliminating out-of-memory failures.
       - >-
         Owned features end to end: API design, implementation, tests,
         and deployment to the client's Kubernetes cluster.
@@ -185,12 +193,13 @@ experience:
         Owned data processing for a retail company's recommendation platform
         end to end: ingestion, Spark jobs and the admin-console UI.
       - >-
-        Built and operated a bare-metal Kubernetes cluster from scratch with
-        Ansible playbooks (Alpine, CentOS, Ubuntu nodes) as an R&D project
+        Built and operated a bare-metal Kubernetes cluster of up to 10 nodes
+        from scratch with Ansible playbooks (Alpine, CentOS, Ubuntu nodes) as an R&D project
         that became the basis for later platform work.
       - >-
         Designed and shipped a Telegram scheduling bot backend on Java 11 /
-        Quarkus compiled to a GraalVM native image.
+        Quarkus compiled to a GraalVM native image, cutting startup from
+        ~2 s to ~50 ms and memory from ~200 MB to ~30 MB.
     tech: >-
       Java, Go, Python, TypeScript, Quarkus, Spring Boot, Apache Spark, Kafka,
       Redis, PostgreSQL, Kubernetes, Docker, Ansible, Azure Data Lake,
@@ -205,7 +214,7 @@ experience:
     highlights:
       - >-
         Owned the implementation of a new SMS gateway protocol (SMGP) for a
-        telecom-services client, delivered with extensive unit-test coverage.
+        telecom-services client, delivered with 80%+ unit-test coverage.
       - >-
         Drove remediation of security findings from Fortify on Demand and
         SonarQube across the codebase.
@@ -234,13 +243,14 @@ experience:
   - position: Software Engineer
     company: LoopMe (via Ciklum until Nov 2015, then in-house)
     url: https://loopme.com
-    location: Dnipro, Ukraine
+    location: UK-based adtech company · Dnipro, Ukraine
     start: 2014-07
     end: 2018-10
     highlights:
       - >-
-        Core engineer on a high-load digital-advertising platform (ad
-        server, targeting algorithms, real-time-bidding APIs) from the
+        Core engineer on a high-load digital-advertising platform serving
+        10k–50k requests per second (ad server, targeting algorithms,
+        real-time-bidding APIs) from the
         original Clojure implementation through the full migration to Java.
       - >-
         Spent ~2 years in the Data Science team owning the Java gRPC
@@ -262,13 +272,14 @@ experience:
   - position: Junior → Middle Software Engineer
     company: Privat Bank
     url: https://privatbank.ua
-    location: Dnipro, Ukraine
+    location: Ukraine's largest bank · Dnipro, Ukraine
     start: 2012-02
     end: 2014-07
     highlights:
       - >-
-        Developed and maintained the Privat24 internet-banking system
-        (Ukraine, Georgia and A-Bank editions): features, support,
+        Developed and maintained Privat24, an internet-banking system used
+        by millions of customers, across its Ukraine, Georgia and A-Bank
+        editions: features, support,
         bug fixing and unit testing.
       - >-
         Single-handedly migrated the Privat24 Georgia project from Java 6 +
