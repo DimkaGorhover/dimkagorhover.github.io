@@ -19335,6 +19335,25 @@ projects:
   categories:
   - Go
   language: Go
+- id: EL4CTEO/fast-anything
+  url: https://github.com/EL4CTEO/fast-anything
+  description: 'Don''t rewrite it in Rust. Rewrite the 5% that''s slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.'
+  stars: 640
+  topics:
+  - agent-skills
+  - ai-agents
+  - claude-code
+  - claude-code-plugin
+  - codex
+  - developer-tools
+  - ffi
+  - mcp
+  - mcp-server
+  - napi-rs
+  categories:
+  - AI · Agent Skills
+  - Rust
+  language: Rust
 - id: rpbouman/huey
   url: https://github.com/rpbouman/huey
   description: 'Browser-based data analytics & BI with DuckDB-WASM. Privacy-first: your data stays local; no server required.'
