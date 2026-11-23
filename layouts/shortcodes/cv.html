@@ -5,7 +5,7 @@
   Software Engineer with {{ sub now.Year $cv.first_working_year }}+ years of
   experience, mostly Java and JVM-based languages such as Clojure and Groovy.
 </p>
-{{ range $cv.about }}<p>{{ . }}</p>{{ end }}
+{{ range $cv.about }}<p>{{ . | markdownify }}</p>{{ end }}
 
 <h2 id="contacts">Contacts</h2>
 <ul>
@@ -36,7 +36,7 @@
 </p>
 {{ with .highlights }}
 <ul>
-  {{ range . }}<li>{{ . }}</li>{{ end }}
+  {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
 </ul>
 {{ end }}
 {{ with .tech }}<p><strong>Tech:</strong> {{ . }}</p>{{ end }}
