@@ -13,6 +13,12 @@ about:
     3–6-person DevOps/SRE team as team lead and Product Owner while
     staying hands-on.
   - >-
+    Currently a platform & DevSecOps engineer (contract) at TNET, a
+    Georgian marketplace company, where I got Kubernetes approved and built
+    it out (on-prem RKE2, Argo CD GitOps, CloudNativePG), making deployment
+    of a new service at least 5× faster, alongside a Backstage developer
+    portal and security checks across the company's repos.
+  - >-
     AI-native in daily practice: most of my engineering work is delivered
     through coding agents (Claude Code, Kiro, OpenCode), including
     merge-request review, Helm chart upgrades and documentation, with me
@@ -25,8 +31,7 @@ about:
   - >-
     Looking for a platform / infrastructure / SRE engineering or
     engineering-lead role. Product companies and remote preferred,
-    relocation welcome. Currently building an AI-powered bot that automates code
-    review of GitLab merge requests (pre-alpha).
+    relocation welcome.
 
 languages:
   - name: Ukrainian
@@ -53,7 +58,7 @@ contacts:
 
 skills:
   - name: Platform & Kubernetes
-    items: ["Kubernetes (RKE2, AKS, EKS)", Cilium, ArgoCD / GitOps, Helm, Kustomize, Kyverno, Ansible, Terraform, Bare-metal ops]
+    items: ["Kubernetes (RKE2, AKS, EKS)", Cilium, ArgoCD / GitOps, Helm, Kustomize, Kyverno, Ansible, Terraform, Backstage (IDP), Bare-metal ops]
   - name: CI/CD & Supply Chain
     items: [GitLab CI, TeamCity Kotlin DSL, Docker / BuildKit, cosign, Trivy, Nexus, Jsonnet, Air-gapped mirrors]
   - name: Data Platform
@@ -88,6 +93,74 @@ education:
     end: 2010-06
 
 experience:
+  - position: Platform & DevSecOps Engineer
+    company: TNET
+    url: https://tnet.ge
+    location: >-
+      Georgian product company behind online marketplaces MyAuto, MyHome,
+      MyMarket and Swoop · Remote · Contract
+    start: 2025-08
+    highlights:
+      - >-
+        Pitched Kubernetes to the CIO and was the first in the company to get
+        it approved; wrote the plan and roadmap, then built the on-prem RKE2
+        clusters (production and test) with Ansible, alongside workloads on
+        AWS EKS.
+      - >-
+        Replaced hand-built VMs per application and database with Kubernetes
+        delivery: Argo CD GitOps with Image Updater, CloudNativePG with Barman
+        backups to S3, and the Redis Operator. Deploying a new service is now
+        at least 5× faster.
+      - >-
+        Closed the cluster to all inbound traffic by routing ingress through
+        Cloudflare Tunnel.
+      - >-
+        Manage the on-prem GitLab instance as Terraform (groups, projects,
+        per-group and per-project roles, branch protection, tokens, CI
+        variables): one commit applies changes across the whole instance,
+        making GitLab administration 50% faster. Renovate keeps dependencies
+        current across the infrastructure repos.
+      - >-
+        Manage Cloudflare DNS as code through a reusable zone module;
+        infrastructure pipelines lint, validate and plan, require manual
+        approval before apply, and send change notifications.
+      - >-
+        Own the central GitLab CI templates and CI/CD Catalog components and
+        moved product teams onto the standard pipelines, with secrets read
+        from AWS Secrets Manager.
+      - >-
+        Moved container builds off privileged docker-in-docker VMs to
+        BuildKit. Built shared PHP base images with precompiled extensions and
+        GitLab CI caching, cutting application build times about 10×, and
+        backport security patches to end-of-life PHP versions still in use.
+      - >-
+        Hardened the cluster with Kyverno policies (non-root containers,
+        dropped capabilities, service-account token rules) and External
+        Secrets with AWS Secrets Manager; added Trivy, gitleaks, tflint,
+        Checkov and pre-commit hooks across company repos, and rolled out and
+        support SonarQube.
+      - >-
+        Build and run the Backstage developer portal: GitLab, Argo CD,
+        Kubernetes, Prometheus and SonarQube integrations, catalog quality
+        checks in CI, TechDocs, semantic search over documentation with
+        Ollama, and a read-only MCP server that exposes the portal to AI
+        coding assistants.
+      - >-
+        Run monitoring outside the clusters (VictoriaMetrics, vmalert,
+        Alertmanager) and cluster metrics with Grafana Alloy, including
+        database and storage alerts; automated the vCenter VM inventory into
+        Ansible and Backstage.
+      - >-
+        Member of the company's AI SDLC team; building AI-assisted
+        merge-request review on GitLab free tier.
+    tech: >-
+      Kubernetes (RKE2, EKS), Argo CD, Argo Rollouts, Helm, Ansible,
+      Terraform, OpenTofu, Terragrunt, GitLab CI, Renovate, Docker/BuildKit,
+      CloudNativePG, Redis Operator, Kyverno, External Secrets, Sealed
+      Secrets, AWS (EKS, S3, IAM, Secrets Manager), Cloudflare (Tunnel, DNS),
+      Trivy, gitleaks, Checkov, tflint, SonarQube, Backstage, Ollama, MCP,
+      VictoriaMetrics, Grafana Alloy, PHP, vCenter
+
   - position: Team Lead / Senior DevOps Engineer, Data Platform
     company: Fozzy Group (Temabit / Foodtech)
     url: https://fozzy.group
@@ -95,6 +168,7 @@ experience:
       One of Ukraine's largest holdings, mostly retail (largest supermarket
       chain in Ukraine, 30,000+ employees) · 100% remote
     start: 2021-05
+    end: 2026-10
     highlights:
       - >-
         Designed and built the group's Kubernetes-based analytics platform
@@ -148,7 +222,7 @@ experience:
         agents handle merge-request review, routine Helm chart upgrades and
         keeping documentation current, with every change human-reviewed.
         Built a team plugin of agent skills and CLI helpers, covered by evals
-        and compatible with Claude Code, Codex and Cursor. Support work that used to take three engineers now takes about
+        and compatible with Claude Code, Codex and Cursor. Support work that used to take three engineers came down to about
         half of my time, so the rest of the team works on new features.
       - >-
         Led a 3–6-person DevOps/SRE team as team lead and Product Owner:
