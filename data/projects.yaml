@@ -2311,6 +2311,14 @@ projects:
   categories:
   - AI · Learning & Prompt Engineering
   language: Python
+- id: multica-ai/multica
+  url: https://github.com/multica-ai/multica
+  description: Shared task board where people and AI coding agents work as teammates. Source-available, self-hostable.
+  stars: 58069
+  topics: []
+  categories:
+  - AI · Agent Frameworks & Orchestration
+  language: Go
 - id: Textualize/rich
   url: https://github.com/Textualize/rich
   description: Rich is a Python library for rich text and beautiful formatting in the terminal.
