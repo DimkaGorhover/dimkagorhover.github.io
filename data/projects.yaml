@@ -10003,6 +10003,25 @@ projects:
   - Tools
   language: C++
   stale: true
+- id: erkamyaman/rust-anything
+  url: https://github.com/erkamyaman/rust-anything
+  description: Rewrite your app in Rust, piece by piece, checked against the original at every step. Works with TypeScript, JavaScript, Python, Go, Ruby, Java, C, PHP, C#, Kotlin and PowerShell.
+  stars: 9991
+  topics:
+  - agent-skills
+  - claude-code
+  - codex
+  - ffi
+  - mcp
+  - migration
+  - napi
+  - performance
+  - pyo3
+  - rust
+  categories:
+  - Rust
+  - AI · Agent Skills
+  language: Rust
 - id: anchore/syft
   url: https://github.com/anchore/syft
   description: CLI tool and library for generating a Software Bill of Materials from container images and filesystems
