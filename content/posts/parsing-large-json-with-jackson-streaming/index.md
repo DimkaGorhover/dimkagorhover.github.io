@@ -1,59 +1,63 @@
 ---
-title: "How to parse large JSON file"
+title: "Parsing a multi-gigabyte JSON array in Java with Jackson streaming"
 date: 2021-03-01
+lastmod: 2026-11-26
 draft: false
 description: >-
   Parse JSON files too large to fit in memory by combining Jackson's streaming
-  JsonParser with ObjectMapper data binding — plus a reactive variant that
-  exposes the stream as a Project Reactor Flux for async processing.
+  JsonParser with ObjectReader data binding, one array element at a time, plus
+  a reactive variant that exposes the stream as a backpressure-aware Reactor
+  Flux.
 tags: ["java", "jackson", "reactive"]
 ---
 
-Calling `objectMapper.readValue()` on a multi-gigabyte JSON file loads the
-whole document into memory and ends in an `OutOfMemoryError`. When the file is
-a large array of records, you don't need the whole array at once — you need
-one element at a time.
+**TL;DR:** `objectMapper.readValue()` on a multi-gigabyte JSON array loads the
+whole file and runs out of memory. Walking the array with Jackson's
+`JsonParser` and binding one element at a time with an `ObjectReader` keeps
+memory at the size of a single record.
 
-Jackson's streaming API (`JsonParser`) reads token by token with constant
-memory, but working with raw tokens is tedious. The trick is to combine both
-layers: let `JsonParser` walk the array and hand each element to an
-`ObjectReader` for regular data binding. Memory usage stays bounded by the
-size of a single element, not the whole file.
+## Background
 
-## Links
+I worked as a full-stack engineer in a team of about ten, building e-commerce
+services for a large US retailer. The backend was reactive Java: Spring
+WebFlux and Project Reactor, deployed to Kubernetes.
 
-- [Github: FasterXML/jackson](https://github.com/FasterXML/jackson)
-- [Github: reactor/reactor-core](https://github.com/reactor/reactor-core)
+## Issue
 
-## Data Objects
+Some of those services imported large JSON files, each one a big array of
+records. The import code read the whole file with `objectMapper.readValue()`,
+so **memory grew with the file, into gigabytes**, and the bigger imports ended
+in `OutOfMemoryError`. A bigger heap would only have moved the limit to the
+next bigger file.
 
-Plain immutable value classes with `@JsonCreator` constructors — nothing
-streaming-specific here, they deserialize the same way as with a regular
-`ObjectMapper` call.
+The import never needed the whole array at once, just one element at a time.
+Jackson's streaming API (`JsonParser`) reads token by token in constant
+memory, but working with raw tokens by hand is tedious. The fix combines both
+layers: `JsonParser` walks the array, and an `ObjectReader` binds each element
+with regular data binding.
 
-`User.java`:
+## Data objects
+
+Plain value classes with `@JsonCreator` constructors. Nothing here is
+streaming-specific; they bind the same way as with a regular `readValue()`.
 
 ```java
 @ToString
 class User {
     private final int id;
     private final String name;
-    private final List<String> phones;
+    private final List<Phone> phones;
 
     @JsonCreator
     User(@JsonProperty("id") int id,
          @JsonProperty("name") String name,
-         @JsonProperty("phones") List<String> phones) {
+         @JsonProperty("phones") List<Phone> phones) {
         this.id = id;
         this.name = name;
         this.phones = phones;
     }
 }
-```
 
-`Phone.java`:
-
-```java
 @ToString
 class Phone {
     private final String phone;
@@ -61,161 +65,170 @@ class Phone {
 
     @JsonCreator
     Phone(@JsonProperty("phone") String phone,
-         @JsonProperty("type") String type) {
+          @JsonProperty("type") String type) {
         this.phone = phone;
         this.type = type;
     }
 }
 ```
 
-JSON example:
+The input is one top-level array, a few gigabytes of elements like these:
 
 ```json
 [
-  // ...
-  {
-    "id": 42,
-    "name": "name_for_42",
-    "phones": [
-      {
-        "phone": "+123456789000",
-        "type": "work"
-      }
-    ]
-  },
-  // ...
+  {"id": 41, "name": "name_for_41", "phones": [{"phone": "+123456789000", "type": "work"}]},
+  {"id": 42, "name": "name_for_42", "phones": []}
 ]
 ```
 
-## Simple Parser
+## Streaming parser
 
-The parser advances to the opening `[`, then loops: each `nextToken()` call
-positions the stream at the start of the next element, and
-`objectReader.readValue(jsonParser)` binds just that element to a `User`.
-Only one `User` is ever held in memory at a time.
+The parser checks for the opening `[`, then loops. Each `nextToken()` moves
+to the start of the next element, and `objectReader.readValue(jsonParser)`
+binds **just that element**, leaving the parser on its closing `}`.
 
 ```java
 class Parser {
 
-    void parse() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        JsonFactory jsonFactory = objectMapper.getFactory();
-        ObjectReader objectReader = objectMapper.readerFor(User.class);
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final ObjectReader USER_READER = MAPPER.readerFor(User.class);
 
-        try (JsonParser jsonParser = jsonFactory.createParser(ioSource())) {
-
+    void parse(InputStream in) throws IOException {
+        try (JsonParser jsonParser = MAPPER.getFactory().createParser(in)) {
             if (jsonParser.nextToken() != JsonToken.START_ARRAY) {
                 throw new IllegalStateException("Expected content to be an array");
             }
-
             while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
-                User user = objectReader.readValue(jsonParser);
-                // process "user" here — it's the only element in memory
+                User user = USER_READER.readValue(jsonParser);
+                // process "user" here; it is the only element in memory
             }
         }
-    }
-
-    static java.io.InputStream ioSource() {
-        // open the JSON input: FileInputStream, HTTP response body, etc.
     }
 }
 ```
 
-## Reactive Solution (Project Reactor)
+A truncated file doesn't loop forever: `nextToken()` throws a
+`JsonEOFException` when the input ends inside the array.
 
-The while-loop works, but processing is synchronous: parsing blocks until each
-element is handled. Wrapping the same streaming logic in a `Flux` decouples
-parsing from processing — each `User` is emitted as it's read, downstream
-operators can process it asynchronously, and the parser is closed when the
-stream terminates for any reason.
+## Reactive variant
 
-`ReactiveParser.java`:
+The loop is synchronous: parsing waits while each element is processed. In a
+WebFlux service I wanted each `User` as an element of a `Flux`, so downstream
+operators could process them asynchronously with bounded concurrency.
+
+`Flux.generate` fits this exactly. It calls the generator **once per
+requested element**, so the parser only reads as fast as downstream asks, and
+its last argument closes the parser on complete, error and cancel.
 
 ```java
 class ReactiveParser {
 
-    static void test() {
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        // register modules, enable/disable features, etc.
-
-        JsonFactory jsonFactory = objectMapper.getFactory();
-
-        Mono.fromCallable(() -> jsonFactory.createParser(ioSource()))
-                .flatMapMany(jsonParser -> {
-                    // emit each array element as a User;
-                    // doFinally guarantees the parser is closed on
-                    // complete, error, and cancel
-                    return ReactiveUtils.readArrayValues(jsonParser, User.class)
-                            .doFinally(ReactiveUtils.closeFn(jsonParser));
-                })
-                .flatMap(user -> {
-                    // async processing per element — here: store the user
-                    // in Redis via the reactive Lettuce API
-                    return lettuceRedisConnection.reactive()
-                            .hset("users", user.getId(), user);
-                })
-                .doOnError(e -> {
-                    // parsing and processing errors both end up here
-                })
-                .subscribe();
-    }
-
-    static java.io.InputStream ioSource() {
-        // open the JSON input: FileInputStream, HTTP response body, etc.
+    static <T> Flux<T> readArrayValues(Callable<JsonParser> open, ObjectReader reader) {
+        return Flux.generate(
+                () -> {
+                    JsonParser parser = open.call();
+                    if (parser.nextToken() != JsonToken.START_ARRAY) {
+                        parser.close();
+                        throw new IllegalStateException("Expected content to be an array");
+                    }
+                    return parser;
+                },
+                (parser, sink) -> {
+                    try {
+                        if (parser.nextToken() == JsonToken.END_ARRAY) {
+                            sink.complete();
+                        } else {
+                            sink.next(reader.<T>readValue(parser));
+                        }
+                    } catch (IOException e) {
+                        sink.error(e);
+                    }
+                    return parser;
+                },
+                parser -> {
+                    try {
+                        parser.close();
+                    } catch (IOException ignored) {
+                        // the stream has already terminated
+                    }
+                });
     }
 }
 ```
 
-`ReactiveUtils.java` — the same token loop as the simple parser, wrapped in
-`Flux.create` so each element becomes an emission:
+Using it, with at most 16 elements in flight:
 
 ```java
-class ReactiveUtils {
+ObjectMapper mapper = new ObjectMapper();
 
-    static <T> Flux<T> readArrayValues(JsonParser jsonParser, Class<T> clazz) {
-        if (jsonParser == null) {
-            return Flux.error(new NullPointerException("jsonParser"));
-        }
-        if (clazz == null) {
-            return Flux.error(new NullPointerException("clazz"));
-        }
-        return Flux.create(fluxSink -> {
-            try {
+ReactiveParser.<User>readArrayValues(
+                () -> mapper.getFactory().createParser(openInput()),
+                mapper.readerFor(User.class))
+        .flatMap(user -> save(user), 16) // save returns a Mono
+        .subscribe();
+```
 
-                ObjectMapper objectMapper = (ObjectMapper) jsonParser.getCodec();
-                ObjectReader objectReader = objectMapper.readerFor(clazz);
+{{< alert >}}
+The first version of this post used `Flux.create` with a `while` loop inside.
+That pushes every element as fast as the parser can read, and the default
+`OverflowStrategy.BUFFER` queues whatever downstream hasn't consumed yet.
+Reactor's docs warn that it "does unbounded buffering and may lead to
+`OutOfMemoryError`". With a slow sink, that brings back the exact problem the
+streaming parser was meant to fix.
+{{< /alert >}}
 
-                if (jsonParser.nextToken() != JsonToken.START_ARRAY) {
-                    fluxSink.error(new IllegalStateException("Expected content to be an array"));
-                    return;
-                }
+The snippets are Jackson 2 and Reactor 3. I rewrote them in 2026 from the
+2021 post to fix the code and **have not re-run them**, so test them before
+you rely on them.
 
-                while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
-                    T obj = objectReader.readValue(jsonParser);
-                    fluxSink.next(obj);
-                }
+## How to do it now
 
-                fluxSink.complete();
+Jackson already has the loop built in. `ObjectReader.readValues()` returns a
+`MappingIterator`, and when the input is a top-level array it iterates over
+the elements:
 
-            } catch (IOException e) {
-                fluxSink.error(e);
-            }
-        });
-    }
-
-    static Consumer<SignalType> closeFn(AutoCloseable closeable) {
-        if (closeable == null) {
-            return ignore -> {};
-        }
-        return signalType -> {
-            try {
-                closeable.close();
-            } catch (Exception e) {
-                // stream already terminated at this point —
-                // log the close failure or deliberately ignore it
-            }
-        };
+```java
+try (MappingIterator<User> users = USER_READER.readValues(in)) {
+    while (users.hasNextValue()) {
+        User user = users.nextValue();
+        // process "user"
     }
 }
 ```
+
+This replaces the `START_ARRAY` and `END_ARRAY` handling. I'd use it for the
+synchronous case today, and keep the hand-written `JsonParser` only when the
+array sits deeper in the document.
+
+Jackson 3 (Java 17+) moves everything to the `tools.jackson` package, makes
+`ObjectMapper` immutable (`JsonMapper.builder()`), turns `JacksonException`
+into an unchecked exception, and removes `JsonParser.getCodec()`. The
+approach is the same; the `IOException` handling goes away. See the
+[migration guide](https://github.com/FasterXML/jackson/blob/main/jackson3/MIGRATING_TO_JACKSON_3.md).
+
+## What it does not do
+
+- Memory is bounded by **one element**, not by a fixed number. A single huge
+  element still has to fit.
+- It expects the array at the top level. For an array inside an object, move
+  the parser to it first (for example by walking tokens to the field name).
+- The import can't resume. If it fails halfway, it starts over from the
+  beginning of the file.
+
+## Conclusion
+
+- Streaming plus data binding took the imports **from gigabytes of memory to
+  a constant few megabytes** and ended the `OutOfMemoryError`s.
+- `JsonParser` walks the array; `ObjectReader.readValue(parser)` binds one
+  element at a time.
+- `ObjectReader.readValues()` and `MappingIterator` do the same loop with no
+  token handling.
+- In Reactor, `Flux.generate` reads on demand and closes the parser for you.
+  `Flux.create` with the default strategy buffers without limit.
+
+## Links
+
+- [Github: FasterXML/jackson](https://github.com/FasterXML/jackson)
+- [Jackson 3 migration guide](https://github.com/FasterXML/jackson/blob/main/jackson3/MIGRATING_TO_JACKSON_3.md)
+- [Reactor: programmatically creating a sequence](https://projectreactor.io/docs/core/release/reference/producing.html)
+- [Github: reactor/reactor-core](https://github.com/reactor/reactor-core)
