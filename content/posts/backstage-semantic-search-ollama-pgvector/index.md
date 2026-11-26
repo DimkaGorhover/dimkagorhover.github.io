@@ -8,7 +8,7 @@ description: >-
   embeds TechDocs, ADRs and announcements with a CPU-only Ollama into
   pgvector, gives AI agents a semantic MCP tool, and fuses the same vectors
   into the search page with reciprocal rank fusion.
-tags: ["backstage", "pgvector", "ollama", "search", "mcp"]
+tags: ["backstage", "pgvector", "ollama", "search", "mcp", "roadie"]
 ---
 
 **TL;DR:** Backstage keyword search returned nothing for questions, only for
@@ -48,10 +48,12 @@ The constraints:
 - Keyword search must not change or slow down, and Backstage must start
   normally if anything new is missing.
 
+I built this as an experiment, and started it before I looked closely at
 Roadie's
-[RAG AI plugin](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/rag-ai-backend)
-also stores embeddings in pgvector, but it only ships embedding modules for
-OpenAI and AWS Bedrock, which fails the first constraint.
+[RAG AI plugin](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/rag-ai-backend).
+It also stores embeddings in pgvector, and its OpenAI embeddings module
+accepts a custom OpenAI-compatible endpoint, so it could have used the same
+in-cluster Ollama. More on that in [In hindsight](#in-hindsight).
 
 ## The design
 
@@ -303,6 +305,35 @@ in the docs: the page that quotes it outranks the page that answers it.
 - TechDocs from the local builder are indexed only after someone opens the
   site once.
 
+## In hindsight
+
+Roadie's `@roadiehq/rag-ai-backend-embeddings-openai` reads
+`ai.embeddings.openai.openAiBaseUrl` and passes it to LangChain's
+`OpenAIEmbeddings` as `baseURL`. Ollama serves an OpenAI-compatible API under
+`/v1`, so this should work against the same pod. I have not tested it:
+
+```yaml
+ai:
+  embeddings:
+    openai:
+      openAiBaseUrl: http://ollama:11434/v1
+      openAiApiKey: unused # Ollama ignores it, the client requires one
+      modelName: bge-m3
+```
+
+Today I would start there and move to a custom module only when I hit its
+limits. For this portal, they are:
+
+- **It indexes the catalog and TechDocs only.** ADRs are covered only if they
+  are published inside a TechDocs site; ADRs from the ADR plugin and
+  announcements need your own indexer.
+- **It answers in an LLM chat modal.** It does not change the search page
+  and has no MCP tool, and on CPU-only nodes a chat model costs far more
+  than an embedding model.
+- **The OpenAI-compatible endpoint takes no Ollama options**, so
+  `num_thread` and `keep_alive` move into a Modelfile or the
+  `OLLAMA_KEEP_ALIVE` variable.
+
 ## Conclusion
 
 - Backstage's Postgres search ANDs every word, so questions need a semantic
@@ -316,6 +347,9 @@ in the docs: the page that quotes it outranks the page that answers it.
 - Reciprocal rank fusion merges keyword and vector hits without comparing
   scores: a question went **from 2 to 16 hits** with short queries
   unchanged.
+- Check Roadie's RAG AI plugin first: it can use an in-cluster Ollama
+  through `openAiBaseUrl`. Go custom for other document types, the search
+  page or an MCP tool.
 
 ## Links
 
@@ -326,3 +360,5 @@ in the docs: the page that quotes it outranks the page that answers it.
 - [BGE-M3 model card](https://huggingface.co/BAAI/bge-m3)
 - [Reciprocal Rank Fusion (Cormack, Clarke and Büttcher, SIGIR 2009)](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf)
 - [Roadie RAG AI plugin](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/rag-ai-backend)
+- [Roadie RAG AI OpenAI embeddings module](https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/rag-ai-backend-embeddings-openai)
+- [Ollama: OpenAI compatibility](https://docs.ollama.com/api/openai-compatibility)
