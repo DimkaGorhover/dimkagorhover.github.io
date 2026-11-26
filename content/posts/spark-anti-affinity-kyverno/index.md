@@ -9,7 +9,13 @@ description: >-
   one application. Since Kubernetes 1.29 (stable in 1.33), matchLabelKeys does
   the same without variables.
 tags: ["spark", "kubernetes", "kyverno", "kyuubi"]
+lastmod: 2026-11-26
 ---
+
+**TL;DR:** The scheduler packed several executors of one Spark job onto the
+same nodes, and their local disks filled up. A Kyverno policy now copies each
+pod's application ID into a pod anti-affinity rule at admission, so executors
+of one job spread across nodes.
 
 ## Background
 
@@ -196,30 +202,6 @@ not. The policy just gets simpler. The patch becomes a constant with no
 `request.object` in it, and it ports to `MutatingPolicy` without any CEL to
 build the selector.
 
-## What it does not do
-
-The rule is `preferredDuringSchedulingIgnoredDuringExecution`, so **it is a
-hint**: when the cluster is tight, two executors of one application can
-still share a node. I chose that deliberately, because a job with more
-executors than there are nodes must still be able to start. The Kubernetes
-docs on
-[inter-pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)
-and
-[topology spread constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)
-cover the stricter options.
-
-The policy also puts Kyverno in the path of every Spark pod. A rule fails
-closed by default (`failurePolicy: Fail`), so while Kyverno is down, Spark
-cannot create pods. Setting `failurePolicy: Ignore` in the policy's
-`webhookConfiguration` trades that for pods that start without the rule.
-
-It also **does nothing about disk usage itself**. Ten executors on ten nodes
-would have written the same total amount of data during my incident. The
-difference is that each node would have taken about 1 TB, not several, and a
-node that fills up takes one executor with it. A limit on
-`ephemeral-storage` for the executor pods is what stops a single pod from
-filling a disk, and it is a separate change from this one.
-
 ## Kyverno 1.20 removes ClusterPolicy
 
 I run this on **Kyverno 1.19.1** (Helm chart 3.9.1). The policy is old: its
@@ -290,6 +272,30 @@ selector. And the patch is a JSON Patch now, which needs the `has()` check:
 that something else had already set. Either way the pod's own
 `podAntiAffinity`, if it had one, is replaced.
 
+## What it does not do
+
+The rule is `preferredDuringSchedulingIgnoredDuringExecution`, so **it is a
+hint**: when the cluster is tight, two executors of one application can
+still share a node. I chose that deliberately, because a job with more
+executors than there are nodes must still be able to start. The Kubernetes
+docs on
+[inter-pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#inter-pod-affinity-and-anti-affinity)
+and
+[topology spread constraints](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/)
+cover the stricter options.
+
+The policy also puts Kyverno in the path of every Spark pod. A rule fails
+closed by default (`failurePolicy: Fail`), so while Kyverno is down, Spark
+cannot create pods. Setting `failurePolicy: Ignore` in the policy's
+`webhookConfiguration` trades that for pods that start without the rule.
+
+It also **does nothing about disk usage itself**. Ten executors on ten nodes
+would have written the same total amount of data during my incident. The
+difference is that each node would have taken about 1 TB, not several, and a
+node that fills up takes one executor with it. A limit on
+`ephemeral-storage` for the executor pods is what stops a single pod from
+filling a disk, and it is a separate change from this one.
+
 ## Conclusion
 
 - A pod template has no placeholders, so before `matchLabelKeys` it could
@@ -301,7 +307,6 @@ that something else had already set. Either way the pod's own
   Kubernetes supports it since 1.29 and marks it stable since 1.33.
 - With Argo CD the rollout is **one commit and nothing restarts**, which is
   why I keep the rule in Kyverno either way.
-- It does not limit disk usage. That needs an `ephemeral-storage` limit.
 
 ## Links
 
