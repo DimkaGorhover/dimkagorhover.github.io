@@ -2315,7 +2315,16 @@ projects:
   url: https://github.com/multica-ai/multica
   description: Shared task board where people and AI coding agents work as teammates. Source-available, self-hostable.
   stars: 58069
-  topics: []
+  topics:
+  - ai-agents
+  - coding-agents
+  - claude-code
+  - codex
+  - task-board
+  - project-management
+  - multi-agent
+  - self-hosted
+  - golang
   categories:
   - AI · Agent Frameworks & Orchestration
   language: Go
