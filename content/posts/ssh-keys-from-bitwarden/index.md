@@ -1,6 +1,7 @@
 ---
 title: "Keeping SSH keys in Bitwarden, not in ~/.ssh"
 date: 2026-11-17
+lastmod: 2026-11-26
 draft: false
 description: >-
   Serve SSH private keys from Bitwarden through the rbw agent, and fetch the
@@ -9,10 +10,29 @@ description: >-
 tags: ["ssh", "bitwarden", "fnox", "security"]
 ---
 
-Moving SSH private keys into a password manager is the easy part. Bitwarden
-can store SSH keys, and [rbw](https://github.com/torreirow/rbw) runs an SSH
-agent that serves them, so `SSH_AUTH_SOCK` points at rbw and the private
-halves never touch the disk.
+**TL;DR:** A key file in `~/.ssh` works for anything running as me, vault
+locked or not. With rbw serving the private keys from Bitwarden and an
+ssh_config `Match exec` block fetching the public keys on demand, no SSH key
+works until the vault is unlocked, and no key file is left on disk.
+
+## Background
+
+I keep a separate SSH key per identity: personal, plus one per project I
+commit to, as described in the
+[git identities post]({{< ref "posts/multiple-git-configs" >}}). All of them
+lived in `~/.ssh` on my laptop, and my passwords already lived in Bitwarden.
+
+## Issue
+
+This was about security. **A private key in `~/.ssh` is usable by any process
+running as me**, and locking my password manager does nothing to it. I wanted
+one switch: lock the vault, and no SSH key works until I type the master
+password again.
+
+Moving the private keys into Bitwarden was the easy part. Bitwarden can store
+SSH keys, and [rbw](https://github.com/torreirow/rbw) runs an SSH agent that
+serves them, so `SSH_AUTH_SOCK` points at rbw and the private halves never
+touch the disk.
 
 {{< alert >}}
 The original [doy/rbw](https://github.com/doy/rbw) has gone quiet. Its README
@@ -24,27 +44,14 @@ are patched, and `rbw edit` no longer corrupts items that have their own
 encryption key. See [Installing rbw](#installing-rbw) for how I install it.
 {{< /alert >}}
 
-The public halves are what stayed behind. Every host in my `~/.ssh/config`
-still had an `IdentityFile ~/.ssh/pub/<name>.pub` line, which meant a folder
-of `.pub` files to keep in sync with the vault by hand. This post removes
-that folder too: ssh asks Bitwarden for the public key at connection time.
+The public halves stayed behind. Every host in my `~/.ssh/config` still had an
+`IdentityFile ~/.ssh/pub/<name>.pub` line, which meant a folder of `.pub`
+files to keep in sync with the vault by hand.
 
-## Links
-
-- [Github: torreirow/rbw](https://github.com/torreirow/rbw), the fork I use
-- [Github: doy/rbw](https://github.com/doy/rbw), the original
-- [fnox](https://fnox.jdx.dev/) and its
-  [Bitwarden provider](https://fnox.jdx.dev/providers/bitwarden)
-- [ssh_config(5)](https://man.openbsd.org/ssh_config)
-
-## Why ssh needs the public key at all
-
-With an agent holding several keys, ssh offers them to the server one by one.
-Servers cut you off after a few failed attempts (`MaxAuthTries` defaults to
-6), so with enough keys in the agent you get `Too many authentication
-failures` before the right key comes up.
-
-The usual fix is a per-host block:
+ssh needs those lines. With an agent holding several keys, ssh offers them to
+the server one by one, and servers cut you off after a few failed attempts
+(`MaxAuthTries` defaults to 6), so you get `Too many authentication failures`
+before the right key comes up. The usual fix is a per-host block:
 
 ```text
 Host git.example.com
@@ -54,9 +61,9 @@ Host git.example.com
 
 `IdentitiesOnly yes` makes ssh offer only the identities named in the config.
 `IdentityFile` can point at a *public* key: ssh reads it, finds the agent key
-with the same public half, and asks the agent to sign. The private key is
-never needed locally. All ssh needs from that file is a way to identify the
-key, which is why it's fine to generate it on the fly.
+with the same public half, and asks the agent to sign. **All ssh needs from
+that file is a way to identify the key**, so it's fine to generate it on the
+fly.
 
 ## The setup
 
@@ -82,7 +89,7 @@ rbw = "cargo:torreirow/rbw"
 
 The alias maps the short name `rbw` to the fork's git repository, and
 `tag:v2.0.3` builds that tag. I pin the tag because the fork has one
-maintainer and rbw holds the keys to my vault, so I read the diff before
+maintainer and **rbw holds the keys to my vault**, so I read the diff before
 I move to a new tag.
 
 ### fnox provider
@@ -102,8 +109,8 @@ Bitwarden SSH key items expose a `public_key` field, which fnox reads as
 `<item>/public_key`.
 
 fnox shells out to rbw, so it is a little slower than calling rbw directly:
-over 10 runs, `rbw get --field public_key` averaged 62 ms and `fnox get`
-averaged 77 ms. The speed comes from rbw, whose daemon keeps the vault
+over 10 runs, `rbw get --field public_key` averaged **62 ms** and `fnox get`
+averaged **77 ms**. The speed comes from rbw, whose daemon keeps the vault
 unlocked in memory; that's what makes it so much quicker than the official
 Node-based `bw` CLI. I pay the extra 15 ms for fnox because it gives me one
 config of named secrets for everything I fetch, and I can swap a provider
@@ -182,43 +189,51 @@ Host git.example.com
 
 `Match exec` runs the command and applies the block only if it exits 0.
 `IdentityFile` expands environment variables (OpenSSH 8.4+), so
-`${TMPDIR}` works. I'll come back to `IdentityFile none` below.
+`${TMPDIR}` works. The `IdentityFile none` line is explained below.
 
-## Gotchas
+Two things surprised me here:
 
-**`Match exec` runs in the caller's working directory.** fnox looks for its
-config starting from the current directory, so `fnox get` from inside some git
-repo won't see `~/.ssh/fnox.local.toml`. That's what the `cd ~/.ssh` is for.
+- **`Match exec` runs in the caller's working directory.** fnox looks for its
+  config starting from the current directory, so `fnox get` from inside some
+  git repo won't see `~/.ssh/fnox.local.toml`. That's what the `cd ~/.ssh` is
+  for.
+- **`exec` runs on every connection.** Every `git fetch`, `git push`, and
+  `ssh -G` runs it. At 77 ms per call that adds up in a script that loops over
+  many repositories, so the script reuses a file younger than 10 minutes.
 
-**`exec` runs on every connection.** Every `git fetch`, `git push`, and
-`ssh -G` runs it. At 77 ms per call that adds up in a script that loops over
-many repositories, so the script reuses a file younger than 10 minutes.
+## Why IdentityFile none
 
-## Failure mode
+The design is meant to fail closed: if Bitwarden is locked, `fnox get` fails,
+`gen.sh` exits 1, ssh skips the Match block, and authentication fails.
 
-The design is meant to fail closed. If Bitwarden is locked, `fnox get` fails,
-`gen.sh` exits 1, ssh skips the Match block, and authentication fails. The
-cache is the exception: for up to 10 minutes after the last fetch, ssh keeps
-offering the public key from the file, even if the vault is locked or the key
-was rotated in Bitwarden. A shorter `-mmin` narrows that window.
-
-I tested it by locking rbw and deleting the cached file. `gen.sh` exited 1
-and ssh skipped the Match block, as intended. Then, with no `IdentityFile`
-left, ssh fell back to its defaults (`id_rsa`, `id_ecdsa`, `id_ed25519`, and
-so on) and offered my old `~/.ssh/id_rsa` to the server. `IdentitiesOnly`
-doesn't prevent that: when nothing else is configured, the default files count
-as the configured identities.
+My first version had no `IdentityFile none`. I tested it by locking rbw and
+deleting the cached file. `gen.sh` exited 1 and ssh skipped the Match block,
+as intended. Then, with no `IdentityFile` left, ssh fell back to its defaults
+(`id_rsa`, `id_ecdsa`, `id_ed25519`, and so on) and **offered my old
+`~/.ssh/id_rsa` to the server**. `IdentitiesOnly` doesn't prevent that: when
+nothing else is configured, the default files count as the configured
+identities.
 
 The login still failed, but the server saw a public key it had no reason to
 see, and if that key had been registered there, I would have logged in as the
-wrong identity. Adding `IdentityFile none` to the `Host` block fixes it. The
-Match block's file still applies when the Match fires, and when it doesn't,
-ssh has nothing to offer:
+wrong identity. `IdentityFile none` in the `Host` block fixes it. The Match
+block's file still applies when the Match fires, and when it doesn't, ssh has
+nothing to offer.
+
+## Checking it works
+
+Lock the vault, drop the cache, and connect:
+
+```bash
+rbw lock && rm -f "${TMPDIR}/work_gitlab_auth.pub" && ssh -v -T git@git.example.com
+```
 
 ```text
 debug1: No more authentication methods to try.
 git@git.example.com: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
 ```
+
+No `Offering public key` line should appear before the denial.
 
 ## Variation: delete the file after use
 
@@ -241,9 +256,34 @@ file path, since ssh_config has no per-process token, so one connection can
 delete the file while the other is still reading it. I haven't switched to
 this. The cache works and the file holds only a public key.
 
-## Where this leaves ~/.ssh
+## What it does not do
 
-So far only one host is migrated. The rest still use static `.pub` files, and
-a few older keys still sit on disk as files. Each migration means moving the
-key into a Bitwarden SSH key item, adding the two config blocks above, and
-deleting the files.
+- **The cache is a 10-minute window.** For up to 10 minutes after the last
+  fetch, ssh keeps offering the public key from the file, even if the vault
+  is locked or the key was rotated in Bitwarden. A shorter `-mmin` narrows
+  the window.
+- It is migrated host by host. So far only one host uses it; the rest still
+  have static `.pub` files, and a few older keys still sit on disk. Each
+  migration means moving the key into a Bitwarden SSH key item, adding the
+  two config blocks above, and deleting the files.
+- `gen.sh` as written relies on macOS `${TMPDIR}`; Linux needs
+  `${XDG_RUNTIME_DIR}`.
+
+## Conclusion
+
+- With rbw as the SSH agent, **locking the vault turns off every SSH key** at
+  once, and the private halves never touch the disk.
+- `IdentityFile` only needs the public key, so a `Match exec` script can
+  fetch it from Bitwarden at connect time instead of a folder of `.pub`
+  files.
+- `IdentityFile none` in the `Host` block is what makes it fail closed;
+  without it ssh falls back to the default `~/.ssh/id_*` files.
+- A short file cache keeps the 62 to 77 ms lookup off every `git fetch`.
+
+## Links
+
+- [Github: torreirow/rbw](https://github.com/torreirow/rbw), the fork I use
+- [Github: doy/rbw](https://github.com/doy/rbw), the original
+- [fnox](https://fnox.jdx.dev/) and its
+  [Bitwarden provider](https://fnox.jdx.dev/providers/bitwarden)
+- [ssh_config(5)](https://man.openbsd.org/ssh_config)
