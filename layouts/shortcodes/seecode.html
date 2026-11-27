@@ -1,0 +1,6 @@
+{{- /* Embeds a SeeCode diagram from static/diagrams. Usage: {{< seecode src="diagrams/x.html" title="..." ratio="16/9" >}}
+     SeeCode caps the SVG at 82vh, which inside an iframe always leaves empty space below,
+     so onload lifts the cap and sizes the iframe from the SVG viewBox (24px = embed padding). */ -}}
+<iframe src="{{ .Get "src" | relURL }}?embed=1" title="{{ .Get "title" }}" loading="lazy"
+  style="width:100%;{{ printf "aspect-ratio:%s" (.Get "ratio" | default "16/9") | safeCSS }};border:0"
+  onload="const d=this.contentDocument,s=d&&d.querySelector('.sc-svg');if(!s)return;d.head.insertAdjacentHTML('beforeend','<style>.sc-svg{max-height:none}</style>');const v=s.viewBox.baseVal,fit=()=>{this.style.aspectRatio='auto';this.style.height=((this.clientWidth-24)*v.height/v.width+24)+'px'};fit();new ResizeObserver(fit).observe(this)"></iframe>
